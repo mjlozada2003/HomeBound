@@ -49,4 +49,9 @@ describe("HU-02: Caso 2 - Autenticacion de credenciales", () => {
         expect(resultado.exito).toBe(false);
         expect(resultado.mensaje).toEqual("Credenciales incorrectas. Verifica tu correo y contraseña.");
     });
+    it("Escenario 2: Debería rechazar si la contraseña es incorrecta", () => {
+        const resultado = autenticarUsuario("juan@example.com", "claveerronea", usuariosRegistrados);
+        expect(resultado.exito).toBe(false);
+        expect(resultado.mensaje).toEqual("Credenciales incorrectas. Verifica tu correo y contraseña.");
+    });
 });

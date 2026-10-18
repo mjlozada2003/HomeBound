@@ -22,11 +22,11 @@ export function validarCamposLogin(correo, password){
 export function autenticarUsuario(correo, password, usuarios = []){
     const correoNormalizado = correo.trim().toLowerCase();
 
-    const usuarioEncontardo = usuarios.find(
+    const usuarioEncontrado = usuarios.find(
         (u) => u.correo.toLowerCase() == correoNormalizado
     );
 
-    if(!usuarioEncontardo){
+    if(!usuarioEncontrado  || password !== usuarioEncontrado.password){
         return {
             exito:false,
             mensaje: "Credenciales incorrectas. Verifica tu correo y contraseña."
