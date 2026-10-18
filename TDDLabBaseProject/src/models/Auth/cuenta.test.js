@@ -88,4 +88,13 @@ describe("HU-01: Crear cuenta - Validaciones de registro", () => {
    expect(resultadoValido.esValido).toBe(true);
    expect(resultadoValido.mensaje).toEqual("¡Cuenta creada exitosamente! Bienvenido a HomeBound.");
  });
+ it("Escenario 2: Debería normalizar y retornar los datos del usuario creado (nombre, correo sin espacios en los extremos", () => {
+   const resultado = validarRegistro("  Maria Lopez  ", "  maria@gmail.com  ", "passwordSeguro123");
+   expect(resultado.esValido).toBe(true);
+   expect(resultado.usuario).toEqual({
+      nombre: "Maria Lopez",
+      correo: "maria@gmail.com"
+   });
+ });
+
 })

@@ -28,7 +28,11 @@ export function validarRegistro(nombre,correo, password){
     }
     return {
         esValido :true,
-        mensaje: "¡Cuenta creada exitosamente! Bienvenido a HomeBound."
+        mensaje: "¡Cuenta creada exitosamente! Bienvenido a HomeBound.",
+        usuario: {
+            nombre: nombre.trim(),
+            correo : correo.trim()
+        }
     };
 
 }

@@ -21,6 +21,8 @@ form.addEventListener("submit", (event) => {
   }else{
     mensajeDiv.className = "exito";
     mensajeDiv.textContent = resultado.mensaje;
+    
+    form.reset();
   }
 
 });
