@@ -114,16 +114,6 @@ HomeBound/
 
 ---
 
-## 🎯 Estado de Historias de Usuario (Sprint 1)
-
-| Identificador | Historia de Usuario | Estado | Detalle |
-| :---: | :--- | :---: | :--- |
-| **HU-01** | **Crear cuenta** | ✅ **Completada** | 16 pruebas unitarias TDD cubriendo 5 casos: campos vacíos, formato de correo, longitud de contraseña (mínimo 6), longitud de nombre (mínimo 2) y registro exitoso con confirmación. |
-| **HU-02** | **Iniciar / Cerrar sesión** | ⏳ *En desarrollo* | Autenticación con correo/contraseña, roles (Usuario vs Admin), persistencia de sesión al recargar y pantalla de perfil con opción de cerrar sesión. |
-| **HU-03** | **Publicar hallazgo** | 📋 *Pendiente* | Reporte de objeto o mascota encontrada con detalles, fecha, fotografía y contacto opcional. |
-| **HU-04** | **Publicar pérdida** | 📋 *Pendiente* | Reporte de objeto o mascota perdida con detalles, fecha, fotografía y contacto obligatorio. |
-| **HU-06** | **Ver vista básica** | 📋 *Pendiente* | Exploración del feed con tarjetas de publicaciones recientes y badges diferenciadores. |
-| **HU-08** | **Ver estadísticas básicas** | 📋 *Pendiente* | Panel exclusivo para el rol `ADMIN` con contadores de publicaciones activas y resueltas. |
 
 ### 🛡️ Reglas de Negocio Inquebrantables
 1. **Separación estricta de categorías:** Los objetos (`OBJETO`) y las mascotas (`MASCOTA`) están rigurosamente separados; el sistema no permite mezclar publicaciones entre categorías.
