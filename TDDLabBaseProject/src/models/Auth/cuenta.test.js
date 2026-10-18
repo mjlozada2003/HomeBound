@@ -12,5 +12,10 @@ describe("HU-01: Crear cuenta - Validaciones de registro", () => {
    expect(resultadoSinNombre.esValido).toBe(false);
    expect(resultadoSinNombre.mensaje).toEqual("Por favor, completa todos los campos");
  });
- 
+ it("Escenario 3: Debería rechazar si falta el correo", () => {
+   const resultadoSinCorreo = validarRegistro("Juan", "", "123456");
+   expect(resultadoSinCorreo.esValido).toBe(false);
+   expect(resultadoSinCorreo.mensaje).toEqual("Por favor, completa todos los campos")
+ });
+
 })
