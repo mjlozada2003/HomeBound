@@ -34,5 +34,9 @@ describe("HU-01: Crear cuenta - Validaciones de registro", () => {
    expect(resultadoSinArroba.esValido).toBe(false);
    expect(resultadoSinArroba.mensaje).toEqual("El correo electrónico no es válido");
  });
- 
+ it("Escenario 2: Debería rechazar si el correo no tiene dominio completo(sin punto)", () => {
+   const resultadoSinDominio = validarRegistro("Juan", "juan@gmail", "123456");
+   expect(resultadoSinDominio.esValido).toBe(false);
+   expect(resultadoSinDominio.mensaje).toEqual("El correo electrónico no es válido");
+ })
 })
