@@ -80,5 +80,12 @@ describe("HU-01: Crear cuenta - Validaciones de registro", () => {
    const resultadoConEspacios = validarRegistro("   J   ", "juan@example.com", "123456");
    expect(resultadoConEspacios.esValido).toBe(false);
    expect(resultadoConEspacios.mensaje).toEqual("El nombre debe tener al menos 2 caracteres");
- })
+ });
+
+
+ it("Caso 5 - Escenario 1: Debería registrar exitosamente y enviar mensaje de confirmacion cuando todos los datos son válidos", () => {
+   const resultadoValido = validarRegistro("Juan Perez", "juan@example.com", "123456");
+   expect(resultadoValido.esValido).toBe(true);
+   expect(resultadoValido.mensaje).toEqual("¡Cuenta creada exitosamente! Bienvenido a HomeBound.");
+ });
 })
