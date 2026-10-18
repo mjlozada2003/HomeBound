@@ -26,4 +26,10 @@ describe("HU-02: Iniciar sesión - Validaciones de campos", () => {
         expect(resultado.esValido).toBe(false);
         expect(resultado.mensaje).toEqual("El correo electrónico no es válido");
     });
+    it("Escenario 6: Debería aceptar si ambos campos son válidos", () => {
+        const resultado = validarCamposLogin("usuario@example.com", "123456");
+        expect(resultado.esValido).toBe(true);
+        expect(resultado.mensaje).toEqual("");
+    });
+
 })

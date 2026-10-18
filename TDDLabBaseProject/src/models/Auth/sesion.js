@@ -13,4 +13,8 @@ export function validarCamposLogin(correo, password){
             mensaje: "El correo electrónico no es válido"
         }
     }
+    return {
+        esValido:true,
+        mensaje:""
+    };
 }
