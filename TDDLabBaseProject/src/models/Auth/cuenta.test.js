@@ -44,5 +44,10 @@ describe("HU-01: Crear cuenta - Validaciones de registro", () => {
    expect(resultadoSinNombre.esValido).toBe(false);
    expect(resultadoSinNombre.mensaje).toEqual("El correo electrónico no es válido");
  });
+ it("Escenario 4: Debería rechazar si el correo contiene espacios en medio", () => {
+   const resultadoConEspacios = validarRegistro("Juan", "juan perez@gmail.com", "123456");
+   expect(resultadoConEspacios.esValido).toBe(false);
+   expect(resultadoConEspacios.mensaje).toEqual("El correo electrónico no es válido");
  
+ })
 })
