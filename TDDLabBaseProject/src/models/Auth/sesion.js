@@ -17,4 +17,20 @@ export function validarCamposLogin(correo, password){
         esValido:true,
         mensaje:""
     };
+};
+
+export function autenticarUsuario(correo, password, usuarios = []){
+    const correoNormalizado = correo.trim().toLowerCase();
+
+    const usuarioEncontardo = usuarios.find(
+        (u) => u.correo.toLowerCase() == correoNormalizado
+    );
+
+    if(!usuarioEncontardo){
+        return {
+            exito:false,
+            mensaje: "Credenciales incorrectas. Verifica tu correo y contraseña."
+        };
+    }
 }
+

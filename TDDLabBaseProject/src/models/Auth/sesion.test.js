@@ -1,4 +1,5 @@
 import { validarCamposLogin } from "./sesion";
+import { autenticarUsuario } from "./sesion";
 
 describe("HU-02: Iniciar sesión - Validaciones de campos", () => {
     it("Caso 1 - Escenario 1: Debería rechazar si ambos campos están vacíos", () => {
@@ -32,4 +33,20 @@ describe("HU-02: Iniciar sesión - Validaciones de campos", () => {
         expect(resultado.mensaje).toEqual("");
     });
 
-})
+
+});
+
+describe("HU-02: Caso 2 - Autenticacion de credenciales", () => {
+    const usuariosRegistrados = [
+    {
+        nombre: "Juan Perez", 
+        correo: "juan@example.com",
+        password: "password123"
+    }];
+
+    it("Caso 2 - Escenario 1: Debería rechazar si el correo no está registrado", () => {
+        const resultado = autenticarUsuario("noexiste@gmail.com","123456", usuariosRegistrados);
+        expect(resultado.exito).toBe(false);
+        expect(resultado.mensaje).toEqual("Credenciales incorrectas. Verifica tu correo y contraseña.");
+    });
+});
