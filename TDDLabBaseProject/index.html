@@ -1,18 +1,214 @@
 <!DOCTYPE html>
 <html xml:lang="es">
   <head>
-    <title>Sumador</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeBound - Crea tu cuenta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+    <style>
+        :root {
+          --color-bg: #F7F5EB;
+          --color-surface: #FFFFFF;
+          --color-primary: #2D6A4F;
+          --color-primary-hover: #22533D;
+          --color-text: #1F2D24;
+          --color-text-muted: #5E7265;
+          --color-input-bg: #F5F3E9;
+          --color-input-border: #E8E5D8;
+          --color-error: #C94A29;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+          font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+          background-color: var(--color-bg);
+          color: var(--color-text);
+          min-height: 100vh;
+        }
+        /* Navbar */
+        .navbar {
+          background-color:var(--color-surface);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 3rem;
+        }
+        .brand {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          font-size: 1.4rem;
+          font-weight: 800;
+          color: var(--color-primary);
+        }
+        .brand img { width: 36px; height: 36px; border-radius: 8px; }
+        .nav-actions { display: flex; gap: 0.75rem; align-items: center; }
+        .btn-publicar {
+          background-color: var(--color-primary);
+          color: #fff;
+          padding: 0.55rem 1.25rem;
+          border-radius: 9999px;
+          border: none;
+          font-weight: 600;
+          cursor: pointer;
+        }
+        .btn-ingresar {
+          background: transparent;
+          color: var(--color-text);
+          padding: 0.55rem 1.25rem;
+          border-radius: 9999px;
+          border: 1px solid var(--color-input-border);
+          font-weight: 600;
+          cursor: pointer;
+        }
+        /* Card Central */
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2rem 1rem 4rem 1rem;
+        }
+        .card {
+          background-color: var(--color-surface);
+          width: 100%;
+          max-width: 440px;
+          border-radius: 28px;
+          padding: 2.5rem 2rem;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+          text-align: center;
+        }
+        .card-logo { width: 68px; height: 68px; margin-bottom: 0.5rem; }
+        .card-title {
+          font-size: 1.8rem;
+          font-weight: 800;
+          color: var(--color-primary);
+          margin-bottom: 0.25rem;
+        }
+        .card-subtitle {
+          color: var(--color-text-muted);
+          font-size: 0.95rem;
+          margin-bottom: 1.75rem;
+        }
+        /* Formulario */
+        .form-group { text-align: left; margin-bottom: 1.1rem; }
+        .form-group label {
+          display: block;
+          font-size: 0.88rem;
+          font-weight: 600;
+          color: var(--color-text);
+          margin-bottom: 0.4rem;
+        }
+        .form-group input {
+          width: 100%;
+          padding: 0.85rem 1rem;
+          border-radius: 14px;
+          border: 1.5px solid var(--color-input-border);
+          background-color: var(--color-input-bg);
+          font-size: 0.95rem;
+          color: var(--color-text);
+          outline: none;
+          transition: border-color 0.2s;
+        }
+        .form-group input:focus {
+          border-color: var(--color-primary);
+          background-color: #FFFFFF;
+        }
+        .btn-registrar {
+          width: 100%;
+          background-color: var(--color-primary);
+          color: #fff;
+          padding: 0.95rem;
+          border-radius: 9999px;
+          border: none;
+          font-size: 1.05rem;
+          font-weight: 700;
+          cursor: pointer;
+          margin-top: 0.8rem;
+          transition: background-color 0.2s;
+        }
+        .btn-registrar:hover { background-color: var(--color-primary-hover); }
+        .login-link {
+          margin-top: 1.4rem;
+          font-size: 0.9rem;
+          color: var(--color-text-muted);
+        }
+        .login-link a {
+          color: var(--color-primary);
+          font-weight: 700;
+          text-decoration: none;
+        }
+        /* Mensajes de Validación */
+        #mensaje-div {
+          margin-top: 1rem;
+          padding: 0.75rem;
+          border-radius: 12px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          display: none;
+        }
+        #mensaje-div.error {
+          display: block;
+          background-color: #FDF2F0;
+          color: var(--color-error);
+          border: 1px solid #F5C6CB;
+        }
+        #mensaje-div.exito {
+          display: block;
+          background-color: #E8F5E9;
+          color: var(--color-primary);
+          border: 1px solid #C8E6C9;
+        }
+    </style>
   </head>
   <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="primer-numero">Primer número:</label>
-      <input type="number" id="primer-numero" />
-      <label for="segundo-numero">Segundo número:</label>
-      <input type="number" id="segundo-numero" />
-      <input type="submit" value="Sumar" id="sumar-button" />
-    </form>
-    <div id="resultado-div"></div>
+    <!-- Navbar-->
+     <header class ="navbar">
+      <div class ="brand">
+        <img src="./src/assets/logo.jpg" alt="Logo HomeBound" />
+        <span>HomeBound</span>
+      </div>
+      <div class ="nav-actions">
+        <button class ="btn-publicar">+ Publicar</button>
+        <button class ="btn-ingresar">Ingresar</button>
+      </div>
+     </header>
+
+
+
+     <!--Card Central-->
+    <main class ="container">
+      <div class ="card">
+        <img src="./src/assets/logo.jpg" alt="HomeBound" class="card-logo" />
+        <h1 class="car-title">Crea tu cuenta</h1>
+        <p class ="card-subtitle">Así podrás reportar hallazgos y pérdidas.</p>
+
+        <form id="registro-form">
+          <div class="form-group">
+            <label for ="nombre-input">Nombre</label>
+            <input type="text" id="nombre-input"/>
+          </div>
+          <div class="form-group">
+            <label for ="correo-input">Correo electrónico</label>
+            <input type="email" id="correo-input"/>
+          </div>
+          <div class="form-group">
+            <label for ="password-input">Contraseña</label>
+            <input type="password" id="password-input"/>
+          </div>
+          
+          <button type="submit" id="registrar-button" class="btn-registrar">Registrarme</button>
+        </form>
+
+        <div id="mensaje-div"></div>
+      
+        <p class ="login-link">
+           ¿Ya tienes cuenta? <a href="#login" id="link-iniciar-sesion">Inicia sesión</a>
+        </p>
+      </div>
+    </main> 
+
 
     <script type="module" src="./src/presenter.js"></script>
   </body>

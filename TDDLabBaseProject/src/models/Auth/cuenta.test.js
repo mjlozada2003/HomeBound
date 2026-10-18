@@ -22,5 +22,10 @@ describe("HU-01: Crear cuenta - Validaciones de registro", () => {
    expect(resultadoSinContraseña.esValido).toBe(false);
    expect(resultadoSinContraseña.mensaje).toEqual("Por favor, completa todos los campos")
  });
+ it("Escenario 5: Debería rechazar si los campos solo contienen espacios en blanco", () => {
+   const resultadoConEspacios = validarRegistro(" ", " ", "  ");
+   expect(resultadoConEspacios.esValido).toBe(false);
+   expect(resultadoConEspacios.mensaje).toEqual("Por favor, completa todos los campos")
+ });
 
 })

@@ -1,15 +1,26 @@
-import sumar from "./sumador";
+import { validarRegistro } from "./models/Auth/cuenta";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const form = document.querySelector("#registro-form");
+const nombreInput = document.querySelector("#nombre-input");
+const correoInput = document.querySelector("#correo-input");
+const passwordInput = document.querySelector("#password-input");
+const mensajeDiv = document.querySelector("#mensaje-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const nombre = nombreInput.value;
+  const correo = correoInput.value;
+  const password = passwordInput.value;
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  const resultado = validarRegistro(nombre, correo, password);
+
+  if(!resultado.esValido){
+    mensajeDiv.className ="error";
+    mensajeDiv.textContent = resultado.mensaje;
+  }else{
+    mensajeDiv.className = "exito";
+    mensajeDiv.textContent = resultado.mensaje;
+  }
+
 });
