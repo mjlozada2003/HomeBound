@@ -13,7 +13,13 @@ export function validarRegistro(nombre,correo, password){
         mensaje : "El correo electrónico no es válido"
         };
     }
-    
+
+    if(password.length < 6){
+        return{
+            esValido:false,
+            mensaje: "La contraseña debe tener al menos 6 caracteres"
+        };
+    }
     return {
         esValido :true,
         mensaje: ""

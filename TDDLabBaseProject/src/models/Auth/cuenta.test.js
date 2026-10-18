@@ -49,5 +49,13 @@ describe("HU-01: Crear cuenta - Validaciones de registro", () => {
    expect(resultadoConEspacios.esValido).toBe(false);
    expect(resultadoConEspacios.mensaje).toEqual("El correo electrónico no es válido");
  
- })
+ });
+
+
+
+ it("Caso 3 - Escenario 1: Debería rechazar si a contraseña tiene menos de 6 caracteres", () => {
+   const resultadoContrasenaCorta = validarRegistro("Juan", "juan@example.com", "123");
+   expect(resultadoContrasenaCorta.esValido).toBe(false);
+   expect(resultadoContrasenaCorta.mensaje).toEqual("La contraseña debe tener al menos 6 caracteres");
+ });
 })
