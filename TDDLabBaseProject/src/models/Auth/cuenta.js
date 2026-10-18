@@ -14,7 +14,7 @@ export function validarRegistro(nombre,correo, password){
         };
     }
 
-    if(password.length < 6){
+    if(password.trim().length < 6){
         return{
             esValido:false,
             mensaje: "La contraseña debe tener al menos 6 caracteres"
