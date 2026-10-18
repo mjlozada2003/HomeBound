@@ -28,4 +28,11 @@ describe("HU-01: Crear cuenta - Validaciones de registro", () => {
    expect(resultadoConEspacios.mensaje).toEqual("Por favor, completa todos los campos")
  });
 
+
+ it("Caso 2 - Escenario 1: Debería rechazar si el correo no tiene arroba", () => {
+   const resultadoSinArroba = validarRegistro("Juan", "juanexample.com", "123456");
+   expect(resultadoSinArroba.esValido).toBe(false);
+   expect(resultadoSinArroba.mensaje).toEqual("El correo electrónico no es válido");
+ });
+ 
 })
