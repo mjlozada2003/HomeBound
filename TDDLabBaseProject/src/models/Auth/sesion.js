@@ -32,5 +32,13 @@ export function autenticarUsuario(correo, password, usuarios = []){
             mensaje: "Credenciales incorrectas. Verifica tu correo y contraseña."
         };
     }
+    return {
+        exito:true,
+        mensaje: "¡Inicio de sesión exitoso!",
+        usuario:{
+            nombre:usuarioEncontrado.nombre,
+            correo:usuarioEncontrado.correo
+        }
+    };
 }
 
