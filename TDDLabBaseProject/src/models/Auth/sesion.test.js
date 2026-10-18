@@ -60,4 +60,10 @@ describe("HU-02: Caso 2 - Autenticacion de credenciales", () => {
         expect(resultado.mensaje).toEqual("¡Inicio de sesión exitoso!");
         expect(resultado.usuario.nombre).toEqual("Juan Perez");
     });
+    it("Escenario 4: Debería permitir iniciar sesión si el correo se escribió con mayúsculas", () => {
+        const resultado = autenticarUsuario("JUAN@EXAMPLE.COM", "password123", usuariosRegistrados);
+        expect(resultado.exito).toBe(true);
+        expect(resultado.mensaje).toEqual("¡Inicio de sesión exitoso!");
+        expect(resultado.usuario.correo).toEqual("juan@example.com");
+    });
 });
