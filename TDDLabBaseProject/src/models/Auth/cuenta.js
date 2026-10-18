@@ -20,7 +20,7 @@ export function validarRegistro(nombre,correo, password){
             mensaje: "La contraseña debe tener al menos 6 caracteres"
         };
     }
-    if(nombre.length < 2){
+    if(nombre.trim().length < 2){
         return {
             esValido : false,
             mensaje : "El nombre debe tener al menos 2 caracteres"
