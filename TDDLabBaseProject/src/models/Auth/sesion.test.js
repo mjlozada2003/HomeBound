@@ -15,6 +15,10 @@ describe("HU-02: Iniciar sesión - Validaciones de campos", () => {
         const resultado = validarCamposLogin("usuario@example.com", "");
         expect(resultado.esValido).toBe(false);
         expect(resultado.mensaje).toEqual("Por favor, completa todos los campos");
-  
-    })
+    });
+    it("Escenario 4: Debería rechazar si los campos solo tienen espacios en blanco", () => {
+        const resultado = validarCamposLogin("  ", "  ");
+        expect(resultado.esValido).toBe(false);
+        expect(resultado.mensaje).toEqual("Por favor, completa todos los campos");
+    });
 })
