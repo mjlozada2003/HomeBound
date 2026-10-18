@@ -1,18 +1,62 @@
 <!DOCTYPE html>
 <html xml:lang="es">
   <head>
-    <title>Sumador</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeBound - Crea tu cuenta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles/styles.css">
+
   </head>
   <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="primer-numero">Primer número:</label>
-      <input type="number" id="primer-numero" />
-      <label for="segundo-numero">Segundo número:</label>
-      <input type="number" id="segundo-numero" />
-      <input type="submit" value="Sumar" id="sumar-button" />
-    </form>
-    <div id="resultado-div"></div>
+    <!-- Navbar-->
+     <header class ="navbar">
+      <div class ="brand">
+        <img src="./src/assets/logo.jpg" alt="Logo HomeBound" />
+        <span>HomeBound</span>
+      </div>
+      <div class ="nav-actions">
+        <button class ="btn-publicar">+ Publicar</button>
+        <button class ="btn-ingresar">Ingresar</button>
+      </div>
+     </header>
+
+
+
+     <!--Card Central-->
+    <main class ="container">
+      <div class ="card">
+        <img src="./src/assets/logo.jpg" alt="HomeBound" class="card-logo" />
+        <h1 class="car-title">Crea tu cuenta</h1>
+        <p class ="card-subtitle">Así podrás reportar hallazgos y pérdidas.</p>
+
+        <form id="registro-form">
+          <div class="form-group">
+            <label for ="nombre-input">Nombre</label>
+            <input type="text" id="nombre-input"/>
+          </div>
+          <div class="form-group">
+            <label for ="correo-input">Correo electrónico</label>
+            <input type="email" id="correo-input"/>
+          </div>
+          <div class="form-group">
+            <label for ="password-input">Contraseña</label>
+            <input type="password" id="password-input"/>
+          </div>
+          
+          <button type="submit" id="registrar-button" class="btn-registrar">Registrarme</button>
+        </form>
+
+        <div id="mensaje-div"></div>
+      
+        <p class ="login-link">
+           ¿Ya tienes cuenta? <a href="#login" id="link-iniciar-sesion">Inicia sesión</a>
+        </p>
+      </div>
+    </main> 
+
 
     <script type="module" src="./src/presenter.js"></script>
   </body>

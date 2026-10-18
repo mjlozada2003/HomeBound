@@ -1,0 +1,100 @@
+import { validarRegistro } from "./cuenta";
+
+describe("HU-01: Crear cuenta - Validaciones de registro", () => {
+ it("Caso 1: Debería rechazar el registro si algún campo está vacío", () => {
+    //Escenario 1: 
+    const resultadoTodosVacíos = validarRegistro("","","");
+    expect(resultadoTodosVacíos.esValido).toBe(false);
+    expect(resultadoTodosVacíos.mensaje).toEqual("Por favor, completa todos los campos");
+ });
+ it("Escenario 2: Debería rechazar si falta el nombre", () => {
+   const resultadoSinNombre = validarRegistro("", "juan@gmail.com", "123456");
+   expect(resultadoSinNombre.esValido).toBe(false);
+   expect(resultadoSinNombre.mensaje).toEqual("Por favor, completa todos los campos");
+ });
+ it("Escenario 3: Debería rechazar si falta el correo", () => {
+   const resultadoSinCorreo = validarRegistro("Juan", "", "123456");
+   expect(resultadoSinCorreo.esValido).toBe(false);
+   expect(resultadoSinCorreo.mensaje).toEqual("Por favor, completa todos los campos")
+ });
+ it("Escenario 4: Debería rechazar si falta la contraseña", () => {
+   const resultadoSinContraseña = validarRegistro("Juan", "juan@gmail.com", "");
+   expect(resultadoSinContraseña.esValido).toBe(false);
+   expect(resultadoSinContraseña.mensaje).toEqual("Por favor, completa todos los campos")
+ });
+ it("Escenario 5: Debería rechazar si los campos solo contienen espacios en blanco", () => {
+   const resultadoConEspacios = validarRegistro(" ", " ", "  ");
+   expect(resultadoConEspacios.esValido).toBe(false);
+   expect(resultadoConEspacios.mensaje).toEqual("Por favor, completa todos los campos")
+ });
+
+
+ it("Caso 2 - Escenario 1: Debería rechazar si el correo no tiene arroba", () => {
+   const resultadoSinArroba = validarRegistro("Juan", "juanexample.com", "123456");
+   expect(resultadoSinArroba.esValido).toBe(false);
+   expect(resultadoSinArroba.mensaje).toEqual("El correo electrónico no es válido");
+ });
+ it("Escenario 2: Debería rechazar si el correo no tiene dominio completo(sin punto)", () => {
+   const resultadoSinDominio = validarRegistro("Juan", "juan@gmail", "123456");
+   expect(resultadoSinDominio.esValido).toBe(false);
+   expect(resultadoSinDominio.mensaje).toEqual("El correo electrónico no es válido");
+ })
+ it("Escenario 3: Debería rechazar si el correo no tiene nombre de usuario antes del arroba", () => {
+   const resultadoSinNombre = validarRegistro("Juan", "@gmail.com", "123456");
+   expect(resultadoSinNombre.esValido).toBe(false);
+   expect(resultadoSinNombre.mensaje).toEqual("El correo electrónico no es válido");
+ });
+ it("Escenario 4: Debería rechazar si el correo contiene espacios en medio", () => {
+   const resultadoConEspacios = validarRegistro("Juan", "juan perez@gmail.com", "123456");
+   expect(resultadoConEspacios.esValido).toBe(false);
+   expect(resultadoConEspacios.mensaje).toEqual("El correo electrónico no es válido");
+ 
+ });
+
+
+
+ it("Caso 3 - Escenario 1: Debería rechazar si a contraseña tiene menos de 6 caracteres", () => {
+   const resultadoContrasenaCorta = validarRegistro("Juan", "juan@example.com", "123");
+   expect(resultadoContrasenaCorta.esValido).toBe(false);
+   expect(resultadoContrasenaCorta.mensaje).toEqual("La contraseña debe tener al menos 6 caracteres");
+ });
+ it("Escenario 2: Debería rechazar si la contraseña tiene exactamente 5 caracteres", () => {
+   const resultadoCincoCaracteres = validarRegistro("Juan", "juan@example.com", "12345");
+   expect(resultadoCincoCaracteres.esValido).toBe(false);
+   expect(resultadoCincoCaracteres.mensaje).toEqual("La contraseña debe tener al menos 6 caracteres");
+ });
+ it("Escenario 3: Debería rechazar si la contraseña tiene menos de 6 caracteres ignorando espacios en los extremos", () => {
+   const resultadoConEspacios = validarRegistro("Juan", "juan@example.com", " 123  ");
+   expect(resultadoConEspacios.esValido).toBe(false);
+   expect(resultadoConEspacios.mensaje).toEqual("La contraseña debe tener al menos 6 caracteres");
+ });
+
+
+
+ it("Caso 4 - Escenario 1: Debería rechazar si el nombre tiene menos de 2 caracteres", () => {
+   const resultadoNombreCorto = validarRegistro("J", "juan@example.com", "123456");
+   expect(resultadoNombreCorto.esValido).toBe(false);
+   expect(resultadoNombreCorto.mensaje).toEqual("El nombre debe tener al menos 2 caracteres");
+ });
+ it("Escenario 2: Debería rechazar si el nombre tiene una letra rodeada de espacios en blanco", () => {
+   const resultadoConEspacios = validarRegistro("   J   ", "juan@example.com", "123456");
+   expect(resultadoConEspacios.esValido).toBe(false);
+   expect(resultadoConEspacios.mensaje).toEqual("El nombre debe tener al menos 2 caracteres");
+ });
+
+
+ it("Caso 5 - Escenario 1: Debería registrar exitosamente y enviar mensaje de confirmacion cuando todos los datos son válidos", () => {
+   const resultadoValido = validarRegistro("Juan Perez", "juan@example.com", "123456");
+   expect(resultadoValido.esValido).toBe(true);
+   expect(resultadoValido.mensaje).toEqual("¡Cuenta creada exitosamente! Bienvenido a HomeBound.");
+ });
+ it("Escenario 2: Debería normalizar y retornar los datos del usuario creado (nombre, correo sin espacios en los extremos", () => {
+   const resultado = validarRegistro("  Maria Lopez  ", "  maria@gmail.com  ", "passwordSeguro123");
+   expect(resultado.esValido).toBe(true);
+   expect(resultado.usuario).toEqual({
+      nombre: "Maria Lopez",
+      correo: "maria@gmail.com"
+   });
+ });
+
+})
