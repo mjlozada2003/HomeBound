@@ -21,4 +21,9 @@ describe("HU-02: Iniciar sesión - Validaciones de campos", () => {
         expect(resultado.esValido).toBe(false);
         expect(resultado.mensaje).toEqual("Por favor, completa todos los campos");
     });
+    it("Escenario 5: Debería rechazar si el correo no tiene un formato válido", () => {
+        const resultado = validarCamposLogin("correoinvalido", "123456");
+        expect(resultado.esValido).toBe(false);
+        expect(resultado.mensaje).toEqual("El correo electrónico no es válido");
+    });
 })
