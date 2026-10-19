@@ -154,8 +154,12 @@ describe("Caso 5: Control de acceso a pantallas", () => {
         expect(puedeAccederAAdmin(null)).toBe(false);
     });
     it("Escenario 4: Debería denegar el acceso a administración si el usuario tiene rol 'USER'", () => {
-    const usuarioComun = { nombre: "Carlos", correo: "carlos@example.com", rol: "USER" };
-    expect(puedeAccederAAdmin(usuarioComun)).toBe(false);
-  });
+        const usuarioComun = { nombre: "Carlos", correo: "carlos@example.com", rol: "USER" };
+        expect(puedeAccederAAdmin(usuarioComun)).toBe(false);
+    });
+    it("Escenario 5: Debería autorizar el acceso a administración si el usuario tiene rol 'ADMIN'", () => {
+        const usuarioAdmin = { nombre: "Admin", correo: "admin@homebound.com", rol: "ADMIN" };
+        expect(puedeAccederAAdmin(usuarioAdmin)).toBe(true);
+    });
 
-})
+});

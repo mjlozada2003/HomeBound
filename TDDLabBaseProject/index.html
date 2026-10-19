@@ -11,17 +11,27 @@
 
   </head>
   <body>
-    <!-- Navbar-->
-     <header class ="navbar">
-      <div class ="brand">
+    
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="brand" id="brand-logo" style="cursor: pointer;">
         <img src="./src/assets/logo.jpg" alt="Logo HomeBound" />
         <span>HomeBound</span>
       </div>
-      <div class ="nav-actions">
-        <button class ="btn-publicar">+ Publicar</button>
-        <button class ="btn-ingresar">Ingresar</button>
+      <div class="nav-actions">
+        <!-- Botón exclusivo para Admin -->
+        <button id="nav-btn-panel" class="btn-panel oculto">📊 Panel</button>
+        <!-- Botón Publicar (protegido con sesión) -->
+        <button id="nav-btn-publicar" class="btn-publicar">+ Publicar</button>
+        <!-- Botón Ingresar (solo visible sin sesión) -->
+        <button id="nav-btn-ingresar" class="btn-ingresar">Ingresar</button>
+        <!-- Sección de Usuario (visible con sesión) -->
+        <div id="nav-user-info" class="user-info oculto">
+          <span id="nav-user-name" class="user-name">👤 Usuario</span>
+          <button id="nav-btn-logout" class="btn-logout" title="Cerrar sesión">Cerrar sesión</button>
+        </div>
       </div>
-     </header>
+    </header>
 
 
 

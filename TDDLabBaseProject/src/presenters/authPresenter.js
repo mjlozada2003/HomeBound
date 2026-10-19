@@ -1,5 +1,5 @@
 import { validarRegistro } from "../models/Auth/cuenta";
-import { validarCamposLogin, autenticarUsuario } from "../models/Auth/sesion";
+import { validarCamposLogin, autenticarUsuario, guardarSesion, obtenerSesionActiva, cerrarSesion, puedeAccederAAdmin, puedeAccederAPublicar } from "../models/Auth/sesion";
 
 export const usuariosRegistrados = [];
 
@@ -8,10 +8,19 @@ export function iniciarAuthPresenter() {
   // Secciones
   const vistaRegistro = document.querySelector("#vista-registro");
   const vistaLogin = document.querySelector("#vista-login");
-  // Enlaces de navegación
+  
+  // Elementos del Navbar
+  const navBtnPanel = document.querySelector("#nav-btn-panel");
+  const navBtnPublicar = document.querySelector("#nav-btn-publicar");
+  const navBtnIngresar = document.querySelector("#nav-btn-ingresar");
+  const navUserInfo = document.querySelector("#nav-user-info");
+  const navUserName = document.querySelector("#nav-user-name");
+  const navBtnLogout = document.querySelector("#nav-btn-logout");
+  const brandLogo = document.querySelector("#brand-logo");
+
+  // Enlaces entre pantallas
   const linkIrLogin = document.querySelector("#link-ir-login");
   const linkIrRegistro = document.querySelector("#link-ir-registro");
-  const btnIngresarNav = document.querySelector(".btn-ingresar");
 
   //Formulario Registro
   const formRegistro = document.querySelector("#registro-form");
@@ -39,9 +48,29 @@ export function iniciarAuthPresenter() {
     mensajeRegistroDiv.className = "";
     mensajeRegistroDiv.textContent = "";
   }
+
+  // Actualiza el Navbar según si hay sesión iniciada y el rol del usuario
+  function actualizarNavbar(usuario) {
+    if (usuario) {
+      navBtnIngresar.classList.add("oculto");
+      navUserInfo.classList.remove("oculto");
+      navUserName.textContent = `👤 ${usuario.nombre}`;
+      // Distinción de rol Admin
+      if (puedeAccederAAdmin(usuario)) {
+        navBtnPanel.classList.remove("oculto");
+      } else {
+        navBtnPanel.classList.add("oculto");
+      }
+    } else {
+      navBtnIngresar.classList.remove("oculto");
+      navUserInfo.classList.add("oculto");
+      navBtnPanel.classList.add("oculto");
+    }
+  }
   if (linkIrLogin) linkIrLogin.addEventListener("click", (e) => { e.preventDefault(); mostrarLogin(); });
-  if (btnIngresarNav) btnIngresarNav.addEventListener("click", () => mostrarLogin());
+  if (navBtnIngresar) navBtnIngresar.addEventListener("click", () => mostrarLogin());
   if (linkIrRegistro) linkIrRegistro.addEventListener("click", (e) => { e.preventDefault(); mostrarRegistro(); });
+  if(brandLogo) brandLogo.addEventListener("click", () => mostrarRegistro());
 
 
 
@@ -99,9 +128,40 @@ export function iniciarAuthPresenter() {
         }else{
             mensajeLoginDiv.className ="exito",
             mensajeLoginDiv.textContent = `¡Bienvenido, ${auth.usuario.nombre}!`;
+            
+            //Guardar sesion
+            guardarSesion(auth.usuario);
+            actualizarNavbar(auth.usuario);
+
             formLogin.reset();            
         }
     });
    } 
+
+   //Cerrar Sesión
+   if(navBtnLogout){
+    navBtnLogout.addEventListener("click", () => {
+        cerrarSesion();
+        actualizarNavbar(null);
+        mostrarLogin();
+    });
+   }
+
+   //Proteccion de pantallas 
+   if(navBtnPublicar){
+    navBtnPublicar.addEventListener("click", () => {
+        const sesionActual = obtenerSesionActiva();
+        if(!puedeAccederAPublicar(sesionActual)){
+            alert("Debes iniciar sesión para publicar un hallazgo o pérdida.");
+            mostrarLogin();
+        }else{
+            alert("¡Acceso concedido a Publicar!");
+        }
+    });
+   }
+
+   //persistencia al recargar
+   const sesionGuardada = obtenerSesionActiva();
+   actualizarNavbar(sesionGuardada);
 
 }
