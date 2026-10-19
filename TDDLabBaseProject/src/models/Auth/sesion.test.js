@@ -153,5 +153,9 @@ describe("Caso 5: Control de acceso a pantallas", () => {
     it("Escenario 3: Debería denegar el acceso a administración si no hay sesión iniciada", () => {
         expect(puedeAccederAAdmin(null)).toBe(false);
     });
+    it("Escenario 4: Debería denegar el acceso a administración si el usuario tiene rol 'USER'", () => {
+    const usuarioComun = { nombre: "Carlos", correo: "carlos@example.com", rol: "USER" };
+    expect(puedeAccederAAdmin(usuarioComun)).toBe(false);
+  });
 
 })
