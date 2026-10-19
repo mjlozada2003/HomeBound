@@ -17,3 +17,12 @@ it('rechaza campos obligatorios vacíos o con espacios', () => {
   }
   expect(validarHallazgo({}, hoy).esValido).toBe(false);
 });
+
+it('solo permite OBJETO o MASCOTA', () => {
+  expect(validarHallazgo({ ...datos, categoria: 'OTRO' }, hoy)).toEqual({
+    esValido: false, mensaje: 'Selecciona OBJETO o MASCOTA'
+  });
+  for (const categoria of ['OBJETO', 'MASCOTA']) {
+    expect(validarHallazgo({ ...datos, categoria }, hoy).esValido).toBe(true);
+  }
+});
