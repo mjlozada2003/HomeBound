@@ -73,7 +73,7 @@ it('deberia rechazar archivos vacíos o que no sean imágenes admitidas', () => 
   }
 });
 
-it('rechaza el hallazgo si no se proporciona ningún medio de contacto', () => {
+it('deberia rechazar el hallazgo si no se proporciona ningún medio de contacto', () => {
   for (const contacto of [
     { correo: undefined, whatsapp: undefined },
     { correo: '', whatsapp: '' },
@@ -86,11 +86,22 @@ it('rechaza el hallazgo si no se proporciona ningún medio de contacto', () => {
   }
 });
 
-it('permite publicar con solo correo o solo WhatsApp', () => {
+it('deberia permitir publicar con solo correo o solo WhatsApp', () => {
   for (const contacto of [
     { correo: 'contacto@example.com', whatsapp: '' },
     { correo: '', whatsapp: '+59171234567' }
   ]) {
     expect(validarHallazgo({ ...datos, ...contacto }, hoy).esValido).toBe(true);
   }
+});
+
+it('deberia permitir publicar con ambos contactos válidos', () => {
+  expect(validarHallazgo({ ...datos, whatsapp: '+59171234567' }, hoy).esValido).toBe(true);
+});
+
+it('deberia validar el correo solo cuando se proporciona', () => {
+  expect(validarHallazgo({ ...datos, correo: 'correo-invalido' }, hoy)).toEqual({
+    esValido: false, mensaje: 'El correo electrónico no es válido'
+  });
+  expect(validarHallazgo({ ...datos, correo: ' usuario@example.com ' }, hoy).esValido).toBe(true);
 });
