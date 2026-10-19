@@ -114,5 +114,17 @@ describe("Caso 4: Persistencia de sesión y Cerrar sesión", () => {
         const sesion = obtenerSesionActiva();
         expect(sesion).toBeNull();
     });
-   
+    it("Escenario 2: Debería guardar y recuperar la sesion activa del usuario", () => {
+        const usuario = {
+        nombre: "Carlos Lopez",
+        correo: "carlos@example.com",
+        rol: "USER"
+        };
+        guardarSesion(usuario);
+        const sesionActiva = obtenerSesionActiva();
+        expect(sesionActiva).not.toBeNull();
+        expect(sesionActiva.nombre).toEqual("Carlos Lopez");
+        expect(sesionActiva.correo).toEqual("carlos@example.com");
+        expect(sesionActiva.rol).toEqual("USER");
+    });
 })
