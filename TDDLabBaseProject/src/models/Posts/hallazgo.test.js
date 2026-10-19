@@ -112,3 +112,20 @@ it('deberia validar WhatsApp con código de país y permite espacios, guiones y 
   }
   expect(validarHallazgo({ ...datos, whatsapp: '+591 (7) 123-4567' }, hoy).esValido).toBe(true);
 });
+
+it('genera un enlace de Maps para una dirección o coordenadas opcionales', () => {
+  expect(crearEnlaceMapa('')).toBe('');
+  expect(crearEnlaceMapa('Plaza A & B, La Paz')).toBe(
+    'https://www.google.com/maps/search/?api=1&query=Plaza%20A%20%26%20B%2C%20La%20Paz'
+  );
+  expect(crearEnlaceMapa('-16.5, -68.15')).toContain('query=-16.5%2C%20-68.15');
+  expect(crearEnlaceMapa('https://maps.app.goo.gl/ejemplo')).toBe('https://maps.app.goo.gl/ejemplo');
+});
+
+it('rechaza enlaces de ubicación ajenos a Google Maps', () => {
+  for (const ubicacion of ['javascript:alert(1)', 'https://example.com', 'https://www.google.com/maps-malicioso']) {
+    expect(validarHallazgo({ ...datos, ubicacion }, hoy)).toEqual({
+      esValido: false, mensaje: 'Usa una dirección, coordenadas o un enlace de Google Maps'
+    });
+  }
+});

@@ -1,6 +1,23 @@
+/* global URL */
 export function fechaLocal(fecha = new Date()) {
   return [fecha.getFullYear(), String(fecha.getMonth() + 1).padStart(2, '0'),
     String(fecha.getDate()).padStart(2, '0')].join('-');
+}
+
+export function crearEnlaceMapa(ubicacion = '') {
+  const texto = ubicacion.trim();
+  if (!texto) { return ''; }
+  if (/^[a-z][a-z0-9+.-]*:/i.test(texto)) {
+    try {
+      const url = new URL(texto);
+      const googleMaps = (['google.com', 'www.google.com'].includes(url.hostname) && /^\/maps(?:\/|$)/.test(url.pathname)) ||
+        ['maps.google.com', 'maps.app.goo.gl'].includes(url.hostname) ||
+        (url.hostname === 'goo.gl' && url.pathname.startsWith('/maps/'));
+      if (url.protocol === 'https:' && !url.username && !url.password && googleMaps) { return url.href; }
+    } catch { return null; }
+    return null;
+  }
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(texto);
 }
 
 export function validarHallazgo(datos = {}, hoy = new Date()) {
@@ -35,6 +52,9 @@ export function validarHallazgo(datos = {}, hoy = new Date()) {
   }
   if (!correo && !whatsapp) {
     return { esValido: false, mensaje: 'Ingresa al menos un medio de contacto: WhatsApp o correo electrónico.' };
+  }
+  if (crearEnlaceMapa(datos.ubicacion || '') === null) {
+    return { esValido: false, mensaje: 'Usa una dirección, coordenadas o un enlace de Google Maps' };
   }
   return { esValido: true, mensaje: '' };
 }
