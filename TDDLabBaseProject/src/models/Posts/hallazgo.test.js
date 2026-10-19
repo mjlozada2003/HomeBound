@@ -26,3 +26,11 @@ it('deberia solo permitir OBJETO o MASCOTA', () => {
     expect(validarHallazgo({ ...datos, categoria }, hoy).esValido).toBe(true);
   }
 });
+
+it('deberia rechazar fechas imposibles y formatos incorrectos', () => {
+  for (const fecha of ['2026-02-30', '2025-02-29', '2026-13-01', '18/10/2026', '2026-1-1', '0000-01-01']) {
+    expect(validarHallazgo({ ...datos, fecha }, hoy)).toEqual({
+      esValido: false, mensaje: 'Ingresa una fecha válida'
+    });
+  }
+});
