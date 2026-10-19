@@ -146,4 +146,8 @@ describe("Caso 5: Control de acceso a pantallas", () => {
         const puede = puedeAccederAPublicar(null)
         expect(puede).toBe(false);
     });
+    it("Escenario 2: Debería permitir el acceso a publicar si hay un usuario autenticado", () => {
+        const usuario = { nombre: "Carlos", correo: "carlos@example.com", rol: "USER" };
+        expect(puedeAccederAPublicar(usuario)).toBe(true);
+    })
 })
