@@ -46,3 +46,11 @@ it('deberia rechazar fechas futuras y admite hoy, el pasado y un día bisiesto',
   expect(validarHallazgo(datos, noche).esValido).toBe(true);
   expect(validarHallazgo({ ...datos, fecha: '2026-10-19' }, noche).esValido).toBe(false);
 });
+
+it('exige al menos una foto', () => {
+  for (const fotos of [undefined, null, [], 'foto.jpg']) {
+    expect(validarHallazgo({ ...datos, fotos }, hoy)).toEqual({
+      esValido: false, mensaje: 'Añade al menos una foto'
+    });
+  }
+});

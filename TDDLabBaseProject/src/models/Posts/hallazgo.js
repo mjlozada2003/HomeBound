@@ -18,5 +18,8 @@ export function validarHallazgo(datos = {}, hoy = new Date()) {
   if (datos.fecha > fechaLocal(hoy)) {
     return { esValido: false, mensaje: 'La fecha del hallazgo no puede ser futura' };
   }
+  if (!Array.isArray(datos.fotos) || datos.fotos.length === 0) {
+    return { esValido: false, mensaje: 'Añade al menos una foto' };
+  }
   return { esValido: true, mensaje: '' };
 }
