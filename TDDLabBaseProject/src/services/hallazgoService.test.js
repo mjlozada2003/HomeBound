@@ -29,7 +29,7 @@ beforeEach(() => {
   serverTimestamp.mockReturnValue('FECHA_SERVIDOR');
 });
 
-it('sube todas las fotos y guarda sus URLs junto al hallazgo pendiente', async () => {
+it('deberia subir todas las fotos y guardar sus URLs junto al hallazgo pendiente', async () => {
   const resultado = await guardarHallazgo(publicacion);
   expect(uploadBytes).toHaveBeenCalledTimes(2);
   expect(setDoc).toHaveBeenCalledWith({ id: 'hallazgo-1' }, expect.objectContaining({
@@ -41,4 +41,18 @@ it('sube todas las fotos y guarda sus URLs junto al hallazgo pendiente', async (
   }));
   expect(resultado.id).toBe('hallazgo-1');
   expect(resultado.fotos).toHaveLength(2);
+});
+
+it('deberia eliminar las fotos ya subidas si falla Firestore y conservar el error original', async () => {
+  const error = new Error('No se pudo guardar');
+  setDoc.mockRejectedValue(error);
+  await expect(guardarHallazgo(publicacion)).rejects.toBe(error);
+  expect(deleteObject).toHaveBeenCalledTimes(2);
+});
+
+it('deberia limpiar la primera foto si falla la segunda subida y no escribir el documento', async () => {
+  uploadBytes.mockResolvedValueOnce({}).mockRejectedValueOnce(new Error('Subida fallida'));
+  await expect(guardarHallazgo(publicacion)).rejects.toThrow('Subida fallida');
+  expect(deleteObject).toHaveBeenCalledTimes(1);
+  expect(setDoc).not.toHaveBeenCalled();
 });

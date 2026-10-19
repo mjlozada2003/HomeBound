@@ -1,17 +1,32 @@
 import { collection, doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import { db, storage } from './firebase';
 
 export async function guardarHallazgo(publicacion) {
   const documento = doc(collection(db, 'hallazgos'));
   const { fotos, ...campos } = publicacion;
+  const subidas = [];
   const urls = [];
-    for (const [indice, foto] of fotos.entries()) {
-      const referencia = ref(storage, 'hallazgos/' + documento.id + '/' + indice);
+  async function limpiar() {
+    await Promise.all(subidas.map((referencia) => deleteObject(referencia)));
+  }
+  for (const [indice, foto] of fotos.entries()) {
+    const referencia = ref(storage, 'hallazgos/' + documento.id + '/' + indice);
+    try {
       await uploadBytes(referencia, foto, { contentType: foto.type });
-      urls.push(await getDownloadURL(referencia));
+    } catch (error) {
+      await limpiar();
+      throw error;
     }
-    const datos = { ...campos, fotos: urls, estado: 'Pendiente de revisión', creadoEn: serverTimestamp() };
+    subidas.push(referencia);
+    urls.push(await getDownloadURL(referencia));
+  }
+  const datos = { ...campos, fotos: urls, estado: 'Pendiente de revisión', creadoEn: serverTimestamp() };
+  try {
     await setDoc(documento, datos);
-    return { ...datos, id: documento.id };
+  } catch (error) {
+    await limpiar();
+    throw error;
+  }
+  return { ...datos, id: documento.id };
 }
