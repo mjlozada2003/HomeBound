@@ -85,4 +85,9 @@ describe("Caso 3: Distinción de roles y Admin preconfigurado", () => {
         expect(resultadoUsuario.exito).toBe(true);
         expect(resultadoUsuario.usuario.rol).toEqual("USER");
     });
+    it("Escenario 3: Debería rechazar si intentan ingresar como Admin con contraseña incorrecta", () => {
+        const resultado = autenticarUsuario("admin@homebound.com", "claveIncorrecta");
+        expect(resultado.exito).toBe(false);
+        expect(resultado.mensaje).toEqual("Credenciales incorrectas. Verifica tu correo y contraseña.");
+    });
 })

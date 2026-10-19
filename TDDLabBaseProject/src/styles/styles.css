@@ -129,8 +129,14 @@ body {
     font-weight: 700;
     text-decoration: none;
 }
-/* Mensajes de Validación */
-#mensaje-div {
+/* Utilidad para alternar vistas */
+.oculto {
+  display: none !important;
+}
+
+/* Mensajes de Validación (Registro y Login) */
+#mensaje-div,
+#login-mensaje-div {
     margin-top: 1rem;
     padding: 0.75rem;
     border-radius: 12px;
@@ -138,13 +144,17 @@ body {
     font-weight: 600;
     display: none;
 }
-#mensaje-div.error {
+
+#mensaje-div.error,
+#login-mensaje-div.error {
     display: block;
     background-color: #FDF2F0;
     color: var(--color-error);
     border: 1px solid #F5C6CB;
 }
-#mensaje-div.exito {
+
+#mensaje-div.exito,
+#login-mensaje-div.exito {
     display: block;
     background-color: #E8F5E9;
     color: var(--color-primary);

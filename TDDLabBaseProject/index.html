@@ -25,37 +25,62 @@
 
 
 
-     <!--Card Central-->
-    <main class ="container">
-      <div class ="card">
+        <!-- Card Central (Vistas SPA) -->
+    <main class="container">
+      <!-- VISTA 1: REGISTRO -->
+      <section id="vista-registro" class="card">
         <img src="./src/assets/logo.jpg" alt="HomeBound" class="card-logo" />
-        <h1 class="car-title">Crea tu cuenta</h1>
-        <p class ="card-subtitle">Así podrás reportar hallazgos y pérdidas.</p>
+        <h1 class="card-title">Crea tu cuenta</h1>
+        <p class="card-subtitle">Así podrás reportar hallazgos y pérdidas.</p>
 
         <form id="registro-form">
           <div class="form-group">
-            <label for ="nombre-input">Nombre</label>
-            <input type="text" id="nombre-input"/>
+            <label for="nombre-input">Nombre</label>
+            <input type="text" id="nombre-input" />
           </div>
           <div class="form-group">
-            <label for ="correo-input">Correo electrónico</label>
-            <input type="email" id="correo-input"/>
+            <label for="correo-input">Correo electrónico</label>
+            <input type="email" id="correo-input" />
           </div>
           <div class="form-group">
-            <label for ="password-input">Contraseña</label>
-            <input type="password" id="password-input"/>
+            <label for="password-input">Contraseña</label>
+            <input type="password" id="password-input" />
           </div>
-          
           <button type="submit" id="registrar-button" class="btn-registrar">Registrarme</button>
         </form>
 
         <div id="mensaje-div"></div>
-      
-        <p class ="login-link">
-           ¿Ya tienes cuenta? <a href="#login" id="link-iniciar-sesion">Inicia sesión</a>
+
+        <p class="login-link">
+          ¿Ya tienes cuenta? <a href="#login" id="link-ir-login">Inicia sesión</a>
         </p>
-      </div>
-    </main> 
+      </section>
+
+      <!-- VISTA 2: INICIO DE SESIÓN (Oculto por defecto) -->
+      <section id="vista-login" class="card oculto">
+        <img src="./src/assets/logo.jpg" alt="HomeBound" class="card-logo" />
+        <h1 class="card-title">Inicia sesión</h1>
+        <p class="card-subtitle">Ingresa tus credenciales para acceder a HomeBound.</p>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-correo-input">Correo electrónico</label>
+            <input type="email" id="login-correo-input" />
+          </div>
+          <div class="form-group">
+            <label for="login-password-input">Contraseña</label>
+            <input type="password" id="login-password-input" />
+          </div>
+          <button type="submit" id="login-button" class="btn-registrar">Iniciar sesión</button>
+        </form>
+
+        <div id="login-mensaje-div"></div>
+
+        <p class="login-link">
+          ¿No tienes cuenta? <a href="#registro" id="link-ir-registro">Regístrate</a>
+        </p>
+      </section>
+    </main>
 
 
     <script type="module" src="./src/presenter.js"></script>
