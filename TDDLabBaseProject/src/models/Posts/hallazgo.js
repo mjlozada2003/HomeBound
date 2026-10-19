@@ -58,3 +58,22 @@ export function validarHallazgo(datos = {}, hoy = new Date()) {
   }
   return { esValido: true, mensaje: '' };
 }
+
+export function crearHallazgo(datos, hoy = new Date()) {
+  const validacion = validarHallazgo(datos, hoy);
+  if (!validacion.esValido) { return validacion; }
+  const whatsapp = (datos.whatsapp || '').trim().replace(/[ ()-]/g, '').replace(/^\+/, '');
+  const correo = datos.correo?.trim() || '';
+  const ubicacion = datos.ubicacion?.trim() || '';
+  return {
+    esValido: true,
+    publicacion: {
+      tipo: 'HALLAZGO', categoria: datos.categoria,
+      titulo: datos.titulo.trim(), descripcion: datos.descripcion.trim(), fecha: datos.fecha,
+      fotos: [...datos.fotos], estado: 'Pendiente de revisión',
+      contacto: { whatsapp, correo, enlaceWhatsapp: whatsapp ? 'https://wa.me/' + whatsapp : '',
+        enlaceCorreo: correo ? 'mailto:' + correo : '' },
+      ubicacion: { texto: ubicacion, enlace: crearEnlaceMapa(ubicacion) }
+    }
+  };
+}

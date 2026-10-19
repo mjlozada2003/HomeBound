@@ -113,7 +113,7 @@ it('deberia validar WhatsApp con código de país y permite espacios, guiones y 
   expect(validarHallazgo({ ...datos, whatsapp: '+591 (7) 123-4567' }, hoy).esValido).toBe(true);
 });
 
-it('genera un enlace de Maps para una dirección o coordenadas opcionales', () => {
+it('deberia generar un enlace de Maps para una dirección o coordenadas opcionales', () => {
   expect(crearEnlaceMapa('')).toBe('');
   expect(crearEnlaceMapa('Plaza A & B, La Paz')).toBe(
     'https://www.google.com/maps/search/?api=1&query=Plaza%20A%20%26%20B%2C%20La%20Paz'
@@ -122,10 +122,34 @@ it('genera un enlace de Maps para una dirección o coordenadas opcionales', () =
   expect(crearEnlaceMapa('https://maps.app.goo.gl/ejemplo')).toBe('https://maps.app.goo.gl/ejemplo');
 });
 
-it('rechaza enlaces de ubicación ajenos a Google Maps', () => {
+it('deberia rechazar enlaces de ubicación ajenos a Google Maps', () => {
   for (const ubicacion of ['javascript:alert(1)', 'https://example.com', 'https://www.google.com/maps-malicioso']) {
     expect(validarHallazgo({ ...datos, ubicacion }, hoy)).toEqual({
       esValido: false, mensaje: 'Usa una dirección, coordenadas o un enlace de Google Maps'
     });
   }
+});
+
+it('deberia preparar el hallazgo normalizado con sus fotos y estado pendiente', () => {
+  const resultado = crearHallazgo({ ...datos, titulo: ' Mochila azul ',
+    descripcion: ' Encontrada en la plaza. ', whatsapp: '+591 (7) 123-4567',
+    correo: ' contacto@example.com ', ubicacion: ' Plaza Murillo ' }, hoy);
+  expect(resultado.esValido).toBe(true);
+  expect(resultado.publicacion).toMatchObject({
+    tipo: 'HALLAZGO', categoria: 'OBJETO', titulo: 'Mochila azul',
+    descripcion: 'Encontrada en la plaza.', fecha: '2026-10-18',
+    estado: 'Pendiente de revisión', fotos: [foto],
+    contacto: { whatsapp: '59171234567', enlaceWhatsapp: 'https://wa.me/59171234567',
+      correo: 'contacto@example.com', enlaceCorreo: 'mailto:contacto@example.com' },
+    ubicacion: { texto: 'Plaza Murillo', enlace: 'https://www.google.com/maps/search/?api=1&query=Plaza%20Murillo' }
+  });
+  expect(resultado.publicacion.fotos).not.toBe(datos.fotos);
+});
+
+it('deberia no crear un hallazgo inválido y omite WhatsApp cuando solo hay correo', () => {
+  expect(crearHallazgo({ ...datos, titulo: '' }, hoy).publicacion).toBeUndefined();
+  const publicacion = crearHallazgo(datos, hoy).publicacion;
+  expect(publicacion.contacto.enlaceWhatsapp).toBe('');
+  expect(publicacion.contacto.enlaceCorreo).toBe('mailto:contacto@example.com');
+  expect(publicacion.ubicacion.enlace).toBe('');
 });
