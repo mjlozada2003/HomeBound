@@ -129,8 +129,14 @@ body {
     font-weight: 700;
     text-decoration: none;
 }
-/* Mensajes de Validación */
-#mensaje-div {
+/* Utilidad para alternar vistas */
+.oculto {
+  display: none !important;
+}
+
+/* Mensajes de Validación (Registro y Login) */
+#mensaje-div,
+#login-mensaje-div {
     margin-top: 1rem;
     padding: 0.75rem;
     border-radius: 12px;
@@ -138,15 +144,57 @@ body {
     font-weight: 600;
     display: none;
 }
-#mensaje-div.error {
+
+#mensaje-div.error,
+#login-mensaje-div.error {
     display: block;
     background-color: #FDF2F0;
     color: var(--color-error);
     border: 1px solid #F5C6CB;
 }
-#mensaje-div.exito {
+
+#mensaje-div.exito,
+#login-mensaje-div.exito {
     display: block;
     background-color: #E8F5E9;
     color: var(--color-primary);
     border: 1px solid #C8E6C9;
+}
+/* Elementos del Navbar con sesión activa */
+.btn-panel {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  padding: 0.5rem 1.1rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-panel:hover {
+  background-color: #E8F5E9;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.user-name {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+.btn-logout {
+  background: transparent;
+  color: var(--color-error);
+  border: 1px solid var(--color-input-border);
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-logout:hover {
+  background-color: #FDF2F0;
+  border-color: var(--color-error);
 }
