@@ -29,6 +29,10 @@ export function validarHallazgo(datos = {}, hoy = new Date()) {
     return { esValido: false, mensaje: 'El correo electrónico no es válido' };
   }
   const whatsapp = datos.whatsapp?.trim() || '';
+  const numero = whatsapp.replace(/[ ()-]/g, '').replace(/^\+/, '');
+  if (whatsapp && (!/^\+?[\d ()-]+$/.test(whatsapp) || !/^[1-9]\d{6,14}$/.test(numero))) {
+    return { esValido: false, mensaje: 'Ingresa WhatsApp con código de país, por ejemplo +59171234567' };
+  }
   if (!correo && !whatsapp) {
     return { esValido: false, mensaje: 'Ingresa al menos un medio de contacto: WhatsApp o correo electrónico.' };
   }

@@ -105,3 +105,10 @@ it('deberia validar el correo solo cuando se proporciona', () => {
   });
   expect(validarHallazgo({ ...datos, correo: ' usuario@example.com ' }, hoy).esValido).toBe(true);
 });
+
+it('deberia validar WhatsApp con código de país y permite espacios, guiones y paréntesis', () => {
+  for (const whatsapp of ['abc', '123', '+591+71234567', '0000000']) {
+    expect(validarHallazgo({ ...datos, whatsapp }, hoy).esValido).toBe(false);
+  }
+  expect(validarHallazgo({ ...datos, whatsapp: '+591 (7) 123-4567' }, hoy).esValido).toBe(true);
+});
