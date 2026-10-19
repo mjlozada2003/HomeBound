@@ -56,3 +56,16 @@ it('deberia limpiar la primera foto si falla la segunda subida y no escribir el 
   expect(deleteObject).toHaveBeenCalledTimes(1);
   expect(setDoc).not.toHaveBeenCalled();
 });
+
+it('deberia limpiar una imagen si falla la obtención de su URL', async () => {
+  getDownloadURL.mockRejectedValueOnce(new Error('URL no disponible'));
+  await expect(guardarHallazgo(publicacion)).rejects.toThrow('URL no disponible');
+  expect(deleteObject).toHaveBeenCalledTimes(1);
+  expect(setDoc).not.toHaveBeenCalled();
+});
+
+it('deberia no sustituir el error original aunque falle también la limpieza', async () => {
+  setDoc.mockRejectedValue(new Error('Error original'));
+  deleteObject.mockRejectedValue(new Error('Error de limpieza'));
+  await expect(guardarHallazgo(publicacion)).rejects.toThrow('Error original');
+});
