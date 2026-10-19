@@ -8,7 +8,8 @@ export function iniciarAuthPresenter() {
   // Secciones
   const vistaRegistro = document.querySelector("#vista-registro");
   const vistaLogin = document.querySelector("#vista-login");
-  
+  const vistaHallazgo = document.querySelector("#hallazgo-seccion");
+
   // Elementos del Navbar
   const navBtnPanel = document.querySelector("#nav-btn-panel");
   const navBtnPublicar = document.querySelector("#nav-btn-publicar");
@@ -37,12 +38,15 @@ export function iniciarAuthPresenter() {
 
   // Funciones para alternar vistas
   function mostrarLogin() {
+    vistaHallazgo.classList.add("oculto");
     vistaRegistro.classList.add("oculto");
     vistaLogin.classList.remove("oculto");
     mensajeLoginDiv.className = "";
     mensajeLoginDiv.textContent = "";
   }
+
   function mostrarRegistro() {
+    vistaHallazgo.classList.add("oculto");
     vistaLogin.classList.add("oculto");
     vistaRegistro.classList.remove("oculto");
     mensajeRegistroDiv.className = "";
@@ -55,6 +59,7 @@ export function iniciarAuthPresenter() {
       navBtnIngresar.classList.add("oculto");
       navUserInfo.classList.remove("oculto");
       navUserName.textContent = `👤 ${usuario.nombre}`;
+
       // Distinción de rol Admin
       if (puedeAccederAAdmin(usuario)) {
         navBtnPanel.classList.remove("oculto");
@@ -67,6 +72,7 @@ export function iniciarAuthPresenter() {
       navBtnPanel.classList.add("oculto");
     }
   }
+
   if (linkIrLogin) linkIrLogin.addEventListener("click", (e) => { e.preventDefault(); mostrarLogin(); });
   if (navBtnIngresar) navBtnIngresar.addEventListener("click", () => mostrarLogin());
   if (linkIrRegistro) linkIrRegistro.addEventListener("click", (e) => { e.preventDefault(); mostrarRegistro(); });
@@ -119,7 +125,7 @@ export function iniciarAuthPresenter() {
             mensajeLoginDiv.textContent = validacionCampos.mensaje;
             return;
         }
-        
+
         //Autenticacion
         const auth = autenticarUsuario(correo, password, usuariosRegistrados);
         if(!auth.exito){
@@ -128,15 +134,15 @@ export function iniciarAuthPresenter() {
         }else{
             mensajeLoginDiv.className ="exito",
             mensajeLoginDiv.textContent = `¡Bienvenido, ${auth.usuario.nombre}!`;
-            
+
             //Guardar sesion
             guardarSesion(auth.usuario);
             actualizarNavbar(auth.usuario);
 
-            formLogin.reset();            
+            formLogin.reset();
         }
     });
-   } 
+   }
 
    //Cerrar Sesión
    if(navBtnLogout){
@@ -147,7 +153,7 @@ export function iniciarAuthPresenter() {
     });
    }
 
-   //Proteccion de pantallas 
+   //Proteccion de pantallas
    if(navBtnPublicar){
     navBtnPublicar.addEventListener("click", () => {
         const sesionActual = obtenerSesionActiva();
@@ -155,7 +161,10 @@ export function iniciarAuthPresenter() {
             alert("Debes iniciar sesión para publicar un hallazgo o pérdida.");
             mostrarLogin();
         }else{
-            alert("¡Acceso concedido a Publicar!");
+            vistaRegistro.classList.add("oculto");
+            vistaLogin.classList.add("oculto");
+            vistaHallazgo.classList.remove("oculto");
+            document.querySelector("#hallazgo-categoria").focus();
         }
     });
    }
