@@ -74,4 +74,15 @@ describe("Caso 3: Distinción de roles y Admin preconfigurado", () => {
         expect(resultadoAdmin.exito).toBe(true);
         expect(resultadoAdmin.usuario.rol).toEqual("ADMIN");
     });
+    it("Escenario 2: Deberia asignar rol USER a un usuario común registrado", () => {
+        const usuariosRegistrados = [
+        {
+        nombre: "Carlos Lopez",
+        correo: "carlos@example.com",
+        password: "password123"
+        }];
+        const resultadoUsuario = autenticarUsuario("carlos@example.com", "password123", usuariosRegistrados);
+        expect(resultadoUsuario.exito).toBe(true);
+        expect(resultadoUsuario.usuario.rol).toEqual("USER");
+    });
 })

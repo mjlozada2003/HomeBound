@@ -49,7 +49,7 @@ export function autenticarUsuario(correo, password, usuarios = []){
         usuario:{
             nombre:usuarioEncontrado.nombre,
             correo:usuarioEncontrado.correo,
-            rol: usuarioEncontrado.rol
+            rol: usuarioEncontrado.rol || "USER"
         }
     };
 };
