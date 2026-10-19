@@ -654,5 +654,37 @@
     "timestamp": 1792373783548,
     "success": true,
     "testId": 0
+  },
+  {
+    "numPassedTests": 37,
+    "failedTests": 0,
+    "numTotalTests": 37,
+    "timestamp": 1792375360397,
+    "success": false,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 38,
+    "failedTests": 0,
+    "numTotalTests": 38,
+    "timestamp": 1792375435964,
+    "success": true,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 38,
+    "failedTests": 1,
+    "numTotalTests": 39,
+    "timestamp": 1792375672109,
+    "success": false,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 39,
+    "failedTests": 0,
+    "numTotalTests": 39,
+    "timestamp": 1792375698758,
+    "success": true,
+    "testId": 0
   }
 ]

@@ -7,7 +7,7 @@ const datos = {
   descripcion: 'Encontrada en la plaza.', fecha: '2026-10-18', fotos: [foto]
 };
 
-it('rechaza campos obligatorios vacíos o con espacios', () => {
+it('deberia rechazar campos obligatorios vacíos o con espacios', () => {
   for (const campo of ['categoria', 'titulo', 'descripcion', 'fecha']) {
     for (const valor of ['', '   ']) {
       expect(validarHallazgo({ ...datos, [campo]: valor }, hoy)).toEqual({
@@ -18,7 +18,7 @@ it('rechaza campos obligatorios vacíos o con espacios', () => {
   expect(validarHallazgo({}, hoy).esValido).toBe(false);
 });
 
-it('solo permite OBJETO o MASCOTA', () => {
+it('deberia solo permitir OBJETO o MASCOTA', () => {
   expect(validarHallazgo({ ...datos, categoria: 'OTRO' }, hoy)).toEqual({
     esValido: false, mensaje: 'Selecciona OBJETO o MASCOTA'
   });
