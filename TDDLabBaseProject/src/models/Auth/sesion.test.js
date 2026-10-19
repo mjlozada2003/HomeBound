@@ -1,5 +1,5 @@
 import { validarCamposLogin } from "./sesion";
-import { autenticarUsuario } from "./sesion";
+import { autenticarUsuario, obtenerSesionActiva, guardarSesion } from "./sesion";
 
 describe("HU-02: Iniciar sesión - Validaciones de campos", () => {
     it("Caso 1 - Escenario 1: Debería rechazar si ambos campos están vacíos", () => {
@@ -90,4 +90,29 @@ describe("Caso 3: Distinción de roles y Admin preconfigurado", () => {
         expect(resultado.exito).toBe(false);
         expect(resultado.mensaje).toEqual("Credenciales incorrectas. Verifica tu correo y contraseña.");
     });
+});
+
+
+// Simulación de localStorage para el entorno de pruebas de Node/Jest
+const localStorageMock = (() => {
+  let store = {};
+  return {
+    getItem: (key) => store[key] || null,
+    setItem: (key, value) => { store[key] = value.toString(); },
+    removeItem: (key) => { delete store[key]; },
+    clear: () => { store = {}; }
+  };
+})();
+
+global.localStorage = localStorageMock;
+describe("Caso 4: Persistencia de sesión y Cerrar sesión", () => {
+    beforeEach(() => {
+        localStorage.clear();
+    });
+
+    it("Escenario 1: Debería devolver null si no hay sesión activa", () => {
+        const sesion = obtenerSesionActiva();
+        expect(sesion).toBeNull();
+    });
+   
 })

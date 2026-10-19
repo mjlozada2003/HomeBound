@@ -53,6 +53,21 @@ export function autenticarUsuario(correo, password, usuarios = []){
         }
     };
 };
+const CLAVE_SESION = "homebound_sesion_activa";
+export function obtenerSesionActiva(){
+    if (typeof localStorage === "undefined") return null;
+    const datos = localStorage.getItem(CLAVE_SESION);
+    if(!datos) return null;
+    try{
+        return JSON.parse(datos);
+    }catch{
+        return null;
+    }
+}
+export function guardarSesion(usuario){
+    if (!usuario ||typeof localStorage === "undefinded") return;
+    localStorage.setItem(CLAVE_SESION, JSON.stringify(usuario));
+}
 
 
 
