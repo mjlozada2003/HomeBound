@@ -34,3 +34,15 @@ it('deberia rechazar fechas imposibles y formatos incorrectos', () => {
     });
   }
 });
+
+it('deberia rechazar fechas futuras y admite hoy, el pasado y un día bisiesto', () => {
+  expect(validarHallazgo({ ...datos, fecha: '2026-10-19' }, hoy)).toEqual({
+    esValido: false, mensaje: 'La fecha del hallazgo no puede ser futura'
+  });
+  for (const fecha of ['2026-10-18', '2026-10-17', '2024-02-29']) {
+    expect(validarHallazgo({ ...datos, fecha }, hoy).esValido).toBe(true);
+  }
+  const noche = new Date(2026, 9, 18, 23, 59);
+  expect(validarHallazgo(datos, noche).esValido).toBe(true);
+  expect(validarHallazgo({ ...datos, fecha: '2026-10-19' }, noche).esValido).toBe(false);
+});
