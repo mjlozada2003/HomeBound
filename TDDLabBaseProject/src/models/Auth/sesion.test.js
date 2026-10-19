@@ -67,3 +67,11 @@ describe("HU-02: Caso 2 - Autenticacion de credenciales", () => {
         expect(resultado.usuario.correo).toEqual("juan@example.com");
     });
 });
+
+describe("Caso 3: Distinción de roles y Admin preconfigurado", () => {
+    it("Escenario 1: Debería autenticar con la cuenta Admin preconfigurada y asignar rol ADMIN", () => {
+        const resultadoAdmin = autenticarUsuario("admin@homebound.com", "admin123");
+        expect(resultadoAdmin.exito).toBe(true);
+        expect(resultadoAdmin.usuario.rol).toEqual("ADMIN");
+    });
+})

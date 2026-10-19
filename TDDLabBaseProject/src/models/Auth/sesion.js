@@ -19,10 +19,21 @@ export function validarCamposLogin(correo, password){
     };
 };
 
+
+export const CUENTA_ADMIN_PRECONFIGURADA = {
+  nombre: "Administrador HomeBound",
+  correo: "admin@homebound.com",
+  password: "admin123",
+  rol: "ADMIN"
+};
+
+
 export function autenticarUsuario(correo, password, usuarios = []){
     const correoNormalizado = correo.trim().toLowerCase();
 
-    const usuarioEncontrado = usuarios.find(
+    const todosLosUsuarios = [CUENTA_ADMIN_PRECONFIGURADA, ...usuarios];
+
+    const usuarioEncontrado = todosLosUsuarios.find(
         (u) => u.correo.toLowerCase() == correoNormalizado
     );
 
@@ -37,8 +48,11 @@ export function autenticarUsuario(correo, password, usuarios = []){
         mensaje: "¡Inicio de sesión exitoso!",
         usuario:{
             nombre:usuarioEncontrado.nombre,
-            correo:usuarioEncontrado.correo
+            correo:usuarioEncontrado.correo,
+            rol: usuarioEncontrado.rol
         }
     };
-}
+};
+
+
 
