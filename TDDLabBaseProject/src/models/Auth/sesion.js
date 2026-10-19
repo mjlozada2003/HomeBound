@@ -69,5 +69,10 @@ export function guardarSesion(usuario){
     localStorage.setItem(CLAVE_SESION, JSON.stringify(usuario));
 }
 
+export function cerrarSesion(){
+    if (typeof localStorage === "undefined") return;
+    localStorage.removeItem(CLAVE_SESION);
+}
+
 
 

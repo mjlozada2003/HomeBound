@@ -1,5 +1,5 @@
 import { validarCamposLogin } from "./sesion";
-import { autenticarUsuario, obtenerSesionActiva, guardarSesion } from "./sesion";
+import { autenticarUsuario, obtenerSesionActiva, guardarSesion, cerrarSesion } from "./sesion";
 
 describe("HU-02: Iniciar sesión - Validaciones de campos", () => {
     it("Caso 1 - Escenario 1: Debería rechazar si ambos campos están vacíos", () => {
@@ -126,5 +126,17 @@ describe("Caso 4: Persistencia de sesión y Cerrar sesión", () => {
         expect(sesionActiva.nombre).toEqual("Carlos Lopez");
         expect(sesionActiva.correo).toEqual("carlos@example.com");
         expect(sesionActiva.rol).toEqual("USER");
+    });
+    it("Escenario 3: Debería eliminar la sesión activa al cerrar sesión", () => {
+        const usuario = {
+        nombre: "Carlos Lopez",
+        correo: "carlos@example.com",
+        rol: "USER"
+        };
+        guardarSesion(usuario);
+        expect(obtenerSesionActiva()).not.toBeNull();
+
+        cerrarSesion();
+        expect(obtenerSesionActiva()).toBeNull();
     });
 })
