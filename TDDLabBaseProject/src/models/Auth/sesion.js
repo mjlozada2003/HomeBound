@@ -74,5 +74,9 @@ export function cerrarSesion(){
     localStorage.removeItem(CLAVE_SESION);
 }
 
+export function puedeAccederAPublicar(usuario){
+    return usuario !== null && usuario !== undefined && !!usuario.correo;
+}
+
 
 

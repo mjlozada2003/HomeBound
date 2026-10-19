@@ -1,5 +1,5 @@
 import { validarCamposLogin } from "./sesion";
-import { autenticarUsuario, obtenerSesionActiva, guardarSesion, cerrarSesion } from "./sesion";
+import { autenticarUsuario, obtenerSesionActiva, guardarSesion, cerrarSesion, puedeAccederAPublicar } from "./sesion";
 
 describe("HU-02: Iniciar sesión - Validaciones de campos", () => {
     it("Caso 1 - Escenario 1: Debería rechazar si ambos campos están vacíos", () => {
@@ -138,5 +138,12 @@ describe("Caso 4: Persistencia de sesión y Cerrar sesión", () => {
 
         cerrarSesion();
         expect(obtenerSesionActiva()).toBeNull();
+    });
+});
+
+describe("Caso 5: Control de acceso a pantallas", () => {
+    it("Escenario 1: Debería denegar ela cceso a publicar si el usuario no ha iniciado sesión", () => {
+        const puede = puedeAccederAPublicar(null)
+        expect(puede).toBe(false);
     });
 })
