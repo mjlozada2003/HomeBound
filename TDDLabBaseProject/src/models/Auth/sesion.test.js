@@ -1,5 +1,5 @@
 import { validarCamposLogin } from "./sesion";
-import { autenticarUsuario, obtenerSesionActiva, guardarSesion, cerrarSesion, puedeAccederAPublicar } from "./sesion";
+import { autenticarUsuario, obtenerSesionActiva, guardarSesion, cerrarSesion, puedeAccederAPublicar, puedeAccederAAdmin } from "./sesion";
 
 describe("HU-02: Iniciar sesión - Validaciones de campos", () => {
     it("Caso 1 - Escenario 1: Debería rechazar si ambos campos están vacíos", () => {
@@ -149,5 +149,9 @@ describe("Caso 5: Control de acceso a pantallas", () => {
     it("Escenario 2: Debería permitir el acceso a publicar si hay un usuario autenticado", () => {
         const usuario = { nombre: "Carlos", correo: "carlos@example.com", rol: "USER" };
         expect(puedeAccederAPublicar(usuario)).toBe(true);
-    })
+    });
+    it("Escenario 3: Debería denegar el acceso a administración si no hay sesión iniciada", () => {
+        expect(puedeAccederAAdmin(null)).toBe(false);
+    });
+
 })

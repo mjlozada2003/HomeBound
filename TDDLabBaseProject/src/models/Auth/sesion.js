@@ -77,6 +77,8 @@ export function cerrarSesion(){
 export function puedeAccederAPublicar(usuario){
     return usuario !== null && usuario !== undefined && !!usuario.correo;
 }
-
+export function puedeAccederAAdmin(usuario) {
+  return usuario !== null && usuario !== undefined && usuario.rol === "ADMIN";
+}
 
 
