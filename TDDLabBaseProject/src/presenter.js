@@ -1,4 +1,5 @@
-import { iniciarAuthPresenter } from "./presenters/authPresenter";
+import { iniciarAuthPresenter } from './presenters/authPresenter';
+import { iniciarPostPresenter } from './presenters/postPresenter';
 
-// Inicializar los presentadores de la aplicación
 iniciarAuthPresenter();
+iniciarPostPresenter();
