@@ -24,5 +24,10 @@ export function validarHallazgo(datos = {}, hoy = new Date()) {
   if (datos.fotos.some((foto) => !foto || !['image/jpeg', 'image/png', 'image/webp'].includes(foto.type) || !(foto.size > 0))) {
     return { esValido: false, mensaje: 'Usa fotos JPEG, PNG o WebP que no estén vacías' };
   }
+  const correo = datos.correo?.trim() || '';
+  const whatsapp = datos.whatsapp?.trim() || '';
+  if (!correo && !whatsapp) {
+    return { esValido: false, mensaje: 'Ingresa al menos un medio de contacto: WhatsApp o correo electrónico.' };
+  }
   return { esValido: true, mensaje: '' };
 }

@@ -3,8 +3,12 @@ import { validarHallazgo, crearEnlaceMapa, crearHallazgo } from './hallazgo';
 const hoy = new Date(2026, 9, 18, 12);
 const foto = { name: 'mochila.jpg', type: 'image/jpeg', size: 1024 };
 const datos = {
-  categoria: 'OBJETO', titulo: 'Mochila azul',
-  descripcion: 'Encontrada en la plaza.', fecha: '2026-10-18', fotos: [foto]
+  categoria: 'OBJETO',
+  titulo: 'Mochila azul',
+  descripcion: 'Encontrada en la plaza.',
+  fecha: '2026-10-18',
+  fotos: [foto],
+  correo: 'contacto@example.com'
 };
 
 it('deberia rechazar campos obligatorios vacíos o con espacios', () => {
@@ -66,5 +70,27 @@ it('deberia rechazar archivos vacíos o que no sean imágenes admitidas', () => 
     expect(validarHallazgo({ ...datos, fotos: [foto, archivo] }, hoy)).toEqual({
       esValido: false, mensaje: 'Usa fotos JPEG, PNG o WebP que no estén vacías'
     });
+  }
+});
+
+it('rechaza el hallazgo si no se proporciona ningún medio de contacto', () => {
+  for (const contacto of [
+    { correo: undefined, whatsapp: undefined },
+    { correo: '', whatsapp: '' },
+    { correo: '   ', whatsapp: '   ' }
+  ]) {
+    expect(validarHallazgo({ ...datos, ...contacto }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Ingresa al menos un medio de contacto: WhatsApp o correo electrónico.'
+    });
+  }
+});
+
+it('permite publicar con solo correo o solo WhatsApp', () => {
+  for (const contacto of [
+    { correo: 'contacto@example.com', whatsapp: '' },
+    { correo: '', whatsapp: '+59171234567' }
+  ]) {
+    expect(validarHallazgo({ ...datos, ...contacto }, hoy).esValido).toBe(true);
   }
 });
