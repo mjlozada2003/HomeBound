@@ -18,7 +18,11 @@ export async function guardarHallazgo(publicacion) {
     await setDoc(documento, datos);
     return { ...datos, id: documento.id };
   } catch (error) {
-    await Promise.allSettled(subidas.map((referencia) => deleteObject(referencia)));
-    throw error;
-  }
+  console.error('Error al guardar hallazgo:', error.code, error.message);
+
+  await Promise.allSettled(
+    subidas.map((referencia) => deleteObject(referencia))
+  );
+  throw error;
+}
 }
