@@ -21,5 +21,8 @@ export function validarHallazgo(datos = {}, hoy = new Date()) {
   if (!Array.isArray(datos.fotos) || datos.fotos.length === 0) {
     return { esValido: false, mensaje: 'Añade al menos una foto' };
   }
+  if (datos.fotos.some((foto) => !foto || !['image/jpeg', 'image/png', 'image/webp'].includes(foto.type) || !(foto.size > 0))) {
+    return { esValido: false, mensaje: 'Usa fotos JPEG, PNG o WebP que no estén vacías' };
+  }
   return { esValido: true, mensaje: '' };
 }

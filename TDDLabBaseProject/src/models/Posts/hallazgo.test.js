@@ -54,3 +54,17 @@ it('exige al menos una foto', () => {
     });
   }
 });
+
+it('deberia admitir varias fotos JPEG, PNG o WebP', () => {
+  const fotos = [foto, { name: 'detalle.png', type: 'image/png', size: 20 },
+    { name: 'otra.webp', type: 'image/webp', size: 30 }];
+  expect(validarHallazgo({ ...datos, fotos }, hoy).esValido).toBe(true);
+});
+
+it('deberia rechazar archivos vacíos o que no sean imágenes admitidas', () => {
+  for (const archivo of [null, { ...foto, size: 0 }, { ...foto, type: 'application/pdf' }]) {
+    expect(validarHallazgo({ ...datos, fotos: [foto, archivo] }, hoy)).toEqual({
+      esValido: false, mensaje: 'Usa fotos JPEG, PNG o WebP que no estén vacías'
+    });
+  }
+});
