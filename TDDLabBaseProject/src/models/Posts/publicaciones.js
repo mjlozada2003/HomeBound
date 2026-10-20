@@ -1,139 +1,137 @@
+function crearImagenSvg(texto) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="180" viewBox="0 0 300 180">
+    <rect width="100%" height="100%" fill="#E8F5E9"/>
+    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#2D6A4F" font-family="sans-serif" font-size="18" font-weight="bold">${texto}</text>
+  </svg>`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
+
 let publicacionesEnMemoria = [
   {
     id: "1",
     titulo: "Credencial universitaria UCB",
-    descripcion: "Encontrada cerca de la biblioteca",
     fecha: "2026-10-08",
     tipo: "HALLAZGO",
     categoria: "OBJETO",
-    foto: "https://placehold.co/300x200?text=Credencial",
+    foto: crearImagenSvg("Credencial UCB"),
     estado: "APROBADA",
   },
   {
     id: "2",
     titulo: "Gato naranja con collar azul",
-    descripcion: "Se perdió por la zona de Cala Cala",
     fecha: "2026-10-09",
     tipo: "PERDIDA",
     categoria: "MASCOTA",
-    foto: "https://placehold.co/300x200?text=Gato+Perdido",
+    foto: crearImagenSvg("Gato Naranja"),
     estado: "APROBADA",
   },
   {
     id: "3",
     titulo: "Mochila negra en trufi 110",
-    descripcion: "Contiene cuadernos",
     fecha: "2026-10-10",
     tipo: "HALLAZGO",
     categoria: "OBJETO",
-    foto: "https://placehold.co/300x200?text=Mochila",
+    foto: crearImagenSvg("Mochila Negra"),
     estado: "APROBADA",
   },
   {
     id: "4",
     titulo: "Perrito French Poodle blanco",
-    descripcion: "Responde al nombre de Toby",
     fecha: "2026-10-11",
     tipo: "PERDIDA",
     categoria: "MASCOTA",
-    foto: "https://placehold.co/300x200?text=Perrito+Toby",
+    foto: crearImagenSvg("Perrito Blanco"),
     estado: "APROBADA",
   },
   {
     id: "5",
     titulo: "Llavero con cinta roja",
-    descripcion: "Encontrado en el Prado",
     fecha: "2026-10-12",
     tipo: "HALLAZGO",
     categoria: "OBJETO",
-    foto: "https://placehold.co/300x200?text=Llaves",
+    foto: crearImagenSvg("Llaves"),
     estado: "APROBADA",
   },
   {
     id: "6",
     titulo: "Billetera marrón de cuero",
-    descripcion: "Perdida cerca de la plaza Colón",
     fecha: "2026-10-13",
     tipo: "PERDIDA",
     categoria: "OBJETO",
-    foto: "https://placehold.co/300x200?text=Billetera",
+    foto: crearImagenSvg("Billetera"),
     estado: "APROBADA",
   },
   {
     id: "7",
     titulo: "Celular Samsung con funda transparente",
-    descripcion: "Encontrado en una banca",
     fecha: "2026-10-14",
     tipo: "HALLAZGO",
     categoria: "OBJETO",
-    foto: "https://placehold.co/300x200?text=Celular",
+    foto: crearImagenSvg("Celular Samsung"),
     estado: "APROBADA",
   },
   {
     id: "8",
     titulo: "Gatita siamesa",
-    descripcion: "Se salió de casa ayer por la tarde",
     fecha: "2026-10-15",
     tipo: "PERDIDA",
     categoria: "MASCOTA",
-    foto: "https://placehold.co/300x200?text=Gatita",
+    foto: crearImagenSvg("Gatita Siamesa"),
     estado: "APROBADA",
   },
   {
     id: "9",
     titulo: "Carnet de identidad",
-    descripcion: "Encontrado en la Av. América",
     fecha: "2026-10-16",
     tipo: "HALLAZGO",
     categoria: "OBJETO",
-    foto: "https://placehold.co/300x200?text=Carnet",
+    foto: crearImagenSvg("Carnet"),
     estado: "APROBADA",
   },
   {
     id: "10",
     titulo: "Estuche de lentes negro",
-    descripcion: "Perdido en el campus Tupuraya",
     fecha: "2026-10-17",
     tipo: "PERDIDA",
     categoria: "OBJETO",
-    foto: "https://placehold.co/300x200?text=Lentes",
+    foto: crearImagenSvg("Lentes"),
     estado: "APROBADA",
   },
   {
     id: "11",
     titulo: "Cachorro Golden Retriever",
-    descripcion: "Encontrado asustado cerca del parque Fidel Anze",
     fecha: "2026-10-18",
     tipo: "HALLAZGO",
     categoria: "MASCOTA",
-    foto: "https://placehold.co/300x200?text=Golden",
+    foto: crearImagenSvg("Golden Retriever"),
     estado: "APROBADA",
   },
   {
     id: "12",
     titulo: "Audífonos inalámbricos blancos",
-    descripcion: "Perdidos hoy por la mañana",
     fecha: "2026-10-19",
     tipo: "PERDIDA",
     categoria: "OBJETO",
-    foto: "https://placehold.co/300x200?text=Audifonos",
+    foto: crearImagenSvg("Audifonos"),
     estado: "APROBADA",
   },
   {
     id: "13",
-    titulo: "Publicación pendiente de prueba (Para HU-10)",
-    descripcion: "Esta no debe salir en la lista pública hasta aprobarse",
+    titulo: "Publicación pendiente (Para HU-10)",
     fecha: "2026-10-20",
     tipo: "HALLAZGO",
     categoria: "OBJETO",
-    foto: "https://placehold.co/300x200?text=Pendiente",
+    foto: crearImagenSvg("Pendiente"),
     estado: "PENDIENTE_REVISION",
   },
 ];
 
 export function filtrarSoloAprobadas(listaPublicaciones = []) {
   return listaPublicaciones.filter(
-    (pub) => pub.estado === "APROBADA" || pub.estado === "Aprobada" || pub.estado === "Activo"
+    (pub) =>
+      pub.estado === "APROBADA" ||
+      pub.estado === "Aprobada" ||
+      pub.estado === "Activo"
   );
 }
 
@@ -151,7 +149,7 @@ export function formatearParaTarjeta(pub) {
 
   return {
     id: pub.id,
-    foto: pub.foto || "https://placehold.co/300x200?text=Sin+Foto",
+    foto: pub.foto || crearImagenSvg("Sin Foto"),
     titulo: pub.titulo,
     fecha: pub.fecha,
     tipoTexto: esHallazgo ? "Encontrado" : "Perdido",
