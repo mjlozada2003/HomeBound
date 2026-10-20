@@ -1,6 +1,7 @@
 import { 
     obtenerPublicacionesPaginadas, 
-    filtrarSoloAprobadas 
+    filtrarSoloAprobadas,
+    ordenarPorFechaReciente
 
 } from "./publicaciones.js";
 
@@ -24,5 +25,12 @@ describe("HU-06: Ver vista básica de publicaciones recientes", () => {
     const aprobadas = filtrarSoloAprobadas(publicacionesMock);
     expect(aprobadas.length).toBe(2);
     expect(aprobadas.every((pub) => pub.estado === "APROBADA")).toBe(true);
+  });
+
+  test("Debería ordenar las publicaciones de la más reciente a la más antigua", () => {
+    const aprobadas = filtrarSoloAprobadas(publicacionesMock);
+    const ordenadas = ordenarPorFechaReciente(aprobadas);
+    expect(ordenadas[0].id).toBe("3");
+    expect(ordenadas[1].id).toBe("1");
   });
 });

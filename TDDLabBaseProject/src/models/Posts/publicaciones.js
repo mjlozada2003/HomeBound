@@ -14,3 +14,9 @@ export function filtrarSoloAprobadas(listaPublicaciones = []) {
     (pub) => pub.estado === "APROBADA" || pub.estado === "Aprobada" || pub.estado === "Activo"
   );
 }
+
+export function ordenarPorFechaReciente(listaPublicaciones = []) {
+  return [...listaPublicaciones].sort((a, b) => {
+    return new Date(b.fecha).getTime() - new Date(a.fecha).getTime();
+  });
+}
