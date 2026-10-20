@@ -1,17 +1,50 @@
 import { 
     obtenerPublicacionesPaginadas, 
     filtrarSoloAprobadas,
-    ordenarPorFechaReciente
+    ordenarPorFechaReciente,
+    formatearParaTarjeta
 
 } from "./publicaciones.js";
 
 describe("HU-06: Ver vista básica de publicaciones recientes", () => {
 
     const publicacionesMock = [
-    { id: "1", titulo: "Llaves encontradas", fecha: "2026-10-10", tipo: "HALLAZGO", estado: "APROBADA" },
-    { id: "2", titulo: "Perrito perdido", fecha: "2026-10-15", tipo: "PERDIDA", estado: "PENDIENTE_REVISION" },
-    { id: "3", titulo: "Billetera negra", fecha: "2026-10-18", tipo: "HALLAZGO", estado: "APROBADA" },
-    { id: "4", titulo: "Spam", fecha: "2026-10-19", tipo: "PERDIDA", estado: "RECHAZADA" },
+    {
+      id: "1",
+      titulo: "Llaves encontradas en la plazuela",
+      fecha: "2026-10-10",
+      tipo: "HALLAZGO",
+      categoria: "OBJETO",
+      foto: "https://via.placeholder.com/150",
+      estado: "APROBADA",
+    },
+    {
+      id: "2",
+      titulo: "Perrito mestizo perdido",
+      fecha: "2026-10-15",
+      tipo: "PERDIDA",
+      categoria: "MASCOTA",
+      foto: "https://via.placeholder.com/150",
+      estado: "PENDIENTE_REVISION",
+    },
+    {
+      id: "3",
+      titulo: "Billetera negra encontrada",
+      fecha: "2026-10-18",
+      tipo: "HALLAZGO",
+      categoria: "OBJETO",
+      foto: "https://via.placeholder.com/150",
+      estado: "APROBADA",
+    },
+    {
+      id: "4",
+      titulo: "Publicación spam",
+      fecha: "2026-10-19",
+      tipo: "PERDIDA",
+      categoria: "OBJETO",
+      foto: "https://via.placeholder.com/150",
+      estado: "RECHAZADA",
+    },
   ];
 
   test("Si no hay publicaciones aprobadas, debería devolver lista vacía y el mensaje 'Aún no hay publicaciones'", () => {
@@ -32,5 +65,17 @@ describe("HU-06: Ver vista básica de publicaciones recientes", () => {
     const ordenadas = ordenarPorFechaReciente(aprobadas);
     expect(ordenadas[0].id).toBe("3");
     expect(ordenadas[1].id).toBe("1");
+  });
+
+  test("Debería formatear cada tarjeta con foto, título, fecha, tipo (Perdido/Encontrado) y estado (Activo)", () => {
+    const tarjeta = formatearParaTarjeta(publicacionesMock[0]);
+    expect(tarjeta).toEqual({
+      id: "1",
+      foto: "https://via.placeholder.com/150",
+      titulo: "Llaves encontradas en la plazuela",
+      fecha: "2026-10-10",
+      tipoTexto: "Encontrado",
+      estadoTexto: "Activo",
+    });
   });
 });
