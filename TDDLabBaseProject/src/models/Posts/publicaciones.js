@@ -192,3 +192,11 @@ export function obtenerPublicacionesPaginadas(
     mensajeVacio: null,
   };
 }
+
+export function obtenerTodasLasPublicaciones() {
+  return publicacionesEnMemoria;
+}
+
+export function establecerPublicaciones(nuevaLista) {
+  publicacionesEnMemoria = nuevaLista;
+}
