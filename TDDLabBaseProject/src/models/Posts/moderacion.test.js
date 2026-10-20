@@ -1,7 +1,9 @@
 import {
   verificarPermisoModeracion,
   obtenerBandejaPendientes,
+  aprobarPublicacion,
 } from "./moderacion.js";
+import { filtrarSoloAprobadas } from "./publicaciones.js";
 
 describe("HU-10: Moderación de publicaciones", () => {
 
@@ -57,5 +59,17 @@ describe("HU-10: Moderación de publicaciones", () => {
       tipoTexto: "Encontrado",
       estado: "PENDIENTE_REVISION",
     });
+  });
+
+  test("Al aprobar una publicación pendiente, pasa a estado APROBADA y aparece en la lista pública", () => {
+    const admin = { nombre: "Admin", rol: "ADMIN" };
+    const actualizada = aprobarPublicacion(publicacionesMock, "1", admin);
+
+    const bandeja = obtenerBandejaPendientes(actualizada);
+    const listaPublica = filtrarSoloAprobadas(actualizada);
+
+    expect(bandeja.pendientes.length).toBe(0);
+    expect(listaPublica.length).toBe(2);
+    expect(listaPublica.some((p) => p.id === "1")).toBe(true);
   });
 });

@@ -38,3 +38,13 @@ export function obtenerBandejaPendientes(listaPublicaciones = []) {
     mensajeVacio: null,
   };
 }
+
+export function aprobarPublicacion(listaPublicaciones, idPublicacion, usuario) {
+  if (!verificarPermisoModeracion(usuario)) {
+    throw new Error("No tienes permisos de administrador");
+  }
+
+  return listaPublicaciones.map((pub) =>
+    pub.id === idPublicacion ? { ...pub, estado: "APROBADA" } : pub
+  );
+}
