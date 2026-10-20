@@ -2,7 +2,8 @@ import {
     obtenerPublicacionesPaginadas, 
     filtrarSoloAprobadas,
     ordenarPorFechaReciente,
-    formatearParaTarjeta
+    formatearParaTarjeta,
+    obternerPublicacionesPaginadas
 
 } from "./publicaciones.js";
 
@@ -77,5 +78,27 @@ describe("HU-06: Ver vista básica de publicaciones recientes", () => {
       tipoTexto: "Encontrado",
       estadoTexto: "Activo",
     });
+  });
+
+  test("Debería paginar mostrando máximo 10 publicaciones por página", () => {
+    const docePublicaciones = Array.from({ length: 12 }, (_, index) => ({
+      id: `${index + 1}`,
+      titulo: `Publicación ${index + 1}`,
+      fecha: `2026-10-${String(index + 1).padStart(2, "0")}`,
+      tipo: index % 2 === 0 ? "HALLAZGO" : "PERDIDA",
+      foto: "https://via.placeholder.com/150",
+      estado: "APROBADA",
+    }));
+
+    const pagina1 = obtenerPublicacionesPaginadas(docePublicaciones, 1, 10);
+    expect(pagina1.publicaciones.length).toBe(10);
+    expect(pagina1.paginaActual).toBe(1);
+    expect(pagina1.totalPaginas).toBe(2);
+    expect(pagina1.mensajeVacio).toBeNull();
+    expect(pagina1.publicaciones[0].id).toBe("12");
+
+    const pagina2 = obtenerPublicacionesPaginadas(docePublicaciones, 2, 10);
+    expect(pagina2.publicaciones.length).toBe(2);
+    expect(pagina2.paginaActual).toBe(2);
   });
 });
