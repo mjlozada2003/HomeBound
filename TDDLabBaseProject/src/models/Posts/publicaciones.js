@@ -8,3 +8,9 @@ export function obtenerPublicacionesPaginadas(listaPublicaciones = [], pagina = 
     };
   }
 }
+
+export function filtrarSoloAprobadas(listaPublicaciones = []) {
+  return listaPublicaciones.filter(
+    (pub) => pub.estado === "APROBADA" || pub.estado === "Aprobada" || pub.estado === "Activo"
+  );
+}
