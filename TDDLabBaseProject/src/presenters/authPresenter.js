@@ -8,7 +8,10 @@ import {
   puedeAccederAAdmin,
   puedeAccederAPublicar,
 } from "../models/Auth/sesion";
-import { renderizarListaPublicaciones } from "./postPresenter";
+import {
+  renderizarListaPublicaciones,
+  renderizarBandejaModeracion,
+} from "./postPresenter";
 
 export const usuariosRegistrados = [];
 
@@ -17,6 +20,8 @@ export function iniciarAuthPresenter() {
   const vistaRegistro = document.querySelector("#vista-registro");
   const vistaLogin = document.querySelector("#vista-login");
   const vistaPublicaciones = document.querySelector("#seccion-publicaciones");
+  const vistaModeracion = document.querySelector("#seccion-moderacion");
+  const btnVolverPublicaciones = document.querySelector("#btn-volver-publicaciones");
 
   // Elementos del Navbar
   const navBtnPanel = document.querySelector("#nav-btn-panel");
@@ -47,6 +52,7 @@ export function iniciarAuthPresenter() {
   // Funciones para alternar vistas
   function mostrarLogin() {
     vistaRegistro.classList.add("oculto");
+    if (vistaModeracion) vistaModeracion.classList.add("oculto");
     if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
     vistaLogin.classList.remove("oculto");
     mensajeLoginDiv.className = "";
@@ -55,6 +61,7 @@ export function iniciarAuthPresenter() {
 
   function mostrarRegistro() {
     vistaLogin.classList.add("oculto");
+    if (vistaModeracion) vistaModeracion.classList.add("oculto");
     if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
     vistaRegistro.classList.remove("oculto");
     mensajeRegistroDiv.className = "";
@@ -64,6 +71,7 @@ export function iniciarAuthPresenter() {
   function mostrarPublicaciones() {
     vistaRegistro.classList.add("oculto");
     vistaLogin.classList.add("oculto");
+    if (vistaModeracion) vistaModeracion.classList.add("oculto");
     if (vistaPublicaciones) {
       vistaPublicaciones.classList.remove("oculto");
       renderizarListaPublicaciones();
@@ -198,4 +206,31 @@ export function iniciarAuthPresenter() {
   if (sesionGuardada) {
     mostrarPublicaciones();
   }
+}
+
+function mostrarModeracion() {
+  vistaRegistro.classList.add("oculto");
+  vistaLogin.classList.add("oculto");
+  if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
+  if (vistaModeracion) {
+    vistaModeracion.classList.remove("oculto");
+    renderizarBandejaModeracion();
+  }
+}
+
+if (navBtnPanel) {
+  navBtnPanel.addEventListener("click", () => {
+    const sesionActual = obtenerSesionActiva();
+    if (!puedeAccederAAdmin(sesionActual)) {
+      alert("Acceso denegado: Solo administradores.");
+      return;
+    }
+    mostrarModeracion();
+  });
+}
+
+if (btnVolverPublicaciones) {
+  btnVolverPublicaciones.addEventListener("click", () => {
+    mostrarPublicaciones();
+  });
 }
