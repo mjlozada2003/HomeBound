@@ -23,4 +23,21 @@ describe('HU-06 y HU-10: Leer publicaciones desde Firestore', () => {
     expect(collection).toHaveBeenCalledWith(expect.anything(), 'perdidas');
     expect(where).toHaveBeenCalledWith('estado', '==', 'Pendiente de revisión');
   });
+
+  test('Debería juntar las publicaciones de ambas colecciones con su id y coleccion', async () => {
+    getDocs
+      .mockResolvedValueOnce({
+        docs: [{ id: 'h1', data: () => ({ titulo: 'Mochila azul' }) }]
+      })
+      .mockResolvedValueOnce({
+        docs: [{ id: 'p1', data: () => ({ titulo: 'Perro café' }) }]
+      });
+
+    const resultado = await obtenerPublicacionesPorEstado('Pendiente de revisión');
+
+    expect(resultado).toEqual([
+      { titulo: 'Mochila azul', id: 'h1', coleccion: 'hallazgos' },
+      { titulo: 'Perro café', id: 'p1', coleccion: 'perdidas' }
+    ]);
+  });
 });
