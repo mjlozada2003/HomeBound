@@ -1579,6 +1579,30 @@
     "numPassedTests": 87,
     "failedTests": 0,
     "numTotalTests": 87,
+    "timestamp": 1792599402946,
+    "success": true,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 87,
+    "failedTests": 1,
+    "numTotalTests": 88,
+    "timestamp": 1792599483246,
+    "success": false,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 88,
+    "failedTests": 0,
+    "numTotalTests": 88,
+    "timestamp": 1792599497865,
+    "success": true,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 87,
+    "failedTests": 0,
+    "numTotalTests": 87,
     "timestamp": 1792602898227,
     "success": true,
     "testId": 0
