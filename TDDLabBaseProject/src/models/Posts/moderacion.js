@@ -1,13 +1,7 @@
-import {
-  obtenerTodasLasPublicaciones,
-  establecerPublicaciones,
-  obtenerTextoTipo,
-} from "./publicaciones.js";
+import { obtenerTextoTipo } from "./publicaciones.js";
 
 export function verificarPermisoModeracion(usuario) {
-  return Boolean(
-    usuario && (usuario.rol === "ADMIN" || usuario.rol === "Admin")
-  );
+  return usuario?.rol === "ADMIN";
 }
 
 export function formatearPendiente(pub) {
@@ -59,15 +53,4 @@ export function rechazarPublicacion(listaPublicaciones, idPublicacion, usuario) 
   return listaPublicaciones.map((pub) =>
     pub.id === idPublicacion ? { ...pub, estado: "RECHAZADA" } : pub
   );
-}
-
-export function moderarPublicacionEnMemoria(idPublicacion, accion, usuario) {
-  const actuales = obtenerTodasLasPublicaciones();
-  const nuevaLista =
-    accion === "APROBAR"
-      ? aprobarPublicacion(actuales, idPublicacion, usuario)
-      : rechazarPublicacion(actuales, idPublicacion, usuario);
-
-  establecerPublicaciones(nuevaLista);
-  return nuevaLista;
 }
