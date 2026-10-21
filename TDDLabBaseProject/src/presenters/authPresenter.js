@@ -1,13 +1,16 @@
 import { validarRegistro } from "../models/Auth/cuenta";
 import {
   validarCamposLogin,
-  autenticarUsuario,
   guardarSesion,
   obtenerSesionActiva,
   cerrarSesion,
   puedeAccederAAdmin,
   puedeAccederAPublicar,
 } from "../models/Auth/sesion";
+import {
+  registrarUsuarioFirebase,
+  autenticarUsuarioFirebase
+} from "../services/usuarioService";
 import {
   renderizarListaPublicaciones,
   renderizarBandejaModeracion,
@@ -128,7 +131,7 @@ export function iniciarAuthPresenter() {
     });
 
   if (formRegistro) {
-    formRegistro.addEventListener("submit", (event) => {
+    formRegistro.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const nombre = nombreInput.value;
@@ -141,23 +144,43 @@ export function iniciarAuthPresenter() {
         mensajeRegistroDiv.className = "error";
         mensajeRegistroDiv.textContent = resultado.mensaje;
       } else {
-        mensajeRegistroDiv.className = "exito";
-        mensajeRegistroDiv.textContent = resultado.mensaje;
+        mensajeRegistroDiv.className = "";
+        mensajeRegistroDiv.textContent = "Creando cuenta…";
 
-        usuariosRegistrados.push({
-          nombre: resultado.usuario.nombre,
-          correo: resultado.usuario.correo,
-          password: password,
-          rol: "USER",
-        });
+        try {
+          const registro = await registrarUsuarioFirebase({
+            nombre: resultado.usuario.nombre,
+            correo: resultado.usuario.correo,
+            password: password
+          });
 
-        formRegistro.reset();
+          if (!registro.exito) {
+            mensajeRegistroDiv.className = "error";
+            mensajeRegistroDiv.textContent = registro.mensaje;
+          } else {
+            mensajeRegistroDiv.className = "exito";
+            mensajeRegistroDiv.textContent = registro.mensaje;
+
+            usuariosRegistrados.push({
+              nombre: resultado.usuario.nombre,
+              correo: resultado.usuario.correo,
+              password: password,
+              rol: "USER",
+            });
+
+            formRegistro.reset();
+          }
+        } catch (error) {
+          console.error("Error al registrar:", error);
+          mensajeRegistroDiv.className = "error";
+          mensajeRegistroDiv.textContent = "Error de conexión. Inténtalo de nuevo.";
+        }
       }
     });
   }
 
   if (formLogin) {
-    formLogin.addEventListener("submit", (event) => {
+    formLogin.addEventListener("submit", async (event) => {
       event.preventDefault();
       const correo = loginCorreoInput.value;
       const password = loginPasswordInput.value;
@@ -169,20 +192,28 @@ export function iniciarAuthPresenter() {
         return;
       }
 
-      // Autenticacion
-      const auth = autenticarUsuario(correo, password, usuariosRegistrados);
-      if (!auth.exito) {
-        mensajeLoginDiv.className = "error";
-        mensajeLoginDiv.textContent = auth.mensaje;
-      } else {
-        mensajeLoginDiv.className = "exito";
-        mensajeLoginDiv.textContent = `¡Bienvenido, ${auth.usuario.nombre}!`;
+      mensajeLoginDiv.className = "";
+      mensajeLoginDiv.textContent = "Iniciando sesión…";
 
-        // Guardar sesion y pasar a la vista de publicaciones
-        guardarSesion(auth.usuario);
-        actualizarNavbar(auth.usuario);
-        formLogin.reset();
-        mostrarPublicaciones();
+      try {
+        const auth = await autenticarUsuarioFirebase(correo, password);
+        if (!auth.exito) {
+          mensajeLoginDiv.className = "error";
+          mensajeLoginDiv.textContent = auth.mensaje;
+        } else {
+          mensajeLoginDiv.className = "exito";
+          mensajeLoginDiv.textContent = `¡Bienvenido, ${auth.usuario.nombre}!`;
+
+          // Guardar sesion y pasar a la vista de publicaciones
+          guardarSesion(auth.usuario);
+          actualizarNavbar(auth.usuario);
+          formLogin.reset();
+          mostrarPublicaciones();
+        }
+      } catch (error) {
+        console.error("Error al autenticar:", error);
+        mensajeLoginDiv.className = "error";
+        mensajeLoginDiv.textContent = "Error de conexión. Inténtalo de nuevo.";
       }
     });
   }
