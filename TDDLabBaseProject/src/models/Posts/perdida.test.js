@@ -193,3 +193,45 @@ it('deberia validar el correo cuando se proporciona', () => {
     }, hoy).esValido
   ).toBe(true);
 });
+
+it('deberia validar WhatsApp cuando se proporciona y admitir separadores', () => {
+  for (const whatsapp of ['abc', '123', '+591+71234567', '0000000']) {
+    expect(validarPerdida({ ...datos, whatsapp }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Ingresa WhatsApp con código de país, por ejemplo +59171234567'
+    });
+  }
+
+  expect(
+    validarPerdida({
+      ...datos,
+      whatsapp: '+591 (7) 123-4567'
+    }, hoy).esValido
+  ).toBe(true);
+
+  expect(validarPerdida(datos, hoy).esValido).toBe(true);
+});
+
+it('deberia admitir ubicación opcional de Maps y rechazar enlaces ajenos', () => {
+  for (const ubicacion of [
+    'javascript:alert(1)',
+    'https://example.com',
+    'https://www.google.com/maps-malicioso'
+  ]) {
+    expect(validarPerdida({ ...datos, ubicacion }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Usa una dirección, coordenadas o un enlace de Google Maps'
+    });
+  }
+
+  for (const ubicacion of [
+    '',
+    'Plaza Murillo',
+    '-16.5, -68.15',
+    'https://maps.app.goo.gl/ejemplo'
+  ]) {
+    expect(
+      validarPerdida({ ...datos, ubicacion }, hoy).esValido
+    ).toBe(true);
+  }
+});

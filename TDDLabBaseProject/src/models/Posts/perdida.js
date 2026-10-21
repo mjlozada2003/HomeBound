@@ -82,6 +82,30 @@ if (correo && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
   };
 }
 
+const numero = whatsapp
+  .replace(/[ ()-]/g, '')
+  .replace(/^\+/, '');
+
+if (
+  whatsapp &&
+  (
+    !/^\+?[\d ()-]+$/.test(whatsapp) ||
+    !/^[1-9]\d{6,14}$/.test(numero)
+  )
+) {
+  return {
+    esValido: false,
+    mensaje: 'Ingresa WhatsApp con código de país, por ejemplo +59171234567'
+  };
+}
+
+if (crearEnlaceMapa(datos.ubicacion || '') === null) {
+  return {
+    esValido: false,
+    mensaje: 'Usa una dirección, coordenadas o un enlace de Google Maps'
+  };
+}
+
   return { esValido: true, mensaje: '' };
 }
 
