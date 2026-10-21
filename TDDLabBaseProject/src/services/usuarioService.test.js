@@ -1,4 +1,8 @@
-import { guardarUsuario, buscarUsuarioPorCorreo } from './usuarioService';
+import {
+  guardarUsuario,
+  buscarUsuarioPorCorreo,
+  autenticarUsuarioFirebase
+} from './usuarioService';
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 
 jest.mock('./firebase', () => ({ db: {} }));
@@ -89,5 +93,63 @@ describe('Servicio de Usuarios (Firestore)', () => {
     const resultado = await buscarUsuarioPorCorreo('inexistente@example.com');
 
     expect(resultado).toBeNull();
+  });
+
+  it('deberia autenticar exitosamente si el correo y la contraseña coinciden con Firestore', async () => {
+    getDoc.mockResolvedValue({
+      exists: () => true,
+      id: 'carlos@example.com',
+      data: () => ({
+        nombre: 'Carlos Perez',
+        correo: 'carlos@example.com',
+        password: 'password123',
+        rol: 'USER'
+      })
+    });
+
+    const resultado = await autenticarUsuarioFirebase('carlos@example.com', 'password123');
+
+    expect(resultado).toEqual({
+      exito: true,
+      mensaje: '¡Inicio de sesión exitoso!',
+      usuario: {
+        nombre: 'Carlos Perez',
+        correo: 'carlos@example.com',
+        rol: 'USER'
+      }
+    });
+  });
+
+  it('deberia rechazar la autenticacion si la contraseña no coincide', async () => {
+    getDoc.mockResolvedValue({
+      exists: () => true,
+      id: 'carlos@example.com',
+      data: () => ({
+        nombre: 'Carlos Perez',
+        correo: 'carlos@example.com',
+        password: 'password123',
+        rol: 'USER'
+      })
+    });
+
+    const resultado = await autenticarUsuarioFirebase('carlos@example.com', 'incorrecta');
+
+    expect(resultado).toEqual({
+      exito: false,
+      mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
+    });
+  });
+
+  it('deberia rechazar la autenticacion si el usuario no existe en Firestore', async () => {
+    getDoc.mockResolvedValue({
+      exists: () => false
+    });
+
+    const resultado = await autenticarUsuarioFirebase('noexiste@example.com', '123456');
+
+    expect(resultado).toEqual({
+      exito: false,
+      mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
+    });
   });
 });

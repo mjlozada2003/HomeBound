@@ -38,3 +38,24 @@ export async function buscarUsuarioPorCorreo(correo) {
     ...snapshot.data()
   };
 }
+
+export async function autenticarUsuarioFirebase(correo, password) {
+  const usuario = await buscarUsuarioPorCorreo(correo);
+
+  if (!usuario || usuario.password !== password) {
+    return {
+      exito: false,
+      mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
+    };
+  }
+
+  return {
+    exito: true,
+    mensaje: '¡Inicio de sesión exitoso!',
+    usuario: {
+      nombre: usuario.nombre,
+      correo: usuario.correo,
+      rol: usuario.rol || 'USER'
+    }
+  };
+}
