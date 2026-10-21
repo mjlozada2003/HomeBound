@@ -96,6 +96,16 @@
         <h1 id="hallazgo-titulo" class="card-title">Publicar hallazgo</h1>
         <p class="card-subtitle">Ayuda a que un objeto o una mascota vuelva a casa.</p>
 
+        <p class="login-link">
+        <button
+        type="button"
+          id="hallazgo-ir-perdida"
+              class="btn-ingresar"
+        >
+            Publicar una pérdida
+          </button>
+        </p>
+
         <form id="hallazgo-form" novalidate>
           <div class="form-group">
             <label for="hallazgo-categoria">Categoría *</label>
@@ -197,6 +207,149 @@
           </div>
         </article>
       </section>
+
+      <!-- VISTA 4: PUBLICAR PÉRDIDA -->
+<section
+  id="perdida-seccion"
+  class="card hallazgo-card oculto"
+  aria-labelledby="perdida-titulo"
+>
+  <h1 id="perdida-titulo" class="card-title">Publicar pérdida</h1>
+
+  <p class="card-subtitle">
+    Describe lo que perdiste para que puedan ayudarte a recuperarlo.
+  </p>
+
+  <p class="login-link">
+    <button
+      type="button"
+      id="perdida-ir-hallazgo"
+      class="btn-ingresar"
+    >
+      Publicar un hallazgo
+    </button>
+  </p>
+
+  <form id="perdida-form" novalidate>
+    <div class="form-group">
+      <label for="perdida-categoria">Categoría *</label>
+      <select id="perdida-categoria" required>
+        <option value="">Selecciona una categoría</option>
+        <option value="OBJETO">Objeto</option>
+        <option value="MASCOTA">Mascota</option>
+        <option value="OTRO">Otro</option>
+      </select>
+    </div>
+
+    <div id="perdida-categoria-otra-grupo" class="form-group" hidden>
+      <label for="perdida-categoria-otra">Especifica la categoría *</label>
+      <input id="perdida-categoria-otra" type="text" disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="perdida-nombre">Título *</label>
+      <input id="perdida-nombre" type="text" required>
+    </div>
+
+    <div class="form-group">
+      <label for="perdida-descripcion">Descripción *</label>
+      <textarea id="perdida-descripcion" rows="4" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="perdida-fecha">Fecha de la pérdida *</label>
+      <input id="perdida-fecha" type="date" required>
+    </div>
+
+    <div class="form-group">
+      <label for="perdida-fotos">
+        Fotos * (puedes seleccionar varias)
+      </label>
+      <input
+        id="perdida-fotos"
+        type="file"
+        accept="image/jpeg,image/png,image/webp"
+        multiple
+        required
+      >
+      <p class="ayuda">Añade al menos una foto JPEG, PNG o WebP.</p>
+    </div>
+
+    <div class="form-group">
+      <label for="perdida-ubicacion">Ubicación (opcional)</label>
+      <input
+        id="perdida-ubicacion"
+        type="text"
+        placeholder="Dirección, coordenadas o enlace de Google Maps"
+      >
+      <p class="ayuda">
+        Puedes copiar coordenadas o un enlace desde Google Maps.
+      </p>
+      <a
+        id="perdida-maps"
+        href="https://www.google.com/maps"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Abrir Google Maps</a>
+    </div>
+
+    <p class="ayuda contacto-ayuda">
+      Ingresa al menos un medio de contacto: WhatsApp o correo electrónico.
+    </p>
+
+    <div class="form-group">
+      <label for="perdida-whatsapp">
+        WhatsApp (opcional si ingresas correo)
+      </label>
+      <input
+        id="perdida-whatsapp"
+        type="tel"
+        placeholder="+59171234567"
+      >
+      <p class="ayuda">Incluye el código de país.</p>
+    </div>
+
+    <div class="form-group">
+      <label for="perdida-correo">
+        Correo de contacto (opcional si ingresas WhatsApp)
+      </label>
+      <input id="perdida-correo" type="email">
+    </div>
+
+    <button type="submit" id="perdida-enviar" class="btn-registrar">
+      Enviar pérdida
+    </button>
+  </form>
+
+  <div id="perdida-mensaje" role="status" aria-live="polite"></div>
+
+  <article id="perdida-resumen" class="hallazgo-resumen" hidden>
+    <p class="estado-pendiente">Pendiente de revisión</p>
+    <h2 id="perdida-resumen-titulo"></h2>
+    <p id="perdida-resumen-detalles"></p>
+
+    <div id="perdida-resumen-fotos" class="hallazgo-fotos"></div>
+
+    <div class="hallazgo-contactos">
+      <a
+        id="perdida-contacto-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        hidden
+      >WhatsApp</a>
+
+      <a id="perdida-contacto-correo" hidden>Correo</a>
+
+      <a
+        id="perdida-resumen-maps"
+        target="_blank"
+        rel="noopener noreferrer"
+        hidden
+      >Ver ubicación en Google Maps</a>
+    </div>
+  </article>
+</section>
+
     </main>
 
 
