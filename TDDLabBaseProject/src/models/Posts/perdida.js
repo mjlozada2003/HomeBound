@@ -122,6 +122,7 @@ export function crearPerdida(datos, hoy = new Date()) {
     .replace(/^\+/, '');
 
   const correo = datos.correo?.trim() || '';
+  const ubicacion = datos.ubicacion?.trim() || '';
 
   return {
     esValido: true,
@@ -136,6 +137,10 @@ export function crearPerdida(datos, hoy = new Date()) {
       fecha: datos.fecha,
       fotos: [...datos.fotos],
       estado: 'Pendiente de revisión',
+      ubicacion: {
+      texto: ubicacion,
+      enlace: crearEnlaceMapa(ubicacion)
+      },
       contacto: {
         whatsapp,
         correo,

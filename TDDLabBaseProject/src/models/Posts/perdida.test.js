@@ -315,3 +315,22 @@ it('deberia preparar enlaces directos solo para los contactos proporcionados', (
     }, hoy).publicacion.contacto.enlaceCorreo
   ).toBe('');
 });
+
+it('deberia preparar la ubicación y su enlace de Maps solamente si se proporciona', () => {
+  expect(
+    crearPerdida({
+      ...datos,
+      ubicacion: ' Plaza Murillo '
+    }, hoy).publicacion.ubicacion
+  ).toEqual({
+    texto: 'Plaza Murillo',
+    enlace: 'https://www.google.com/maps/search/?api=1&query=Plaza%20Murillo'
+  });
+
+  expect(
+    crearPerdida(datos, hoy).publicacion.ubicacion
+  ).toEqual({
+    texto: '',
+    enlace: ''
+  });
+});
