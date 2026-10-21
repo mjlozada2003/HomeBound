@@ -1,6 +1,7 @@
 import {
   obtenerTodasLasPublicaciones,
   establecerPublicaciones,
+  obtenerTextoTipo,
 } from "./publicaciones.js";
 
 export function verificarPermisoModeracion(usuario) {
@@ -10,18 +11,13 @@ export function verificarPermisoModeracion(usuario) {
 }
 
 export function formatearPendiente(pub) {
-  const esHallazgo =
-    pub.tipo === "HALLAZGO" ||
-    pub.tipo === "Hallazgo" ||
-    pub.tipo === "Encontrado";
-
   return {
     id: pub.id,
     foto: pub.foto || "",
     titulo: pub.titulo,
     descripcion: pub.descripcion || "Sin descripción",
     fecha: pub.fecha,
-    tipoTexto: esHallazgo ? "Encontrado" : "Perdido",
+    tipoTexto: obtenerTextoTipo(pub.tipo),
     estado: pub.estado,
   };
 }
@@ -64,7 +60,6 @@ export function rechazarPublicacion(listaPublicaciones, idPublicacion, usuario) 
   );
 }
 
-// Funciones conectadas a la lista en memoria de HU-06
 export function moderarPublicacionEnMemoria(idPublicacion, accion, usuario) {
   const actuales = obtenerTodasLasPublicaciones();
   const nuevaLista =
