@@ -11,6 +11,7 @@ import {
   obtenerPublicacionesPorEstado,
   actualizarEstadoPublicacion,
 } from "../services/publicacionesService";
+import { escaparHtml } from "../models/html";
 
 import {
   crearHallazgo,
@@ -408,11 +409,11 @@ function dibujarListaPublicaciones() {
   contenedorLista.innerHTML = resultado.publicaciones
     .map(
       (pub) => `
-      <div class="tarjeta-publicacion" data-id="${pub.id}">
-        <img src="${pub.foto}" alt="${pub.titulo}" class="tarjeta-foto" />
+      <div class="tarjeta-publicacion" data-id="${escaparHtml(pub.id)}">
+        <img src="${escaparHtml(pub.foto)}" alt="${escaparHtml(pub.titulo)}" class="tarjeta-foto" />
         <div class="tarjeta-info">
-          <h3 class="tarjeta-titulo">${pub.titulo}</h3>
-          <p class="tarjeta-fecha"><strong>Fecha:</strong> ${pub.fecha}</p>
+          <h3 class="tarjeta-titulo">${escaparHtml(pub.titulo)}</h3>
+          <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)}</p>
           <p class="tarjeta-etiquetas">
             <span class="badge-tipo">${pub.tipoTexto}</span> |
             <span class="badge-estado">${pub.estadoTexto}</span>
@@ -494,15 +495,15 @@ export async function renderizarBandejaModeracion() {
   contenedorPendientes.innerHTML = bandeja.pendientes
     .map(
       (pub) => `
-      <div class="tarjeta-publicacion tarjeta-moderacion" data-id="${pub.id}">
-        <img src="${pub.foto}" alt="${pub.titulo}" class="tarjeta-foto" />
+      <div class="tarjeta-publicacion tarjeta-moderacion" data-id="${escaparHtml(pub.id)}">
+        <img src="${escaparHtml(pub.foto)}" alt="${escaparHtml(pub.titulo)}" class="tarjeta-foto" />
         <div class="tarjeta-info">
-          <h3 class="tarjeta-titulo">${pub.titulo}</h3>
-          <p class="tarjeta-descripcion">${pub.descripcion}</p>
-          <p class="tarjeta-fecha"><strong>Fecha:</strong> ${pub.fecha} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
+          <h3 class="tarjeta-titulo">${escaparHtml(pub.titulo)}</h3>
+          <p class="tarjeta-descripcion">${escaparHtml(pub.descripcion)}</p>
+          <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
           <div class="acciones-moderacion">
-            <button class="btn-aprobar" data-id="${pub.id}" data-coleccion="${pub.coleccion}">Aprobar</button>
-            <button class="btn-rechazar" data-id="${pub.id}" data-coleccion="${pub.coleccion}">Rechazar</button>
+            <button class="btn-aprobar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Aprobar</button>
+            <button class="btn-rechazar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Rechazar</button>
           </div>
         </div>
       </div>
