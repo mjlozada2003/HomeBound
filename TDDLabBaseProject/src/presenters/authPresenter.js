@@ -1,15 +1,30 @@
 import { validarRegistro } from "../models/Auth/cuenta";
-import { validarCamposLogin, autenticarUsuario, guardarSesion, obtenerSesionActiva, cerrarSesion, puedeAccederAAdmin, puedeAccederAPublicar } from "../models/Auth/sesion";
+import {
+  validarCamposLogin,
+  autenticarUsuario,
+  guardarSesion,
+  obtenerSesionActiva,
+  cerrarSesion,
+  puedeAccederAAdmin,
+  puedeAccederAPublicar,
+} from "../models/Auth/sesion";
+import {
+  renderizarListaPublicaciones,
+  renderizarBandejaModeracion,
+} from "./postPresenter";
 
 export const usuariosRegistrados = [];
 
 export function iniciarAuthPresenter() {
-
   // Secciones
   const vistaRegistro = document.querySelector("#vista-registro");
   const vistaLogin = document.querySelector("#vista-login");
   const vistaHallazgo = document.querySelector("#hallazgo-seccion");
   const vistaPerdida = document.querySelector("#perdida-seccion");
+
+  const vistaPublicaciones = document.querySelector("#seccion-publicaciones");
+  const vistaModeracion = document.querySelector("#seccion-moderacion");
+  const btnVolverPublicaciones = document.querySelector("#btn-volver-publicaciones");
 
   // Elementos del Navbar
   const navBtnPanel = document.querySelector("#nav-btn-panel");
@@ -24,7 +39,7 @@ export function iniciarAuthPresenter() {
   const linkIrLogin = document.querySelector("#link-ir-login");
   const linkIrRegistro = document.querySelector("#link-ir-registro");
 
-  //Formulario Registro
+  // Formulario Registro
   const formRegistro = document.querySelector("#registro-form");
   const nombreInput = document.querySelector("#nombre-input");
   const correoInput = document.querySelector("#correo-input");
@@ -39,22 +54,38 @@ export function iniciarAuthPresenter() {
 
   // Funciones para alternar vistas
   function mostrarLogin() {
-  vistaHallazgo.classList.add("oculto");
-  vistaPerdida.classList.add("oculto");
-  vistaRegistro.classList.add("oculto");
-  vistaLogin.classList.remove("oculto");
-  mensajeLoginDiv.className = "";
-  mensajeLoginDiv.textContent = "";
-}
+    if (vistaHallazgo) vistaHallazgo.classList.add("oculto");
+    if (vistaPerdida) vistaPerdida.classList.add("oculto");
+    vistaRegistro.classList.add("oculto");
+    if (vistaModeracion) vistaModeracion.classList.add("oculto");
+    if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
+    vistaLogin.classList.remove("oculto");
+    mensajeLoginDiv.className = "";
+    mensajeLoginDiv.textContent = "";
+  }
 
-function mostrarRegistro() {
-  vistaHallazgo.classList.add("oculto");
-  vistaPerdida.classList.add("oculto");
-  vistaLogin.classList.add("oculto");
-  vistaRegistro.classList.remove("oculto");
-  mensajeRegistroDiv.className = "";
-  mensajeRegistroDiv.textContent = "";
-}
+  function mostrarRegistro() {
+    if (vistaHallazgo) vistaHallazgo.classList.add("oculto");
+    if (vistaPerdida) vistaPerdida.classList.add("oculto");
+    vistaLogin.classList.add("oculto");
+    if (vistaModeracion) vistaModeracion.classList.add("oculto");
+    if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
+    vistaRegistro.classList.remove("oculto");
+    mensajeRegistroDiv.className = "";
+    mensajeRegistroDiv.textContent = "";
+  }
+
+  function mostrarPublicaciones() {
+    if (vistaHallazgo) vistaHallazgo.classList.add("oculto");
+    if (vistaPerdida) vistaPerdida.classList.add("oculto");
+    vistaRegistro.classList.add("oculto");
+    vistaLogin.classList.add("oculto");
+    if (vistaModeracion) vistaModeracion.classList.add("oculto");
+    if (vistaPublicaciones) {
+      vistaPublicaciones.classList.remove("oculto");
+      renderizarListaPublicaciones();
+    }
+  }
 
   // Actualiza el Navbar según si hay sesión iniciada y el rol del usuario
   function actualizarNavbar(usuario) {
@@ -62,8 +93,6 @@ function mostrarRegistro() {
       navBtnIngresar.classList.add("oculto");
       navUserInfo.classList.remove("oculto");
       navUserName.textContent = `👤 ${usuario.nombre}`;
-
-      // Distinción de rol Admin
       if (puedeAccederAAdmin(usuario)) {
         navBtnPanel.classList.remove("oculto");
       } else {
@@ -76,105 +105,149 @@ function mostrarRegistro() {
     }
   }
 
-  if (linkIrLogin) linkIrLogin.addEventListener("click", (e) => { e.preventDefault(); mostrarLogin(); });
-  if (navBtnIngresar) navBtnIngresar.addEventListener("click", () => mostrarLogin());
-  if (linkIrRegistro) linkIrRegistro.addEventListener("click", (e) => { e.preventDefault(); mostrarRegistro(); });
-  if(brandLogo) brandLogo.addEventListener("click", () => mostrarRegistro());
+  if (linkIrLogin)
+    linkIrLogin.addEventListener("click", (e) => {
+      e.preventDefault();
+      mostrarLogin();
+    });
+  if (navBtnIngresar)
+    navBtnIngresar.addEventListener("click", () => mostrarLogin());
+  if (linkIrRegistro)
+    linkIrRegistro.addEventListener("click", (e) => {
+      e.preventDefault();
+      mostrarRegistro();
+    });
+  if (brandLogo)
+    brandLogo.addEventListener("click", () => {
+      const sesion = obtenerSesionActiva();
+      if (sesion) {
+        mostrarPublicaciones();
+      } else {
+        mostrarRegistro();
+      }
+    });
 
+  if (formRegistro) {
+    formRegistro.addEventListener("submit", (event) => {
+      event.preventDefault();
 
+      const nombre = nombreInput.value;
+      const correo = correoInput.value;
+      const password = passwordInput.value;
 
+      const resultado = validarRegistro(nombre, correo, password);
 
-  if (formRegistro){
+      if (!resultado.esValido) {
+        mensajeRegistroDiv.className = "error";
+        mensajeRegistroDiv.textContent = resultado.mensaje;
+      } else {
+        mensajeRegistroDiv.className = "exito";
+        mensajeRegistroDiv.textContent = resultado.mensaje;
 
-  formRegistro.addEventListener("submit", (event) => {
-    event.preventDefault();
+        usuariosRegistrados.push({
+          nombre: resultado.usuario.nombre,
+          correo: resultado.usuario.correo,
+          password: password,
+          rol: "USER",
+        });
 
-    const nombre = nombreInput.value;
-    const correo = correoInput.value;
-    const password = passwordInput.value;
-
-    const resultado = validarRegistro(nombre, correo, password);
-
-    if (!resultado.esValido) {
-      mensajeRegistroDiv.className = "error";
-      mensajeRegistroDiv.textContent = resultado.mensaje;
-    } else {
-      mensajeRegistroDiv.className = "exito";
-      mensajeRegistroDiv.textContent = resultado.mensaje;
-
-      //Guarda al usuario para que pueda autenticarse de inmediato
-      usuariosRegistrados.push({
-        nombre: resultado.usuario.nombre,
-        correo: resultado.usuario.correo,
-        password:password,
-        rol:"USER"
-      });
-
-      formRegistro.reset();
-    }
-  });
+        formRegistro.reset();
+      }
+    });
   }
 
-
-  if(formLogin){
+  if (formLogin) {
     formLogin.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const correo = loginCorreoInput.value;
-        const password = loginPasswordInput.value;
+      event.preventDefault();
+      const correo = loginCorreoInput.value;
+      const password = loginPasswordInput.value;
 
-        const validacionCampos = validarCamposLogin(correo, password);
-        if(!validacionCampos.esValido){
-            mensajeLoginDiv.className ="error",
-            mensajeLoginDiv.textContent = validacionCampos.mensaje;
-            return;
-        }
+      const validacionCampos = validarCamposLogin(correo, password);
+      if (!validacionCampos.esValido) {
+        mensajeLoginDiv.className = "error";
+        mensajeLoginDiv.textContent = validacionCampos.mensaje;
+        return;
+      }
 
-        //Autenticacion
-        const auth = autenticarUsuario(correo, password, usuariosRegistrados);
-        if(!auth.exito){
-            mensajeLoginDiv.className ="error",
-            mensajeLoginDiv.textContent = auth.mensaje;
-        }else{
-            mensajeLoginDiv.className ="exito",
-            mensajeLoginDiv.textContent = `¡Bienvenido, ${auth.usuario.nombre}!`;
+      // Autenticacion
+      const auth = autenticarUsuario(correo, password, usuariosRegistrados);
+      if (!auth.exito) {
+        mensajeLoginDiv.className = "error";
+        mensajeLoginDiv.textContent = auth.mensaje;
+      } else {
+        mensajeLoginDiv.className = "exito";
+        mensajeLoginDiv.textContent = `¡Bienvenido, ${auth.usuario.nombre}!`;
 
-            //Guardar sesion
-            guardarSesion(auth.usuario);
-            actualizarNavbar(auth.usuario);
-
-            formLogin.reset();
-        }
+        // Guardar sesion y pasar a la vista de publicaciones
+        guardarSesion(auth.usuario);
+        actualizarNavbar(auth.usuario);
+        formLogin.reset();
+        mostrarPublicaciones();
+      }
     });
-   }
+  }
 
-   //Cerrar Sesión
-   if(navBtnLogout){
+  // Cerrar Sesión
+  if (navBtnLogout) {
     navBtnLogout.addEventListener("click", () => {
-        cerrarSesion();
-        actualizarNavbar(null);
-        mostrarLogin();
+      cerrarSesion();
+      actualizarNavbar(null);
+      mostrarLogin();
     });
-   }
+  }
 
-   //Proteccion de pantallas
-   if(navBtnPublicar){
+  function mostrarModeracion() {
+    if (vistaHallazgo) vistaHallazgo.classList.add("oculto");
+    if (vistaPerdida) vistaPerdida.classList.add("oculto");
+    vistaRegistro.classList.add("oculto");
+    vistaLogin.classList.add("oculto");
+    if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
+    if (vistaModeracion) {
+      vistaModeracion.classList.remove("oculto");
+      renderizarBandejaModeracion();
+    }
+  }
+
+  if (navBtnPanel) {
+    navBtnPanel.addEventListener("click", () => {
+      const sesionActual = obtenerSesionActiva();
+      if (!puedeAccederAAdmin(sesionActual)) {
+        alert("Acceso denegado: Solo administradores.");
+        return;
+      }
+      mostrarModeracion();
+    });
+  }
+
+  if (btnVolverPublicaciones) {
+    btnVolverPublicaciones.addEventListener("click", () => {
+      mostrarPublicaciones();
+    });
+  }
+
+  // Proteccion de pantallas
+  if (navBtnPublicar) {
     navBtnPublicar.addEventListener("click", () => {
-        const sesionActual = obtenerSesionActiva();
-        if(!puedeAccederAPublicar(sesionActual)){
-            alert("Debes iniciar sesión para publicar un hallazgo o pérdida.");
-            mostrarLogin();
-        }else{
-            vistaRegistro.classList.add("oculto");
-            vistaLogin.classList.add("oculto");
-            vistaPerdida.classList.add("oculto");
-            vistaHallazgo.classList.remove("oculto");
-            document.querySelector("#hallazgo-categoria").focus();
-        }
+      const sesionActual = obtenerSesionActiva();
+      if (!puedeAccederAPublicar(sesionActual)) {
+        alert("Debes iniciar sesión para publicar un hallazgo o pérdida.");
+        mostrarLogin();
+      } else {
+        vistaRegistro.classList.add("oculto");
+        vistaLogin.classList.add("oculto");
+        if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
+        if (vistaModeracion) vistaModeracion.classList.add("oculto");
+        if (vistaPerdida) vistaPerdida.classList.add("oculto");
+        vistaHallazgo.classList.remove("oculto");
+        document.querySelector("#hallazgo-categoria").focus();
+      }
     });
-   }
+  }
 
-   //persistencia al recargar
-   const sesionGuardada = obtenerSesionActiva();
-   actualizarNavbar(sesionGuardada);
-
+  // Persistencia al recargar
+  const sesionGuardada = obtenerSesionActiva();
+  actualizarNavbar(sesionGuardada);
+  if (sesionGuardada) {
+    mostrarPublicaciones();
+  }
 }

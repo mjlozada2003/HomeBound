@@ -91,7 +91,23 @@
         </p>
       </section>
 
-      <!-- VISTA 3: PUBLICAR HALLAZGO -->
+      <!-- VISTA 3: PUBLICACIONES RECIENTES (Oculto mientras no inicie sesión) -->
+      <section id="seccion-publicaciones" class="vista-publicaciones oculto">
+        <h2 class="publicaciones-titulo">Publicaciones Recientes</h2>
+        <div id="lista-publicaciones" class="grid-publicaciones"></div>
+        <div id="controles-paginacion" class="paginacion"></div>
+      </section>
+
+      <!-- VISTA 4: BANDEJA DE MODERACIÓN ADMIN (HU-10) -->
+      <section id="seccion-moderacion" class="vista-publicaciones oculto">
+        <div class="encabezado-moderacion">
+          <h2 class="publicaciones-titulo">Publicaciones pendientes</h2>
+          <button id="btn-volver-publicaciones" class="btn-ingresar">← Volver a la lista pública</button>
+        </div>
+        <div id="lista-pendientes" class="grid-publicaciones"></div>
+      </section>
+
+    <!-- VISTA 5: PUBLICAR HALLAZGO -->
       <section id="hallazgo-seccion" class="card hallazgo-card oculto" aria-labelledby="hallazgo-titulo">
         <h1 id="hallazgo-titulo" class="card-title">Publicar hallazgo</h1>
         <p class="card-subtitle">Ayuda a que un objeto o una mascota vuelva a casa.</p>
@@ -208,7 +224,7 @@
         </article>
       </section>
 
-      <!-- VISTA 4: PUBLICAR PÉRDIDA -->
+      <!-- VISTA 6: PUBLICAR PÉRDIDA -->
 <section
   id="perdida-seccion"
   class="card hallazgo-card oculto"
