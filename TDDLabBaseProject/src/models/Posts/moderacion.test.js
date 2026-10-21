@@ -7,8 +7,7 @@ import {
 import { filtrarSoloAprobadas } from "./publicaciones.js";
 
 describe("HU-10: Moderación de publicaciones", () => {
-
-    const publicacionesMock = [
+  const publicacionesMock = [
     {
       id: "1",
       titulo: "Credencial UCB",
@@ -83,5 +82,16 @@ describe("HU-10: Moderación de publicaciones", () => {
 
     expect(bandeja.pendientes.length).toBe(0);
     expect(listaPublica.some((p) => p.id === "1")).toBe(false);
+  });
+
+  test("Caso inválido: Si un usuario sin rol ADMIN intenta aprobar o rechazar, lanza un error", () => {
+    const usuarioNormal = { nombre: "Juan", rol: "USER" };
+
+    expect(() =>
+      aprobarPublicacion(publicacionesMock, "1", usuarioNormal)
+    ).toThrow("No tienes permisos de administrador");
+    expect(() =>
+      rechazarPublicacion(publicacionesMock, "1", null)
+    ).toThrow("No tienes permisos de administrador");
   });
 });
