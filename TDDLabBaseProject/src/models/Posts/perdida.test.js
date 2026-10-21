@@ -146,3 +146,50 @@ it('deberia admitir fotos JPEG, PNG y WebP no vacías y rechazar otros archivos'
 
   expect(validarPerdida({ ...datos, fotos }, hoy).esValido).toBe(true);
 });
+
+it('deberia exigir al menos un contacto y permitir solo correo o solo WhatsApp', () => {
+  for (const contacto of [
+    { correo: undefined, whatsapp: undefined },
+    { correo: '', whatsapp: '' },
+    { correo: '   ', whatsapp: '   ' }
+  ]) {
+    expect(validarPerdida({ ...datos, ...contacto }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Ingresa al menos un medio de contacto: WhatsApp o correo electrónico.'
+    });
+  }
+
+  expect(validarPerdida(datos, hoy).esValido).toBe(true);
+
+  expect(
+    validarPerdida({
+      ...datos,
+      correo: '',
+      whatsapp: '+59171234567'
+    }, hoy).esValido
+  ).toBe(true);
+});
+
+it('deberia validar el correo cuando se proporciona', () => {
+  expect(
+    validarPerdida({ ...datos, correo: 'correo-invalido' }, hoy)
+  ).toEqual({
+    esValido: false,
+    mensaje: 'El correo electrónico no es válido'
+  });
+
+  expect(
+    validarPerdida({
+      ...datos,
+      correo: ' contacto@example.com '
+    }, hoy).esValido
+  ).toBe(true);
+
+  expect(
+    validarPerdida({
+      ...datos,
+      correo: '',
+      whatsapp: '+59171234567'
+    }, hoy).esValido
+  ).toBe(true);
+});

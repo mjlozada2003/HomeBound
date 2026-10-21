@@ -65,6 +65,23 @@ if (
   };
 }
 
+const correo = datos.correo?.trim() || '';
+const whatsapp = datos.whatsapp?.trim() || '';
+
+if (!correo && !whatsapp) {
+  return {
+    esValido: false,
+    mensaje: 'Ingresa al menos un medio de contacto: WhatsApp o correo electrónico.'
+  };
+}
+
+if (correo && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+  return {
+    esValido: false,
+    mensaje: 'El correo electrónico no es válido'
+  };
+}
+
   return { esValido: true, mensaje: '' };
 }
 
