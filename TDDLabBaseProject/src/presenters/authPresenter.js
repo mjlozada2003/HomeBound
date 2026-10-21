@@ -8,10 +8,8 @@ import {
   puedeAccederAAdmin,
   puedeAccederAPublicar,
 } from "../models/Auth/sesion";
-import {
-  renderizarListaPublicaciones,
-  renderizarBandejaModeracion,
-} from "./postPresenter";
+import { renderizarListaPublicaciones } from "./listaPresenter";
+import { renderizarBandejaModeracion } from "./moderacionPresenter";
 
 export const usuariosRegistrados = [];
 
