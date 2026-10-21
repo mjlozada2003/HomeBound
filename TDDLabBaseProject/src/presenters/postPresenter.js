@@ -1,6 +1,7 @@
 import {
   obtenerPublicacionesPaginadas,
   obtenerTodasLasPublicaciones,
+  establecerPublicaciones,
 } from "../models/Posts/publicaciones.js";
 import {
   obtenerBandejaPendientes,
@@ -372,7 +373,22 @@ function iniciarFormularioPerdida(guardar, ahora) {
 let paginaActual = 1;
 const POR_PAGINA = 10;
 
-export function renderizarListaPublicaciones() {
+export async function renderizarListaPublicaciones() {
+  const contenedorLista = document.querySelector("#lista-publicaciones");
+  if (!contenedorLista) return;
+
+  try {
+    establecerPublicaciones(await obtenerPublicacionesPorEstado("APROBADA"));
+  } catch (error) {
+    console.error("Error al cargar publicaciones:", error.message);
+    contenedorLista.innerHTML = `<p class="mensaje-vacio">No se pudieron cargar las publicaciones. Intenta de nuevo.</p>`;
+    return;
+  }
+
+  dibujarListaPublicaciones();
+}
+
+function dibujarListaPublicaciones() {
   const contenedorLista = document.querySelector("#lista-publicaciones");
   const contenedorPaginacion = document.querySelector("#controles-paginacion");
 
@@ -421,7 +437,7 @@ export function renderizarListaPublicaciones() {
       btnAnterior.addEventListener("click", () => {
         if (paginaActual > 1) {
           paginaActual--;
-          renderizarListaPublicaciones();
+          dibujarListaPublicaciones();
         }
       });
     }
@@ -430,7 +446,7 @@ export function renderizarListaPublicaciones() {
       btnSiguiente.addEventListener("click", () => {
         if (paginaActual < resultado.totalPaginas) {
           paginaActual++;
-          renderizarListaPublicaciones();
+          dibujarListaPublicaciones();
         }
       });
     }
