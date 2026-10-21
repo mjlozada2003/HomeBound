@@ -270,3 +270,45 @@ body {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+/* Estilos Bandeja de Moderación (HU-10) */
+.encabezado-moderacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-descripcion {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin: 6px 0;
+}
+
+.acciones-moderacion {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-aprobar {
+    flex: 1;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 0.45rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-rechazar {
+    flex: 1;
+    background-color: var(--color-error);
+    color: #fff;
+    border: none;
+    padding: 0.45rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
