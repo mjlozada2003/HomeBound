@@ -187,6 +187,33 @@ export function iniciarAuthPresenter() {
     });
   }
 
+  function mostrarModeracion() {
+    vistaRegistro.classList.add("oculto");
+    vistaLogin.classList.add("oculto");
+    if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
+    if (vistaModeracion) {
+      vistaModeracion.classList.remove("oculto");
+      renderizarBandejaModeracion();
+    }
+  }
+
+  if (navBtnPanel) {
+    navBtnPanel.addEventListener("click", () => {
+      const sesionActual = obtenerSesionActiva();
+      if (!puedeAccederAAdmin(sesionActual)) {
+        alert("Acceso denegado: Solo administradores.");
+        return;
+      }
+      mostrarModeracion();
+    });
+  }
+
+  if (btnVolverPublicaciones) {
+    btnVolverPublicaciones.addEventListener("click", () => {
+      mostrarPublicaciones();
+    });
+  }
+
   // Proteccion de pantallas
   if (navBtnPublicar) {
     navBtnPublicar.addEventListener("click", () => {
@@ -206,31 +233,4 @@ export function iniciarAuthPresenter() {
   if (sesionGuardada) {
     mostrarPublicaciones();
   }
-}
-
-function mostrarModeracion() {
-  vistaRegistro.classList.add("oculto");
-  vistaLogin.classList.add("oculto");
-  if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
-  if (vistaModeracion) {
-    vistaModeracion.classList.remove("oculto");
-    renderizarBandejaModeracion();
-  }
-}
-
-if (navBtnPanel) {
-  navBtnPanel.addEventListener("click", () => {
-    const sesionActual = obtenerSesionActiva();
-    if (!puedeAccederAAdmin(sesionActual)) {
-      alert("Acceso denegado: Solo administradores.");
-      return;
-    }
-    mostrarModeracion();
-  });
-}
-
-if (btnVolverPublicaciones) {
-  btnVolverPublicaciones.addEventListener("click", () => {
-    mostrarPublicaciones();
-  });
 }
