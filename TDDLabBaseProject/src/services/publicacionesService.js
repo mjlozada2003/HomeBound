@@ -1,7 +1,9 @@
 import {
   collection,
+  doc,
   getDocs,
   query,
+  updateDoc,
   where
 } from 'firebase/firestore';
 
@@ -23,4 +25,8 @@ export async function obtenerPublicacionesPorEstado(estado) {
       coleccion: COLECCIONES[i]
     }))
   );
+}
+
+export async function actualizarEstadoPublicacion(coleccion, id, estado) {
+  await updateDoc(doc(db, coleccion, id), { estado });
 }

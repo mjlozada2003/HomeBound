@@ -1,12 +1,17 @@
-import { obtenerPublicacionesPorEstado } from './publicacionesService';
-import { collection, getDocs, where } from 'firebase/firestore';
+import {
+  obtenerPublicacionesPorEstado,
+  actualizarEstadoPublicacion
+} from './publicacionesService';
+import { collection, doc, getDocs, updateDoc, where } from 'firebase/firestore';
 
 jest.mock('./firebase', () => ({ db: {} }));
 
 jest.mock('firebase/firestore', () => ({
   collection: jest.fn(),
+  doc: jest.fn(),
   getDocs: jest.fn(),
   query: jest.fn(),
+  updateDoc: jest.fn(),
   where: jest.fn()
 }));
 
@@ -39,5 +44,14 @@ describe('HU-06 y HU-10: Leer publicaciones desde Firestore', () => {
       { titulo: 'Mochila azul', id: 'h1', coleccion: 'hallazgos' },
       { titulo: 'Perro café', id: 'p1', coleccion: 'perdidas' }
     ]);
+  });
+
+  test('Debería actualizar solo el estado en la colección de la publicación', async () => {
+    doc.mockReturnValue('referencia');
+
+    await actualizarEstadoPublicacion('hallazgos', 'h1', 'APROBADA');
+
+    expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'h1');
+    expect(updateDoc).toHaveBeenCalledWith('referencia', { estado: 'APROBADA' });
   });
 });
