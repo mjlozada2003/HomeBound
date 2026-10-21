@@ -8,7 +8,7 @@ describe('HU-06 y HU-10: Mostrar texto del usuario de forma segura', () => {
   });
 
   test('Debería escapar el ampersand y las comillas simples', () => {
-    expect(escaparHtml("Tom & Jerry's")).toBe('Tom &amp; Jerry&#39;s');
+    expect(escaparHtml('Tom & Jerry\'s')).toBe('Tom &amp; Jerry&#39;s');
   });
 
   test('Debería devolver texto vacío si no hay valor', () => {

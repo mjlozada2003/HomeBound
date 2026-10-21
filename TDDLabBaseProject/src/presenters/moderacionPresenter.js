@@ -1,25 +1,25 @@
 import {
   obtenerBandejaPendientes,
   verificarPermisoModeracion,
-} from "../models/Posts/moderacion.js";
+} from '../models/Posts/moderacion.js';
 import {
   obtenerPublicacionesPorEstado,
   actualizarEstadoPublicacion,
-} from "../services/publicacionesService";
-import { escaparHtml } from "../models/html";
-import { obtenerSesionActiva } from "../models/Auth/sesion";
+} from '../services/publicacionesService';
+import { escaparHtml } from '../models/html';
+import { obtenerSesionActiva } from '../models/Auth/sesion';
 
 async function moderar(coleccion, id, estado) {
   if (!verificarPermisoModeracion(obtenerSesionActiva())) {
-    alert("Acceso denegado: Solo administradores.");
+    alert('Acceso denegado: Solo administradores.');
     return;
   }
 
   try {
     await actualizarEstadoPublicacion(coleccion, id, estado);
   } catch (error) {
-    console.error("Error al moderar:", error.message);
-    alert("No se pudo actualizar la publicación. Intenta de nuevo.");
+    console.error('Error al moderar:', error.message);
+    alert('No se pudo actualizar la publicación. Intenta de nuevo.');
     return;
   }
 
@@ -27,16 +27,16 @@ async function moderar(coleccion, id, estado) {
 }
 
 export async function renderizarBandejaModeracion() {
-  const contenedorPendientes = document.querySelector("#lista-pendientes");
-  if (!contenedorPendientes) return;
+  const contenedorPendientes = document.querySelector('#lista-pendientes');
+  if (!contenedorPendientes) {return;}
 
   let pendientesFirestore;
 
   try {
-    pendientesFirestore = await obtenerPublicacionesPorEstado("Pendiente de revisión");
+    pendientesFirestore = await obtenerPublicacionesPorEstado('Pendiente de revisión');
   } catch (error) {
-    console.error("Error al cargar pendientes:", error.message);
-    contenedorPendientes.innerHTML = `<p class="mensaje-vacio">No se pudieron cargar las publicaciones pendientes.</p>`;
+    console.error('Error al cargar pendientes:', error.message);
+    contenedorPendientes.innerHTML = '<p class="mensaje-vacio">No se pudieron cargar las publicaciones pendientes.</p>';
     return;
   }
 
@@ -64,17 +64,17 @@ export async function renderizarBandejaModeracion() {
       </div>
     `
     )
-    .join("");
+    .join('');
 
-  contenedorPendientes.querySelectorAll(".btn-aprobar").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      moderar(btn.dataset.coleccion, btn.dataset.id, "APROBADA");
+  contenedorPendientes.querySelectorAll('.btn-aprobar').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      moderar(btn.dataset.coleccion, btn.dataset.id, 'APROBADA');
     });
   });
 
-  contenedorPendientes.querySelectorAll(".btn-rechazar").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      moderar(btn.dataset.coleccion, btn.dataset.id, "RECHAZADA");
+  contenedorPendientes.querySelectorAll('.btn-rechazar').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      moderar(btn.dataset.coleccion, btn.dataset.id, 'RECHAZADA');
     });
   });
 }

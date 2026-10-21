@@ -2,22 +2,22 @@ import {
   obtenerPublicacionesPaginadas,
   obtenerTodasLasPublicaciones,
   establecerPublicaciones,
-} from "../models/Posts/publicaciones.js";
-import { obtenerPublicacionesPorEstado } from "../services/publicacionesService";
-import { escaparHtml } from "../models/html";
+} from '../models/Posts/publicaciones.js';
+import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
+import { escaparHtml } from '../models/html';
 
 let paginaActual = 1;
 const POR_PAGINA = 10;
 
 export async function renderizarListaPublicaciones() {
-  const contenedorLista = document.querySelector("#lista-publicaciones");
-  if (!contenedorLista) return;
+  const contenedorLista = document.querySelector('#lista-publicaciones');
+  if (!contenedorLista) {return;}
 
   try {
-    establecerPublicaciones(await obtenerPublicacionesPorEstado("APROBADA"));
+    establecerPublicaciones(await obtenerPublicacionesPorEstado('APROBADA'));
   } catch (error) {
-    console.error("Error al cargar publicaciones:", error.message);
-    contenedorLista.innerHTML = `<p class="mensaje-vacio">No se pudieron cargar las publicaciones. Intenta de nuevo.</p>`;
+    console.error('Error al cargar publicaciones:', error.message);
+    contenedorLista.innerHTML = '<p class="mensaje-vacio">No se pudieron cargar las publicaciones. Intenta de nuevo.</p>';
     return;
   }
 
@@ -25,10 +25,10 @@ export async function renderizarListaPublicaciones() {
 }
 
 function dibujarListaPublicaciones() {
-  const contenedorLista = document.querySelector("#lista-publicaciones");
-  const contenedorPaginacion = document.querySelector("#controles-paginacion");
+  const contenedorLista = document.querySelector('#lista-publicaciones');
+  const contenedorPaginacion = document.querySelector('#controles-paginacion');
 
-  if (!contenedorLista) return;
+  if (!contenedorLista) {return;}
 
   const todas = obtenerTodasLasPublicaciones();
   const resultado = obtenerPublicacionesPaginadas(todas, paginaActual, POR_PAGINA);
@@ -37,7 +37,7 @@ function dibujarListaPublicaciones() {
 
   if (resultado.mensajeVacio) {
     contenedorLista.innerHTML = `<p id="mensaje-vacio" class="mensaje-vacio">${resultado.mensajeVacio}</p>`;
-    if (contenedorPaginacion) contenedorPaginacion.innerHTML = "";
+    if (contenedorPaginacion) {contenedorPaginacion.innerHTML = '';}
     return;
   }
 
@@ -57,20 +57,20 @@ function dibujarListaPublicaciones() {
       </div>
     `
     )
-    .join("");
+    .join('');
 
   if (contenedorPaginacion) {
     contenedorPaginacion.innerHTML = `
-      <button id="btn-anterior" ${paginaActual <= 1 ? "disabled" : ""}>Anterior</button>
+      <button id="btn-anterior" ${paginaActual <= 1 ? 'disabled' : ''}>Anterior</button>
       <span id="info-pagina">Página ${paginaActual} de ${resultado.totalPaginas}</span>
-      <button id="btn-siguiente" ${paginaActual >= resultado.totalPaginas ? "disabled" : ""}>Siguiente</button>
+      <button id="btn-siguiente" ${paginaActual >= resultado.totalPaginas ? 'disabled' : ''}>Siguiente</button>
     `;
 
-    const btnAnterior = document.querySelector("#btn-anterior");
-    const btnSiguiente = document.querySelector("#btn-siguiente");
+    const btnAnterior = document.querySelector('#btn-anterior');
+    const btnSiguiente = document.querySelector('#btn-siguiente');
 
     if (btnAnterior) {
-      btnAnterior.addEventListener("click", () => {
+      btnAnterior.addEventListener('click', () => {
         if (paginaActual > 1) {
           paginaActual--;
           dibujarListaPublicaciones();
@@ -79,7 +79,7 @@ function dibujarListaPublicaciones() {
     }
 
     if (btnSiguiente) {
-      btnSiguiente.addEventListener("click", () => {
+      btnSiguiente.addEventListener('click', () => {
         if (paginaActual < resultado.totalPaginas) {
           paginaActual++;
           dibujarListaPublicaciones();

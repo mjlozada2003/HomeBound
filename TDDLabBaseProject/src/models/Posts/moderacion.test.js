@@ -3,97 +3,97 @@ import {
   obtenerBandejaPendientes,
   aprobarPublicacion,
   rechazarPublicacion,
-} from "./moderacion.js";
-import { filtrarSoloAprobadas } from "./publicaciones.js";
+} from './moderacion.js';
+import { filtrarSoloAprobadas } from './publicaciones.js';
 
-describe("HU-10: Moderación de publicaciones", () => {
+describe('HU-10: Moderación de publicaciones', () => {
   const publicacionesMock = [
     {
-      id: "1",
-      titulo: "Credencial UCB",
-      descripcion: "Encontrada en la entrada principal",
-      fecha: "2026-10-18",
-      tipo: "HALLAZGO",
-      fotos: ["foto1.jpg"],
-      estado: "Pendiente de revisión",
-      coleccion: "hallazgos",
+      id: '1',
+      titulo: 'Credencial UCB',
+      descripcion: 'Encontrada en la entrada principal',
+      fecha: '2026-10-18',
+      tipo: 'HALLAZGO',
+      fotos: ['foto1.jpg'],
+      estado: 'Pendiente de revisión',
+      coleccion: 'hallazgos',
     },
     {
-      id: "2",
-      titulo: "Perrito Beagle",
-      descripcion: "Se perdió con correa roja",
-      fecha: "2026-10-19",
-      tipo: "PERDIDA",
-      fotos: ["foto2.jpg"],
-      estado: "APROBADA",
+      id: '2',
+      titulo: 'Perrito Beagle',
+      descripcion: 'Se perdió con correa roja',
+      fecha: '2026-10-19',
+      tipo: 'PERDIDA',
+      fotos: ['foto2.jpg'],
+      estado: 'APROBADA',
     },
   ];
 
-  test("Solo un usuario con rol ADMIN puede entrar y moderar en la bandeja", () => {
-    const admin = { nombre: "Admin", rol: "ADMIN" };
-    const usuarioNormal = { nombre: "Juan", rol: "USER" };
+  test('Solo un usuario con rol ADMIN puede entrar y moderar en la bandeja', () => {
+    const admin = { nombre: 'Admin', rol: 'ADMIN' };
+    const usuarioNormal = { nombre: 'Juan', rol: 'USER' };
 
     expect(verificarPermisoModeracion(admin)).toBe(true);
     expect(verificarPermisoModeracion(usuarioNormal)).toBe(false);
     expect(verificarPermisoModeracion(null)).toBe(false);
   });
 
-  test("Si no hay publicaciones pendientes, muestra 'No hay publicaciones pendientes'", () => {
+  test('Si no hay publicaciones pendientes, muestra \'No hay publicaciones pendientes\'', () => {
     const soloAprobadas = [publicacionesMock[1]];
     const bandeja = obtenerBandejaPendientes(soloAprobadas);
 
     expect(bandeja.pendientes).toEqual([]);
-    expect(bandeja.mensajeVacio).toBe("No hay publicaciones pendientes");
+    expect(bandeja.mensajeVacio).toBe('No hay publicaciones pendientes');
   });
 
-  test("El Admin ve la bandeja de pendientes con foto, título, descripción, fecha y tipo", () => {
+  test('El Admin ve la bandeja de pendientes con foto, título, descripción, fecha y tipo', () => {
     const bandeja = obtenerBandejaPendientes(publicacionesMock);
 
     expect(bandeja.pendientes.length).toBe(1);
     expect(bandeja.mensajeVacio).toBeNull();
     expect(bandeja.pendientes[0]).toEqual({
-      id: "1",
-      foto: "foto1.jpg",
-      titulo: "Credencial UCB",
-      descripcion: "Encontrada en la entrada principal",
-      fecha: "2026-10-18",
-      tipoTexto: "Encontrado",
-      estado: "Pendiente de revisión",
-      coleccion: "hallazgos",
+      id: '1',
+      foto: 'foto1.jpg',
+      titulo: 'Credencial UCB',
+      descripcion: 'Encontrada en la entrada principal',
+      fecha: '2026-10-18',
+      tipoTexto: 'Encontrado',
+      estado: 'Pendiente de revisión',
+      coleccion: 'hallazgos',
     });
   });
 
-  test("Al aprobar una publicación pendiente, pasa a estado APROBADA y aparece en la lista pública", () => {
-    const admin = { nombre: "Admin", rol: "ADMIN" };
-    const actualizada = aprobarPublicacion(publicacionesMock, "1", admin);
+  test('Al aprobar una publicación pendiente, pasa a estado APROBADA y aparece en la lista pública', () => {
+    const admin = { nombre: 'Admin', rol: 'ADMIN' };
+    const actualizada = aprobarPublicacion(publicacionesMock, '1', admin);
 
     const bandeja = obtenerBandejaPendientes(actualizada);
     const listaPublica = filtrarSoloAprobadas(actualizada);
 
     expect(bandeja.pendientes.length).toBe(0);
     expect(listaPublica.length).toBe(2);
-    expect(listaPublica.some((p) => p.id === "1")).toBe(true);
+    expect(listaPublica.some((p) => p.id === '1')).toBe(true);
   });
 
-  test("Al rechazar una publicación pendiente, desaparece de la bandeja y nunca se muestra en la lista pública", () => {
-    const admin = { nombre: "Admin", rol: "ADMIN" };
-    const actualizada = rechazarPublicacion(publicacionesMock, "1", admin);
+  test('Al rechazar una publicación pendiente, desaparece de la bandeja y nunca se muestra en la lista pública', () => {
+    const admin = { nombre: 'Admin', rol: 'ADMIN' };
+    const actualizada = rechazarPublicacion(publicacionesMock, '1', admin);
 
     const bandeja = obtenerBandejaPendientes(actualizada);
     const listaPublica = filtrarSoloAprobadas(actualizada);
 
     expect(bandeja.pendientes.length).toBe(0);
-    expect(listaPublica.some((p) => p.id === "1")).toBe(false);
+    expect(listaPublica.some((p) => p.id === '1')).toBe(false);
   });
 
-  test("Caso inválido: Si un usuario sin rol ADMIN intenta aprobar o rechazar, lanza un error", () => {
-    const usuarioNormal = { nombre: "Juan", rol: "USER" };
+  test('Caso inválido: Si un usuario sin rol ADMIN intenta aprobar o rechazar, lanza un error', () => {
+    const usuarioNormal = { nombre: 'Juan', rol: 'USER' };
 
     expect(() =>
-      aprobarPublicacion(publicacionesMock, "1", usuarioNormal)
-    ).toThrow("No tienes permisos de administrador");
+      aprobarPublicacion(publicacionesMock, '1', usuarioNormal)
+    ).toThrow('No tienes permisos de administrador');
     expect(() =>
-      rechazarPublicacion(publicacionesMock, "1", null)
-    ).toThrow("No tienes permisos de administrador");
+      rechazarPublicacion(publicacionesMock, '1', null)
+    ).toThrow('No tienes permisos de administrador');
   });
 });

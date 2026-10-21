@@ -1,5 +1,8 @@
 export default [
   {
+    ignores: ['dist/**', '.parcel-cache/**', 'coverage/**'],
+  },
+  {
     files: ['**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
@@ -9,10 +12,20 @@ export default [
         module: 'readonly',
         describe: 'readonly',
         it: 'readonly',
+        test: 'readonly',
+        jest: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
         cy: 'readonly',
         expect: 'readonly',
         document: 'readonly',
         window: 'readonly',
+        console: 'readonly',
+        alert: 'readonly',
+        localStorage: 'readonly',
+        URL: 'readonly',
+        fetch: 'readonly',
+        FormData: 'readonly',
       },
     },
     rules: {

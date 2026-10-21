@@ -3,7 +3,7 @@ const REEMPLAZOS = {
   '<': '&lt;',
   '>': '&gt;',
   '"': '&quot;',
-  "'": '&#39;'
+  '\'': '&#39;'
 };
 
 export function escaparHtml(texto) {
