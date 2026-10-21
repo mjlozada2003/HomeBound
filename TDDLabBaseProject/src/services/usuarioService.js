@@ -40,6 +40,32 @@ export async function buscarUsuarioPorCorreo(correo) {
   };
 }
 
+export async function registrarUsuarioFirebase(usuario) {
+  const correoNormalizado = usuario.correo.trim().toLowerCase();
+
+  if (correoNormalizado === CUENTA_ADMIN_PRECONFIGURADA.correo.toLowerCase()) {
+    return {
+      exito: false,
+      mensaje: 'El correo electrónico ya se encuentra registrado.'
+    };
+  }
+
+  const usuarioExistente = await buscarUsuarioPorCorreo(correoNormalizado);
+  if (usuarioExistente) {
+    return {
+      exito: false,
+      mensaje: 'El correo electrónico ya se encuentra registrado.'
+    };
+  }
+
+  const nuevoUsuario = await guardarUsuario(usuario);
+  return {
+    exito: true,
+    mensaje: '¡Cuenta creada exitosamente! Bienvenido a HomeBound.',
+    usuario: nuevoUsuario
+  };
+}
+
 export async function autenticarUsuarioFirebase(correo, password) {
   const correoNormalizado = correo.trim().toLowerCase();
 

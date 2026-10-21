@@ -1,7 +1,8 @@
 import {
   guardarUsuario,
   buscarUsuarioPorCorreo,
-  autenticarUsuarioFirebase
+  autenticarUsuarioFirebase,
+  registrarUsuarioFirebase
 } from './usuarioService';
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 
@@ -175,5 +176,41 @@ describe('Servicio de Usuarios (Firestore)', () => {
       exito: false,
       mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
     });
+  });
+
+  it('deberia rechazar el registro si el correo ya existe en Firestore', async () => {
+    getDoc.mockResolvedValue({
+      exists: () => true,
+      id: 'carlos@example.com',
+      data: () => ({ correo: 'carlos@example.com' })
+    });
+
+    const resultado = await registrarUsuarioFirebase({
+      nombre: 'Carlos Perez',
+      correo: 'carlos@example.com',
+      password: 'password123'
+    });
+
+    expect(resultado).toEqual({
+      exito: false,
+      mensaje: 'El correo electrónico ya se encuentra registrado.'
+    });
+    expect(setDoc).not.toHaveBeenCalled();
+  });
+
+  it('deberia registrar exitosamente si el correo no existe en Firestore', async () => {
+    getDoc.mockResolvedValue({
+      exists: () => false
+    });
+
+    const resultado = await registrarUsuarioFirebase({
+      nombre: 'Carlos Perez',
+      correo: 'carlos@example.com',
+      password: 'password123'
+    });
+
+    expect(resultado.exito).toBe(true);
+    expect(resultado.mensaje).toBe('¡Cuenta creada exitosamente! Bienvenido a HomeBound.');
+    expect(setDoc).toHaveBeenCalled();
   });
 });
