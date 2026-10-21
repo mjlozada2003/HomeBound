@@ -14,7 +14,7 @@ describe("HU-10: Moderación de publicaciones", () => {
       descripcion: "Encontrada en la entrada principal",
       fecha: "2026-10-18",
       tipo: "HALLAZGO",
-      foto: "foto1.jpg",
+      fotos: ["foto1.jpg"],
       estado: "Pendiente de revisión",
     },
     {
@@ -23,7 +23,7 @@ describe("HU-10: Moderación de publicaciones", () => {
       descripcion: "Se perdió con correa roja",
       fecha: "2026-10-19",
       tipo: "PERDIDA",
-      foto: "foto2.jpg",
+      fotos: ["foto2.jpg"],
       estado: "APROBADA",
     },
   ];

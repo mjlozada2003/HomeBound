@@ -13,7 +13,7 @@ export function verificarPermisoModeracion(usuario) {
 export function formatearPendiente(pub) {
   return {
     id: pub.id,
-    foto: pub.foto || "",
+    foto: pub.fotos?.[0] || "",
     titulo: pub.titulo,
     descripcion: pub.descripcion || "Sin descripción",
     fecha: pub.fecha,
