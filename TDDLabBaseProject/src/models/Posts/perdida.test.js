@@ -70,3 +70,40 @@ it('deberia exigir el texto de categoría solamente cuando se elige OTRO', () =>
 
   expect(validarPerdida(datos, hoy).esValido).toBe(true);
 });
+
+it('deberia rechazar fechas inexistentes y formatos incorrectos', () => {
+  for (const fecha of [
+    '2026-02-30',
+    '2025-02-29',
+    '2026-13-01',
+    '20/10/2026',
+    '2026-1-1',
+    '0000-01-01'
+  ]) {
+    expect(validarPerdida({ ...datos, fecha }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Ingresa una fecha válida'
+    });
+  }
+
+  expect(
+    validarPerdida({ ...datos, fecha: '2024-02-29' }, hoy).esValido
+  ).toBe(true);
+});
+
+it('deberia rechazar fechas futuras y permitir hoy o fechas anteriores', () => {
+  expect(
+    validarPerdida({ ...datos, fecha: '2026-10-21' }, hoy)
+  ).toEqual({
+    esValido: false,
+    mensaje: 'La fecha de la pérdida no puede ser futura'
+  });
+
+  for (const fecha of ['2026-10-20', '2026-10-19']) {
+    expect(validarPerdida({ ...datos, fecha }, hoy).esValido).toBe(true);
+  }
+
+  expect(
+    validarPerdida(datos, new Date(2026, 9, 20, 23, 59)).esValido
+  ).toBe(true);
+});
