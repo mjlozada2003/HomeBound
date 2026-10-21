@@ -107,3 +107,42 @@ it('deberia rechazar fechas futuras y permitir hoy o fechas anteriores', () => {
     validarPerdida(datos, new Date(2026, 9, 20, 23, 59)).esValido
   ).toBe(true);
 });
+
+it('deberia exigir al menos una foto y admitir varias', () => {
+  for (const fotos of [undefined, null, [], 'foto.jpg']) {
+    expect(validarPerdida({ ...datos, fotos }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Añade al menos una foto'
+    });
+  }
+
+  expect(
+    validarPerdida({
+      ...datos,
+      fotos: [foto, { ...foto, name: 'detalle.jpg' }]
+    }, hoy).esValido
+  ).toBe(true);
+});
+
+it('deberia admitir fotos JPEG, PNG y WebP no vacías y rechazar otros archivos', () => {
+  for (const archivo of [
+    null,
+    { ...foto, size: 0 },
+    { ...foto, type: 'application/pdf' }
+  ]) {
+    expect(
+      validarPerdida({ ...datos, fotos: [foto, archivo] }, hoy)
+    ).toEqual({
+      esValido: false,
+      mensaje: 'Usa fotos JPEG, PNG o WebP que no estén vacías'
+    });
+  }
+
+  const fotos = [
+    foto,
+    { ...foto, type: 'image/png' },
+    { ...foto, type: 'image/webp' }
+  ];
+
+  expect(validarPerdida({ ...datos, fotos }, hoy).esValido).toBe(true);
+});
