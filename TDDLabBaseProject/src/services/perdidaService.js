@@ -12,13 +12,18 @@ export async function guardarPerdida(publicacion) {
   const documento = doc(collection(db, 'perdidas'));
   const { fotos, ...campos } = publicacion;
 
-  const urls = [await subirFoto(fotos[0])];
+  const urls = [];
+
+    for (const foto of fotos) {
+    urls.push(await subirFoto(foto));
+    }
 
   const datos = {
-    ...campos,
-    fotos: urls,
-    creadoEn: serverTimestamp()
-  };
+  ...campos,
+  fotos: urls,
+  estado: 'Pendiente de revisión',
+  creadoEn: serverTimestamp()
+    };
 
   await setDoc(documento, datos);
 

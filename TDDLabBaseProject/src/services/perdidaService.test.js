@@ -66,3 +66,38 @@ it('deberia guardar la perdida con la URL de una foto en la colección perdidas'
 
   expect(resultado.id).toBe('perdida-1');
 });
+
+it('deberia guardar las URLs de todas las fotos en el mismo orden', async () => {
+  const segunda = { ...foto, name: 'detalle.jpg' };
+
+  subirFoto
+    .mockResolvedValueOnce('https://imagenes.test/uno.jpg')
+    .mockResolvedValueOnce('https://imagenes.test/dos.jpg');
+
+  const resultado = await guardarPerdida({
+    ...publicacion,
+    fotos: [foto, segunda]
+  });
+
+  expect(subirFoto).toHaveBeenCalledTimes(2);
+  expect(subirFoto).toHaveBeenNthCalledWith(2, segunda);
+
+  expect(resultado.fotos).toEqual([
+    'https://imagenes.test/uno.jpg',
+    'https://imagenes.test/dos.jpg'
+  ]);
+});
+
+it('deberia guardar Pendiente de revisión aunque se reciba otro estado', async () => {
+  await guardarPerdida({
+    ...publicacion,
+    estado: 'Aprobado'
+  });
+
+  expect(setDoc).toHaveBeenCalledWith(
+    expect.anything(),
+    expect.objectContaining({
+      estado: 'Pendiente de revisión'
+    })
+  );
+});
