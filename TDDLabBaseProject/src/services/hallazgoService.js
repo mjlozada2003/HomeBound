@@ -1,28 +1,40 @@
-import { collection, doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
-import { db, storage } from './firebase';
+import {
+  collection,
+  doc,
+  setDoc,
+  serverTimestamp
+} from 'firebase/firestore';
+
+import { db } from './firebase';
+import { subirFoto } from './cloudinaryService';
 
 export async function guardarHallazgo(publicacion) {
   const documento = doc(collection(db, 'hallazgos'));
   const { fotos, ...campos } = publicacion;
-  const subidas = [];
   const urls = [];
+
   try {
-    for (const [indice, foto] of fotos.entries()) {
-      const referencia = ref(storage, 'hallazgos/' + documento.id + '/' + indice);
-      await uploadBytes(referencia, foto, { contentType: foto.type });
-      subidas.push(referencia);
-      urls.push(await getDownloadURL(referencia));
+    for (const foto of fotos) {
+      urls.push(await subirFoto(foto));
     }
-    const datos = { ...campos, fotos: urls, estado: 'Pendiente de revisión', creadoEn: serverTimestamp() };
+
+    const datos = {
+      ...campos,
+      fotos: urls,
+      estado: 'Pendiente de revisión',
+      creadoEn: serverTimestamp()
+    };
+
     await setDoc(documento, datos);
+
     return { ...datos, id: documento.id };
   } catch (error) {
-  console.error('Error al guardar hallazgo:', error.code, error.message);
+    console.error(
+      'Error al guardar hallazgo:',
+      error.code || '',
+      error.message
+    );
 
-  await Promise.allSettled(
-    subidas.map((referencia) => deleteObject(referencia))
-  );
-  throw error;
-}
+    throw error;
+  }
 }
