@@ -312,3 +312,137 @@ body {
     font-weight: 600;
     cursor: pointer;
 }
+
+/* HU-03: estilos exclusivos del formulario de hallazgo */
+.hallazgo-card {
+  max-width: 640px;
+}
+
+.hallazgo-card .form-group select,
+.hallazgo-card .form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--color-input-border);
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.hallazgo-card .form-group textarea {
+  resize: vertical;
+}
+
+.hallazgo-card .form-group select:focus,
+.hallazgo-card .form-group textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.hallazgo-card .ayuda {
+  margin: 0.5rem 0;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.hallazgo-card .contacto-ayuda {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+#hallazgo-mensaje:not(:empty) {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+#hallazgo-mensaje.error {
+  background-color: #FDF2F0;
+  color: var(--color-error);
+  border: 1px solid #F5C6CB;
+}
+
+#hallazgo-mensaje.exito {
+  background-color: #E8F5E9;
+  color: var(--color-primary);
+  border: 1px solid #C8E6C9;
+}
+
+.hallazgo-resumen {
+  margin-top: 1.5rem;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.estado-pendiente {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.hallazgo-fotos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.hallazgo-fotos img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hallazgo-contactos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+#hallazgo-resumen[hidden],
+.hallazgo-contactos [hidden] {
+  display: none !important;
+}
+
+#hallazgo-enviar:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+@media (max-width: 480px) {
+  .hallazgo-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* HU04: mensajes y controles de pérdida */
+#perdida-mensaje:not(:empty) {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+#perdida-mensaje.error {
+  background-color: #FDF2F0;
+  color: var(--color-error);
+  border: 1px solid #F5C6CB;
+}
+
+#perdida-mensaje.exito {
+  background-color: #E8F5E9;
+  color: var(--color-primary);
+  border: 1px solid #C8E6C9;
+}
+
+#perdida-categoria-otra-grupo[hidden],
+#perdida-resumen[hidden] {
+  display: none !important;
+}
+
+#perdida-enviar:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}

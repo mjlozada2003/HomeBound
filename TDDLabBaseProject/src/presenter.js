@@ -1,8 +1,17 @@
-import { iniciarAuthPresenter } from "./presenters/authPresenter";
-import { inicializarPostPresenter } from "./presenters/postPresenter.js";
+import { iniciarAuthPresenter } from './presenters/authPresenter';
+import {
+  iniciarPostPresenter,
+  inicializarPostPresenter
+} from './presenters/postPresenter';
 
-// Inicializar los presentadores de la aplicación
-document.addEventListener("DOMContentLoaded", () => {
-    iniciarAuthPresenter();
-    inicializarPostPresenter();
-});
+function iniciarAplicacion() {
+  iniciarAuthPresenter();
+  iniciarPostPresenter();
+  inicializarPostPresenter();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', iniciarAplicacion, { once: true });
+} else {
+  iniciarAplicacion();
+}

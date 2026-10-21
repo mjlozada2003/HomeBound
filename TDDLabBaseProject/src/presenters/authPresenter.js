@@ -19,6 +19,9 @@ export function iniciarAuthPresenter() {
   // Secciones
   const vistaRegistro = document.querySelector("#vista-registro");
   const vistaLogin = document.querySelector("#vista-login");
+  const vistaHallazgo = document.querySelector("#hallazgo-seccion");
+  const vistaPerdida = document.querySelector("#perdida-seccion");
+
   const vistaPublicaciones = document.querySelector("#seccion-publicaciones");
   const vistaModeracion = document.querySelector("#seccion-moderacion");
   const btnVolverPublicaciones = document.querySelector("#btn-volver-publicaciones");
@@ -51,6 +54,8 @@ export function iniciarAuthPresenter() {
 
   // Funciones para alternar vistas
   function mostrarLogin() {
+    if (vistaHallazgo) vistaHallazgo.classList.add("oculto");
+    if (vistaPerdida) vistaPerdida.classList.add("oculto");
     vistaRegistro.classList.add("oculto");
     if (vistaModeracion) vistaModeracion.classList.add("oculto");
     if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
@@ -60,6 +65,8 @@ export function iniciarAuthPresenter() {
   }
 
   function mostrarRegistro() {
+    if (vistaHallazgo) vistaHallazgo.classList.add("oculto");
+    if (vistaPerdida) vistaPerdida.classList.add("oculto");
     vistaLogin.classList.add("oculto");
     if (vistaModeracion) vistaModeracion.classList.add("oculto");
     if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
@@ -69,6 +76,8 @@ export function iniciarAuthPresenter() {
   }
 
   function mostrarPublicaciones() {
+    if (vistaHallazgo) vistaHallazgo.classList.add("oculto");
+    if (vistaPerdida) vistaPerdida.classList.add("oculto");
     vistaRegistro.classList.add("oculto");
     vistaLogin.classList.add("oculto");
     if (vistaModeracion) vistaModeracion.classList.add("oculto");
@@ -188,6 +197,8 @@ export function iniciarAuthPresenter() {
   }
 
   function mostrarModeracion() {
+    if (vistaHallazgo) vistaHallazgo.classList.add("oculto");
+    if (vistaPerdida) vistaPerdida.classList.add("oculto");
     vistaRegistro.classList.add("oculto");
     vistaLogin.classList.add("oculto");
     if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
@@ -222,7 +233,13 @@ export function iniciarAuthPresenter() {
         alert("Debes iniciar sesión para publicar un hallazgo o pérdida.");
         mostrarLogin();
       } else {
-        alert("¡Acceso concedido a Publicar!");
+        vistaRegistro.classList.add("oculto");
+        vistaLogin.classList.add("oculto");
+        if (vistaPublicaciones) vistaPublicaciones.classList.add("oculto");
+        if (vistaModeracion) vistaModeracion.classList.add("oculto");
+        if (vistaPerdida) vistaPerdida.classList.add("oculto");
+        vistaHallazgo.classList.remove("oculto");
+        document.querySelector("#hallazgo-categoria").focus();
       }
     });
   }

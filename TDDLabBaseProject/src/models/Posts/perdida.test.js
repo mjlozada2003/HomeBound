@@ -1,0 +1,336 @@
+import { validarPerdida, crearPerdida } from './perdida';
+
+const hoy = new Date(2026, 9, 20, 12);
+const foto = {
+  name: 'mochila.jpg',
+  type: 'image/jpeg',
+  size: 1024
+};
+
+const datos = {
+  categoria: 'OBJETO',
+  titulo: 'Mochila azul',
+  descripcion: 'Perdida en la plaza.',
+  fecha: '2026-10-20',
+  fotos: [foto],
+  correo: 'contacto@example.com'
+};
+
+it('deberia rechazar campos obligatorios vacíos o con espacios', () => {
+  for (const campo of ['categoria', 'titulo', 'descripcion', 'fecha']) {
+    for (const valor of ['', '   ']) {
+      expect(validarPerdida({ ...datos, [campo]: valor }, hoy)).toEqual({
+        esValido: false,
+        mensaje: 'Completa categoría, título, descripción y fecha'
+      });
+    }
+  }
+
+  expect(validarPerdida({}, hoy).esValido).toBe(false);
+});
+
+it('deberia admitir OBJETO, MASCOTA y OTRO y rechazar categorías desconocidas', () => {
+  expect(validarPerdida({ ...datos, categoria: 'INVALIDA' }, hoy)).toEqual({
+    esValido: false,
+    mensaje: 'Selecciona OBJETO, MASCOTA u OTRO'
+  });
+
+  for (const categoria of ['OBJETO', 'MASCOTA', 'OTRO']) {
+    expect(
+      validarPerdida({
+        ...datos,
+        categoria,
+        categoriaOtra: 'Documentos'
+      }, hoy).esValido
+    ).toBe(true);
+  }
+});
+
+it('deberia exigir el texto de categoría solamente cuando se elige OTRO', () => {
+  for (const categoriaOtra of [undefined, '', '   ']) {
+    expect(
+      validarPerdida({
+        ...datos,
+        categoria: 'OTRO',
+        categoriaOtra
+      }, hoy)
+    ).toEqual({
+      esValido: false,
+      mensaje: 'Especifica la categoría al elegir Otro'
+    });
+  }
+
+  expect(
+    validarPerdida({
+      ...datos,
+      categoria: 'OTRO',
+      categoriaOtra: ' Documentos '
+    }, hoy).esValido
+  ).toBe(true);
+
+  expect(validarPerdida(datos, hoy).esValido).toBe(true);
+});
+
+it('deberia rechazar fechas inexistentes y formatos incorrectos', () => {
+  for (const fecha of [
+    '2026-02-30',
+    '2025-02-29',
+    '2026-13-01',
+    '20/10/2026',
+    '2026-1-1',
+    '0000-01-01'
+  ]) {
+    expect(validarPerdida({ ...datos, fecha }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Ingresa una fecha válida'
+    });
+  }
+
+  expect(
+    validarPerdida({ ...datos, fecha: '2024-02-29' }, hoy).esValido
+  ).toBe(true);
+});
+
+it('deberia rechazar fechas futuras y permitir hoy o fechas anteriores', () => {
+  expect(
+    validarPerdida({ ...datos, fecha: '2026-10-21' }, hoy)
+  ).toEqual({
+    esValido: false,
+    mensaje: 'La fecha de la pérdida no puede ser futura'
+  });
+
+  for (const fecha of ['2026-10-20', '2026-10-19']) {
+    expect(validarPerdida({ ...datos, fecha }, hoy).esValido).toBe(true);
+  }
+
+  expect(
+    validarPerdida(datos, new Date(2026, 9, 20, 23, 59)).esValido
+  ).toBe(true);
+});
+
+it('deberia exigir al menos una foto y admitir varias', () => {
+  for (const fotos of [undefined, null, [], 'foto.jpg']) {
+    expect(validarPerdida({ ...datos, fotos }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Añade al menos una foto'
+    });
+  }
+
+  expect(
+    validarPerdida({
+      ...datos,
+      fotos: [foto, { ...foto, name: 'detalle.jpg' }]
+    }, hoy).esValido
+  ).toBe(true);
+});
+
+it('deberia admitir fotos JPEG, PNG y WebP no vacías y rechazar otros archivos', () => {
+  for (const archivo of [
+    null,
+    { ...foto, size: 0 },
+    { ...foto, type: 'application/pdf' }
+  ]) {
+    expect(
+      validarPerdida({ ...datos, fotos: [foto, archivo] }, hoy)
+    ).toEqual({
+      esValido: false,
+      mensaje: 'Usa fotos JPEG, PNG o WebP que no estén vacías'
+    });
+  }
+
+  const fotos = [
+    foto,
+    { ...foto, type: 'image/png' },
+    { ...foto, type: 'image/webp' }
+  ];
+
+  expect(validarPerdida({ ...datos, fotos }, hoy).esValido).toBe(true);
+});
+
+it('deberia exigir al menos un contacto y permitir solo correo o solo WhatsApp', () => {
+  for (const contacto of [
+    { correo: undefined, whatsapp: undefined },
+    { correo: '', whatsapp: '' },
+    { correo: '   ', whatsapp: '   ' }
+  ]) {
+    expect(validarPerdida({ ...datos, ...contacto }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Ingresa al menos un medio de contacto: WhatsApp o correo electrónico.'
+    });
+  }
+
+  expect(validarPerdida(datos, hoy).esValido).toBe(true);
+
+  expect(
+    validarPerdida({
+      ...datos,
+      correo: '',
+      whatsapp: '+59171234567'
+    }, hoy).esValido
+  ).toBe(true);
+});
+
+it('deberia validar el correo cuando se proporciona', () => {
+  expect(
+    validarPerdida({ ...datos, correo: 'correo-invalido' }, hoy)
+  ).toEqual({
+    esValido: false,
+    mensaje: 'El correo electrónico no es válido'
+  });
+
+  expect(
+    validarPerdida({
+      ...datos,
+      correo: ' contacto@example.com '
+    }, hoy).esValido
+  ).toBe(true);
+
+  expect(
+    validarPerdida({
+      ...datos,
+      correo: '',
+      whatsapp: '+59171234567'
+    }, hoy).esValido
+  ).toBe(true);
+});
+
+it('deberia validar WhatsApp cuando se proporciona y admitir separadores', () => {
+  for (const whatsapp of ['abc', '123', '+591+71234567', '0000000']) {
+    expect(validarPerdida({ ...datos, whatsapp }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Ingresa WhatsApp con código de país, por ejemplo +59171234567'
+    });
+  }
+
+  expect(
+    validarPerdida({
+      ...datos,
+      whatsapp: '+591 (7) 123-4567'
+    }, hoy).esValido
+  ).toBe(true);
+
+  expect(validarPerdida(datos, hoy).esValido).toBe(true);
+});
+
+it('deberia admitir ubicación opcional de Maps y rechazar enlaces ajenos', () => {
+  for (const ubicacion of [
+    'javascript:alert(1)',
+    'https://example.com',
+    'https://www.google.com/maps-malicioso'
+  ]) {
+    expect(validarPerdida({ ...datos, ubicacion }, hoy)).toEqual({
+      esValido: false,
+      mensaje: 'Usa una dirección, coordenadas o un enlace de Google Maps'
+    });
+  }
+
+  for (const ubicacion of [
+    '',
+    'Plaza Murillo',
+    '-16.5, -68.15',
+    'https://maps.app.goo.gl/ejemplo'
+  ]) {
+    expect(
+      validarPerdida({ ...datos, ubicacion }, hoy).esValido
+    ).toBe(true);
+  }
+});
+
+it('deberia crear una perdida pendiente con textos normalizados y copia de sus fotos', () => {
+  const resultado = crearPerdida({
+    ...datos,
+    titulo: ' Mochila azul ',
+    descripcion: ' Perdida en la plaza. '
+  }, hoy);
+
+  expect(resultado.esValido).toBe(true);
+
+  expect(resultado.publicacion).toMatchObject({
+    tipo: 'PERDIDA',
+    categoria: 'OBJETO',
+    titulo: 'Mochila azul',
+    descripcion: 'Perdida en la plaza.',
+    fecha: '2026-10-20',
+    estado: 'Pendiente de revisión',
+    fotos: [foto]
+  });
+
+  expect(resultado.publicacion.fotos).not.toBe(datos.fotos);
+});
+
+it('deberia devolver la validación sin crear una publicación inválida', () => {
+  const resultado = crearPerdida({ ...datos, titulo: '' }, hoy);
+
+  expect(resultado).toEqual({
+    esValido: false,
+    mensaje: 'Completa categoría, título, descripción y fecha'
+  });
+
+  expect(resultado.publicacion).toBeUndefined();
+});
+
+it('deberia guardar la categoría libre solo si se elige OTRO', () => {
+  expect(
+    crearPerdida({
+      ...datos,
+      categoria: 'OTRO',
+      categoriaOtra: ' Documentos '
+    }, hoy).publicacion
+  ).toMatchObject({
+    categoria: 'OTRO',
+    categoriaOtra: 'Documentos'
+  });
+
+  expect(
+    crearPerdida({
+      ...datos,
+      categoriaOtra: 'Texto anterior'
+    }, hoy).publicacion.categoriaOtra
+  ).toBe('');
+});
+
+it('deberia preparar enlaces directos solo para los contactos proporcionados', () => {
+  const contacto = crearPerdida({
+    ...datos,
+    correo: ' contacto@example.com ',
+    whatsapp: '+591 (7) 123-4567'
+  }, hoy).publicacion.contacto;
+
+  expect(contacto).toEqual({
+    correo: 'contacto@example.com',
+    whatsapp: '59171234567',
+    enlaceCorreo: 'mailto:contacto@example.com',
+    enlaceWhatsapp: 'https://wa.me/59171234567'
+  });
+
+  expect(
+    crearPerdida(datos, hoy).publicacion.contacto.enlaceWhatsapp
+  ).toBe('');
+
+  expect(
+    crearPerdida({
+      ...datos,
+      correo: '',
+      whatsapp: '+59171234567'
+    }, hoy).publicacion.contacto.enlaceCorreo
+  ).toBe('');
+});
+
+it('deberia preparar la ubicación y su enlace de Maps solamente si se proporciona', () => {
+  expect(
+    crearPerdida({
+      ...datos,
+      ubicacion: ' Plaza Murillo '
+    }, hoy).publicacion.ubicacion
+  ).toEqual({
+    texto: 'Plaza Murillo',
+    enlace: 'https://www.google.com/maps/search/?api=1&query=Plaza%20Murillo'
+  });
+
+  expect(
+    crearPerdida(datos, hoy).publicacion.ubicacion
+  ).toEqual({
+    texto: '',
+    enlace: ''
+  });
+});
