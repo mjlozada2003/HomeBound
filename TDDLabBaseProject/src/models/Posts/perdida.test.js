@@ -235,3 +235,36 @@ it('deberia admitir ubicación opcional de Maps y rechazar enlaces ajenos', () =
     ).toBe(true);
   }
 });
+
+it('deberia crear una perdida pendiente con textos normalizados y copia de sus fotos', () => {
+  const resultado = crearPerdida({
+    ...datos,
+    titulo: ' Mochila azul ',
+    descripcion: ' Perdida en la plaza. '
+  }, hoy);
+
+  expect(resultado.esValido).toBe(true);
+
+  expect(resultado.publicacion).toMatchObject({
+    tipo: 'PERDIDA',
+    categoria: 'OBJETO',
+    titulo: 'Mochila azul',
+    descripcion: 'Perdida en la plaza.',
+    fecha: '2026-10-20',
+    estado: 'Pendiente de revisión',
+    fotos: [foto]
+  });
+
+  expect(resultado.publicacion.fotos).not.toBe(datos.fotos);
+});
+
+it('deberia devolver la validación sin crear una publicación inválida', () => {
+  const resultado = crearPerdida({ ...datos, titulo: '' }, hoy);
+
+  expect(resultado).toEqual({
+    esValido: false,
+    mensaje: 'Completa categoría, título, descripción y fecha'
+  });
+
+  expect(resultado.publicacion).toBeUndefined();
+});

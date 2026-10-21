@@ -109,7 +109,24 @@ if (crearEnlaceMapa(datos.ubicacion || '') === null) {
   return { esValido: true, mensaje: '' };
 }
 
-export function crearPerdida() {
-  return {};
+export function crearPerdida(datos, hoy = new Date()) {
+  const validacion = validarPerdida(datos, hoy);
+
+  if (!validacion.esValido) {
+    return validacion;
+  }
+
+  return {
+    esValido: true,
+    publicacion: {
+      tipo: 'PERDIDA',
+      categoria: datos.categoria,
+      titulo: datos.titulo.trim(),
+      descripcion: datos.descripcion.trim(),
+      fecha: datos.fecha,
+      fotos: [...datos.fotos],
+      estado: 'Pendiente de revisión'
+    }
+  };
 }
 
