@@ -268,3 +268,50 @@ it('deberia devolver la validación sin crear una publicación inválida', () =>
 
   expect(resultado.publicacion).toBeUndefined();
 });
+
+it('deberia guardar la categoría libre solo si se elige OTRO', () => {
+  expect(
+    crearPerdida({
+      ...datos,
+      categoria: 'OTRO',
+      categoriaOtra: ' Documentos '
+    }, hoy).publicacion
+  ).toMatchObject({
+    categoria: 'OTRO',
+    categoriaOtra: 'Documentos'
+  });
+
+  expect(
+    crearPerdida({
+      ...datos,
+      categoriaOtra: 'Texto anterior'
+    }, hoy).publicacion.categoriaOtra
+  ).toBe('');
+});
+
+it('deberia preparar enlaces directos solo para los contactos proporcionados', () => {
+  const contacto = crearPerdida({
+    ...datos,
+    correo: ' contacto@example.com ',
+    whatsapp: '+591 (7) 123-4567'
+  }, hoy).publicacion.contacto;
+
+  expect(contacto).toEqual({
+    correo: 'contacto@example.com',
+    whatsapp: '59171234567',
+    enlaceCorreo: 'mailto:contacto@example.com',
+    enlaceWhatsapp: 'https://wa.me/59171234567'
+  });
+
+  expect(
+    crearPerdida(datos, hoy).publicacion.contacto.enlaceWhatsapp
+  ).toBe('');
+
+  expect(
+    crearPerdida({
+      ...datos,
+      correo: '',
+      whatsapp: '+59171234567'
+    }, hoy).publicacion.contacto.enlaceCorreo
+  ).toBe('');
+});

@@ -116,16 +116,32 @@ export function crearPerdida(datos, hoy = new Date()) {
     return validacion;
   }
 
+  const whatsapp = (datos.whatsapp || '')
+    .trim()
+    .replace(/[ ()-]/g, '')
+    .replace(/^\+/, '');
+
+  const correo = datos.correo?.trim() || '';
+
   return {
     esValido: true,
     publicacion: {
       tipo: 'PERDIDA',
       categoria: datos.categoria,
+      categoriaOtra: datos.categoria === 'OTRO'
+        ? datos.categoriaOtra.trim()
+        : '',
       titulo: datos.titulo.trim(),
       descripcion: datos.descripcion.trim(),
       fecha: datos.fecha,
       fotos: [...datos.fotos],
-      estado: 'Pendiente de revisión'
+      estado: 'Pendiente de revisión',
+      contacto: {
+        whatsapp,
+        correo,
+        enlaceWhatsapp: whatsapp ? 'https://wa.me/' + whatsapp : '',
+        enlaceCorreo: correo ? 'mailto:' + correo : ''
+      }
     }
   };
 }
