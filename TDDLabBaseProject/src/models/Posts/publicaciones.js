@@ -24,7 +24,7 @@ export function ordenarPorFechaReciente(listaPublicaciones = []) {
 export function formatearParaTarjeta(pub) {
   return {
     id: pub.id,
-    foto: pub.foto || "",
+    foto: pub.fotos?.[0] || "",
     titulo: pub.titulo,
     fecha: pub.fecha,
     tipoTexto: obtenerTextoTipo(pub.tipo),

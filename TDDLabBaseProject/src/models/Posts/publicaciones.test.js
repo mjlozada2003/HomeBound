@@ -16,7 +16,7 @@ describe("HU-06: Ver vista básica de publicaciones recientes", () => {
       fecha: "2026-10-10",
       tipo: "HALLAZGO",
       categoria: "OBJETO",
-      foto: "https://via.placeholder.com/150",
+      fotos: ["https://via.placeholder.com/150"],
       estado: "APROBADA",
     },
     {
@@ -25,7 +25,7 @@ describe("HU-06: Ver vista básica de publicaciones recientes", () => {
       fecha: "2026-10-15",
       tipo: "PERDIDA",
       categoria: "MASCOTA",
-      foto: "https://via.placeholder.com/150",
+      fotos: ["https://via.placeholder.com/150"],
       estado: "Pendiente de revisión",
     },
     {
@@ -34,7 +34,7 @@ describe("HU-06: Ver vista básica de publicaciones recientes", () => {
       fecha: "2026-10-18",
       tipo: "HALLAZGO",
       categoria: "OBJETO",
-      foto: "https://via.placeholder.com/150",
+      fotos: ["https://via.placeholder.com/150"],
       estado: "APROBADA",
     },
     {
@@ -43,7 +43,7 @@ describe("HU-06: Ver vista básica de publicaciones recientes", () => {
       fecha: "2026-10-19",
       tipo: "PERDIDA",
       categoria: "OBJETO",
-      foto: "https://via.placeholder.com/150",
+      fotos: ["https://via.placeholder.com/150"],
       estado: "RECHAZADA",
     },
   ];
@@ -86,7 +86,7 @@ describe("HU-06: Ver vista básica de publicaciones recientes", () => {
       titulo: `Publicación ${index + 1}`,
       fecha: `2026-10-${String(index + 1).padStart(2, "0")}`,
       tipo: index % 2 === 0 ? "HALLAZGO" : "PERDIDA",
-      foto: "https://via.placeholder.com/150",
+      fotos: ["https://via.placeholder.com/150"],
       estado: "APROBADA",
     }));
 
