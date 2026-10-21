@@ -2,6 +2,7 @@ import {
   verificarPermisoModeracion,
   obtenerBandejaPendientes,
   aprobarPublicacion,
+  rechazarPublicacion,
 } from "./moderacion.js";
 import { filtrarSoloAprobadas } from "./publicaciones.js";
 
@@ -71,5 +72,16 @@ describe("HU-10: Moderación de publicaciones", () => {
     expect(bandeja.pendientes.length).toBe(0);
     expect(listaPublica.length).toBe(2);
     expect(listaPublica.some((p) => p.id === "1")).toBe(true);
+  });
+
+  test("Al rechazar una publicación pendiente, desaparece de la bandeja y nunca se muestra en la lista pública", () => {
+    const admin = { nombre: "Admin", rol: "ADMIN" };
+    const actualizada = rechazarPublicacion(publicacionesMock, "1", admin);
+
+    const bandeja = obtenerBandejaPendientes(actualizada);
+    const listaPublica = filtrarSoloAprobadas(actualizada);
+
+    expect(bandeja.pendientes.length).toBe(0);
+    expect(listaPublica.some((p) => p.id === "1")).toBe(false);
   });
 });
