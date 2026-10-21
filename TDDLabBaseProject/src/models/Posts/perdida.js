@@ -17,6 +17,12 @@ export function validarPerdida(datos = {}, hoy = new Date()) {
       mensaje: 'Selecciona OBJETO, MASCOTA u OTRO'
     };
   }
+  if (datos.categoria === 'OTRO' && !datos.categoriaOtra?.trim()) {
+  return {
+    esValido: false,
+    mensaje: 'Especifica la categoría al elegir Otro'
+  };
+}
 
   return { esValido: true, mensaje: '' };
 }

@@ -45,3 +45,28 @@ it('deberia admitir OBJETO, MASCOTA y OTRO y rechazar categorías desconocidas',
     ).toBe(true);
   }
 });
+
+it('deberia exigir el texto de categoría solamente cuando se elige OTRO', () => {
+  for (const categoriaOtra of [undefined, '', '   ']) {
+    expect(
+      validarPerdida({
+        ...datos,
+        categoria: 'OTRO',
+        categoriaOtra
+      }, hoy)
+    ).toEqual({
+      esValido: false,
+      mensaje: 'Especifica la categoría al elegir Otro'
+    });
+  }
+
+  expect(
+    validarPerdida({
+      ...datos,
+      categoria: 'OTRO',
+      categoriaOtra: ' Documentos '
+    }, hoy).esValido
+  ).toBe(true);
+
+  expect(validarPerdida(datos, hoy).esValido).toBe(true);
+});
