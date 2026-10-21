@@ -65,7 +65,7 @@ export function obtenerSesionActiva(){
     }
 }
 export function guardarSesion(usuario){
-    if (!usuario ||typeof localStorage === "undefinded") return;
+    if (!usuario || typeof localStorage === "undefined") return;
     localStorage.setItem(CLAVE_SESION, JSON.stringify(usuario));
 }
 
@@ -80,5 +80,4 @@ export function puedeAccederAPublicar(usuario){
 export function puedeAccederAAdmin(usuario) {
   return usuario !== null && usuario !== undefined && usuario.rol === "ADMIN";
 }
-
 
