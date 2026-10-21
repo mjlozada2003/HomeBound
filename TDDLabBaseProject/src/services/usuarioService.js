@@ -1,5 +1,6 @@
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from './firebase';
+import { CUENTA_ADMIN_PRECONFIGURADA } from '../models/Auth/sesion';
 
 export async function guardarUsuario(usuario) {
   const correoNormalizado = usuario.correo.trim().toLowerCase();
@@ -40,7 +41,28 @@ export async function buscarUsuarioPorCorreo(correo) {
 }
 
 export async function autenticarUsuarioFirebase(correo, password) {
-  const usuario = await buscarUsuarioPorCorreo(correo);
+  const correoNormalizado = correo.trim().toLowerCase();
+
+  // Caso especial: Cuenta Admin preconfigurada
+  if (correoNormalizado === CUENTA_ADMIN_PRECONFIGURADA.correo.toLowerCase()) {
+    if (password === CUENTA_ADMIN_PRECONFIGURADA.password) {
+      return {
+        exito: true,
+        mensaje: '¡Inicio de sesión exitoso!',
+        usuario: {
+          nombre: CUENTA_ADMIN_PRECONFIGURADA.nombre,
+          correo: CUENTA_ADMIN_PRECONFIGURADA.correo,
+          rol: CUENTA_ADMIN_PRECONFIGURADA.rol
+        }
+      };
+    }
+    return {
+      exito: false,
+      mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
+    };
+  }
+
+  const usuario = await buscarUsuarioPorCorreo(correoNormalizado);
 
   if (!usuario || usuario.password !== password) {
     return {

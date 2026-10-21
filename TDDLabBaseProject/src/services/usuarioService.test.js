@@ -152,4 +152,28 @@ describe('Servicio de Usuarios (Firestore)', () => {
       mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
     });
   });
+
+  it('deberia autenticar al administrador preconfigurado con rol ADMIN sin consultar Firestore', async () => {
+    const resultado = await autenticarUsuarioFirebase('admin@homebound.com', 'admin123');
+
+    expect(getDoc).not.toHaveBeenCalled();
+    expect(resultado).toEqual({
+      exito: true,
+      mensaje: '¡Inicio de sesión exitoso!',
+      usuario: {
+        nombre: 'Administrador HomeBound',
+        correo: 'admin@homebound.com',
+        rol: 'ADMIN'
+      }
+    });
+  });
+
+  it('deberia rechazar al administrador si la contraseña es incorrecta', async () => {
+    const resultado = await autenticarUsuarioFirebase('admin@homebound.com', 'password-falsa');
+
+    expect(resultado).toEqual({
+      exito: false,
+      mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
+    });
+  });
 });
