@@ -9,6 +9,7 @@ export function iniciarAuthPresenter() {
   const vistaRegistro = document.querySelector("#vista-registro");
   const vistaLogin = document.querySelector("#vista-login");
   const vistaHallazgo = document.querySelector("#hallazgo-seccion");
+  const vistaPerdida = document.querySelector("#perdida-seccion");
 
   // Elementos del Navbar
   const navBtnPanel = document.querySelector("#nav-btn-panel");
@@ -38,20 +39,22 @@ export function iniciarAuthPresenter() {
 
   // Funciones para alternar vistas
   function mostrarLogin() {
-    vistaHallazgo.classList.add("oculto");
-    vistaRegistro.classList.add("oculto");
-    vistaLogin.classList.remove("oculto");
-    mensajeLoginDiv.className = "";
-    mensajeLoginDiv.textContent = "";
-  }
+  vistaHallazgo.classList.add("oculto");
+  vistaPerdida.classList.add("oculto");
+  vistaRegistro.classList.add("oculto");
+  vistaLogin.classList.remove("oculto");
+  mensajeLoginDiv.className = "";
+  mensajeLoginDiv.textContent = "";
+}
 
-  function mostrarRegistro() {
-    vistaHallazgo.classList.add("oculto");
-    vistaLogin.classList.add("oculto");
-    vistaRegistro.classList.remove("oculto");
-    mensajeRegistroDiv.className = "";
-    mensajeRegistroDiv.textContent = "";
-  }
+function mostrarRegistro() {
+  vistaHallazgo.classList.add("oculto");
+  vistaPerdida.classList.add("oculto");
+  vistaLogin.classList.add("oculto");
+  vistaRegistro.classList.remove("oculto");
+  mensajeRegistroDiv.className = "";
+  mensajeRegistroDiv.textContent = "";
+}
 
   // Actualiza el Navbar según si hay sesión iniciada y el rol del usuario
   function actualizarNavbar(usuario) {
@@ -163,6 +166,7 @@ export function iniciarAuthPresenter() {
         }else{
             vistaRegistro.classList.add("oculto");
             vistaLogin.classList.add("oculto");
+            vistaPerdida.classList.add("oculto");
             vistaHallazgo.classList.remove("oculto");
             document.querySelector("#hallazgo-categoria").focus();
         }

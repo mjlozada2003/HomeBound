@@ -302,3 +302,33 @@ body {
     padding: 1.5rem 1rem;
   }
 }
+
+/* HU04: mensajes y controles de pérdida */
+#perdida-mensaje:not(:empty) {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+#perdida-mensaje.error {
+  background-color: #FDF2F0;
+  color: var(--color-error);
+  border: 1px solid #F5C6CB;
+}
+
+#perdida-mensaje.exito {
+  background-color: #E8F5E9;
+  color: var(--color-primary);
+  border: 1px solid #C8E6C9;
+}
+
+#perdida-categoria-otra-grupo[hidden],
+#perdida-resumen[hidden] {
+  display: none !important;
+}
+
+#perdida-enviar:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
