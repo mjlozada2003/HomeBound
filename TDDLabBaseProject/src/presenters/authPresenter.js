@@ -11,10 +11,8 @@ import {
   registrarUsuarioFirebase,
   autenticarUsuarioFirebase
 } from "../services/usuarioService";
-import {
-  renderizarListaPublicaciones,
-  renderizarBandejaModeracion,
-} from "./postPresenter";
+import { renderizarListaPublicaciones } from "./listaPresenter";
+import { renderizarBandejaModeracion } from "./moderacionPresenter";
 
 export const usuariosRegistrados = [];
 

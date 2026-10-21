@@ -1,13 +1,11 @@
 import { iniciarAuthPresenter } from './presenters/authPresenter';
-import {
-  iniciarPostPresenter,
-  inicializarPostPresenter
-} from './presenters/postPresenter';
+import { iniciarPostPresenter } from './presenters/postPresenter';
+import { inicializarListaPresenter } from './presenters/listaPresenter';
 
 function iniciarAplicacion() {
   iniciarAuthPresenter();
   iniciarPostPresenter();
-  inicializarPostPresenter();
+  inicializarListaPresenter();
 }
 
 if (document.readyState === 'loading') {

@@ -1,18 +1,11 @@
 let publicacionesEnMemoria = [];
 
 export function obtenerTextoTipo(tipo) {
-  const esHallazgo =
-    tipo === "HALLAZGO" || tipo === "Hallazgo" || tipo === "Encontrado";
-  return esHallazgo ? "Encontrado" : "Perdido";
+  return tipo === 'HALLAZGO' ? 'Encontrado' : 'Perdido';
 }
 
 export function filtrarSoloAprobadas(listaPublicaciones = []) {
-  return listaPublicaciones.filter(
-    (pub) =>
-      pub.estado === "APROBADA" ||
-      pub.estado === "Aprobada" ||
-      pub.estado === "Activo"
-  );
+  return listaPublicaciones.filter((pub) => pub.estado === 'APROBADA');
 }
 
 export function ordenarPorFechaReciente(listaPublicaciones = []) {
@@ -24,11 +17,11 @@ export function ordenarPorFechaReciente(listaPublicaciones = []) {
 export function formatearParaTarjeta(pub) {
   return {
     id: pub.id,
-    foto: pub.foto || "",
+    foto: pub.fotos?.[0] || '',
     titulo: pub.titulo,
     fecha: pub.fecha,
     tipoTexto: obtenerTextoTipo(pub.tipo),
-    estadoTexto: "Activo",
+    estadoTexto: 'Activo',
   };
 }
 
@@ -45,7 +38,7 @@ export function obtenerPublicacionesPaginadas(
       publicaciones: [],
       paginaActual: 1,
       totalPaginas: 1,
-      mensajeVacio: "Aún no hay publicaciones",
+      mensajeVacio: 'Aún no hay publicaciones',
     };
   }
 
@@ -72,9 +65,4 @@ export function obtenerTodasLasPublicaciones() {
 
 export function establecerPublicaciones(nuevaLista) {
   publicacionesEnMemoria = Array.isArray(nuevaLista) ? nuevaLista : [];
-}
-
-export function agregarPublicacion(nuevaPublicacion) {
-  publicacionesEnMemoria.push(nuevaPublicacion);
-  return nuevaPublicacion;
 }
