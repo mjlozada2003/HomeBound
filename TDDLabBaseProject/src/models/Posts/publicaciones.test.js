@@ -26,7 +26,7 @@ describe("HU-06: Ver vista básica de publicaciones recientes", () => {
       tipo: "PERDIDA",
       categoria: "MASCOTA",
       foto: "https://via.placeholder.com/150",
-      estado: "PENDIENTE_REVISION",
+      estado: "Pendiente de revisión",
     },
     {
       id: "3",

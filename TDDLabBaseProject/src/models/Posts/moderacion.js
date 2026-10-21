@@ -24,7 +24,7 @@ export function formatearPendiente(pub) {
 
 export function obtenerBandejaPendientes(listaPublicaciones = []) {
   const pendientes = listaPublicaciones
-    .filter((pub) => pub.estado === "PENDIENTE_REVISION")
+    .filter((pub) => pub.estado === "Pendiente de revisión")
     .map(formatearPendiente);
 
   if (pendientes.length === 0) {

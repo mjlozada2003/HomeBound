@@ -15,7 +15,7 @@ describe("HU-10: Moderación de publicaciones", () => {
       fecha: "2026-10-18",
       tipo: "HALLAZGO",
       foto: "foto1.jpg",
-      estado: "PENDIENTE_REVISION",
+      estado: "Pendiente de revisión",
     },
     {
       id: "2",
@@ -57,7 +57,7 @@ describe("HU-10: Moderación de publicaciones", () => {
       descripcion: "Encontrada en la entrada principal",
       fecha: "2026-10-18",
       tipoTexto: "Encontrado",
-      estado: "PENDIENTE_REVISION",
+      estado: "Pendiente de revisión",
     });
   });
 
