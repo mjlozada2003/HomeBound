@@ -24,3 +24,4 @@ export function validarPerdida(datos = {}, hoy = new Date()) {
 export function crearPerdida() {
   return {};
 }
+
