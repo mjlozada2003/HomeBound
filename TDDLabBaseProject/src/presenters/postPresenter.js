@@ -4,8 +4,12 @@ import {
 } from "../models/Posts/publicaciones.js";
 import {
   obtenerBandejaPendientes,
-  moderarPublicacionEnMemoria,
+  verificarPermisoModeracion,
 } from "../models/Posts/moderacion.js";
+import {
+  obtenerPublicacionesPorEstado,
+  actualizarEstadoPublicacion,
+} from "../services/publicacionesService";
 
 import {
   crearHallazgo,
@@ -433,12 +437,38 @@ export function renderizarListaPublicaciones() {
   }
 }
 
-export function renderizarBandejaModeracion() {
+async function moderar(coleccion, id, estado) {
+  if (!verificarPermisoModeracion(obtenerSesionActiva())) {
+    alert("Acceso denegado: Solo administradores.");
+    return;
+  }
+
+  try {
+    await actualizarEstadoPublicacion(coleccion, id, estado);
+  } catch (error) {
+    console.error("Error al moderar:", error.message);
+    alert("No se pudo actualizar la publicación. Intenta de nuevo.");
+    return;
+  }
+
+  await renderizarBandejaModeracion();
+}
+
+export async function renderizarBandejaModeracion() {
   const contenedorPendientes = document.querySelector("#lista-pendientes");
   if (!contenedorPendientes) return;
 
-  const todas = obtenerTodasLasPublicaciones();
-  const bandeja = obtenerBandejaPendientes(todas);
+  let pendientesFirestore;
+
+  try {
+    pendientesFirestore = await obtenerPublicacionesPorEstado("Pendiente de revisión");
+  } catch (error) {
+    console.error("Error al cargar pendientes:", error.message);
+    contenedorPendientes.innerHTML = `<p class="mensaje-vacio">No se pudieron cargar las publicaciones pendientes.</p>`;
+    return;
+  }
+
+  const bandeja = obtenerBandejaPendientes(pendientesFirestore);
 
   if (bandeja.mensajeVacio) {
     contenedorPendientes.innerHTML = `<p id="mensaje-sin-pendientes" class="mensaje-vacio">${bandeja.mensajeVacio}</p>`;
@@ -455,8 +485,8 @@ export function renderizarBandejaModeracion() {
           <p class="tarjeta-descripcion">${pub.descripcion}</p>
           <p class="tarjeta-fecha"><strong>Fecha:</strong> ${pub.fecha} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
           <div class="acciones-moderacion">
-            <button class="btn-aprobar" data-id="${pub.id}">Aprobar</button>
-            <button class="btn-rechazar" data-id="${pub.id}">Rechazar</button>
+            <button class="btn-aprobar" data-id="${pub.id}" data-coleccion="${pub.coleccion}">Aprobar</button>
+            <button class="btn-rechazar" data-id="${pub.id}" data-coleccion="${pub.coleccion}">Rechazar</button>
           </div>
         </div>
       </div>
@@ -466,19 +496,13 @@ export function renderizarBandejaModeracion() {
 
   contenedorPendientes.querySelectorAll(".btn-aprobar").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const id = btn.getAttribute("data-id");
-      const usuario = obtenerSesionActiva();
-      moderarPublicacionEnMemoria(id, "APROBAR", usuario);
-      renderizarBandejaModeracion();
+      moderar(btn.dataset.coleccion, btn.dataset.id, "APROBADA");
     });
   });
 
   contenedorPendientes.querySelectorAll(".btn-rechazar").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const id = btn.getAttribute("data-id");
-      const usuario = obtenerSesionActiva();
-      moderarPublicacionEnMemoria(id, "RECHAZAR", usuario);
-      renderizarBandejaModeracion();
+      moderar(btn.dataset.coleccion, btn.dataset.id, "RECHAZADA");
     });
   });
 }
