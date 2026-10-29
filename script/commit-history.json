@@ -1,0 +1,78 @@
+[
+  {
+    "sha": "877d2585a030fc9cbd1aacee09f42a314d8f1692",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-10-29T17:30:47.000Z",
+      "message": "refactor: mover estructura del proyecto a la raiz",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/877d2585a030fc9cbd1aacee09f42a314d8f1692"
+    },
+    "stats": {
+      "total": 121,
+      "additions": 47,
+      "deletions": 74,
+      "date": "2026-10-29"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "877d2585a030fc9cbd1aacee09f42a314d8f1692",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-10-29T17:31:28.000Z",
+      "message": "refactor: mover estructura del proyecto a la raiz",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/877d2585a030fc9cbd1aacee09f42a314d8f1692"
+    },
+    "stats": {
+      "total": 121,
+      "additions": 47,
+      "deletions": 74,
+      "date": "2026-10-29"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "877d2585a030fc9cbd1aacee09f42a314d8f1692",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-10-29T17:31:40.000Z",
+      "message": "refactor: mover estructura del proyecto a la raiz",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/877d2585a030fc9cbd1aacee09f42a314d8f1692"
+    },
+    "stats": {
+      "total": 121,
+      "additions": 47,
+      "deletions": 74,
+      "date": "2026-10-29"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-10-29T17:33:16.000Z",
+      "message": "refactor: mover estructura del proyecto a la raiz",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 125,
+      "additions": 50,
+      "deletions": 75,
+      "date": "2026-10-29"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  }
+]

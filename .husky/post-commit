@@ -1,4 +1,5 @@
-if [ "$HUSKY_SKIP_TRACK" = "1" ]; then
+#!/usr/bin/env sh
+if [ "$HUSKY_SKIP_TRACK" = "1" ] || [ "$HUSKY" = "0" ]; then
 	exit 0
 fi
 
@@ -7,8 +8,10 @@ node ./script/commitScript.js
 REPO_DIR="$(git rev-parse --show-toplevel)"
 node "$REPO_DIR/script/commit-tracker.js"
 
+export HUSKY_SKIP_TRACK=1
 export HUSKY=0
 git add script/commit-history.json
 git add script/tdd_log.json
 git commit --amend --no-edit 
+unset HUSKY_SKIP_TRACK
 unset HUSKY

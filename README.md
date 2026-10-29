@@ -64,52 +64,50 @@ La aplicación sigue fielmente el patrón arquitectónico **Modelo - Vista - Pre
 
 ## 📂 Estructura de Directorios
 
-Toda la solución se encuentra organizada modularmente dentro de `TDDLabBaseProject`:
+Toda la solución se encuentra organizada modularmente en la raíz del proyecto:
 
 ```text
 HomeBound/
-│
 ├── README.md                              # Documentación general del proyecto
+├── .github/                               # Flujos de integración continua (CI/CD)
+├── .husky/                                # Git hooks (pre-commit, post-commit con telemetría TDD)
+├── cypress/                               # Pruebas de Aceptación End-to-End (E2E)
+├── script/                                # Scripts de seguimiento de métricas y commits de TDD
+├── tests-lists/                           # Listas de casos de prueba por Historia de Usuario
+│   └── HU-01.md
 │
-└── TDDLabBaseProject/                     # Código fuente y configuración del proyecto
-    ├── .github/                           # Flujos de integración continua (CI/CD)
-    ├── .husky/                            # Git hooks (pre-commit, post-commit con telemetría TDD)
-    ├── cypress/                           # Pruebas de Aceptación End-to-End (E2E)
-    ├── script/                            # Scripts de seguimiento de métricas y commits de TDD
-    ├── tests-lists/                       # Listas de casos de prueba por Historia de Usuario
-    │   └── HU-01.md
-    │
-    ├── src/                               # Código Fuente
-    │   ├── assets/                        # Recursos multimedia
-    │   │   └── logo.jpg                   # Logotipo oficial
-    │   │
-    │   ├── models/                        # 🧠 MODELOS (Lógica de negocio pura + tests TDD)
-    │   │   ├── Auth/                      # Dominio de Autenticación y Cuentas
-    │   │   │   ├── cuenta.js
-    │   │   │   └── cuenta.test.js         # (16 pruebas unitarias TDD)
-    │   │   ├── Posts/                     # Dominio de Publicaciones (Hallazgos y Pérdidas)
-    │   │   └── Stats/                     # Dominio de Estadísticas para Administradores
-    │   │
-    │   ├── presenters/                    # 🔄 PRESENTADORES (Orquestación MVP)
-    │   │   ├── authPresenter.js           # Maneja Registro, Login y Perfil
-    │   │   ├── postPresenter.js           # Maneja creación de Hallazgos y Pérdidas
-    │   │   └── statsPresenter.js          # Maneja visualización de métricas
-    │   │
-    │   ├── services/                      # ☁️ SERVICIOS (Conexión con Firebase BaaS)
-    │   │   └── firebase.js                # Inicialización de Firebase SDK y Firestore
-    │   │
-    │   ├── styles/                        # 🎨 SISTEMA DE DISEÑO
-    │   │   └── styles.css                 # Paleta de colores y componentes visuales
-    │   │
-    │   └── presenter.js                   # Bootstrap / Inicializador principal de presentadores
-    │
-    ├── .babelrc                           # Configuración Babel para Jest
-    ├── .parcelrc                          # Configuración del empaquetador Parcel
-    ├── cypress.config.js                  # Configuración de Cypress E2E
-    ├── index.html                         # 👁️ VISTA (Interfaz web con navegación y secciones SPA)
-    ├── package.json                       # Dependencias y scripts de ejecución
-    ├── semantic-commits.js                # Validador de commits semánticos
-    └── tsconfig.json                      # Configuración de soporte y resolución de módulos
+├── src/                                   # Código Fuente
+│   ├── assets/                            # Recursos multimedia
+│   │   └── logo.jpg                       # Logotipo oficial
+│   │
+│   ├── models/                            # 🧠 MODELOS (Lógica de negocio pura + tests TDD)
+│   │   ├── Auth/                          # Dominio de Autenticación y Cuentas
+│   │   │   ├── cuenta.js
+│   │   │   └── cuenta.test.js             # (16 pruebas unitarias TDD)
+│   │   ├── Posts/                         # Dominio de Publicaciones (Hallazgos y Pérdidas)
+│   │   └── Stats/                         # Dominio de Estadísticas para Administradores
+│   │
+│   ├── presenters/                        # 🔄 PRESENTADORES (Orquestación MVP)
+│   │   ├── authPresenter.js               # Maneja Registro, Login y Perfil
+│   │   ├── postPresenter.js               # Maneja creación de Hallazgos y Pérdidas
+│   │   └── statsPresenter.js              # Maneja visualización de métricas
+│   │
+│   ├── services/                          # ☁️ SERVICIOS (Conexión con Firebase BaaS)
+│   │   └── firebase.js                    # Inicialización de Firebase SDK y Firestore
+│   │
+│   ├── styles/                        # 🎨 SISTEMA DE DISEÑO
+│   │   └── styles.css                     # Paleta de colores y componentes visuales
+│   │
+│   └── presenter.js                   # Bootstrap / Inicializador principal de presentadores
+│
+├── .babelrc                               # Configuración Babel para Jest
+├── .parcelrc                              # Configuración del empaquetador Parcel
+├── cypress.config.js                      # Configuración de Cypress E2E
+├── eslint.config.js                       # Configuración de ESLint
+├── index.html                             # 👁️ VISTA (Interfaz web con navegación y secciones SPA)
+├── package.json                           # Dependencias y scripts de ejecución
+├── semantic-commits.js                    # Validador de commits semánticos
+└── tsconfig.json                          # Configuración de soporte y resolución de módulos
 ```
 
 ---
