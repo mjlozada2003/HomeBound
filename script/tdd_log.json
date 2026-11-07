@@ -1888,9 +1888,59 @@
     "testId": 7
   },
   {
-    "commitId": "HEAD",
+    "commitId": "9f2f85099e63635efd5b4188bff62fc2a1119554",
     "commitName": "chore: correr eslint en el ci y en el pre-commit",
     "commitTimestamp": 1794027035043,
     "testId": 8
+  },
+  {
+    "numPassedTests": 103,
+    "failedTests": 2,
+    "numTotalTests": 105,
+    "timestamp": 1794030222419,
+    "success": false,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794030275285,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "commitId": "5754726f883f512f5ac3a59fb8c4adcbcafc3308",
+    "commitName": "test: cambiar el estado de una publicacion validando el rol admin",
+    "commitTimestamp": 1794030346901,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794030554335,
+    "success": true,
+    "testId": 10
+  },
+  {
+    "commitId": "28e11ea79db4d63fbd9d2ae76641e78bb1b1d304",
+    "commitName": "refactor: aprobar y rechazar usan cambiarEstadoPublicacion",
+    "commitTimestamp": 1794030582620,
+    "testId": 10
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794031695079,
+    "success": true,
+    "testId": 11
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: moderar usa la regla de permisos del modelo",
+    "commitTimestamp": 1794031744222,
+    "testId": 11
   }
 ]

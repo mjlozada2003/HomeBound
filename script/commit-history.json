@@ -133,12 +133,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "9f2f85099e63635efd5b4188bff62fc2a1119554",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T04:50:22.000Z",
       "message": "chore: correr eslint en el ci y en el pre-commit",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9f2f85099e63635efd5b4188bff62fc2a1119554"
     },
     "stats": {
       "total": 4,
@@ -148,6 +148,63 @@
     },
     "coverage": 95.59,
     "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "5754726f883f512f5ac3a59fb8c4adcbcafc3308",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T05:45:44.000Z",
+      "message": "test: cambiar el estado de una publicacion validando el rol admin",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5754726f883f512f5ac3a59fb8c4adcbcafc3308"
+    },
+    "stats": {
+      "total": 29,
+      "additions": 29,
+      "deletions": 0,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.67,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "28e11ea79db4d63fbd9d2ae76641e78bb1b1d304",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T05:49:40.000Z",
+      "message": "refactor: aprobar y rechazar usan cambiarEstadoPublicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/28e11ea79db4d63fbd9d2ae76641e78bb1b1d304"
+    },
+    "stats": {
+      "total": 17,
+      "additions": 2,
+      "deletions": 15,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T06:09:01.000Z",
+      "message": "refactor: moderar usa la regla de permisos del modelo",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 15,
+      "additions": 12,
+      "deletions": 3,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
+    "test_count": 105,
     "failed_tests": 0,
     "conclusion": "success"
   }

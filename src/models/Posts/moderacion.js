@@ -35,22 +35,20 @@ export function obtenerBandejaPendientes(listaPublicaciones = []) {
   };
 }
 
-export function aprobarPublicacion(listaPublicaciones, idPublicacion, usuario) {
+export function cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, estado) {
   if (!verificarPermisoModeracion(usuario)) {
     throw new Error('No tienes permisos de administrador');
   }
 
   return listaPublicaciones.map((pub) =>
-    pub.id === idPublicacion ? { ...pub, estado: 'APROBADA' } : pub
+    pub.id === idPublicacion ? { ...pub, estado } : pub
   );
 }
 
-export function rechazarPublicacion(listaPublicaciones, idPublicacion, usuario) {
-  if (!verificarPermisoModeracion(usuario)) {
-    throw new Error('No tienes permisos de administrador');
-  }
+export function aprobarPublicacion(listaPublicaciones, idPublicacion, usuario) {
+  return cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, 'APROBADA');
+}
 
-  return listaPublicaciones.map((pub) =>
-    pub.id === idPublicacion ? { ...pub, estado: 'RECHAZADA' } : pub
-  );
+export function rechazarPublicacion(listaPublicaciones, idPublicacion, usuario) {
+  return cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, 'RECHAZADA');
 }
