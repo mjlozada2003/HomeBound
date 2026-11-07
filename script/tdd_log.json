@@ -1882,9 +1882,15 @@
     "testId": 6
   },
   {
-    "commitId": "HEAD",
+    "commitId": "d67880770b3dfd377b47c55289d5f275b3c929ac",
     "commitName": "style: aplicar eslint --fix en src y cypress",
     "commitTimestamp": 1794026956281,
     "testId": 7
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "chore: correr eslint en el ci y en el pre-commit",
+    "commitTimestamp": 1794027035043,
+    "testId": 8
   }
 ]

@@ -114,17 +114,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "d67880770b3dfd377b47c55289d5f275b3c929ac",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T04:49:13.000Z",
       "message": "style: aplicar eslint --fix en src y cypress",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d67880770b3dfd377b47c55289d5f275b3c929ac"
     },
     "stats": {
       "total": 556,
       "additions": 278,
       "deletions": 278,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T04:50:22.000Z",
+      "message": "chore: correr eslint en el ci y en el pre-commit",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 3,
+      "deletions": 1,
       "date": "2026-11-07"
     },
     "coverage": 95.59,
