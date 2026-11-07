@@ -1910,9 +1910,23 @@
     "testId": 9
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5754726f883f512f5ac3a59fb8c4adcbcafc3308",
     "commitName": "test: cambiar el estado de una publicacion validando el rol admin",
     "commitTimestamp": 1794030346901,
     "testId": 9
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794030554335,
+    "success": true,
+    "testId": 10
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: aprobar y rechazar usan cambiarEstadoPublicacion",
+    "commitTimestamp": 1794030582620,
+    "testId": 10
   }
 ]

@@ -152,12 +152,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "5754726f883f512f5ac3a59fb8c4adcbcafc3308",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T05:45:44.000Z",
       "message": "test: cambiar el estado de una publicacion validando el rol admin",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5754726f883f512f5ac3a59fb8c4adcbcafc3308"
     },
     "stats": {
       "total": 29,
@@ -166,6 +166,25 @@
       "date": "2026-11-07"
     },
     "coverage": 95.67,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T05:49:40.000Z",
+      "message": "refactor: aprobar y rechazar usan cambiarEstadoPublicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 17,
+      "additions": 2,
+      "deletions": 15,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
     "test_count": 105,
     "failed_tests": 0,
     "conclusion": "success"

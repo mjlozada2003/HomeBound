@@ -45,23 +45,10 @@ export function cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usua
   );
 }
 
-
 export function aprobarPublicacion(listaPublicaciones, idPublicacion, usuario) {
-  if (!verificarPermisoModeracion(usuario)) {
-    throw new Error('No tienes permisos de administrador');
-  }
-
-  return listaPublicaciones.map((pub) =>
-    pub.id === idPublicacion ? { ...pub, estado: 'APROBADA' } : pub
-  );
+  return cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, 'APROBADA');
 }
 
 export function rechazarPublicacion(listaPublicaciones, idPublicacion, usuario) {
-  if (!verificarPermisoModeracion(usuario)) {
-    throw new Error('No tienes permisos de administrador');
-  }
-
-  return listaPublicaciones.map((pub) =>
-    pub.id === idPublicacion ? { ...pub, estado: 'RECHAZADA' } : pub
-  );
+  return cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, 'RECHAZADA');
 }
