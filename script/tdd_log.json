@@ -1864,9 +1864,33 @@
     "testId": 3
   },
   {
-    "commitId": "HEAD",
+    "commitId": "cab29f0cde0bab4fe738ecb3950ec45b8d026de2",
     "commitName": "refactor: mover estructura del proyecto a la raiz",
     "commitTimestamp": 1793295196999,
     "testId": 4
+  },
+  {
+    "commitId": "18498b4519bca97193749bceae495515f04f65da",
+    "commitName": "chore: ignorar carpetas generadas y scripts base en eslint y declarar globals faltantes",
+    "commitTimestamp": 1794026825456,
+    "testId": 5
+  },
+  {
+    "commitId": "d3d7588c7c61668dc97a9fc9fc882dc41d732e2b",
+    "commitName": "fix: usar === al comparar el correo en autenticarUsuario",
+    "commitTimestamp": 1794026851321,
+    "testId": 6
+  },
+  {
+    "commitId": "d67880770b3dfd377b47c55289d5f275b3c929ac",
+    "commitName": "style: aplicar eslint --fix en src y cypress",
+    "commitTimestamp": 1794026956281,
+    "testId": 7
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "chore: correr eslint en el ci y en el pre-commit",
+    "commitTimestamp": 1794027035043,
+    "testId": 8
   }
 ]
