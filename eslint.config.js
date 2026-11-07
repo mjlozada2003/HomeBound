@@ -1,6 +1,13 @@
 export default [
   {
-    ignores: ['dist/**', '.parcel-cache/**', 'coverage/**'],
+    ignores: [
+      'dist/**',
+      '.parcel-cache/**',
+      'coverage/**',
+      'TDDLabBaseProject/**',
+      'script/**',
+      'semantic-commits.js',
+    ],
   },
   {
     files: ['**/*.js'],
@@ -26,6 +33,11 @@ export default [
         URL: 'readonly',
         fetch: 'readonly',
         FormData: 'readonly',
+        AbortController: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        global: 'readonly',
+        process: 'readonly',
       },
     },
     rules: {

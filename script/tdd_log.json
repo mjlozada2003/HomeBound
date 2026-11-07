@@ -1864,9 +1864,15 @@
     "testId": 3
   },
   {
-    "commitId": "HEAD",
+    "commitId": "cab29f0cde0bab4fe738ecb3950ec45b8d026de2",
     "commitName": "refactor: mover estructura del proyecto a la raiz",
     "commitTimestamp": 1793295196999,
     "testId": 4
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "chore: ignorar carpetas generadas y scripts base en eslint y declarar globals faltantes",
+    "commitTimestamp": 1794026825456,
+    "testId": 5
   }
 ]
