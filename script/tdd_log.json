@@ -1870,9 +1870,15 @@
     "testId": 4
   },
   {
-    "commitId": "HEAD",
+    "commitId": "18498b4519bca97193749bceae495515f04f65da",
     "commitName": "chore: ignorar carpetas generadas y scripts base en eslint y declarar globals faltantes",
     "commitTimestamp": 1794026825456,
     "testId": 5
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: usar === al comparar el correo en autenticarUsuario",
+    "commitTimestamp": 1794026851321,
+    "testId": 6
   }
 ]

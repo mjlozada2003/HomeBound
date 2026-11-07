@@ -76,17 +76,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "18498b4519bca97193749bceae495515f04f65da",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T04:47:02.000Z",
       "message": "chore: ignorar carpetas generadas y scripts base en eslint y declarar globals faltantes",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/18498b4519bca97193749bceae495515f04f65da"
     },
     "stats": {
       "total": 16,
       "additions": 14,
       "deletions": 2,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T04:47:28.000Z",
+      "message": "fix: usar === al comparar el correo en autenticarUsuario",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1,
       "date": "2026-11-07"
     },
     "coverage": 95.59,

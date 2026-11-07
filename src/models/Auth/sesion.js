@@ -34,7 +34,7 @@ export function autenticarUsuario(correo, password, usuarios = []){
     const todosLosUsuarios = [CUENTA_ADMIN_PRECONFIGURADA, ...usuarios];
 
     const usuarioEncontrado = todosLosUsuarios.find(
-        (u) => u.correo.toLowerCase() == correoNormalizado
+        (u) => u.correo.toLowerCase() === correoNormalizado
     );
 
     if(!usuarioEncontrado  || password !== usuarioEncontrado.password){
