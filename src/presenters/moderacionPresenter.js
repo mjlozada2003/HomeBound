@@ -1,6 +1,6 @@
 import {
   obtenerBandejaPendientes,
-  verificarPermisoModeracion,
+  cambiarEstadoPublicacion,
 } from '../models/Posts/moderacion.js';
 import {
   obtenerPublicacionesPorEstado,
@@ -9,14 +9,22 @@ import {
 import { escaparHtml } from '../models/html';
 import { obtenerSesionActiva } from '../models/Auth/sesion';
 
+let pendientesCargadas = [];
+
 async function moderar(coleccion, id, estado) {
-  if (!verificarPermisoModeracion(obtenerSesionActiva())) {
+  let actualizadas;
+
+  try {
+    actualizadas = cambiarEstadoPublicacion(pendientesCargadas, id, obtenerSesionActiva(), estado);
+  } catch {
     alert('Acceso denegado: Solo administradores.');
     return;
   }
 
+  const moderada = actualizadas.find((pub) => pub.id === id);
+
   try {
-    await actualizarEstadoPublicacion(coleccion, id, estado);
+    await actualizarEstadoPublicacion(coleccion, id, moderada.estado);
   } catch (error) {
     console.error('Error al moderar:', error.message);
     alert('No se pudo actualizar la publicación. Intenta de nuevo.');
@@ -40,6 +48,7 @@ export async function renderizarBandejaModeracion() {
     return;
   }
 
+  pendientesCargadas = pendientesFirestore;
   const bandeja = obtenerBandejaPendientes(pendientesFirestore);
 
   if (bandeja.mensajeVacio) {

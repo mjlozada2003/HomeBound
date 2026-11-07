@@ -1924,9 +1924,23 @@
     "testId": 10
   },
   {
-    "commitId": "HEAD",
+    "commitId": "28e11ea79db4d63fbd9d2ae76641e78bb1b1d304",
     "commitName": "refactor: aprobar y rechazar usan cambiarEstadoPublicacion",
     "commitTimestamp": 1794030582620,
     "testId": 10
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794031695079,
+    "success": true,
+    "testId": 11
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: moderar usa la regla de permisos del modelo",
+    "commitTimestamp": 1794031744222,
+    "testId": 11
   }
 ]

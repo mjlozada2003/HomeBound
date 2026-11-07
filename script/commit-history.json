@@ -171,17 +171,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "28e11ea79db4d63fbd9d2ae76641e78bb1b1d304",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T05:49:40.000Z",
       "message": "refactor: aprobar y rechazar usan cambiarEstadoPublicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/28e11ea79db4d63fbd9d2ae76641e78bb1b1d304"
     },
     "stats": {
       "total": 17,
       "additions": 2,
       "deletions": 15,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T06:09:01.000Z",
+      "message": "refactor: moderar usa la regla de permisos del modelo",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 15,
+      "additions": 12,
+      "deletions": 3,
       "date": "2026-11-07"
     },
     "coverage": 95.56,
