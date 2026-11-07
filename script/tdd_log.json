@@ -1944,9 +1944,15 @@
     "testId": 11
   },
   {
-    "commitId": "HEAD",
+    "commitId": "1897ee6d91d9596b74209cdaf0b65bc50debd6ab",
     "commitName": "chore: ignorar notas personales de defensa",
     "commitTimestamp": 1794032754252,
     "testId": 12
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: completar la lista de pruebas de HU-10 con estados actuales y casos nuevos",
+    "commitTimestamp": 1794035461696,
+    "testId": 13
   }
 ]
