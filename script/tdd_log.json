@@ -1876,9 +1876,15 @@
     "testId": 5
   },
   {
-    "commitId": "HEAD",
+    "commitId": "d3d7588c7c61668dc97a9fc9fc882dc41d732e2b",
     "commitName": "fix: usar === al comparar el correo en autenticarUsuario",
     "commitTimestamp": 1794026851321,
     "testId": 6
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "style: aplicar eslint --fix en src y cypress",
+    "commitTimestamp": 1794026956281,
+    "testId": 7
   }
 ]

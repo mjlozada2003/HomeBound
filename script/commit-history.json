@@ -95,17 +95,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "d3d7588c7c61668dc97a9fc9fc882dc41d732e2b",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T04:47:28.000Z",
       "message": "fix: usar === al comparar el correo en autenticarUsuario",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d3d7588c7c61668dc97a9fc9fc882dc41d732e2b"
     },
     "stats": {
       "total": 2,
       "additions": 1,
       "deletions": 1,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T04:49:13.000Z",
+      "message": "style: aplicar eslint --fix en src y cypress",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 556,
+      "additions": 278,
+      "deletions": 278,
       "date": "2026-11-07"
     },
     "coverage": 95.59,

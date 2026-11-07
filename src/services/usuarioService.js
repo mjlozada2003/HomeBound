@@ -25,7 +25,7 @@ export async function guardarUsuario(usuario) {
 }
 
 export async function buscarUsuarioPorCorreo(correo) {
-  if (!correo) return null;
+  if (!correo) {return null;}
   const correoNormalizado = correo.trim().toLowerCase();
   const referenciaDoc = doc(db, 'usuarios', correoNormalizado);
   const snapshot = await getDoc(referenciaDoc);
