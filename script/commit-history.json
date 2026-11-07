@@ -190,17 +190,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "f44d3cd6f31e422699338bfea87118d2c607d5d2",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T06:09:01.000Z",
       "message": "refactor: moderar usa la regla de permisos del modelo",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f44d3cd6f31e422699338bfea87118d2c607d5d2"
     },
     "stats": {
       "total": 15,
       "additions": 12,
       "deletions": 3,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T06:25:52.000Z",
+      "message": "chore: ignorar notas personales de defensa",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 2,
+      "deletions": 1,
       "date": "2026-11-07"
     },
     "coverage": 95.56,
