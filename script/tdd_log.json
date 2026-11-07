@@ -1938,9 +1938,15 @@
     "testId": 11
   },
   {
-    "commitId": "HEAD",
+    "commitId": "f44d3cd6f31e422699338bfea87118d2c607d5d2",
     "commitName": "refactor: moderar usa la regla de permisos del modelo",
     "commitTimestamp": 1794031744222,
     "testId": 11
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "chore: ignorar notas personales de defensa",
+    "commitTimestamp": 1794032754252,
+    "testId": 12
   }
 ]
