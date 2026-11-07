@@ -209,17 +209,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "1897ee6d91d9596b74209cdaf0b65bc50debd6ab",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T06:25:52.000Z",
       "message": "chore: ignorar notas personales de defensa",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/1897ee6d91d9596b74209cdaf0b65bc50debd6ab"
     },
     "stats": {
       "total": 3,
       "additions": 2,
       "deletions": 1,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T07:10:59.000Z",
+      "message": "docs: completar la lista de pruebas de HU-10 con estados actuales y casos nuevos",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 27,
+      "additions": 23,
+      "deletions": 4,
       "date": "2026-11-07"
     },
     "coverage": 95.56,
