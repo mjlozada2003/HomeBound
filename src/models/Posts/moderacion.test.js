@@ -3,6 +3,7 @@ import {
   obtenerBandejaPendientes,
   aprobarPublicacion,
   rechazarPublicacion,
+  cambiarEstadoPublicacion,
 } from './moderacion.js';
 import { filtrarSoloAprobadas } from './publicaciones.js';
 
@@ -96,4 +97,21 @@ describe('HU-10: Moderación de publicaciones', () => {
       rechazarPublicacion(publicacionesMock, '1', null)
     ).toThrow('No tienes permisos de administrador');
   });
+
+  test('Debería cambiar solo la publicación indicada al estado pedido', () => {
+    const admin = { nombre: 'Admin', rol: 'ADMIN' };
+    const actualizada = cambiarEstadoPublicacion(publicacionesMock, '1', admin, 'APROBADA');
+
+    expect(actualizada[0].estado).toBe('APROBADA');
+    expect(actualizada[1]).toEqual(publicacionesMock[1]);
+  });
+
+  test('Caso inválido: cambiar el estado sin rol ADMIN lanza un error', () => {
+    const usuarioNormal = { nombre: 'Juan', rol: 'USER' };
+
+    expect(() =>
+      cambiarEstadoPublicacion(publicacionesMock, '1', usuarioNormal, 'APROBADA')
+    ).toThrow('No tienes permisos de administrador');
+  });
+
 });

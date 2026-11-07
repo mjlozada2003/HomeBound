@@ -35,6 +35,17 @@ export function obtenerBandejaPendientes(listaPublicaciones = []) {
   };
 }
 
+export function cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, estado) {
+  if (!verificarPermisoModeracion(usuario)) {
+    throw new Error('No tienes permisos de administrador');
+  }
+
+  return listaPublicaciones.map((pub) =>
+    pub.id === idPublicacion ? { ...pub, estado } : pub
+  );
+}
+
+
 export function aprobarPublicacion(listaPublicaciones, idPublicacion, usuario) {
   if (!verificarPermisoModeracion(usuario)) {
     throw new Error('No tienes permisos de administrador');
