@@ -418,12 +418,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "0eff079599159676e91f5c73a9fcd505f09be70f",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:40:05.000Z",
       "message": "refactor: quitar el estado en memoria del modelo de publicaciones",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/0eff079599159676e91f5c73a9fcd505f09be70f"
     },
     "stats": {
       "total": 10,
@@ -433,6 +433,25 @@
     },
     "coverage": 96.43,
     "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:55:30.000Z",
+      "message": "test: agregar plantilla compartida de tarjeta con crearTarjetaHtml",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 59,
+      "additions": 58,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
     "failed_tests": 0,
     "conclusion": "success"
   }

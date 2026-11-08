@@ -2098,9 +2098,31 @@
     "testId": 23
   },
   {
-    "commitId": "HEAD",
+    "commitId": "0eff079599159676e91f5c73a9fcd505f09be70f",
     "commitName": "refactor: quitar el estado en memoria del modelo de publicaciones",
     "commitTimestamp": 1794174016485,
     "testId": 23
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 3,
+    "numTotalTests": 109,
+    "timestamp": 1794174902586,
+    "success": false,
+    "testId": 24
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794174926569,
+    "success": true,
+    "testId": 24
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: agregar plantilla compartida de tarjeta con crearTarjetaHtml",
+    "commitTimestamp": 1794174935038,
+    "testId": 24
   }
 ]
