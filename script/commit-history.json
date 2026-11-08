@@ -437,17 +437,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "5049e615d5e6f3376a4b0625325cd593153d5f31",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:55:30.000Z",
       "message": "test: agregar plantilla compartida de tarjeta con crearTarjetaHtml",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5049e615d5e6f3376a4b0625325cd593153d5f31"
     },
     "stats": {
       "total": 59,
       "additions": 58,
       "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:56:16.000Z",
+      "message": "refactor: listaPresenter usa la plantilla compartida de tarjeta",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 12,
+      "deletions": 14,
       "date": "2026-11-08"
     },
     "coverage": 96.46,

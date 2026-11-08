@@ -2120,9 +2120,23 @@
     "testId": 24
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5049e615d5e6f3376a4b0625325cd593153d5f31",
     "commitName": "test: agregar plantilla compartida de tarjeta con crearTarjetaHtml",
     "commitTimestamp": 1794174935038,
     "testId": 24
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794174972522,
+    "success": true,
+    "testId": 25
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: listaPresenter usa la plantilla compartida de tarjeta",
+    "commitTimestamp": 1794174979232,
+    "testId": 25
   }
 ]

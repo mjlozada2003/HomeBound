@@ -2,6 +2,7 @@ import { obtenerPublicacionesPaginadas } from '../models/Posts/publicaciones.js'
 import { ESTADOS } from '../models/Posts/estados.js';
 import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
+import { crearTarjetaHtml } from './plantillaTarjeta';
 
 let publicacionesCargadas = [];
 let paginaActual = 1;
@@ -39,20 +40,17 @@ function dibujarListaPublicaciones() {
   }
 
   contenedorLista.innerHTML = resultado.publicaciones
-    .map(
-      (pub) => `
-      <div class="tarjeta-publicacion" data-id="${escaparHtml(pub.id)}">
-        <img src="${escaparHtml(pub.foto)}" alt="${escaparHtml(pub.titulo)}" class="tarjeta-foto" />
-        <div class="tarjeta-info">
-          <h3 class="tarjeta-titulo">${escaparHtml(pub.titulo)}</h3>
-          <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)}</p>
-          <p class="tarjeta-etiquetas">
-            <span class="badge-tipo">${pub.tipoTexto}</span> |
-            <span class="badge-estado">${pub.estadoTexto}</span>
-          </p>
-        </div>
-      </div>
-    `
+    .map((pub) =>
+      crearTarjetaHtml(
+        pub,
+        `
+        <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)}</p>
+        <p class="tarjeta-etiquetas">
+          <span class="badge-tipo">${pub.tipoTexto}</span> |
+          <span class="badge-estado">${pub.estadoTexto}</span>
+        </p>
+      `
+      )
     )
     .join('');
 
