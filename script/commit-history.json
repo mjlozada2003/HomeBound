@@ -399,12 +399,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "607e7d57ca05df28c33efb71038e84de38ee5587",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:37:49.000Z",
       "message": "refactor: listaPresenter guarda las publicaciones cargadas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/607e7d57ca05df28c33efb71038e84de38ee5587"
     },
     "stats": {
       "total": 12,
@@ -413,6 +413,25 @@
       "date": "2026-11-08"
     },
     "coverage": 95.59,
+    "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:40:05.000Z",
+      "message": "refactor: quitar el estado en memoria del modelo de publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 0,
+      "deletions": 10,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.43,
     "test_count": 106,
     "failed_tests": 0,
     "conclusion": "success"
