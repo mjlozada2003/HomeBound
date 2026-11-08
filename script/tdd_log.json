@@ -2134,9 +2134,23 @@
     "testId": 25
   },
   {
-    "commitId": "HEAD",
+    "commitId": "d41e915780372f37dc4c97ecadfa497f556a5884",
     "commitName": "refactor: listaPresenter usa la plantilla compartida de tarjeta",
     "commitTimestamp": 1794174979232,
     "testId": 25
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794174993809,
+    "success": true,
+    "testId": 26
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: moderacionPresenter usa la plantilla compartida de tarjeta",
+    "commitTimestamp": 1794175001073,
+    "testId": 26
   }
 ]

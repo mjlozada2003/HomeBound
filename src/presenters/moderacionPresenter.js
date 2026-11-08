@@ -9,6 +9,7 @@ import {
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 import { obtenerSesionActiva } from '../models/Auth/sesion';
+import { crearTarjetaHtml } from './plantillaTarjeta';
 
 let pendientesCargadas = [];
 
@@ -58,21 +59,19 @@ export async function renderizarBandejaModeracion() {
   }
 
   contenedorPendientes.innerHTML = bandeja.pendientes
-    .map(
-      (pub) => `
-      <div class="tarjeta-publicacion tarjeta-moderacion" data-id="${escaparHtml(pub.id)}">
-        <img src="${escaparHtml(pub.foto)}" alt="${escaparHtml(pub.titulo)}" class="tarjeta-foto" />
-        <div class="tarjeta-info">
-          <h3 class="tarjeta-titulo">${escaparHtml(pub.titulo)}</h3>
-          <p class="tarjeta-descripcion">${escaparHtml(pub.descripcion)}</p>
-          <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
-          <div class="acciones-moderacion">
-            <button class="btn-aprobar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Aprobar</button>
-            <button class="btn-rechazar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Rechazar</button>
-          </div>
+    .map((pub) =>
+      crearTarjetaHtml(
+        pub,
+        `
+        <p class="tarjeta-descripcion">${escaparHtml(pub.descripcion)}</p>
+        <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
+        <div class="acciones-moderacion">
+          <button class="btn-aprobar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Aprobar</button>
+          <button class="btn-rechazar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Rechazar</button>
         </div>
-      </div>
-    `
+      `,
+        'tarjeta-moderacion'
+      )
     )
     .join('');
 
