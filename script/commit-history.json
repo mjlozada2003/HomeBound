@@ -380,17 +380,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "4cd2760830efdf0a8c90e56d1eb7eb0b95ceecae",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:27:22.000Z",
       "message": "refactor: formatearPendiente reutiliza formatearDatosComunes",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/4cd2760830efdf0a8c90e56d1eb7eb0b95ceecae"
     },
     "stats": {
       "total": 8,
       "additions": 2,
       "deletions": 6,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.59,
+    "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:37:49.000Z",
+      "message": "refactor: listaPresenter guarda las publicaciones cargadas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 4,
+      "deletions": 8,
       "date": "2026-11-08"
     },
     "coverage": 95.59,

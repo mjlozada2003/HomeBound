@@ -1,12 +1,9 @@
-import {
-  obtenerPublicacionesPaginadas,
-  obtenerTodasLasPublicaciones,
-  establecerPublicaciones,
-} from '../models/Posts/publicaciones.js';
+import { obtenerPublicacionesPaginadas } from '../models/Posts/publicaciones.js';
 import { ESTADOS } from '../models/Posts/estados.js';
 import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 
+let publicacionesCargadas = [];
 let paginaActual = 1;
 const POR_PAGINA = 10;
 
@@ -15,7 +12,7 @@ export async function renderizarListaPublicaciones() {
   if (!contenedorLista) {return;}
 
   try {
-    establecerPublicaciones(await obtenerPublicacionesPorEstado(ESTADOS.APROBADA));
+    publicacionesCargadas = await obtenerPublicacionesPorEstado(ESTADOS.APROBADA);
   } catch (error) {
     console.error('Error al cargar publicaciones:', error.message);
     contenedorLista.innerHTML = '<p class="mensaje-vacio">No se pudieron cargar las publicaciones. Intenta de nuevo.</p>';
@@ -31,8 +28,7 @@ function dibujarListaPublicaciones() {
 
   if (!contenedorLista) {return;}
 
-  const todas = obtenerTodasLasPublicaciones();
-  const resultado = obtenerPublicacionesPaginadas(todas, paginaActual, POR_PAGINA);
+  const resultado = obtenerPublicacionesPaginadas(publicacionesCargadas, paginaActual, POR_PAGINA);
 
   paginaActual = resultado.paginaActual;
 

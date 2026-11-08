@@ -2070,9 +2070,23 @@
     "testId": 21
   },
   {
-    "commitId": "HEAD",
+    "commitId": "4cd2760830efdf0a8c90e56d1eb7eb0b95ceecae",
     "commitName": "refactor: formatearPendiente reutiliza formatearDatosComunes",
     "commitTimestamp": 1794173246318,
     "testId": 21
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 0,
+    "numTotalTests": 106,
+    "timestamp": 1794173863303,
+    "success": true,
+    "testId": 22
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: listaPresenter guarda las publicaciones cargadas",
+    "commitTimestamp": 1794173875844,
+    "testId": 22
   }
 ]
