@@ -361,17 +361,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "0100511558e92eec68bcdcd14d9ee2eb9ae7aa0b",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:26:53.000Z",
       "message": "refactor: formatearParaTarjeta reutiliza formatearDatosComunes",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/0100511558e92eec68bcdcd14d9ee2eb9ae7aa0b"
     },
     "stats": {
       "total": 6,
       "additions": 1,
       "deletions": 5,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.59,
+    "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:27:22.000Z",
+      "message": "refactor: formatearPendiente reutiliza formatearDatosComunes",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 2,
+      "deletions": 6,
       "date": "2026-11-08"
     },
     "coverage": 95.59,

@@ -2056,9 +2056,23 @@
     "testId": 20
   },
   {
-    "commitId": "HEAD",
+    "commitId": "0100511558e92eec68bcdcd14d9ee2eb9ae7aa0b",
     "commitName": "refactor: formatearParaTarjeta reutiliza formatearDatosComunes",
     "commitTimestamp": 1794173217895,
     "testId": 20
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 0,
+    "numTotalTests": 106,
+    "timestamp": 1794173238237,
+    "success": true,
+    "testId": 21
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: formatearPendiente reutiliza formatearDatosComunes",
+    "commitTimestamp": 1794173246318,
+    "testId": 21
   }
 ]
