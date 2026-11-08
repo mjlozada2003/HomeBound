@@ -2020,9 +2020,59 @@
     "testId": 17
   },
   {
-    "commitId": "HEAD",
+    "commitId": "07216c3aaa3039dde3059ce2324f7bf827611b3f",
     "commitName": "docs: renombrar lista de HU-06 y corregir el estado pendiente",
     "commitTimestamp": 1794171707017,
     "testId": 18
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 1,
+    "numTotalTests": 106,
+    "timestamp": 1794173146262,
+    "success": false,
+    "testId": 19
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 0,
+    "numTotalTests": 106,
+    "timestamp": 1794173167041,
+    "success": true,
+    "testId": 19
+  },
+  {
+    "commitId": "d90dc361f2c3bb1788cd7d9d0bd08e7aa782826e",
+    "commitName": "test: agregar formatearDatosComunes para los datos compartidos de las tarjetas",
+    "commitTimestamp": 1794173176896,
+    "testId": 19
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 0,
+    "numTotalTests": 106,
+    "timestamp": 1794173208964,
+    "success": true,
+    "testId": 20
+  },
+  {
+    "commitId": "0100511558e92eec68bcdcd14d9ee2eb9ae7aa0b",
+    "commitName": "refactor: formatearParaTarjeta reutiliza formatearDatosComunes",
+    "commitTimestamp": 1794173217895,
+    "testId": 20
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 0,
+    "numTotalTests": 106,
+    "timestamp": 1794173238237,
+    "success": true,
+    "testId": 21
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: formatearPendiente reutiliza formatearDatosComunes",
+    "commitTimestamp": 1794173246318,
+    "testId": 21
   }
 ]

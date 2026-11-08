@@ -1,4 +1,4 @@
-import { obtenerTextoTipo } from './publicaciones.js';
+import { formatearDatosComunes } from './publicaciones.js';
 import { ESTADOS } from './estados.js';
 
 export function verificarPermisoModeracion(usuario) {
@@ -7,13 +7,9 @@ export function verificarPermisoModeracion(usuario) {
 
 export function formatearPendiente(pub) {
   return {
-    id: pub.id,
+    ...formatearDatosComunes(pub),
     coleccion: pub.coleccion,
-    foto: pub.fotos?.[0] || '',
-    titulo: pub.titulo,
     descripcion: pub.descripcion || 'Sin descripción',
-    fecha: pub.fecha,
-    tipoTexto: obtenerTextoTipo(pub.tipo),
     estado: pub.estado,
   };
 }
