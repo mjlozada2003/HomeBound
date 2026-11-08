@@ -1950,9 +1950,79 @@
     "testId": 12
   },
   {
-    "commitId": "HEAD",
+    "commitId": "84b4ccc512429da062590236687b7df914cc4896",
     "commitName": "docs: completar la lista de pruebas de HU-10 con estados actuales y casos nuevos",
     "commitTimestamp": 1794035461696,
     "testId": 13
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794171123568,
+    "success": true,
+    "testId": 14
+  },
+  {
+    "commitId": "e82c6600592c3c4ea0ed9f3c3827e35c01f7254a",
+    "commitName": "refactor: crear constantes de estados y usarlas en publicaciones.js",
+    "commitTimestamp": 1794171143163,
+    "testId": 14
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794171172909,
+    "success": true,
+    "testId": 15
+  },
+  {
+    "commitId": "d412369d89ee869769c7bb7695300ebe6455c92c",
+    "commitName": "refactor: usar constantes de estados en moderacion.js",
+    "commitTimestamp": 1794171181499,
+    "testId": 15
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794171213800,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794171459066,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794171657761,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "commitId": "da0ec08d439c32d0db3673fbfec050ed05afba5f",
+    "commitName": "refactor: usar constantes de estados en listaPresenter",
+    "commitTimestamp": 1794171665786,
+    "testId": 16
+  },
+  {
+    "commitId": "c0457cc3cd4e7be820d82a2908e8d9e96fc49fc9",
+    "commitName": "refactor: usar constantes de estados en moderacionPresenter",
+    "commitTimestamp": 1794171686530,
+    "testId": 17
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: renombrar lista de HU-06 y corregir el estado pendiente",
+    "commitTimestamp": 1794171707017,
+    "testId": 18
   }
 ]

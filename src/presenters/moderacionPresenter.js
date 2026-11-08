@@ -2,6 +2,7 @@ import {
   obtenerBandejaPendientes,
   cambiarEstadoPublicacion,
 } from '../models/Posts/moderacion.js';
+import { ESTADOS } from '../models/Posts/estados.js';
 import {
   obtenerPublicacionesPorEstado,
   actualizarEstadoPublicacion,
@@ -41,7 +42,7 @@ export async function renderizarBandejaModeracion() {
   let pendientesFirestore;
 
   try {
-    pendientesFirestore = await obtenerPublicacionesPorEstado('Pendiente de revisión');
+    pendientesFirestore = await obtenerPublicacionesPorEstado(ESTADOS.PENDIENTE);
   } catch (error) {
     console.error('Error al cargar pendientes:', error.message);
     contenedorPendientes.innerHTML = '<p class="mensaje-vacio">No se pudieron cargar las publicaciones pendientes.</p>';
@@ -77,13 +78,13 @@ export async function renderizarBandejaModeracion() {
 
   contenedorPendientes.querySelectorAll('.btn-aprobar').forEach((btn) => {
     btn.addEventListener('click', () => {
-      moderar(btn.dataset.coleccion, btn.dataset.id, 'APROBADA');
+      moderar(btn.dataset.coleccion, btn.dataset.id, ESTADOS.APROBADA);
     });
   });
 
   contenedorPendientes.querySelectorAll('.btn-rechazar').forEach((btn) => {
     btn.addEventListener('click', () => {
-      moderar(btn.dataset.coleccion, btn.dataset.id, 'RECHAZADA');
+      moderar(btn.dataset.coleccion, btn.dataset.id, ESTADOS.RECHAZADA);
     });
   });
 }

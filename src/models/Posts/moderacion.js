@@ -1,4 +1,5 @@
 import { obtenerTextoTipo } from './publicaciones.js';
+import { ESTADOS } from './estados.js';
 
 export function verificarPermisoModeracion(usuario) {
   return usuario?.rol === 'ADMIN';
@@ -19,7 +20,7 @@ export function formatearPendiente(pub) {
 
 export function obtenerBandejaPendientes(listaPublicaciones = []) {
   const pendientes = listaPublicaciones
-    .filter((pub) => pub.estado === 'Pendiente de revisión')
+    .filter((pub) => pub.estado === ESTADOS.PENDIENTE)
     .map(formatearPendiente);
 
   if (pendientes.length === 0) {
@@ -46,9 +47,9 @@ export function cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usua
 }
 
 export function aprobarPublicacion(listaPublicaciones, idPublicacion, usuario) {
-  return cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, 'APROBADA');
+  return cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, ESTADOS.APROBADA);
 }
 
 export function rechazarPublicacion(listaPublicaciones, idPublicacion, usuario) {
-  return cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, 'RECHAZADA');
+  return cambiarEstadoPublicacion(listaPublicaciones, idPublicacion, usuario, ESTADOS.RECHAZADA);
 }

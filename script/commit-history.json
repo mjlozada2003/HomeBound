@@ -228,12 +228,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "84b4ccc512429da062590236687b7df914cc4896",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T07:10:59.000Z",
       "message": "docs: completar la lista de pruebas de HU-10 con estados actuales y casos nuevos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/84b4ccc512429da062590236687b7df914cc4896"
     },
     "stats": {
       "total": 27,
@@ -242,6 +242,101 @@
       "date": "2026-11-07"
     },
     "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "e82c6600592c3c4ea0ed9f3c3827e35c01f7254a",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T20:52:15.000Z",
+      "message": "refactor: crear constantes de estados y usarlas en publicaciones.js",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e82c6600592c3c4ea0ed9f3c3827e35c01f7254a"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 8,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "d412369d89ee869769c7bb7695300ebe6455c92c",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T20:52:57.000Z",
+      "message": "refactor: usar constantes de estados en moderacion.js",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d412369d89ee869769c7bb7695300ebe6455c92c"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 4,
+      "deletions": 3,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "da0ec08d439c32d0db3673fbfec050ed05afba5f",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:01:01.000Z",
+      "message": "refactor: usar constantes de estados en listaPresenter",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da0ec08d439c32d0db3673fbfec050ed05afba5f"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 2,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "c0457cc3cd4e7be820d82a2908e8d9e96fc49fc9",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:01:16.000Z",
+      "message": "refactor: usar constantes de estados en moderacionPresenter",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/c0457cc3cd4e7be820d82a2908e8d9e96fc49fc9"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 4,
+      "deletions": 3,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:01:44.000Z",
+      "message": "docs: renombrar lista de HU-06 y corregir el estado pendiente",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
     "test_count": 105,
     "failed_tests": 0,
     "conclusion": "success"

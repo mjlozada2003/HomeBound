@@ -1,3 +1,5 @@
+import { ESTADOS } from './estados.js';
+
 let publicacionesEnMemoria = [];
 
 export function obtenerTextoTipo(tipo) {
@@ -5,7 +7,7 @@ export function obtenerTextoTipo(tipo) {
 }
 
 export function filtrarSoloAprobadas(listaPublicaciones = []) {
-  return listaPublicaciones.filter((pub) => pub.estado === 'APROBADA');
+  return listaPublicaciones.filter((pub) => pub.estado === ESTADOS.APROBADA);
 }
 
 export function ordenarPorFechaReciente(listaPublicaciones = []) {
