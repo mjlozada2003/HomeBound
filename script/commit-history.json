@@ -247,17 +247,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "e82c6600592c3c4ea0ed9f3c3827e35c01f7254a",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T20:52:15.000Z",
       "message": "refactor: crear constantes de estados y usarlas en publicaciones.js",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e82c6600592c3c4ea0ed9f3c3827e35c01f7254a"
     },
     "stats": {
       "total": 9,
       "additions": 8,
       "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T20:52:57.000Z",
+      "message": "refactor: usar constantes de estados en moderacion.js",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 4,
+      "deletions": 3,
       "date": "2026-11-08"
     },
     "coverage": 95.58,
