@@ -304,17 +304,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "c0457cc3cd4e7be820d82a2908e8d9e96fc49fc9",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:01:16.000Z",
       "message": "refactor: usar constantes de estados en moderacionPresenter",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/c0457cc3cd4e7be820d82a2908e8d9e96fc49fc9"
     },
     "stats": {
       "total": 7,
       "additions": 4,
       "deletions": 3,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:01:44.000Z",
+      "message": "docs: renombrar lista de HU-06 y corregir el estado pendiente",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1,
       "date": "2026-11-08"
     },
     "coverage": 95.58,

@@ -2014,9 +2014,15 @@
     "testId": 16
   },
   {
-    "commitId": "HEAD",
+    "commitId": "c0457cc3cd4e7be820d82a2908e8d9e96fc49fc9",
     "commitName": "refactor: usar constantes de estados en moderacionPresenter",
     "commitTimestamp": 1794171686530,
     "testId": 17
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: renombrar lista de HU-06 y corregir el estado pendiente",
+    "commitTimestamp": 1794171707017,
+    "testId": 18
   }
 ]
