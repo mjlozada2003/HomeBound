@@ -285,17 +285,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "da0ec08d439c32d0db3673fbfec050ed05afba5f",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:01:01.000Z",
       "message": "refactor: usar constantes de estados en listaPresenter",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da0ec08d439c32d0db3673fbfec050ed05afba5f"
     },
     "stats": {
       "total": 3,
       "additions": 2,
       "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:01:16.000Z",
+      "message": "refactor: usar constantes de estados en moderacionPresenter",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 4,
+      "deletions": 3,
       "date": "2026-11-08"
     },
     "coverage": 95.58,
