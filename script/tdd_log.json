@@ -1978,9 +1978,39 @@
     "testId": 15
   },
   {
-    "commitId": "HEAD",
+    "commitId": "d412369d89ee869769c7bb7695300ebe6455c92c",
     "commitName": "refactor: usar constantes de estados en moderacion.js",
     "commitTimestamp": 1794171181499,
     "testId": 15
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794171213800,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794171459066,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794171657761,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: usar constantes de estados en listaPresenter",
+    "commitTimestamp": 1794171665786,
+    "testId": 16
   }
 ]

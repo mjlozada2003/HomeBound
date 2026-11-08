@@ -3,6 +3,7 @@ import {
   obtenerTodasLasPublicaciones,
   establecerPublicaciones,
 } from '../models/Posts/publicaciones.js';
+import { ESTADOS } from '../models/Posts/estados.js';
 import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 
@@ -14,7 +15,7 @@ export async function renderizarListaPublicaciones() {
   if (!contenedorLista) {return;}
 
   try {
-    establecerPublicaciones(await obtenerPublicacionesPorEstado('APROBADA'));
+    establecerPublicaciones(await obtenerPublicacionesPorEstado(ESTADOS.APROBADA));
   } catch (error) {
     console.error('Error al cargar publicaciones:', error.message);
     contenedorLista.innerHTML = '<p class="mensaje-vacio">No se pudieron cargar las publicaciones. Intenta de nuevo.</p>';
