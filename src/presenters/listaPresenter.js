@@ -60,30 +60,27 @@ function dibujarListaPublicaciones() {
       <span id="info-pagina">Página ${paginaActual} de ${resultado.totalPaginas}</span>
       <button id="btn-siguiente" ${paginaActual >= resultado.totalPaginas ? 'disabled' : ''}>Siguiente</button>
     `;
-
-    const btnAnterior = document.querySelector('#btn-anterior');
-    const btnSiguiente = document.querySelector('#btn-siguiente');
-
-    if (btnAnterior) {
-      btnAnterior.addEventListener('click', () => {
-        if (paginaActual > 1) {
-          paginaActual--;
-          dibujarListaPublicaciones();
-        }
-      });
-    }
-
-    if (btnSiguiente) {
-      btnSiguiente.addEventListener('click', () => {
-        if (paginaActual < resultado.totalPaginas) {
-          paginaActual++;
-          dibujarListaPublicaciones();
-        }
-      });
-    }
   }
 }
 
+function cambiarPagina(evento) {
+  if (evento.target.id === 'btn-anterior') {
+    paginaActual--;
+  } else if (evento.target.id === 'btn-siguiente') {
+    paginaActual++;
+  } else {
+    return;
+  }
+
+  dibujarListaPublicaciones();
+}
+
 export function inicializarListaPresenter() {
+  const contenedorPaginacion = document.querySelector('#controles-paginacion');
+
+  if (contenedorPaginacion) {
+    contenedorPaginacion.addEventListener('click', cambiarPagina);
+  }
+
   renderizarListaPublicaciones();
 }

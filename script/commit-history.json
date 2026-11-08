@@ -475,17 +475,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "9efcc6e4cc9ddf7f45e6b60726a1812b0b3c4c0e",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:56:37.000Z",
       "message": "refactor: moderacionPresenter usa la plantilla compartida de tarjeta",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9efcc6e4cc9ddf7f45e6b60726a1812b0b3c4c0e"
     },
     "stats": {
       "total": 27,
       "additions": 13,
       "deletions": 14,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:57:24.000Z",
+      "message": "refactor: listaPresenter usa un solo listener para la paginacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 37,
+      "additions": 17,
+      "deletions": 20,
       "date": "2026-11-08"
     },
     "coverage": 96.46,
