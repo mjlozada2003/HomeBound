@@ -2,7 +2,8 @@ import {
   obtenerPublicacionesPaginadas,
   filtrarSoloAprobadas,
   ordenarPorFechaReciente,
-  formatearParaTarjeta
+  formatearParaTarjeta,
+  formatearDatosComunes
 } from './publicaciones.js';
 
 describe('HU-06: Ver vista básica de publicaciones recientes', () => {
@@ -75,6 +76,17 @@ describe('HU-06: Ver vista básica de publicaciones recientes', () => {
       fecha: '2026-10-10',
       tipoTexto: 'Encontrado',
       estadoTexto: 'Activo',
+    });
+  });
+
+  test('Debería formatear los datos comunes de una publicación: id, foto, título, fecha y tipo', () => {
+    const datos = formatearDatosComunes(publicacionesMock[1]);
+    expect(datos).toEqual({
+      id: '2',
+      foto: 'https://via.placeholder.com/150',
+      titulo: 'Perrito mestizo perdido',
+      fecha: '2026-10-15',
+      tipoTexto: 'Perdido',
     });
   });
 

@@ -323,12 +323,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "07216c3aaa3039dde3059ce2324f7bf827611b3f",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:01:44.000Z",
       "message": "docs: renombrar lista de HU-06 y corregir el estado pendiente",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/07216c3aaa3039dde3059ce2324f7bf827611b3f"
     },
     "stats": {
       "total": 2,
@@ -338,6 +338,25 @@
     },
     "coverage": 95.58,
     "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:26:11.000Z",
+      "message": "test: agregar formatearDatosComunes para los datos compartidos de las tarjetas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 27,
+      "additions": 25,
+      "deletions": 2,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.59,
+    "test_count": 106,
     "failed_tests": 0,
     "conclusion": "success"
   }

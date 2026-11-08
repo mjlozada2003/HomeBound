@@ -16,6 +16,16 @@ export function ordenarPorFechaReciente(listaPublicaciones = []) {
   });
 }
 
+export function formatearDatosComunes(pub) {
+  return {
+    id: pub.id,
+    foto: pub.fotos?.[0] || '',
+    titulo: pub.titulo,
+    fecha: pub.fecha,
+    tipoTexto: obtenerTextoTipo(pub.tipo),
+  };
+}
+
 export function formatearParaTarjeta(pub) {
   return {
     id: pub.id,

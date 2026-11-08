@@ -2020,9 +2020,31 @@
     "testId": 17
   },
   {
-    "commitId": "HEAD",
+    "commitId": "07216c3aaa3039dde3059ce2324f7bf827611b3f",
     "commitName": "docs: renombrar lista de HU-06 y corregir el estado pendiente",
     "commitTimestamp": 1794171707017,
     "testId": 18
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 1,
+    "numTotalTests": 106,
+    "timestamp": 1794173146262,
+    "success": false,
+    "testId": 19
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 0,
+    "numTotalTests": 106,
+    "timestamp": 1794173167041,
+    "success": true,
+    "testId": 19
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: agregar formatearDatosComunes para los datos compartidos de las tarjetas",
+    "commitTimestamp": 1794173176896,
+    "testId": 19
   }
 ]
