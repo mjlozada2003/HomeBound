@@ -1950,9 +1950,23 @@
     "testId": 12
   },
   {
-    "commitId": "HEAD",
+    "commitId": "84b4ccc512429da062590236687b7df914cc4896",
     "commitName": "docs: completar la lista de pruebas de HU-10 con estados actuales y casos nuevos",
     "commitTimestamp": 1794035461696,
     "testId": 13
+  },
+  {
+    "numPassedTests": 105,
+    "failedTests": 0,
+    "numTotalTests": 105,
+    "timestamp": 1794171123568,
+    "success": true,
+    "testId": 14
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: crear constantes de estados y usarlas en publicaciones.js",
+    "commitTimestamp": 1794171143163,
+    "testId": 14
   }
 ]

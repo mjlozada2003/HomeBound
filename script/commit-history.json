@@ -228,12 +228,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "84b4ccc512429da062590236687b7df914cc4896",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-07T07:10:59.000Z",
       "message": "docs: completar la lista de pruebas de HU-10 con estados actuales y casos nuevos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/84b4ccc512429da062590236687b7df914cc4896"
     },
     "stats": {
       "total": 27,
@@ -242,6 +242,25 @@
       "date": "2026-11-07"
     },
     "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T20:52:15.000Z",
+      "message": "refactor: crear constantes de estados y usarlas en publicaciones.js",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 8,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
     "test_count": 105,
     "failed_tests": 0,
     "conclusion": "success"
