@@ -1,7 +1,5 @@
 import { ESTADOS } from './estados.js';
 
-let publicacionesEnMemoria = [];
-
 export function obtenerTextoTipo(tipo) {
   return tipo === 'HALLAZGO' ? 'Encontrado' : 'Perdido';
 }
@@ -65,12 +63,4 @@ export function obtenerPublicacionesPaginadas(
     totalPaginas,
     mensajeVacio: null,
   };
-}
-
-export function obtenerTodasLasPublicaciones() {
-  return publicacionesEnMemoria;
-}
-
-export function establecerPublicaciones(nuevaLista) {
-  publicacionesEnMemoria = Array.isArray(nuevaLista) ? nuevaLista : [];
 }

@@ -2070,9 +2070,37 @@
     "testId": 21
   },
   {
-    "commitId": "HEAD",
+    "commitId": "4cd2760830efdf0a8c90e56d1eb7eb0b95ceecae",
     "commitName": "refactor: formatearPendiente reutiliza formatearDatosComunes",
     "commitTimestamp": 1794173246318,
     "testId": 21
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 0,
+    "numTotalTests": 106,
+    "timestamp": 1794173863303,
+    "success": true,
+    "testId": 22
+  },
+  {
+    "commitId": "607e7d57ca05df28c33efb71038e84de38ee5587",
+    "commitName": "refactor: listaPresenter guarda las publicaciones cargadas",
+    "commitTimestamp": 1794173875844,
+    "testId": 22
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 0,
+    "numTotalTests": 106,
+    "timestamp": 1794173948805,
+    "success": true,
+    "testId": 23
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: quitar el estado en memoria del modelo de publicaciones",
+    "commitTimestamp": 1794174016485,
+    "testId": 23
   }
 ]
