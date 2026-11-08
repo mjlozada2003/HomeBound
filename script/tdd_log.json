@@ -2098,9 +2098,87 @@
     "testId": 23
   },
   {
-    "commitId": "HEAD",
+    "commitId": "0eff079599159676e91f5c73a9fcd505f09be70f",
     "commitName": "refactor: quitar el estado en memoria del modelo de publicaciones",
     "commitTimestamp": 1794174016485,
     "testId": 23
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 3,
+    "numTotalTests": 109,
+    "timestamp": 1794174902586,
+    "success": false,
+    "testId": 24
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794174926569,
+    "success": true,
+    "testId": 24
+  },
+  {
+    "commitId": "5049e615d5e6f3376a4b0625325cd593153d5f31",
+    "commitName": "test: agregar plantilla compartida de tarjeta con crearTarjetaHtml",
+    "commitTimestamp": 1794174935038,
+    "testId": 24
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794174972522,
+    "success": true,
+    "testId": 25
+  },
+  {
+    "commitId": "d41e915780372f37dc4c97ecadfa497f556a5884",
+    "commitName": "refactor: listaPresenter usa la plantilla compartida de tarjeta",
+    "commitTimestamp": 1794174979232,
+    "testId": 25
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794174993809,
+    "success": true,
+    "testId": 26
+  },
+  {
+    "commitId": "9efcc6e4cc9ddf7f45e6b60726a1812b0b3c4c0e",
+    "commitName": "refactor: moderacionPresenter usa la plantilla compartida de tarjeta",
+    "commitTimestamp": 1794175001073,
+    "testId": 26
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794175041351,
+    "success": true,
+    "testId": 27
+  },
+  {
+    "commitId": "b92a8ed0ee6924dc5d5e5afb3d1c67c7431a17a3",
+    "commitName": "refactor: listaPresenter usa un solo listener para la paginacion",
+    "commitTimestamp": 1794175048210,
+    "testId": 27
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794175063221,
+    "success": true,
+    "testId": 28
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: moderacionPresenter usa un solo listener para aprobar y rechazar",
+    "commitTimestamp": 1794175077730,
+    "testId": 28
   }
 ]

@@ -418,12 +418,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "0eff079599159676e91f5c73a9fcd505f09be70f",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:40:05.000Z",
       "message": "refactor: quitar el estado en memoria del modelo de publicaciones",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/0eff079599159676e91f5c73a9fcd505f09be70f"
     },
     "stats": {
       "total": 10,
@@ -433,6 +433,101 @@
     },
     "coverage": 96.43,
     "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "5049e615d5e6f3376a4b0625325cd593153d5f31",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:55:30.000Z",
+      "message": "test: agregar plantilla compartida de tarjeta con crearTarjetaHtml",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5049e615d5e6f3376a4b0625325cd593153d5f31"
+    },
+    "stats": {
+      "total": 59,
+      "additions": 58,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "d41e915780372f37dc4c97ecadfa497f556a5884",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:56:16.000Z",
+      "message": "refactor: listaPresenter usa la plantilla compartida de tarjeta",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d41e915780372f37dc4c97ecadfa497f556a5884"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 12,
+      "deletions": 14,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "9efcc6e4cc9ddf7f45e6b60726a1812b0b3c4c0e",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:56:37.000Z",
+      "message": "refactor: moderacionPresenter usa la plantilla compartida de tarjeta",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9efcc6e4cc9ddf7f45e6b60726a1812b0b3c4c0e"
+    },
+    "stats": {
+      "total": 27,
+      "additions": 13,
+      "deletions": 14,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "b92a8ed0ee6924dc5d5e5afb3d1c67c7431a17a3",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:57:24.000Z",
+      "message": "refactor: listaPresenter usa un solo listener para la paginacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b92a8ed0ee6924dc5d5e5afb3d1c67c7431a17a3"
+    },
+    "stats": {
+      "total": 37,
+      "additions": 17,
+      "deletions": 20,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:57:54.000Z",
+      "message": "refactor: moderacionPresenter usa un solo listener para aprobar y rechazar",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 30,
+      "additions": 19,
+      "deletions": 11,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
     "failed_tests": 0,
     "conclusion": "success"
   }

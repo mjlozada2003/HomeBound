@@ -2,6 +2,7 @@ import { obtenerPublicacionesPaginadas } from '../models/Posts/publicaciones.js'
 import { ESTADOS } from '../models/Posts/estados.js';
 import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
+import { crearTarjetaHtml } from './plantillaTarjeta';
 
 let publicacionesCargadas = [];
 let paginaActual = 1;
@@ -39,20 +40,17 @@ function dibujarListaPublicaciones() {
   }
 
   contenedorLista.innerHTML = resultado.publicaciones
-    .map(
-      (pub) => `
-      <div class="tarjeta-publicacion" data-id="${escaparHtml(pub.id)}">
-        <img src="${escaparHtml(pub.foto)}" alt="${escaparHtml(pub.titulo)}" class="tarjeta-foto" />
-        <div class="tarjeta-info">
-          <h3 class="tarjeta-titulo">${escaparHtml(pub.titulo)}</h3>
-          <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)}</p>
-          <p class="tarjeta-etiquetas">
-            <span class="badge-tipo">${pub.tipoTexto}</span> |
-            <span class="badge-estado">${pub.estadoTexto}</span>
-          </p>
-        </div>
-      </div>
-    `
+    .map((pub) =>
+      crearTarjetaHtml(
+        pub,
+        `
+        <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)}</p>
+        <p class="tarjeta-etiquetas">
+          <span class="badge-tipo">${pub.tipoTexto}</span> |
+          <span class="badge-estado">${pub.estadoTexto}</span>
+        </p>
+      `
+      )
     )
     .join('');
 
@@ -62,30 +60,27 @@ function dibujarListaPublicaciones() {
       <span id="info-pagina">Página ${paginaActual} de ${resultado.totalPaginas}</span>
       <button id="btn-siguiente" ${paginaActual >= resultado.totalPaginas ? 'disabled' : ''}>Siguiente</button>
     `;
-
-    const btnAnterior = document.querySelector('#btn-anterior');
-    const btnSiguiente = document.querySelector('#btn-siguiente');
-
-    if (btnAnterior) {
-      btnAnterior.addEventListener('click', () => {
-        if (paginaActual > 1) {
-          paginaActual--;
-          dibujarListaPublicaciones();
-        }
-      });
-    }
-
-    if (btnSiguiente) {
-      btnSiguiente.addEventListener('click', () => {
-        if (paginaActual < resultado.totalPaginas) {
-          paginaActual++;
-          dibujarListaPublicaciones();
-        }
-      });
-    }
   }
 }
 
+function cambiarPagina(evento) {
+  if (evento.target.id === 'btn-anterior') {
+    paginaActual--;
+  } else if (evento.target.id === 'btn-siguiente') {
+    paginaActual++;
+  } else {
+    return;
+  }
+
+  dibujarListaPublicaciones();
+}
+
 export function inicializarListaPresenter() {
+  const contenedorPaginacion = document.querySelector('#controles-paginacion');
+
+  if (contenedorPaginacion) {
+    contenedorPaginacion.addEventListener('click', cambiarPagina);
+  }
+
   renderizarListaPublicaciones();
 }

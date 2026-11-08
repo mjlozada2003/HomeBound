@@ -9,6 +9,7 @@ import {
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 import { obtenerSesionActiva } from '../models/Auth/sesion';
+import { crearTarjetaHtml } from './plantillaTarjeta';
 
 let pendientesCargadas = [];
 
@@ -58,33 +59,37 @@ export async function renderizarBandejaModeracion() {
   }
 
   contenedorPendientes.innerHTML = bandeja.pendientes
-    .map(
-      (pub) => `
-      <div class="tarjeta-publicacion tarjeta-moderacion" data-id="${escaparHtml(pub.id)}">
-        <img src="${escaparHtml(pub.foto)}" alt="${escaparHtml(pub.titulo)}" class="tarjeta-foto" />
-        <div class="tarjeta-info">
-          <h3 class="tarjeta-titulo">${escaparHtml(pub.titulo)}</h3>
-          <p class="tarjeta-descripcion">${escaparHtml(pub.descripcion)}</p>
-          <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
-          <div class="acciones-moderacion">
-            <button class="btn-aprobar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Aprobar</button>
-            <button class="btn-rechazar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Rechazar</button>
-          </div>
+    .map((pub) =>
+      crearTarjetaHtml(
+        pub,
+        `
+        <p class="tarjeta-descripcion">${escaparHtml(pub.descripcion)}</p>
+        <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
+        <div class="acciones-moderacion">
+          <button class="btn-aprobar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Aprobar</button>
+          <button class="btn-rechazar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Rechazar</button>
         </div>
-      </div>
-    `
+      `,
+        'tarjeta-moderacion'
+      )
     )
     .join('');
+}
 
-  contenedorPendientes.querySelectorAll('.btn-aprobar').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      moderar(btn.dataset.coleccion, btn.dataset.id, ESTADOS.APROBADA);
-    });
-  });
+function manejarClicModeracion(evento) {
+  const boton = evento.target;
 
-  contenedorPendientes.querySelectorAll('.btn-rechazar').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      moderar(btn.dataset.coleccion, btn.dataset.id, ESTADOS.RECHAZADA);
-    });
-  });
+  if (boton.classList.contains('btn-aprobar')) {
+    moderar(boton.dataset.coleccion, boton.dataset.id, ESTADOS.APROBADA);
+  } else if (boton.classList.contains('btn-rechazar')) {
+    moderar(boton.dataset.coleccion, boton.dataset.id, ESTADOS.RECHAZADA);
+  }
+}
+
+export function inicializarModeracionPresenter() {
+  const contenedorPendientes = document.querySelector('#lista-pendientes');
+
+  if (contenedorPendientes) {
+    contenedorPendientes.addEventListener('click', manejarClicModeracion);
+  }
 }
