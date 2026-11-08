@@ -342,17 +342,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "d90dc361f2c3bb1788cd7d9d0bd08e7aa782826e",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:26:11.000Z",
       "message": "test: agregar formatearDatosComunes para los datos compartidos de las tarjetas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d90dc361f2c3bb1788cd7d9d0bd08e7aa782826e"
     },
     "stats": {
       "total": 27,
       "additions": 25,
       "deletions": 2,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.59,
+    "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:26:53.000Z",
+      "message": "refactor: formatearParaTarjeta reutiliza formatearDatosComunes",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 1,
+      "deletions": 5,
       "date": "2026-11-08"
     },
     "coverage": 95.59,

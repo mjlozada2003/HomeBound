@@ -28,11 +28,7 @@ export function formatearDatosComunes(pub) {
 
 export function formatearParaTarjeta(pub) {
   return {
-    id: pub.id,
-    foto: pub.fotos?.[0] || '',
-    titulo: pub.titulo,
-    fecha: pub.fecha,
-    tipoTexto: obtenerTextoTipo(pub.tipo),
+    ...formatearDatosComunes(pub),
     estadoTexto: 'Activo',
   };
 }

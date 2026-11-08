@@ -2042,9 +2042,23 @@
     "testId": 19
   },
   {
-    "commitId": "HEAD",
+    "commitId": "d90dc361f2c3bb1788cd7d9d0bd08e7aa782826e",
     "commitName": "test: agregar formatearDatosComunes para los datos compartidos de las tarjetas",
     "commitTimestamp": 1794173176896,
     "testId": 19
+  },
+  {
+    "numPassedTests": 106,
+    "failedTests": 0,
+    "numTotalTests": 106,
+    "timestamp": 1794173208964,
+    "success": true,
+    "testId": 20
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: formatearParaTarjeta reutiliza formatearDatosComunes",
+    "commitTimestamp": 1794173217895,
+    "testId": 20
   }
 ]
