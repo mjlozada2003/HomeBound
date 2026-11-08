@@ -494,17 +494,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "b92a8ed0ee6924dc5d5e5afb3d1c67c7431a17a3",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:57:24.000Z",
       "message": "refactor: listaPresenter usa un solo listener para la paginacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b92a8ed0ee6924dc5d5e5afb3d1c67c7431a17a3"
     },
     "stats": {
       "total": 37,
       "additions": 17,
       "deletions": 20,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:57:54.000Z",
+      "message": "refactor: moderacionPresenter usa un solo listener para aprobar y rechazar",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 30,
+      "additions": 19,
+      "deletions": 11,
       "date": "2026-11-08"
     },
     "coverage": 96.46,

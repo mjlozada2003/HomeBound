@@ -74,16 +74,22 @@ export async function renderizarBandejaModeracion() {
       )
     )
     .join('');
+}
 
-  contenedorPendientes.querySelectorAll('.btn-aprobar').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      moderar(btn.dataset.coleccion, btn.dataset.id, ESTADOS.APROBADA);
-    });
-  });
+function manejarClicModeracion(evento) {
+  const boton = evento.target;
 
-  contenedorPendientes.querySelectorAll('.btn-rechazar').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      moderar(btn.dataset.coleccion, btn.dataset.id, ESTADOS.RECHAZADA);
-    });
-  });
+  if (boton.classList.contains('btn-aprobar')) {
+    moderar(boton.dataset.coleccion, boton.dataset.id, ESTADOS.APROBADA);
+  } else if (boton.classList.contains('btn-rechazar')) {
+    moderar(boton.dataset.coleccion, boton.dataset.id, ESTADOS.RECHAZADA);
+  }
+}
+
+export function inicializarModeracionPresenter() {
+  const contenedorPendientes = document.querySelector('#lista-pendientes');
+
+  if (contenedorPendientes) {
+    contenedorPendientes.addEventListener('click', manejarClicModeracion);
+  }
 }

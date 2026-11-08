@@ -2162,9 +2162,23 @@
     "testId": 27
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b92a8ed0ee6924dc5d5e5afb3d1c67c7431a17a3",
     "commitName": "refactor: listaPresenter usa un solo listener para la paginacion",
     "commitTimestamp": 1794175048210,
     "testId": 27
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794175063221,
+    "success": true,
+    "testId": 28
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: moderacionPresenter usa un solo listener para aprobar y rechazar",
+    "commitTimestamp": 1794175077730,
+    "testId": 28
   }
 ]
