@@ -1,4 +1,4 @@
-import { formatearDatosComunes } from './publicaciones.js';
+import { formatearParaTarjeta } from './publicaciones.js';
 import { ESTADOS } from './estados.js';
 
 export function verificarPermisoModeracion(usuario) {
@@ -6,8 +6,9 @@ export function verificarPermisoModeracion(usuario) {
 }
 
 export function formatearPendiente(pub) {
+  const { estadoTexto, ...datosTarjeta } = formatearParaTarjeta(pub);
   return {
-    ...formatearDatosComunes(pub),
+    ...datosTarjeta,
     coleccion: pub.coleccion,
     descripcion: pub.descripcion || 'Sin descripción',
     estado: pub.estado,

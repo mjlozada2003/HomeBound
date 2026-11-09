@@ -2176,9 +2176,31 @@
     "testId": 28
   },
   {
-    "commitId": "HEAD",
+    "commitId": "da114de8412ce34db20b8d810085b0c4e9be107d",
     "commitName": "refactor: moderacionPresenter usa un solo listener para aprobar y rechazar",
     "commitTimestamp": 1794175077730,
     "testId": 28
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794249949691,
+    "success": true,
+    "testId": 29
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794250028922,
+    "success": true,
+    "testId": 29
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: formatearPendiente reutiliza formatearParaTarjeta y agrega descripcion, coleccion y estado",
+    "commitTimestamp": 1794250077672,
+    "testId": 29
   }
 ]

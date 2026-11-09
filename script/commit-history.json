@@ -513,12 +513,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "da114de8412ce34db20b8d810085b0c4e9be107d",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:57:54.000Z",
       "message": "refactor: moderacionPresenter usa un solo listener para aprobar y rechazar",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da114de8412ce34db20b8d810085b0c4e9be107d"
     },
     "stats": {
       "total": 30,
@@ -527,6 +527,25 @@
       "date": "2026-11-08"
     },
     "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-09T18:47:53.000Z",
+      "message": "refactor: formatearPendiente reutiliza formatearParaTarjeta y agrega descripcion, coleccion y estado",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 5,
+      "additions": 3,
+      "deletions": 2,
+      "date": "2026-11-09"
+    },
+    "coverage": 96.48,
     "test_count": 109,
     "failed_tests": 0,
     "conclusion": "success"
