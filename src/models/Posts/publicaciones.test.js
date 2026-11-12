@@ -5,7 +5,7 @@ import {
   formatearParaTarjeta,
   formatearDatosComunes,
   obtenerPublicacionPorId,
-  //formatearDetallePublicacion,
+  formatearDetallePublicacion,
 } from './publicaciones.js';
 
 describe('HU-06: Ver vista básica de publicaciones recientes', () => {
@@ -162,6 +162,25 @@ describe('HU-12: Ver detalle de publicación', () => {
     expect(obtenerPublicacionPorId(null, 'pub-101')).toBeNull();
   });
 
+  it('Debería formatear los datos completos del detalle con enlaces de contacto', () => {
+    const detalle = formatearDetallePublicacion(publicacionesDetalleMock[0]);
+
+    expect(detalle).toEqual({
+      id: 'pub-101',
+      titulo: 'Mochila negra encontrada',
+      descripcion: 'Encontrada en la banca de la plaza principal.',
+      categoria: 'OBJETO',
+      fecha: '2026-10-20',
+      tipoTexto: 'Encontrado',
+      estadoTexto: 'Activo',
+      fotoPrincipal: 'https://imagenes.test/mochila1.jpg',
+      fotos: ['https://imagenes.test/mochila1.jpg', 'https://imagenes.test/mochila2.jpg'],
+      whatsapp: '59171234567',
+      enlaceWhatsapp: 'https://wa.me/59171234567',
+      correo: 'contacto@example.com',
+      enlaceCorreo: 'mailto:contacto@example.com',
+    });
+  });
 
 
 });
