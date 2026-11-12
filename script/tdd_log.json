@@ -2514,9 +2514,23 @@
     "testId": 45
   },
   {
-    "commitId": "HEAD",
+    "commitId": "7bf163e00b8efd8b5231dbfde30d946f75b6a57c",
     "commitName": "feat: HU-09 seccion mis publicaciones con su estado de revision",
     "commitTimestamp": 1794491268075,
     "testId": 45
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491309798,
+    "success": true,
+    "testId": 46
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-09 editar titulo y descripcion desde mis publicaciones",
+    "commitTimestamp": 1794491487018,
+    "testId": 46
   }
 ]

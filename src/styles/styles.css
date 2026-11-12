@@ -313,6 +313,56 @@ body {
     cursor: pointer;
 }
 
+/* Mis publicaciones (HU-09) */
+.acciones-mis-publicaciones {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.acciones-mis-publicaciones button {
+    flex: 1;
+    border: none;
+    padding: 0.45rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-editar,
+.btn-guardar {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-cancelar {
+    background-color: #e0e0e0;
+    color: var(--color-text);
+}
+
+.form-editar label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 6px 0;
+}
+
+.form-editar input,
+.form-editar textarea {
+    width: 100%;
+    margin-top: 4px;
+    padding: 0.45rem;
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    font: inherit;
+}
+
+.mensaje-edicion {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    min-height: 1em;
+}
+
 /* HU-03: estilos exclusivos del formulario de hallazgo */
 .hallazgo-card {
   max-width: 640px;
