@@ -532,21 +532,6 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
-    "author": "Maria Lozada",
-    "commit": {
-      "date": "2026-11-12T02:41:12.000Z",
-      "message": "refactor(auth): centralizar alternancia de vistas en authPresenter",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
-    },
-    "stats": {
-      "total": 79,
-      "additions": 37,
-      "deletions": 42,
-      "date": "2026-11-12"
-    },
-    "coverage": 96.46,
-    "test_count": 109,
     "sha": "d215de6554c5efd8cde72a3399dcf571404d4a2e",
     "author": "Maria Lozada",
     "commit": {
@@ -566,17 +551,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "e23ad1e0e02d2e1e40977bbff23d5b4d8fc331f2",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T02:15:05.000Z",
       "message": "refactor(auth): reutilizar validador de correo compartido en cuenta y sesion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e23ad1e0e02d2e1e40977bbff23d5b4d8fc331f2"
     },
     "stats": {
       "total": 14,
       "additions": 8,
       "deletions": 6,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.49,
+    "test_count": 115,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:10:46.000Z",
+      "message": "fix(script): corregir formato de objetos json en tdd_log tras resolucion de conflictos",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
       "date": "2026-11-12"
     },
     "coverage": 96.49,
