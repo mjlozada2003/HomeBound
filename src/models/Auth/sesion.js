@@ -1,4 +1,4 @@
-import { esCorreoValido } from './validadorCorreo';
+import { esCorreoValido, normalizarCorreo } from './validadorCorreo';
 
 export function validarCamposLogin(correo, password){
     if(!correo?.trim() || !password?.trim()){
@@ -29,31 +29,32 @@ export const CUENTA_ADMIN_PRECONFIGURADA = {
 };
 
 
-export function autenticarUsuario(correo, password, usuarios = []){
-    const correoNormalizado = correo.trim().toLowerCase();
+export function autenticarUsuario(correo, password, usuarios = []) {
+  const correoNormalizado = normalizarCorreo(correo);
+  const todosLosUsuarios = [CUENTA_ADMIN_PRECONFIGURADA, ...usuarios];
 
-    const todosLosUsuarios = [CUENTA_ADMIN_PRECONFIGURADA, ...usuarios];
+  const usuarioEncontrado = todosLosUsuarios.find(
+    (u) => normalizarCorreo(u.correo) === correoNormalizado
+  );
 
-    const usuarioEncontrado = todosLosUsuarios.find(
-        (u) => u.correo.toLowerCase() === correoNormalizado
-    );
-
-    if(!usuarioEncontrado || password !== usuarioEncontrado.password){
-        return {
-            exito:false,
-            mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
-        };
-    }
+  if (!usuarioEncontrado || password !== usuarioEncontrado.password) {
     return {
-        exito:true,
-        mensaje: '¡Inicio de sesión exitoso!',
-        usuario:{
-            nombre:usuarioEncontrado.nombre,
-            correo:usuarioEncontrado.correo,
-            rol: usuarioEncontrado.rol || 'USER'
-        }
+      exito: false,
+      mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.',
     };
-};
+  }
+
+  return {
+    exito: true,
+    mensaje: '¡Inicio de sesión exitoso!',
+    usuario: {
+      nombre: usuarioEncontrado.nombre,
+      correo: usuarioEncontrado.correo,
+      rol: usuarioEncontrado.rol || 'USER',
+    },
+  };
+}
+
 const CLAVE_SESION = 'homebound_sesion_activa';
 export function obtenerSesionActiva(){
     if (typeof localStorage === 'undefined') {return null;}
