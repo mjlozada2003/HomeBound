@@ -2176,9 +2176,39 @@
     "testId": 28
   },
   {
-    "commitId": "HEAD",
+    "commitId": "da114de8412ce34db20b8d810085b0c4e9be107d",
     "commitName": "refactor: moderacionPresenter usa un solo listener para aprobar y rechazar",
     "commitTimestamp": 1794175077730,
     "testId": 28
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 1,
+    "numTotalTests": 110,
+    "timestamp": 1794425683918,
+    "success": false,
+    "testId": 29
+  },
+  {
+    "numPassedTests": 109,
+    "failedTests": 6,
+    "numTotalTests": 115,
+    "timestamp": 1794427235656,
+    "success": false,
+    "testId": 29
+  },
+  {
+    "numPassedTests": 115,
+    "failedTests": 0,
+    "numTotalTests": 115,
+    "timestamp": 1794449111227,
+    "success": true,
+    "testId": 29
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(auth): agregar pruebas y modulo de validador de correo compartido",
+    "commitTimestamp": 1794449439630,
+    "testId": 29
   }
 ]

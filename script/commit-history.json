@@ -513,12 +513,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "da114de8412ce34db20b8d810085b0c4e9be107d",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-08T21:57:54.000Z",
       "message": "refactor: moderacionPresenter usa un solo listener para aprobar y rechazar",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da114de8412ce34db20b8d810085b0c4e9be107d"
     },
     "stats": {
       "total": 30,
@@ -528,6 +528,25 @@
     },
     "coverage": 96.46,
     "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T02:10:37.000Z",
+      "message": "test(auth): agregar pruebas y modulo de validador de correo compartido",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 35,
+      "additions": 35,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.52,
+    "test_count": 115,
     "failed_tests": 0,
     "conclusion": "success"
   }
