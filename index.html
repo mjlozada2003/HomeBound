@@ -28,6 +28,7 @@
         <!-- Sección de Usuario (visible con sesión) -->
         <div id="nav-user-info" class="user-info oculto">
           <span id="nav-user-name" class="user-name">👤 Usuario</span>
+          <button id="nav-btn-mis-publicaciones" class="btn-panel">Mis publicaciones</button>
           <button id="nav-btn-logout" class="btn-logout" title="Cerrar sesión">Cerrar sesión</button>
         </div>
       </div>
@@ -105,6 +106,12 @@
           <button id="btn-volver-publicaciones" class="btn-ingresar">← Volver a la lista pública</button>
         </div>
         <div id="lista-pendientes" class="grid-publicaciones"></div>
+      </section>
+
+      <!-- VISTA: MIS PUBLICACIONES (HU-09) -->
+      <section id="seccion-mis-publicaciones" class="vista-publicaciones oculto">
+        <h2 class="publicaciones-titulo">Mis publicaciones</h2>
+        <div id="lista-mis-publicaciones" class="grid-publicaciones"></div>
       </section>
 
     <!-- VISTA 5: PUBLICAR HALLAZGO -->
@@ -367,6 +374,18 @@
 </section>
 
     </main>
+
+    <!-- Diálogo de confirmación de la app (HU-09) -->
+    <dialog id="dialogo-confirmacion" class="dialogo" aria-labelledby="dialogo-titulo">
+      <form method="dialog">
+        <h3 id="dialogo-titulo" class="dialogo-titulo"></h3>
+        <p id="dialogo-mensaje" class="dialogo-mensaje"></p>
+        <div class="dialogo-acciones">
+          <button value="cancelar" class="btn-cancelar">Cancelar</button>
+          <button id="dialogo-confirmar" value="confirmar" class="btn-eliminar">Aceptar</button>
+        </div>
+      </form>
+    </dialog>
 
 
     <script type="module" src="./src/presenter.js"></script>

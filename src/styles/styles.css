@@ -313,6 +313,103 @@ body {
     cursor: pointer;
 }
 
+/* Mis publicaciones (HU-09) */
+.acciones-mis-publicaciones {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.acciones-mis-publicaciones button {
+    flex: 1;
+    border: none;
+    padding: 0.45rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-editar,
+.btn-guardar {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-eliminar {
+    background-color: var(--color-error);
+    color: #fff;
+}
+
+.btn-cancelar {
+    background-color: #e0e0e0;
+    color: var(--color-text);
+}
+
+.form-editar label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 6px 0;
+}
+
+.form-editar input,
+.form-editar textarea {
+    width: 100%;
+    margin-top: 4px;
+    padding: 0.45rem;
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    font: inherit;
+}
+
+.mensaje-edicion {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    min-height: 1em;
+}
+
+/* Diálogo de confirmación de la app (HU-09) */
+.dialogo {
+    border: none;
+    border-radius: 16px;
+    padding: 1.5rem;
+    max-width: 420px;
+    width: calc(100% - 32px);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dialogo::backdrop {
+    background-color: rgba(31, 45, 36, 0.45);
+}
+
+.dialogo-titulo {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+}
+
+.dialogo-mensaje {
+    margin: 0 0 1.25rem;
+    line-height: 1.4;
+}
+
+.dialogo-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.dialogo-acciones button {
+    border: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 /* HU-03: estilos exclusivos del formulario de hallazgo */
 .hallazgo-card {
   max-width: 640px;

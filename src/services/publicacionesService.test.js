@@ -1,13 +1,17 @@
 import {
   obtenerPublicacionesPorEstado,
-  actualizarEstadoPublicacion
+  actualizarEstadoPublicacion,
+  obtenerPublicacionesPorAutor,
+  actualizarPublicacion,
+  borrarPublicacion
 } from './publicacionesService';
-import { collection, doc, getDocs, updateDoc, where } from 'firebase/firestore';
+import { collection, deleteDoc, doc, getDocs, updateDoc, where } from 'firebase/firestore';
 
 jest.mock('./firebase', () => ({ db: {} }));
 
 jest.mock('firebase/firestore', () => ({
   collection: jest.fn(),
+  deleteDoc: jest.fn(),
   doc: jest.fn(),
   getDocs: jest.fn(),
   query: jest.fn(),
@@ -53,5 +57,48 @@ describe('HU-06 y HU-10: Leer publicaciones desde Firestore', () => {
 
     expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'h1');
     expect(updateDoc).toHaveBeenCalledWith('referencia', { estado: 'APROBADA' });
+  });
+});
+
+describe('HU-09: Gestionar mis publicaciones en Firestore', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+    getDocs.mockResolvedValue({ docs: [] });
+  });
+
+  test('Debería buscar en hallazgos y perdidas las publicaciones del autor', async () => {
+    getDocs
+      .mockResolvedValueOnce({
+        docs: [{ id: 'h1', data: () => ({ titulo: 'Mochila azul' }) }]
+      })
+      .mockResolvedValueOnce({ docs: [] });
+
+    const resultado = await obtenerPublicacionesPorAutor('maite@ucb.edu.bo');
+
+    expect(collection).toHaveBeenCalledWith(expect.anything(), 'hallazgos');
+    expect(collection).toHaveBeenCalledWith(expect.anything(), 'perdidas');
+    expect(where).toHaveBeenCalledWith('autor', '==', 'maite@ucb.edu.bo');
+    expect(resultado).toEqual([{ titulo: 'Mochila azul', id: 'h1', coleccion: 'hallazgos' }]);
+  });
+
+  test('Debería guardar solo los campos editados en la colección de la publicación', async () => {
+    doc.mockReturnValue('referencia');
+
+    await actualizarPublicacion('perdidas', 'p1', { titulo: 'Perro café', descripcion: 'Collar rojo' });
+
+    expect(doc).toHaveBeenCalledWith(expect.anything(), 'perdidas', 'p1');
+    expect(updateDoc).toHaveBeenCalledWith('referencia', {
+      titulo: 'Perro café',
+      descripcion: 'Collar rojo'
+    });
+  });
+
+  test('Debería borrar el documento de la colección de la publicación', async () => {
+    doc.mockReturnValue('referencia');
+
+    await borrarPublicacion('hallazgos', 'h1');
+
+    expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'h1');
+    expect(deleteDoc).toHaveBeenCalledWith('referencia');
   });
 });

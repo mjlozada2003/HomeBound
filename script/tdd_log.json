@@ -2206,12 +2206,6 @@
     "testId": 29
   },
   {
-    "commitId": "63dec2b",
-    "commitName": "refactor(auth): centralizar alternancia de vistas en authPresenter",
-    "commitTimestamp": 1794451275158,
-    "testId": 29
-  },
-  {
     "commitId": "d215de6554c5efd8cde72a3399dcf571404d4a2e",
     "commitName": "test(auth): agregar pruebas y modulo de validador de correo compartido",
     "commitTimestamp": 1794449439630,
@@ -2232,6 +2226,12 @@
     "testId": 30
   },
   {
+    "commitId": "63dec2b",
+    "commitName": "refactor(auth): centralizar alternancia de vistas en authPresenter",
+    "commitTimestamp": 1794451275158,
+    "testId": 29
+  },
+  {
     "numPassedTests": 115,
     "failedTests": 0,
     "numTotalTests": 115,
@@ -2247,6 +2247,20 @@
   },
   {
     "numPassedTests": 115,
+    "failedTests": 0,
+    "numTotalTests": 115,
+    "timestamp": 1794454202336,
+    "success": true,
+    "testId": 32
+  },
+  {
+    "commitId": "6b9bb26",
+    "commitName": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
+    "commitTimestamp": 1794454237221,
+    "testId": 32
+  },
+  {
+    "numPassedTests": 115,
     "failedTests": 2,
     "numTotalTests": 117,
     "timestamp": 1794454674674,
@@ -2259,20 +2273,6 @@
     "numTotalTests": 117,
     "timestamp": 1794454737088,
     "success": true,
-    "testId": 32
-  },
-  {
-    "numPassedTests": 115,
-    "failedTests": 0,
-    "numTotalTests": 115,
-    "timestamp": 1794454202336,
-    "success": true,
-    "testId": 32
-  },
-  {
-    "commitId": "6b9bb26",
-    "commitName": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
-    "commitTimestamp": 1794454237221,
     "testId": 32
   },
   {
@@ -2354,9 +2354,239 @@
     "testId": 0
   },
   {
-    "commitId": "HEAD",
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794490642966,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 5,
+    "numTotalTests": 122,
+    "timestamp": 1794490654884,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 122,
+    "failedTests": 0,
+    "numTotalTests": 122,
+    "timestamp": 1794490668494,
+    "success": true,
+    "testId": 37
+  },
+  {
+    "commitId": "bd9f9e6bf8797d969edaa85d00b9912fa623b151",
+    "commitName": "test: HU-09 solo el autor tiene permiso sobre su publicacion",
+    "commitTimestamp": 1794490681524,
+    "testId": 37
+  },
+  {
+    "commitId": "0766c0291fe83013e662785518d377a859e89c1a",
     "commitName": "merge: integrar main con nueva estructura de carpetas en refactor HU03-04",
     "commitTimestamp": 1794490693002,
     "testId": 0
+  },
+  {
+    "numPassedTests": 122,
+    "failedTests": 2,
+    "numTotalTests": 124,
+    "timestamp": 1794490704966,
+    "success": false,
+    "testId": 38
+  },
+  {
+    "numPassedTests": 124,
+    "failedTests": 0,
+    "numTotalTests": 124,
+    "timestamp": 1794490716436,
+    "success": true,
+    "testId": 38
+  },
+  {
+    "commitId": "dbcdebd070f17280948535407699b66feb84645c",
+    "commitName": "test: HU-09 asignar el autor a una publicacion nueva",
+    "commitTimestamp": 1794490724711,
+    "testId": 38
+  },
+  {
+    "numPassedTests": 124,
+    "failedTests": 4,
+    "numTotalTests": 128,
+    "timestamp": 1794490756819,
+    "success": false,
+    "testId": 39
+  },
+  {
+    "numPassedTests": 128,
+    "failedTests": 0,
+    "numTotalTests": 128,
+    "timestamp": 1794490771225,
+    "success": true,
+    "testId": 39
+  },
+  {
+    "commitId": "5b577ce63af93cbc3e870a73a3009fdc05fee1d2",
+    "commitName": "test: HU-09 listar mis publicaciones con su estado de revision",
+    "commitTimestamp": 1794490783253,
+    "testId": 39
+  },
+  {
+    "numPassedTests": 128,
+    "failedTests": 4,
+    "numTotalTests": 132,
+    "timestamp": 1794490808236,
+    "success": false,
+    "testId": 40
+  },
+  {
+    "numPassedTests": 132,
+    "failedTests": 0,
+    "numTotalTests": 132,
+    "timestamp": 1794490821074,
+    "success": true,
+    "testId": 40
+  },
+  {
+    "commitId": "b82d168374451e87b38c9419f88d0e638e0bb5c5",
+    "commitName": "test: HU-09 editar titulo y descripcion solo si soy el autor",
+    "commitTimestamp": 1794490832828,
+    "testId": 40
+  },
+  {
+    "numPassedTests": 132,
+    "failedTests": 3,
+    "numTotalTests": 135,
+    "timestamp": 1794490861884,
+    "success": false,
+    "testId": 41
+  },
+  {
+    "numPassedTests": 135,
+    "failedTests": 0,
+    "numTotalTests": 135,
+    "timestamp": 1794490873748,
+    "success": true,
+    "testId": 41
+  },
+  {
+    "commitId": "efd48182367947d46ca7bdb5a7d5a9642748038a",
+    "commitName": "test: HU-09 eliminar una publicacion solo si soy el autor",
+    "commitTimestamp": 1794490880451,
+    "testId": 41
+  },
+  {
+    "numPassedTests": 135,
+    "failedTests": 3,
+    "numTotalTests": 138,
+    "timestamp": 1794490906940,
+    "success": false,
+    "testId": 42
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794490921887,
+    "success": true,
+    "testId": 42
+  },
+  {
+    "commitId": "5b2e8fc158d91c591be2c4a637ea784523b4f928",
+    "commitName": "test: HU-09 leer, editar y borrar mis publicaciones en firestore",
+    "commitTimestamp": 1794490931903,
+    "testId": 42
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794490990327,
+    "success": true,
+    "testId": 43
+  },
+  {
+    "commitId": "da3352d347ff434dc8a710f432f66049383d77f0",
+    "commitName": "refactor: HU-09 consulta comun para buscar publicaciones en ambas colecciones",
+    "commitTimestamp": 1794490997725,
+    "testId": 43
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491062224,
+    "success": true,
+    "testId": 44
+  },
+  {
+    "commitId": "9e421328b99a90f97a1c8047c6c20964d30dc0ad",
+    "commitName": "feat: HU-09 guardar el autor al publicar un hallazgo o una perdida",
+    "commitTimestamp": 1794491071322,
+    "testId": 44
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491125315,
+    "success": true,
+    "testId": 45
+  },
+  {
+    "commitId": "7bf163e00b8efd8b5231dbfde30d946f75b6a57c",
+    "commitName": "feat: HU-09 seccion mis publicaciones con su estado de revision",
+    "commitTimestamp": 1794491268075,
+    "testId": 45
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491309798,
+    "success": true,
+    "testId": 46
+  },
+  {
+    "commitId": "9f6238c62f9f95f65b9a6475bc1fdec76589fcc1",
+    "commitName": "feat: HU-09 editar titulo y descripcion desde mis publicaciones",
+    "commitTimestamp": 1794491487018,
+    "testId": 46
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491509229,
+    "success": true,
+    "testId": 47
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491692963,
+    "success": true,
+    "testId": 47
+  },
+  {
+    "commitId": "fe338bfd4cd642a60e79edf8b63508395311b8fa",
+    "commitName": "feat: HU-09 eliminar una publicacion propia con confirmacion",
+    "commitTimestamp": 1794491699563,
+    "testId": 47
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "merge: integrar main con el refactor de HU03-04 en HU-09",
+    "commitTimestamp": 1794492843333,
+    "testId": 48
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
+    "commitTimestamp": 1794493053820,
+    "testId": 49
   }
 ]

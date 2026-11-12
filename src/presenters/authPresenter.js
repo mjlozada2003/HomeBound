@@ -13,6 +13,7 @@ import {
 } from '../services/usuarioService';
 import { renderizarListaPublicaciones } from './listaPresenter';
 import { renderizarBandejaModeracion } from './moderacionPresenter';
+import { renderizarMisPublicaciones } from './misPublicacionesPresenter';
 
 export const usuariosRegistrados = [];
 
@@ -125,6 +126,7 @@ function configurarNavegacionNavbar(elementos, callbacks) {
     btnVolverPublicaciones,
     navBtnPanel,
     navBtnPublicar,
+    navBtnMisPublicaciones,
   } = elementos;
 
   const {
@@ -133,6 +135,7 @@ function configurarNavegacionNavbar(elementos, callbacks) {
     mostrarPublicaciones,
     mostrarModeracion,
     mostrarHallazgo,
+    mostrarMisPublicaciones,
     actualizarNavbar,
   } = callbacks;
 
@@ -194,6 +197,9 @@ function configurarNavegacionNavbar(elementos, callbacks) {
       }
     });
   }
+  if (navBtnMisPublicaciones) {
+    navBtnMisPublicaciones.addEventListener('click', () => mostrarMisPublicaciones());
+  }
 }
 
 export function iniciarAuthPresenter() {
@@ -204,6 +210,7 @@ export function iniciarAuthPresenter() {
   const vistaPerdida = document.querySelector('#perdida-seccion');
   const vistaPublicaciones = document.querySelector('#seccion-publicaciones');
   const vistaModeracion = document.querySelector('#seccion-moderacion');
+  const vistaMisPublicaciones = document.querySelector('#seccion-mis-publicaciones');
   const btnVolverPublicaciones = document.querySelector('#btn-volver-publicaciones');
 
   // Elementos del Navbar
@@ -213,6 +220,7 @@ export function iniciarAuthPresenter() {
   const navUserInfo = document.querySelector('#nav-user-info');
   const navUserName = document.querySelector('#nav-user-name');
   const navBtnLogout = document.querySelector('#nav-btn-logout');
+  const navBtnMisPublicaciones = document.querySelector('#nav-btn-mis-publicaciones');
   const brandLogo = document.querySelector('#brand-logo');
 
   // Enlaces entre pantallas
@@ -240,6 +248,7 @@ export function iniciarAuthPresenter() {
     vistaPerdida,
     vistaPublicaciones,
     vistaModeracion,
+    vistaMisPublicaciones,
   ];
 
   function activarVista(vistaActiva) {
@@ -273,6 +282,11 @@ export function iniciarAuthPresenter() {
   function mostrarModeracion() {
     activarVista(vistaModeracion);
     renderizarBandejaModeracion();
+  }
+
+  function mostrarMisPublicaciones() {
+    activarVista(vistaMisPublicaciones);
+    renderizarMisPublicaciones();
   }
 
   function mostrarHallazgo() {
@@ -324,6 +338,7 @@ export function iniciarAuthPresenter() {
       btnVolverPublicaciones,
       navBtnPanel,
       navBtnPublicar,
+      navBtnMisPublicaciones,
     },
     {
       mostrarLogin,
@@ -331,6 +346,7 @@ export function iniciarAuthPresenter() {
       mostrarPublicaciones,
       mostrarModeracion,
       mostrarHallazgo,
+      mostrarMisPublicaciones,
       actualizarNavbar,
     }
   );

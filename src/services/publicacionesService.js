@@ -1,5 +1,6 @@
 import {
   collection,
+  deleteDoc,
   doc,
   getDocs,
   query,
@@ -11,10 +12,10 @@ import { db } from './firebase';
 
 const COLECCIONES = ['hallazgos', 'perdidas'];
 
-export async function obtenerPublicacionesPorEstado(estado) {
+async function buscarEnColecciones(campo, valor) {
   const resultados = await Promise.all(
     COLECCIONES.map((nombre) =>
-      getDocs(query(collection(db, nombre), where('estado', '==', estado)))
+      getDocs(query(collection(db, nombre), where(campo, '==', valor)))
     )
   );
 
@@ -27,6 +28,22 @@ export async function obtenerPublicacionesPorEstado(estado) {
   );
 }
 
+export async function obtenerPublicacionesPorEstado(estado) {
+  return buscarEnColecciones('estado', estado);
+}
+
 export async function actualizarEstadoPublicacion(coleccion, id, estado) {
   await updateDoc(doc(db, coleccion, id), { estado });
+}
+
+export async function obtenerPublicacionesPorAutor(correo) {
+  return buscarEnColecciones('autor', correo);
+}
+
+export async function actualizarPublicacion(coleccion, id, cambios) {
+  await updateDoc(doc(db, coleccion, id), cambios);
+}
+
+export async function borrarPublicacion(coleccion, id) {
+  await deleteDoc(doc(db, coleccion, id));
 }
