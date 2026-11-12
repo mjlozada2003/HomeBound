@@ -532,6 +532,21 @@
     "conclusion": "success"
   },
   {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T02:41:12.000Z",
+      "message": "refactor(auth): centralizar alternancia de vistas en authPresenter",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 79,
+      "additions": 37,
+      "deletions": 42,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
     "sha": "d215de6554c5efd8cde72a3399dcf571404d4a2e",
     "author": "Maria Lozada",
     "commit": {

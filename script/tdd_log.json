@@ -2183,6 +2183,9 @@
   },
   {
     "numPassedTests": 109,
+    "failedTests": 0,
+    "numTotalTests": 109,
+    "timestamp": 1794450681548,
     "failedTests": 1,
     "numTotalTests": 110,
     "timestamp": 1794425683918,
@@ -2206,6 +2209,10 @@
     "testId": 29
   },
   {
+    "commitId": "HEAD",
+    "commitName": "refactor(auth): centralizar alternancia de vistas en authPresenter",
+    "commitTimestamp": 1794451275158,
+    "testId": 29
     "commitId": "d215de6554c5efd8cde72a3399dcf571404d4a2e",
     "commitName": "test(auth): agregar pruebas y modulo de validador de correo compartido",
     "commitTimestamp": 1794449439630,
