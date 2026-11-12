@@ -2486,9 +2486,23 @@
     "testId": 43
   },
   {
-    "commitId": "HEAD",
+    "commitId": "da3352d347ff434dc8a710f432f66049383d77f0",
     "commitName": "refactor: HU-09 consulta comun para buscar publicaciones en ambas colecciones",
     "commitTimestamp": 1794490997725,
     "testId": 43
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491062224,
+    "success": true,
+    "testId": 44
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-09 guardar el autor al publicar un hallazgo o una perdida",
+    "commitTimestamp": 1794491071322,
+    "testId": 44
   }
 ]

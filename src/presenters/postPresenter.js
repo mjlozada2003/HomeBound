@@ -5,6 +5,7 @@ import {
 } from '../models/Posts/hallazgo';
 
 import { crearPerdida } from '../models/Posts/perdida';
+import { asignarAutor } from '../models/Posts/misPublicaciones';
 import { guardarHallazgo } from '../services/hallazgoService';
 import { guardarPerdida } from '../services/perdidaService';
 
@@ -148,7 +149,9 @@ export function iniciarPostPresenter({
     campo('resumen').hidden = true;
 
     try {
-      const resultado = await enviarHallazgo(datos, guardar, ahora());
+      const guardarConAutor = (publicacion) =>
+        guardar(asignarAutor(publicacion, obtenerSesionActiva()));
+      const resultado = await enviarHallazgo(datos, guardarConAutor, ahora());
 
       mensaje.className = resultado.esValido ? 'exito' : 'error';
       mensaje.textContent = resultado.mensaje;
@@ -336,7 +339,9 @@ function iniciarFormularioPerdida(guardar, ahora) {
     campo('resumen').hidden = true;
 
     try {
-      const resultado = await enviarPerdida(datos, guardar, ahora());
+      const guardarConAutor = (publicacion) =>
+        guardar(asignarAutor(publicacion, obtenerSesionActiva()));
+      const resultado = await enviarPerdida(datos, guardarConAutor, ahora());
 
       mensaje.className = resultado.esValido ? 'exito' : 'error';
       mensaje.textContent = resultado.mensaje;

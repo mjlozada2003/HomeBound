@@ -798,17 +798,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "da3352d347ff434dc8a710f432f66049383d77f0",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T13:43:15.000Z",
       "message": "refactor: HU-09 consulta comun para buscar publicaciones en ambas colecciones",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da3352d347ff434dc8a710f432f66049383d77f0"
     },
     "stats": {
       "total": 22,
       "additions": 7,
       "deletions": 15,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.93,
+    "test_count": 138,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:44:27.000Z",
+      "message": "feat: HU-09 guardar el autor al publicar un hallazgo o una perdida",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 7,
+      "deletions": 2,
       "date": "2026-11-12"
     },
     "coverage": 96.93,
