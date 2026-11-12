@@ -2450,9 +2450,31 @@
     "testId": 41
   },
   {
-    "commitId": "HEAD",
+    "commitId": "efd48182367947d46ca7bdb5a7d5a9642748038a",
     "commitName": "test: HU-09 eliminar una publicacion solo si soy el autor",
     "commitTimestamp": 1794490880451,
     "testId": 41
+  },
+  {
+    "numPassedTests": 135,
+    "failedTests": 3,
+    "numTotalTests": 138,
+    "timestamp": 1794490906940,
+    "success": false,
+    "testId": 42
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794490921887,
+    "success": true,
+    "testId": 42
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-09 leer, editar y borrar mis publicaciones en firestore",
+    "commitTimestamp": 1794490931903,
+    "testId": 42
   }
 ]

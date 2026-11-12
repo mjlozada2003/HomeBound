@@ -760,12 +760,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "efd48182367947d46ca7bdb5a7d5a9642748038a",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T13:41:17.000Z",
       "message": "test: HU-09 eliminar una publicacion solo si soy el autor",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/efd48182367947d46ca7bdb5a7d5a9642748038a"
     },
     "stats": {
       "total": 39,
@@ -775,6 +775,25 @@
     },
     "coverage": 96.89,
     "test_count": 135,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:42:07.000Z",
+      "message": "test: HU-09 leer, editar y borrar mis publicaciones en firestore",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 83,
+      "additions": 81,
+      "deletions": 2,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.97,
+    "test_count": 138,
     "failed_tests": 0,
     "conclusion": "success"
   }
