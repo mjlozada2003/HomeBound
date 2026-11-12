@@ -5,3 +5,7 @@ export function esAutor(publicacion, usuario) {
 
   return autor !== '' && autor === normalizarCorreo(usuario?.correo);
 }
+
+export function asignarAutor(publicacion, usuario) {
+  return { ...publicacion, autor: normalizarCorreo(usuario?.correo) };
+}

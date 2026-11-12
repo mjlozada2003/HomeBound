@@ -2362,9 +2362,31 @@
     "testId": 37
   },
   {
-    "commitId": "HEAD",
+    "commitId": "bd9f9e6bf8797d969edaa85d00b9912fa623b151",
     "commitName": "test: HU-09 solo el autor tiene permiso sobre su publicacion",
     "commitTimestamp": 1794490681524,
     "testId": 37
+  },
+  {
+    "numPassedTests": 122,
+    "failedTests": 2,
+    "numTotalTests": 124,
+    "timestamp": 1794490704966,
+    "success": false,
+    "testId": 38
+  },
+  {
+    "numPassedTests": 124,
+    "failedTests": 0,
+    "numTotalTests": 124,
+    "timestamp": 1794490716436,
+    "success": true,
+    "testId": 38
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-09 asignar el autor a una publicacion nueva",
+    "commitTimestamp": 1794490724711,
+    "testId": 38
   }
 ]

@@ -1,4 +1,4 @@
-import { esAutor } from './misPublicaciones.js';
+import { esAutor, asignarAutor } from './misPublicaciones.js';
 
 describe('HU-09: Gestionar mis publicaciones', () => {
   const usuario = { nombre: 'Maite', correo: 'maite@ucb.edu.bo', rol: 'USER' };
@@ -28,6 +28,22 @@ describe('HU-09: Gestionar mis publicaciones', () => {
 
     test('Debería negar el permiso si la publicación no tiene autor', () => {
       expect(esAutor({ id: 'h2', titulo: 'Gato' }, { correo: '' })).toBe(false);
+    });
+  });
+
+  describe('Asignar autor al crear', () => {
+    test('Debería guardar el correo normalizado del usuario como autor', () => {
+      const nueva = asignarAutor({ titulo: 'Gato negro' }, { correo: ' Maite@UCB.edu.bo ' });
+
+      expect(nueva).toEqual({ titulo: 'Gato negro', autor: 'maite@ucb.edu.bo' });
+    });
+
+    test('Debería no modificar la publicación original', () => {
+      const original = { titulo: 'Gato negro' };
+
+      asignarAutor(original, usuario);
+
+      expect(original).toEqual({ titulo: 'Gato negro' });
     });
   });
 });
