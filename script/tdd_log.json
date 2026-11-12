@@ -2354,9 +2354,15 @@
     "testId": 0
   },
   {
-    "commitId": "HEAD",
+    "commitId": "27ec449176d551484f12734b4f29e549baf099bd",
     "commitName": "merge: integrar main con nueva estructura de carpetas en refactor HU03-04",
     "commitTimestamp": 1794490693002,
     "testId": 0
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: agregar lista de pruebas para HU-12 ver detalle de publicacion",
+    "commitTimestamp": 1794509979306,
+    "testId": 1
   }
 ]
