@@ -627,17 +627,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "e35b1b3eff3e08238e4a78daf6645bac3b5721a3",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T03:49:03.000Z",
       "message": "refactor(sesion): normalizarCorreo en autenticacion 2",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e35b1b3eff3e08238e4a78daf6645bac3b5721a3"
     },
     "stats": {
       "total": 43,
       "additions": 22,
       "deletions": 21,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:52:00.000Z",
+      "message": "test(auth): verificacion final de pruebas despues de refactory",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
       "date": "2026-11-12"
     },
     "coverage": 96.54,

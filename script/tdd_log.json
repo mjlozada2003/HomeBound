@@ -2290,9 +2290,23 @@
     "testId": 34
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e35b1b3eff3e08238e4a78daf6645bac3b5721a3",
     "commitName": "refactor(sesion): normalizarCorreo en autenticacion 2",
     "commitTimestamp": 1794455347166,
     "testId": 34
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794455406051,
+    "success": true,
+    "testId": 35
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(auth): verificacion final de pruebas despues de refactory",
+    "commitTimestamp": 1794455523001,
+    "testId": 35
   }
 ]
