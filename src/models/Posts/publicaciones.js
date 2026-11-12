@@ -66,5 +66,8 @@ export function obtenerPublicacionesPaginadas(
 }
 
 export function obtenerPublicacionPorId(listaPublicaciones = [], id) {
+  if(!id || !Array.isArray(listaPublicaciones)) {
+    return null;
+  }
   return listaPublicaciones.find((pub) => pub.id === id) || null;
 }

@@ -156,6 +156,11 @@ describe('HU-12: Ver detalle de publicación', () => {
     expect(encontrada.titulo).toBe('Mochila negra encontrada');
   });
 
+  it('Debería retornar null si el id no existe en la lista o la lista está vacía', () => {
+    expect(obtenerPublicacionPorId(publicacionesDetalleMock, 'inexistente')).toBeNull();
+    expect(obtenerPublicacionPorId([], 'pub-101')).toBeNull();
+    expect(obtenerPublicacionPorId(null, 'pub-101')).toBeNull();
+  });
 
 
 

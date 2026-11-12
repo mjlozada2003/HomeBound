@@ -722,12 +722,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "8488f67847656a2e3f51b80e46291cf96957ebf8",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T19:12:37.000Z",
       "message": "feat(publicaciones): obtener detalle de publicacion por id",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/8488f67847656a2e3f51b80e46291cf96957ebf8"
     },
     "stats": {
       "total": 54,
@@ -737,6 +737,25 @@
     },
     "coverage": 72.48,
     "test_count": 157,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T19:14:44.000Z",
+      "message": "feat(publicaciones): verificar lista de publicaciones si esta vacía o no existe",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 8,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 72.63,
+    "test_count": 158,
     "failed_tests": 0,
     "conclusion": "success"
   }

@@ -2398,9 +2398,31 @@
     "testId": 2
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8488f67847656a2e3f51b80e46291cf96957ebf8",
     "commitName": "feat(publicaciones): obtener detalle de publicacion por id",
     "commitTimestamp": 1794510760350,
     "testId": 2
+  },
+  {
+    "numPassedTests": 157,
+    "failedTests": 1,
+    "numTotalTests": 158,
+    "timestamp": 1794510792435,
+    "success": false,
+    "testId": 3
+  },
+  {
+    "numPassedTests": 158,
+    "failedTests": 0,
+    "numTotalTests": 158,
+    "timestamp": 1794510832075,
+    "success": true,
+    "testId": 3
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat(publicaciones): verificar lista de publicaciones si esta vacía o no existe",
+    "commitTimestamp": 1794510887153,
+    "testId": 3
   }
 ]
