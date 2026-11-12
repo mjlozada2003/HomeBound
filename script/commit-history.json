@@ -665,12 +665,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "93fa83d92889433340d549b87e9ca2791800b4a7",
+    "sha": "a7236760f0a316dc99bf2e3283da07a13c0bc204",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T04:02:03.000Z",
       "message": "fix(script): corregir formato json en tdd_log tras resolucion de conflictos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/93fa83d92889433340d549b87e9ca2791800b4a7"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/a7236760f0a316dc99bf2e3283da07a13c0bc204"
     },
     "stats": {
       "total": 0,
@@ -699,6 +699,25 @@
     },
     "coverage": 96.57,
     "test_count": 122,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "0766c0291fe83013e662785518d377a859e89c1a",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-12T13:38:06.000Z",
+      "message": "merge: integrar main con nueva estructura de carpetas en refactor HU03-04",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/0766c0291fe83013e662785518d377a859e89c1a"
+    },
+    "stats": {
+      "total": 2213,
+      "additions": 1249,
+      "deletions": 964,
+      "date": "2026-11-12"
+    },
+    "coverage": 72.33,
+    "test_count": 156,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -889,6 +908,25 @@
     },
     "coverage": 96.93,
     "test_count": 138,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T14:13:59.000Z",
+      "message": "merge: integrar main con el refactor de HU03-04 en HU-09",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 2200,
+      "additions": 1177,
+      "deletions": 1023,
+      "date": "2026-11-12"
+    },
+    "coverage": 74.06,
+    "test_count": 177,
     "failed_tests": 0,
     "conclusion": "success"
   }

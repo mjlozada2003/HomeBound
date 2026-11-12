@@ -2206,12 +2206,6 @@
     "testId": 29
   },
   {
-    "commitId": "63dec2b",
-    "commitName": "refactor(auth): centralizar alternancia de vistas en authPresenter",
-    "commitTimestamp": 1794451275158,
-    "testId": 29
-  },
-  {
     "commitId": "d215de6554c5efd8cde72a3399dcf571404d4a2e",
     "commitName": "test(auth): agregar pruebas y modulo de validador de correo compartido",
     "commitTimestamp": 1794449439630,
@@ -2232,6 +2226,12 @@
     "testId": 30
   },
   {
+    "commitId": "63dec2b",
+    "commitName": "refactor(auth): centralizar alternancia de vistas en authPresenter",
+    "commitTimestamp": 1794451275158,
+    "testId": 29
+  },
+  {
     "numPassedTests": 115,
     "failedTests": 0,
     "numTotalTests": 115,
@@ -2247,6 +2247,20 @@
   },
   {
     "numPassedTests": 115,
+    "failedTests": 0,
+    "numTotalTests": 115,
+    "timestamp": 1794454202336,
+    "success": true,
+    "testId": 32
+  },
+  {
+    "commitId": "6b9bb26",
+    "commitName": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
+    "commitTimestamp": 1794454237221,
+    "testId": 32
+  },
+  {
+    "numPassedTests": 115,
     "failedTests": 2,
     "numTotalTests": 117,
     "timestamp": 1794454674674,
@@ -2259,20 +2273,6 @@
     "numTotalTests": 117,
     "timestamp": 1794454737088,
     "success": true,
-    "testId": 32
-  },
-  {
-    "numPassedTests": 115,
-    "failedTests": 0,
-    "numTotalTests": 115,
-    "timestamp": 1794454202336,
-    "success": true,
-    "testId": 32
-  },
-  {
-    "commitId": "6b9bb26",
-    "commitName": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
-    "commitTimestamp": 1794454237221,
     "testId": 32
   },
   {
@@ -2332,10 +2332,26 @@
     "testId": 36
   },
   {
-    "commitId": "93fa83d92889433340d549b87e9ca2791800b4a7",
+    "commitId": "a7236760f0a316dc99bf2e3283da07a13c0bc204",
     "commitName": "fix(script): corregir formato json en tdd_log tras resolucion de conflictos",
     "commitTimestamp": 1794456127951,
     "testId": 36
+  },
+  {
+    "numPassedTests": 142,
+    "failedTests": 0,
+    "numTotalTests": 142,
+    "timestamp": 1794458293696,
+    "success": true,
+    "testId": 0
+  },
+  {
+    "numPassedTests": 156,
+    "failedTests": 0,
+    "numTotalTests": 156,
+    "timestamp": 1794490620432,
+    "success": true,
+    "testId": 0
   },
   {
     "numPassedTests": 117,
@@ -2366,6 +2382,12 @@
     "commitName": "test: HU-09 solo el autor tiene permiso sobre su publicacion",
     "commitTimestamp": 1794490681524,
     "testId": 37
+  },
+  {
+    "commitId": "0766c0291fe83013e662785518d377a859e89c1a",
+    "commitName": "merge: integrar main con nueva estructura de carpetas en refactor HU03-04",
+    "commitTimestamp": 1794490693002,
+    "testId": 0
   },
   {
     "numPassedTests": 122,
@@ -2554,5 +2576,11 @@
     "commitName": "feat: HU-09 eliminar una publicacion propia con confirmacion",
     "commitTimestamp": 1794491699563,
     "testId": 47
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "merge: integrar main con el refactor de HU03-04 en HU-09",
+    "commitTimestamp": 1794492843333,
+    "testId": 48
   }
 ]
