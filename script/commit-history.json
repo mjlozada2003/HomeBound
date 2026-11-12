@@ -1,0 +1,705 @@
+[
+  {
+    "sha": "877d2585a030fc9cbd1aacee09f42a314d8f1692",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-10-29T17:30:47.000Z",
+      "message": "refactor: mover estructura del proyecto a la raiz",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/877d2585a030fc9cbd1aacee09f42a314d8f1692"
+    },
+    "stats": {
+      "total": 121,
+      "additions": 47,
+      "deletions": 74,
+      "date": "2026-10-29"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "877d2585a030fc9cbd1aacee09f42a314d8f1692",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-10-29T17:31:28.000Z",
+      "message": "refactor: mover estructura del proyecto a la raiz",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/877d2585a030fc9cbd1aacee09f42a314d8f1692"
+    },
+    "stats": {
+      "total": 121,
+      "additions": 47,
+      "deletions": 74,
+      "date": "2026-10-29"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "877d2585a030fc9cbd1aacee09f42a314d8f1692",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-10-29T17:31:40.000Z",
+      "message": "refactor: mover estructura del proyecto a la raiz",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/877d2585a030fc9cbd1aacee09f42a314d8f1692"
+    },
+    "stats": {
+      "total": 121,
+      "additions": 47,
+      "deletions": 74,
+      "date": "2026-10-29"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "cab29f0cde0bab4fe738ecb3950ec45b8d026de2",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-10-29T17:33:16.000Z",
+      "message": "refactor: mover estructura del proyecto a la raiz",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/cab29f0cde0bab4fe738ecb3950ec45b8d026de2"
+    },
+    "stats": {
+      "total": 125,
+      "additions": 50,
+      "deletions": 75,
+      "date": "2026-10-29"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "18498b4519bca97193749bceae495515f04f65da",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T04:47:02.000Z",
+      "message": "chore: ignorar carpetas generadas y scripts base en eslint y declarar globals faltantes",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/18498b4519bca97193749bceae495515f04f65da"
+    },
+    "stats": {
+      "total": 16,
+      "additions": 14,
+      "deletions": 2,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "d3d7588c7c61668dc97a9fc9fc882dc41d732e2b",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T04:47:28.000Z",
+      "message": "fix: usar === al comparar el correo en autenticarUsuario",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d3d7588c7c61668dc97a9fc9fc882dc41d732e2b"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "d67880770b3dfd377b47c55289d5f275b3c929ac",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T04:49:13.000Z",
+      "message": "style: aplicar eslint --fix en src y cypress",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d67880770b3dfd377b47c55289d5f275b3c929ac"
+    },
+    "stats": {
+      "total": 556,
+      "additions": 278,
+      "deletions": 278,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "9f2f85099e63635efd5b4188bff62fc2a1119554",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T04:50:22.000Z",
+      "message": "chore: correr eslint en el ci y en el pre-commit",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9f2f85099e63635efd5b4188bff62fc2a1119554"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 3,
+      "deletions": 1,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.59,
+    "test_count": 103,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "5754726f883f512f5ac3a59fb8c4adcbcafc3308",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T05:45:44.000Z",
+      "message": "test: cambiar el estado de una publicacion validando el rol admin",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5754726f883f512f5ac3a59fb8c4adcbcafc3308"
+    },
+    "stats": {
+      "total": 29,
+      "additions": 29,
+      "deletions": 0,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.67,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "28e11ea79db4d63fbd9d2ae76641e78bb1b1d304",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T05:49:40.000Z",
+      "message": "refactor: aprobar y rechazar usan cambiarEstadoPublicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/28e11ea79db4d63fbd9d2ae76641e78bb1b1d304"
+    },
+    "stats": {
+      "total": 17,
+      "additions": 2,
+      "deletions": 15,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "f44d3cd6f31e422699338bfea87118d2c607d5d2",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T06:09:01.000Z",
+      "message": "refactor: moderar usa la regla de permisos del modelo",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f44d3cd6f31e422699338bfea87118d2c607d5d2"
+    },
+    "stats": {
+      "total": 15,
+      "additions": 12,
+      "deletions": 3,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "1897ee6d91d9596b74209cdaf0b65bc50debd6ab",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T06:25:52.000Z",
+      "message": "chore: ignorar notas personales de defensa",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/1897ee6d91d9596b74209cdaf0b65bc50debd6ab"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 2,
+      "deletions": 1,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "84b4ccc512429da062590236687b7df914cc4896",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-07T07:10:59.000Z",
+      "message": "docs: completar la lista de pruebas de HU-10 con estados actuales y casos nuevos",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/84b4ccc512429da062590236687b7df914cc4896"
+    },
+    "stats": {
+      "total": 27,
+      "additions": 23,
+      "deletions": 4,
+      "date": "2026-11-07"
+    },
+    "coverage": 95.56,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "e82c6600592c3c4ea0ed9f3c3827e35c01f7254a",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T20:52:15.000Z",
+      "message": "refactor: crear constantes de estados y usarlas en publicaciones.js",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e82c6600592c3c4ea0ed9f3c3827e35c01f7254a"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 8,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "d412369d89ee869769c7bb7695300ebe6455c92c",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T20:52:57.000Z",
+      "message": "refactor: usar constantes de estados en moderacion.js",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d412369d89ee869769c7bb7695300ebe6455c92c"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 4,
+      "deletions": 3,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "da0ec08d439c32d0db3673fbfec050ed05afba5f",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:01:01.000Z",
+      "message": "refactor: usar constantes de estados en listaPresenter",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da0ec08d439c32d0db3673fbfec050ed05afba5f"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 2,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "c0457cc3cd4e7be820d82a2908e8d9e96fc49fc9",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:01:16.000Z",
+      "message": "refactor: usar constantes de estados en moderacionPresenter",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/c0457cc3cd4e7be820d82a2908e8d9e96fc49fc9"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 4,
+      "deletions": 3,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "07216c3aaa3039dde3059ce2324f7bf827611b3f",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:01:44.000Z",
+      "message": "docs: renombrar lista de HU-06 y corregir el estado pendiente",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/07216c3aaa3039dde3059ce2324f7bf827611b3f"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.58,
+    "test_count": 105,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "d90dc361f2c3bb1788cd7d9d0bd08e7aa782826e",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:26:11.000Z",
+      "message": "test: agregar formatearDatosComunes para los datos compartidos de las tarjetas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d90dc361f2c3bb1788cd7d9d0bd08e7aa782826e"
+    },
+    "stats": {
+      "total": 27,
+      "additions": 25,
+      "deletions": 2,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.59,
+    "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "0100511558e92eec68bcdcd14d9ee2eb9ae7aa0b",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:26:53.000Z",
+      "message": "refactor: formatearParaTarjeta reutiliza formatearDatosComunes",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/0100511558e92eec68bcdcd14d9ee2eb9ae7aa0b"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 1,
+      "deletions": 5,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.59,
+    "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "4cd2760830efdf0a8c90e56d1eb7eb0b95ceecae",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:27:22.000Z",
+      "message": "refactor: formatearPendiente reutiliza formatearDatosComunes",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/4cd2760830efdf0a8c90e56d1eb7eb0b95ceecae"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 2,
+      "deletions": 6,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.59,
+    "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "607e7d57ca05df28c33efb71038e84de38ee5587",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:37:49.000Z",
+      "message": "refactor: listaPresenter guarda las publicaciones cargadas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/607e7d57ca05df28c33efb71038e84de38ee5587"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 4,
+      "deletions": 8,
+      "date": "2026-11-08"
+    },
+    "coverage": 95.59,
+    "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "0eff079599159676e91f5c73a9fcd505f09be70f",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:40:05.000Z",
+      "message": "refactor: quitar el estado en memoria del modelo de publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/0eff079599159676e91f5c73a9fcd505f09be70f"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 0,
+      "deletions": 10,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.43,
+    "test_count": 106,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "5049e615d5e6f3376a4b0625325cd593153d5f31",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:55:30.000Z",
+      "message": "test: agregar plantilla compartida de tarjeta con crearTarjetaHtml",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5049e615d5e6f3376a4b0625325cd593153d5f31"
+    },
+    "stats": {
+      "total": 59,
+      "additions": 58,
+      "deletions": 1,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "d41e915780372f37dc4c97ecadfa497f556a5884",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:56:16.000Z",
+      "message": "refactor: listaPresenter usa la plantilla compartida de tarjeta",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d41e915780372f37dc4c97ecadfa497f556a5884"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 12,
+      "deletions": 14,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "9efcc6e4cc9ddf7f45e6b60726a1812b0b3c4c0e",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:56:37.000Z",
+      "message": "refactor: moderacionPresenter usa la plantilla compartida de tarjeta",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9efcc6e4cc9ddf7f45e6b60726a1812b0b3c4c0e"
+    },
+    "stats": {
+      "total": 27,
+      "additions": 13,
+      "deletions": 14,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "b92a8ed0ee6924dc5d5e5afb3d1c67c7431a17a3",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:57:24.000Z",
+      "message": "refactor: listaPresenter usa un solo listener para la paginacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b92a8ed0ee6924dc5d5e5afb3d1c67c7431a17a3"
+    },
+    "stats": {
+      "total": 37,
+      "additions": 17,
+      "deletions": 20,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "da114de8412ce34db20b8d810085b0c4e9be107d",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-08T21:57:54.000Z",
+      "message": "refactor: moderacionPresenter usa un solo listener para aprobar y rechazar",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da114de8412ce34db20b8d810085b0c4e9be107d"
+    },
+    "stats": {
+      "total": 30,
+      "additions": 19,
+      "deletions": 11,
+      "date": "2026-11-08"
+    },
+    "coverage": 96.46,
+    "test_count": 109,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "d215de6554c5efd8cde72a3399dcf571404d4a2e",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T02:10:37.000Z",
+      "message": "test(auth): agregar pruebas y modulo de validador de correo compartido",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/d215de6554c5efd8cde72a3399dcf571404d4a2e"
+    },
+    "stats": {
+      "total": 35,
+      "additions": 35,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.52,
+    "test_count": 115,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "e23ad1e0e02d2e1e40977bbff23d5b4d8fc331f2",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T02:15:05.000Z",
+      "message": "refactor(auth): reutilizar validador de correo compartido en cuenta y sesion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e23ad1e0e02d2e1e40977bbff23d5b4d8fc331f2"
+    },
+    "stats": {
+      "total": 14,
+      "additions": 8,
+      "deletions": 6,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.49,
+    "test_count": 115,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "1fb56440bf3faa7447ecb0abcf86f9bbcda1b628",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:10:46.000Z",
+      "message": "fix(script): corregir formato de objetos json en tdd_log tras resolucion de conflictos",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/1fb56440bf3faa7447ecb0abcf86f9bbcda1b628"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.49,
+    "test_count": 115,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "b0b68488683c4feae5cefb3bf4ec514c26429933",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:43:59.000Z",
+      "message": "test(auth): agregar pruebas y funcion normalizarCorreo en validador compartido",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b0b68488683c4feae5cefb3bf4ec514c26429933"
+    },
+    "stats": {
+      "total": 17,
+      "additions": 16,
+      "deletions": 1,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "68917f786f18cd015d4c56b2f6d288e39e6b1402",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:45:51.000Z",
+      "message": "refactor(sesion): aplicar igualdad estricta y normalizarCorreo en autenticacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/68917f786f18cd015d4c56b2f6d288e39e6b1402"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "e35b1b3eff3e08238e4a78daf6645bac3b5721a3",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:49:03.000Z",
+      "message": "refactor(sesion): normalizarCorreo en autenticacion 2",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e35b1b3eff3e08238e4a78daf6645bac3b5721a3"
+    },
+    "stats": {
+      "total": 43,
+      "additions": 22,
+      "deletions": 21,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "91292b6a941e4cb946d090e6d939e4d4cbef96d6",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:52:00.000Z",
+      "message": "test(auth): verificacion final de pruebas despues de refactory",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/91292b6a941e4cb946d090e6d939e4d4cbef96d6"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "a7236760f0a316dc99bf2e3283da07a13c0bc204",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T04:02:03.000Z",
+      "message": "fix(script): corregir formato json en tdd_log tras resolucion de conflictos",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/a7236760f0a316dc99bf2e3283da07a13c0bc204"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-12T13:38:06.000Z",
+      "message": "merge: integrar main con nueva estructura de carpetas en refactor HU03-04",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 2213,
+      "additions": 1249,
+      "deletions": 964,
+      "date": "2026-11-12"
+    },
+    "coverage": 72.33,
+    "test_count": 156,
+    "failed_tests": 0,
+    "conclusion": "success"
+  }
+]
