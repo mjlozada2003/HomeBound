@@ -9,12 +9,192 @@ import {
 } from '../models/Auth/sesion';
 import {
   registrarUsuarioFirebase,
-  autenticarUsuarioFirebase
+  autenticarUsuarioFirebase,
 } from '../services/usuarioService';
 import { renderizarListaPublicaciones } from './listaPresenter';
 import { renderizarBandejaModeracion } from './moderacionPresenter';
 
 export const usuariosRegistrados = [];
+
+function configurarFormularioRegistro(elementos) {
+  const { formRegistro, nombreInput, correoInput, passwordInput, mensajeRegistroDiv } = elementos;
+  if (!formRegistro) {
+    return;
+  }
+
+  formRegistro.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const nombre = nombreInput.value;
+    const correo = correoInput.value;
+    const password = passwordInput.value;
+
+    const resultado = validarRegistro(nombre, correo, password);
+
+    if (!resultado.esValido) {
+      mensajeRegistroDiv.className = 'error';
+      mensajeRegistroDiv.textContent = resultado.mensaje;
+      return;
+    }
+
+    mensajeRegistroDiv.className = '';
+    mensajeRegistroDiv.textContent = 'Creando cuenta…';
+
+    try {
+      const registro = await registrarUsuarioFirebase({
+        nombre: resultado.usuario.nombre,
+        correo: resultado.usuario.correo,
+        password: password,
+      });
+
+      if (!registro.exito) {
+        mensajeRegistroDiv.className = 'error';
+        mensajeRegistroDiv.textContent = registro.mensaje;
+      } else {
+        mensajeRegistroDiv.className = 'exito';
+        mensajeRegistroDiv.textContent = registro.mensaje;
+
+        usuariosRegistrados.push({
+          nombre: resultado.usuario.nombre,
+          correo: resultado.usuario.correo,
+          password: password,
+          rol: 'USER',
+        });
+
+        formRegistro.reset();
+      }
+    } catch (error) {
+      console.error('Error al registrar:', error);
+      mensajeRegistroDiv.className = 'error';
+      mensajeRegistroDiv.textContent = 'Error de conexión. Inténtalo de nuevo.';
+    }
+  });
+}
+
+function configurarFormularioLogin(elementos, callbacks) {
+  const { formLogin, loginCorreoInput, loginPasswordInput, mensajeLoginDiv } = elementos;
+  const { actualizarNavbar, mostrarPublicaciones } = callbacks;
+  if (!formLogin) {
+    return;
+  }
+
+  formLogin.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const correo = loginCorreoInput.value;
+    const password = loginPasswordInput.value;
+
+    const validacionCampos = validarCamposLogin(correo, password);
+    if (!validacionCampos.esValido) {
+      mensajeLoginDiv.className = 'error';
+      mensajeLoginDiv.textContent = validacionCampos.mensaje;
+      return;
+    }
+
+    mensajeLoginDiv.className = '';
+    mensajeLoginDiv.textContent = 'Iniciando sesión…';
+
+    try {
+      const auth = await autenticarUsuarioFirebase(correo, password);
+      if (!auth.exito) {
+        mensajeLoginDiv.className = 'error';
+        mensajeLoginDiv.textContent = auth.mensaje;
+      } else {
+        mensajeLoginDiv.className = 'exito';
+        mensajeLoginDiv.textContent = `¡Bienvenido, ${auth.usuario.nombre}!`;
+
+        guardarSesion(auth.usuario);
+        actualizarNavbar(auth.usuario);
+        formLogin.reset();
+        mostrarPublicaciones();
+      }
+    } catch (error) {
+      console.error('Error al autenticar:', error);
+      mensajeLoginDiv.className = 'error';
+      mensajeLoginDiv.textContent = 'Error de conexión. Inténtalo de nuevo.';
+    }
+  });
+}
+
+function configurarNavegacionNavbar(elementos, callbacks) {
+  const {
+    linkIrLogin,
+    navBtnIngresar,
+    linkIrRegistro,
+    brandLogo,
+    navBtnLogout,
+    btnVolverPublicaciones,
+    navBtnPanel,
+    navBtnPublicar,
+  } = elementos;
+
+  const {
+    mostrarLogin,
+    mostrarRegistro,
+    mostrarPublicaciones,
+    mostrarModeracion,
+    mostrarHallazgo,
+    actualizarNavbar,
+  } = callbacks;
+
+  if (linkIrLogin) {
+    linkIrLogin.addEventListener('click', (e) => {
+      e.preventDefault();
+      mostrarLogin();
+    });
+  }
+  if (navBtnIngresar) {
+    navBtnIngresar.addEventListener('click', () => mostrarLogin());
+  }
+  if (linkIrRegistro) {
+    linkIrRegistro.addEventListener('click', (e) => {
+      e.preventDefault();
+      mostrarRegistro();
+    });
+  }
+  if (brandLogo) {
+    brandLogo.addEventListener('click', () => {
+      const sesion = obtenerSesionActiva();
+      if (sesion) {
+        mostrarPublicaciones();
+      } else {
+        mostrarRegistro();
+      }
+    });
+  }
+  if (navBtnLogout) {
+    navBtnLogout.addEventListener('click', () => {
+      cerrarSesion();
+      actualizarNavbar(null);
+      mostrarLogin();
+    });
+  }
+  if (btnVolverPublicaciones) {
+    btnVolverPublicaciones.addEventListener('click', () => {
+      mostrarPublicaciones();
+    });
+  }
+  if (navBtnPanel) {
+    navBtnPanel.addEventListener('click', () => {
+      const sesionActual = obtenerSesionActiva();
+      if (!puedeAccederAAdmin(sesionActual)) {
+        alert('Acceso denegado: Solo administradores.');
+        return;
+      }
+      mostrarModeracion();
+    });
+  }
+  if (navBtnPublicar) {
+    navBtnPublicar.addEventListener('click', () => {
+      const sesionActual = obtenerSesionActiva();
+      if (!puedeAccederAPublicar(sesionActual)) {
+        alert('Debes iniciar sesión para publicar un hallazgo o pérdida.');
+        mostrarLogin();
+      } else {
+        mostrarHallazgo();
+      }
+    });
+  }
+}
 
 export function iniciarAuthPresenter() {
   // Secciones
@@ -22,7 +202,6 @@ export function iniciarAuthPresenter() {
   const vistaLogin = document.querySelector('#vista-login');
   const vistaHallazgo = document.querySelector('#hallazgo-seccion');
   const vistaPerdida = document.querySelector('#perdida-seccion');
-
   const vistaPublicaciones = document.querySelector('#seccion-publicaciones');
   const vistaModeracion = document.querySelector('#seccion-moderacion');
   const btnVolverPublicaciones = document.querySelector('#btn-volver-publicaciones');
@@ -85,15 +264,18 @@ export function iniciarAuthPresenter() {
     mensajeRegistroDiv.className = '';
     mensajeRegistroDiv.textContent = '';
   }
-  function mostrarPublicaciones(){
+
+  function mostrarPublicaciones() {
     activarVista(vistaPublicaciones);
     renderizarListaPublicaciones();
   }
-  function mostrarModeracion(){
+
+  function mostrarModeracion() {
     activarVista(vistaModeracion);
     renderizarBandejaModeracion();
   }
-  function mostrarHallazgo(){
+
+  function mostrarHallazgo() {
     activarVista(vistaHallazgo);
     const categoria = document.querySelector('#hallazgo-categoria');
     if (categoria) {
@@ -101,7 +283,6 @@ export function iniciarAuthPresenter() {
     }
   }
 
-  // Actualiza el Navbar según si hay sesión iniciada y el rol del usuario
   function actualizarNavbar(usuario) {
     if (usuario) {
       navBtnIngresar.classList.add('oculto');
@@ -119,154 +300,40 @@ export function iniciarAuthPresenter() {
     }
   }
 
-  if (linkIrLogin)
-    {linkIrLogin.addEventListener('click', (e) => {
-      e.preventDefault();
-      mostrarLogin();
-    });}
-  if (navBtnIngresar)
-    {navBtnIngresar.addEventListener('click', () => mostrarLogin());}
-  if (linkIrRegistro)
-    {linkIrRegistro.addEventListener('click', (e) => {
-      e.preventDefault();
-      mostrarRegistro();
-    });}
-  if (brandLogo)
-    {brandLogo.addEventListener('click', () => {
-      const sesion = obtenerSesionActiva();
-      if (sesion) {
-        mostrarPublicaciones();
-      } else {
-        mostrarRegistro();
-      }
-    });}
+  // Inicialización de submódulos
+  configurarFormularioRegistro({
+    formRegistro,
+    nombreInput,
+    correoInput,
+    passwordInput,
+    mensajeRegistroDiv,
+  });
 
-  if (formRegistro) {
-    formRegistro.addEventListener('submit', async (event) => {
-      event.preventDefault();
+  configurarFormularioLogin(
+    { formLogin, loginCorreoInput, loginPasswordInput, mensajeLoginDiv },
+    { actualizarNavbar, mostrarPublicaciones }
+  );
 
-      const nombre = nombreInput.value;
-      const correo = correoInput.value;
-      const password = passwordInput.value;
-
-      const resultado = validarRegistro(nombre, correo, password);
-
-      if (!resultado.esValido) {
-        mensajeRegistroDiv.className = 'error';
-        mensajeRegistroDiv.textContent = resultado.mensaje;
-      } else {
-        mensajeRegistroDiv.className = '';
-        mensajeRegistroDiv.textContent = 'Creando cuenta…';
-
-        try {
-          const registro = await registrarUsuarioFirebase({
-            nombre: resultado.usuario.nombre,
-            correo: resultado.usuario.correo,
-            password: password
-          });
-
-          if (!registro.exito) {
-            mensajeRegistroDiv.className = 'error';
-            mensajeRegistroDiv.textContent = registro.mensaje;
-          } else {
-            mensajeRegistroDiv.className = 'exito';
-            mensajeRegistroDiv.textContent = registro.mensaje;
-
-            usuariosRegistrados.push({
-              nombre: resultado.usuario.nombre,
-              correo: resultado.usuario.correo,
-              password: password,
-              rol: 'USER',
-            });
-
-            formRegistro.reset();
-          }
-        } catch (error) {
-          console.error('Error al registrar:', error);
-          mensajeRegistroDiv.className = 'error';
-          mensajeRegistroDiv.textContent = 'Error de conexión. Inténtalo de nuevo.';
-        }
-      }
-    });
-  }
-
-  if (formLogin) {
-    formLogin.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const correo = loginCorreoInput.value;
-      const password = loginPasswordInput.value;
-
-      const validacionCampos = validarCamposLogin(correo, password);
-      if (!validacionCampos.esValido) {
-        mensajeLoginDiv.className = 'error';
-        mensajeLoginDiv.textContent = validacionCampos.mensaje;
-        return;
-      }
-
-      mensajeLoginDiv.className = '';
-      mensajeLoginDiv.textContent = 'Iniciando sesión…';
-
-      try {
-        const auth = await autenticarUsuarioFirebase(correo, password);
-        if (!auth.exito) {
-          mensajeLoginDiv.className = 'error';
-          mensajeLoginDiv.textContent = auth.mensaje;
-        } else {
-          mensajeLoginDiv.className = 'exito';
-          mensajeLoginDiv.textContent = `¡Bienvenido, ${auth.usuario.nombre}!`;
-
-          // Guardar sesion y pasar a la vista de publicaciones
-          guardarSesion(auth.usuario);
-          actualizarNavbar(auth.usuario);
-          formLogin.reset();
-          mostrarPublicaciones();
-        }
-      } catch (error) {
-        console.error('Error al autenticar:', error);
-        mensajeLoginDiv.className = 'error';
-        mensajeLoginDiv.textContent = 'Error de conexión. Inténtalo de nuevo.';
-      }
-    });
-  }
-
-  // Cerrar Sesión
-  if (navBtnLogout) {
-    navBtnLogout.addEventListener('click', () => {
-      cerrarSesion();
-      actualizarNavbar(null);
-      mostrarLogin();
-    });
-  }
-
-  if (navBtnPanel) {
-    navBtnPanel.addEventListener('click', () => {
-      const sesionActual = obtenerSesionActiva();
-      if (!puedeAccederAAdmin(sesionActual)) {
-        alert('Acceso denegado: Solo administradores.');
-        return;
-      }
-      mostrarModeracion();
-    });
-  }
-
-  if (btnVolverPublicaciones) {
-    btnVolverPublicaciones.addEventListener('click', () => {
-      mostrarPublicaciones();
-    });
-  }
-
-  // Proteccion de pantallas
-  if (navBtnPublicar) {
-    navBtnPublicar.addEventListener('click', () => {
-      const sesionActual = obtenerSesionActiva();
-      if (!puedeAccederAPublicar(sesionActual)) {
-        alert('Debes iniciar sesión para publicar un hallazgo o pérdida.');
-        mostrarLogin();
-      } else {
-        mostrarHallazgo();
-      }
-    });
-  }
+  configurarNavegacionNavbar(
+    {
+      linkIrLogin,
+      navBtnIngresar,
+      linkIrRegistro,
+      brandLogo,
+      navBtnLogout,
+      btnVolverPublicaciones,
+      navBtnPanel,
+      navBtnPublicar,
+    },
+    {
+      mostrarLogin,
+      mostrarRegistro,
+      mostrarPublicaciones,
+      mostrarModeracion,
+      mostrarHallazgo,
+      actualizarNavbar,
+    }
+  );
 
   // Persistencia al recargar
   const sesionGuardada = obtenerSesionActiva();

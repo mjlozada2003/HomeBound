@@ -570,17 +570,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "1fb56440bf3faa7447ecb0abcf86f9bbcda1b628",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T03:10:46.000Z",
       "message": "fix(script): corregir formato de objetos json en tdd_log tras resolucion de conflictos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/1fb56440bf3faa7447ecb0abcf86f9bbcda1b628"
     },
     "stats": {
       "total": 0,
       "additions": 0,
       "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.49,
+    "test_count": 115,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:30:34.000Z",
+      "message": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 373,
+      "additions": 220,
+      "deletions": 153,
       "date": "2026-11-12"
     },
     "coverage": 96.49,
