@@ -2360,9 +2360,47 @@
     "testId": 0
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ea0d6d13dff6f739ee898694c7c98de0185d703e",
     "commitName": "docs: agregar lista de pruebas para HU-12 ver detalle de publicacion",
     "commitTimestamp": 1794509979306,
     "testId": 1
+  },
+  {
+    "numPassedTests": 156,
+    "failedTests": 1,
+    "numTotalTests": 157,
+    "timestamp": 1794510270512,
+    "success": false,
+    "testId": 2
+  },
+  {
+    "numPassedTests": 156,
+    "failedTests": 2,
+    "numTotalTests": 158,
+    "timestamp": 1794510423874,
+    "success": false,
+    "testId": 2
+  },
+  {
+    "numPassedTests": 157,
+    "failedTests": 1,
+    "numTotalTests": 158,
+    "timestamp": 1794510542062,
+    "success": false,
+    "testId": 2
+  },
+  {
+    "numPassedTests": 157,
+    "failedTests": 0,
+    "numTotalTests": 157,
+    "timestamp": 1794510590260,
+    "success": true,
+    "testId": 2
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat(publicaciones): obtener detalle de publicacion por id",
+    "commitTimestamp": 1794510760350,
+    "testId": 2
   }
 ]

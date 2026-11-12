@@ -3,7 +3,9 @@ import {
   filtrarSoloAprobadas,
   ordenarPorFechaReciente,
   formatearParaTarjeta,
-  formatearDatosComunes
+  formatearDatosComunes,
+  obtenerPublicacionPorId,
+  //formatearDetallePublicacion,
 } from './publicaciones.js';
 
 describe('HU-06: Ver vista básica de publicaciones recientes', () => {
@@ -111,4 +113,50 @@ describe('HU-06: Ver vista básica de publicaciones recientes', () => {
     expect(pagina2.publicaciones.length).toBe(2);
     expect(pagina2.paginaActual).toBe(2);
   });
+});
+
+describe('HU-12: Ver detalle de publicación', () => {
+  const publicacionesDetalleMock = [
+    {
+      id: 'pub-101',
+      titulo: 'Mochila negra encontrada',
+      descripcion: 'Encontrada en la banca de la plaza principal.',
+      fecha: '2026-10-20',
+      tipo: 'HALLAZGO',
+      categoria: 'OBJETO',
+      fotos: ['https://imagenes.test/mochila1.jpg', 'https://imagenes.test/mochila2.jpg'],
+      estado: 'APROBADA',
+      contacto: {
+        whatsapp: '59171234567',
+        enlaceWhatsapp: 'https://wa.me/59171234567',
+        correo: 'contacto@example.com',
+        enlaceCorreo: 'mailto:contacto@example.com',
+      },
+      ubicacion: {
+        texto: 'Plaza Murillo',
+        enlace: 'https://maps.google.com/?q=Plaza+Murillo',
+      },
+    },
+    {
+      id: 'pub-102',
+      titulo: 'Gatito extraviado',
+      descripcion: 'Gato siamés con collar rojo.',
+      fecha: '2026-10-21',
+      tipo: 'PERDIDA',
+      categoria: 'MASCOTA',
+      fotos: [],
+      estado: 'APROBADA',
+    },
+  ];
+
+  it('Debería obtener una publicación por su id correctamente', () => {
+    const encontrada = obtenerPublicacionPorId(publicacionesDetalleMock, 'pub-101');
+    expect(encontrada).not.toBeNull();
+    expect(encontrada.id).toBe('pub-101');
+    expect(encontrada.titulo).toBe('Mochila negra encontrada');
+  });
+
+
+
+
 });
