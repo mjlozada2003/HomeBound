@@ -1,3 +1,5 @@
+import { esCorreoValido } from './validadorCorreo';
+
 export function validarRegistro(nombre,correo, password){
     if(!nombre?.trim() || !correo?.trim() || !password?.trim()){
         return{
@@ -6,11 +8,10 @@ export function validarRegistro(nombre,correo, password){
         };
     }
 
-    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(!regexCorreo.test(correo.trim())){
+    if(!esCorreoValido(correo)){
         return {
-        esValido :false,
-        mensaje : 'El correo electrónico no es válido'
+            esValido :false,
+            mensaje : 'El correo electrónico no es válido'
         };
     }
 
