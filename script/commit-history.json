@@ -589,17 +589,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "b0b68488683c4feae5cefb3bf4ec514c26429933",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T03:43:59.000Z",
       "message": "test(auth): agregar pruebas y funcion normalizarCorreo en validador compartido",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b0b68488683c4feae5cefb3bf4ec514c26429933"
     },
     "stats": {
       "total": 17,
       "additions": 16,
       "deletions": 1,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:45:51.000Z",
+      "message": "refactor(sesion): aplicar igualdad estricta y normalizarCorreo en autenticacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
       "date": "2026-11-12"
     },
     "coverage": 96.54,

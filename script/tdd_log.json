@@ -2262,9 +2262,23 @@
     "testId": 32
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b0b68488683c4feae5cefb3bf4ec514c26429933",
     "commitName": "test(auth): agregar pruebas y funcion normalizarCorreo en validador compartido",
     "commitTimestamp": 1794455042536,
     "testId": 32
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794455131719,
+    "success": true,
+    "testId": 33
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor(sesion): aplicar igualdad estricta y normalizarCorreo en autenticacion",
+    "commitTimestamp": 1794455154324,
+    "testId": 33
   }
 ]

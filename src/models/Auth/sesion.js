@@ -1,4 +1,4 @@
-import { esCorreoValido } from './validadorCorreo';
+import { esCorreoValido, normalizarCorreo } from './validadorCorreo';
 
 export function validarCamposLogin(correo, password){
     if(!correo?.trim() || !password?.trim()){
@@ -30,7 +30,7 @@ export const CUENTA_ADMIN_PRECONFIGURADA = {
 
 
 export function autenticarUsuario(correo, password, usuarios = []){
-    const correoNormalizado = correo.trim().toLowerCase();
+    const correoNormalizado = normalizarCorreo(correo);
 
     const todosLosUsuarios = [CUENTA_ADMIN_PRECONFIGURADA, ...usuarios];
 
