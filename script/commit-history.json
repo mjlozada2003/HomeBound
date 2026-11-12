@@ -604,6 +604,78 @@
     },
     "coverage": 96.49,
     "test_count": 115,
+    "sha": "b0b68488683c4feae5cefb3bf4ec514c26429933",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:43:59.000Z",
+      "message": "test(auth): agregar pruebas y funcion normalizarCorreo en validador compartido",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b0b68488683c4feae5cefb3bf4ec514c26429933"
+    },
+    "stats": {
+      "total": 17,
+      "additions": 16,
+      "deletions": 1,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "68917f786f18cd015d4c56b2f6d288e39e6b1402",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:45:51.000Z",
+      "message": "refactor(sesion): aplicar igualdad estricta y normalizarCorreo en autenticacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/68917f786f18cd015d4c56b2f6d288e39e6b1402"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "e35b1b3eff3e08238e4a78daf6645bac3b5721a3",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:49:03.000Z",
+      "message": "refactor(sesion): normalizarCorreo en autenticacion 2",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e35b1b3eff3e08238e4a78daf6645bac3b5721a3"
+    },
+    "stats": {
+      "total": 43,
+      "additions": 22,
+      "deletions": 21,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:52:00.000Z",
+      "message": "test(auth): verificacion final de pruebas despues de refactory",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
     "failed_tests": 0,
     "conclusion": "success"
   }

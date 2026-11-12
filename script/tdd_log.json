@@ -2250,6 +2250,17 @@
     "failedTests": 0,
     "numTotalTests": 115,
     "timestamp": 1794453167145,
+    "failedTests": 2,
+    "numTotalTests": 117,
+    "timestamp": 1794454674674,
+    "success": false,
+    "testId": 32
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794454737088,
     "success": true,
     "testId": 32
   },
@@ -2266,5 +2277,51 @@
     "commitName": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
     "commitTimestamp": 1794454237221,
     "testId": 32
+    "commitId": "b0b68488683c4feae5cefb3bf4ec514c26429933",
+    "commitName": "test(auth): agregar pruebas y funcion normalizarCorreo en validador compartido",
+    "commitTimestamp": 1794455042536,
+    "testId": 32
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794455131719,
+    "success": true,
+    "testId": 33
+  },
+  {
+    "commitId": "68917f786f18cd015d4c56b2f6d288e39e6b1402",
+    "commitName": "refactor(sesion): aplicar igualdad estricta y normalizarCorreo en autenticacion",
+    "commitTimestamp": 1794455154324,
+    "testId": 33
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794455286819,
+    "success": true,
+    "testId": 34
+  },
+  {
+    "commitId": "e35b1b3eff3e08238e4a78daf6645bac3b5721a3",
+    "commitName": "refactor(sesion): normalizarCorreo en autenticacion 2",
+    "commitTimestamp": 1794455347166,
+    "testId": 34
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794455406051,
+    "success": true,
+    "testId": 35
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(auth): verificacion final de pruebas despues de refactory",
+    "commitTimestamp": 1794455523001,
+    "testId": 35
   }
 ]
