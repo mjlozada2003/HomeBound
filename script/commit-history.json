@@ -589,6 +589,21 @@
     "conclusion": "success"
   },
   {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:30:34.000Z",
+      "message": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 373,
+      "additions": 220,
+      "deletions": 153,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.49,
+    "test_count": 115,
     "sha": "b0b68488683c4feae5cefb3bf4ec514c26429933",
     "author": "Maria Lozada",
     "commit": {

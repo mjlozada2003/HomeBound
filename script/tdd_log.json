@@ -2247,6 +2247,9 @@
   },
   {
     "numPassedTests": 115,
+    "failedTests": 0,
+    "numTotalTests": 115,
+    "timestamp": 1794453167145,
     "failedTests": 2,
     "numTotalTests": 117,
     "timestamp": 1794454674674,
@@ -2262,6 +2265,18 @@
     "testId": 32
   },
   {
+    "numPassedTests": 115,
+    "failedTests": 0,
+    "numTotalTests": 115,
+    "timestamp": 1794454202336,
+    "success": true,
+    "testId": 32
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
+    "commitTimestamp": 1794454237221,
+    "testId": 32
     "commitId": "b0b68488683c4feae5cefb3bf4ec514c26429933",
     "commitName": "test(auth): agregar pruebas y funcion normalizarCorreo en validador compartido",
     "commitTimestamp": 1794455042536,
