@@ -665,12 +665,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "93fa83d92889433340d549b87e9ca2791800b4a7",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T04:02:03.000Z",
       "message": "fix(script): corregir formato json en tdd_log tras resolucion de conflictos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/93fa83d92889433340d549b87e9ca2791800b4a7"
     },
     "stats": {
       "total": 0,
@@ -680,6 +680,25 @@
     },
     "coverage": 96.54,
     "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:37:54.000Z",
+      "message": "test: HU-09 solo el autor tiene permiso sobre su publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 50,
+      "additions": 50,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.57,
+    "test_count": 122,
     "failed_tests": 0,
     "conclusion": "success"
   }

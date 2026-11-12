@@ -2332,9 +2332,39 @@
     "testId": 36
   },
   {
-    "commitId": "HEAD",
+    "commitId": "93fa83d92889433340d549b87e9ca2791800b4a7",
     "commitName": "fix(script): corregir formato json en tdd_log tras resolucion de conflictos",
     "commitTimestamp": 1794456127951,
     "testId": 36
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794490642966,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 5,
+    "numTotalTests": 122,
+    "timestamp": 1794490654884,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 122,
+    "failedTests": 0,
+    "numTotalTests": 122,
+    "timestamp": 1794490668494,
+    "success": true,
+    "testId": 37
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-09 solo el autor tiene permiso sobre su publicacion",
+    "commitTimestamp": 1794490681524,
+    "testId": 37
   }
 ]
