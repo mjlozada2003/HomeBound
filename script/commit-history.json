@@ -608,17 +608,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "68917f786f18cd015d4c56b2f6d288e39e6b1402",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T03:45:51.000Z",
       "message": "refactor(sesion): aplicar igualdad estricta y normalizarCorreo en autenticacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/68917f786f18cd015d4c56b2f6d288e39e6b1402"
     },
     "stats": {
       "total": 4,
       "additions": 2,
       "deletions": 2,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:49:03.000Z",
+      "message": "refactor(sesion): normalizarCorreo en autenticacion 2",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 43,
+      "additions": 22,
+      "deletions": 21,
       "date": "2026-11-12"
     },
     "coverage": 96.54,

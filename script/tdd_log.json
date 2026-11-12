@@ -2276,9 +2276,23 @@
     "testId": 33
   },
   {
-    "commitId": "HEAD",
+    "commitId": "68917f786f18cd015d4c56b2f6d288e39e6b1402",
     "commitName": "refactor(sesion): aplicar igualdad estricta y normalizarCorreo en autenticacion",
     "commitTimestamp": 1794455154324,
     "testId": 33
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794455286819,
+    "success": true,
+    "testId": 34
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor(sesion): normalizarCorreo en autenticacion 2",
+    "commitTimestamp": 1794455347166,
+    "testId": 34
   }
 ]
