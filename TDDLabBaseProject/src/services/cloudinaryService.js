@@ -1,52 +1,67 @@
+/* global AbortController, setTimeout, clearTimeout */
 import { cloudinaryConfig } from './cloudinaryConfig';
 
-export async function subirFoto(foto) {
-  const { cloudName, uploadPreset } = cloudinaryConfig;
+const TIEMPO_MAXIMO_SUBIDA_MS = 45000;
+const CLOUD_NAME_DE_EJEMPLO = 'TU_CLOUD_NAME';
 
-  if (!cloudName || cloudName === 'TU_CLOUD_NAME' || !uploadPreset) {
-    throw new Error('Configura tu Cloud Name y Upload Preset de Cloudinary.');
-  }
+const MENSAJES_CLOUDINARY = {
+  sinConfiguracion: 'Configura tu Cloud Name y Upload Preset de Cloudinary.',
+  subidaFallida: 'No se pudo subir la foto a Cloudinary.',
+  sinUrlSegura: 'Cloudinary no devolvió una URL segura para la foto.',
+  tiempoAgotado: 'La subida de la foto tardó demasiado. Inténtalo de nuevo.'
+};
 
+function estaConfigurado({ cloudName, uploadPreset }) {
+  return Boolean(cloudName) && cloudName !== CLOUD_NAME_DE_EJEMPLO && Boolean(uploadPreset);
+}
+
+function construirUrlDeSubida(cloudName) {
+  return 'https://api.cloudinary.com/v1_1/' + cloudName + '/image/upload';
+}
+
+function crearFormularioDeSubida(foto, uploadPreset) {
   const formulario = new FormData();
   formulario.append('file', foto);
   formulario.append('upload_preset', uploadPreset);
+  return formulario;
+}
+
+function esUrlSegura(url) {
+  return typeof url === 'string' && url.startsWith('https://');
+}
+
+function esSubidaCancelada(error) {
+  return error.name === 'AbortError';
+}
+
+export async function subirFoto(foto) {
+  if (!estaConfigurado(cloudinaryConfig)) {
+    throw new Error(MENSAJES_CLOUDINARY.sinConfiguracion);
+  }
+  const { cloudName, uploadPreset } = cloudinaryConfig;
 
   const controlador = new AbortController();
-  const temporizador = setTimeout(() => controlador.abort(), 45000);
+  const temporizador = setTimeout(() => controlador.abort(), TIEMPO_MAXIMO_SUBIDA_MS);
 
   try {
-    const respuesta = await fetch(
-      'https://api.cloudinary.com/v1_1/' + cloudName + '/image/upload',
-      {
-        method: 'POST',
-        body: formulario,
-        signal: controlador.signal
-      }
-    );
-
-    const datos = await respuesta.json();
+    const respuesta = await fetch(construirUrlDeSubida(cloudName), {
+      method: 'POST',
+      body: crearFormularioDeSubida(foto, uploadPreset),
+      signal: controlador.signal
+    });
+    const datosRespuesta = await respuesta.json();
 
     if (!respuesta.ok) {
-      throw new Error(
-        datos.error?.message || 'No se pudo subir la foto a Cloudinary.'
-      );
+      throw new Error(datosRespuesta.error?.message || MENSAJES_CLOUDINARY.subidaFallida);
     }
-
-    if (
-      typeof datos.secure_url !== 'string' ||
-      !datos.secure_url.startsWith('https://')
-    ) {
-      throw new Error('Cloudinary no devolvió una URL segura para la foto.');
+    if (!esUrlSegura(datosRespuesta.secure_url)) {
+      throw new Error(MENSAJES_CLOUDINARY.sinUrlSegura);
     }
-
-    return datos.secure_url;
+    return datosRespuesta.secure_url;
   } catch (error) {
-    if (error.name === 'AbortError') {
-      throw new Error(
-        'La subida de la foto tardó demasiado. Inténtalo de nuevo.'
-      );
+    if (esSubidaCancelada(error)) {
+      throw new Error(MENSAJES_CLOUDINARY.tiempoAgotado);
     }
-
     throw error;
   } finally {
     clearTimeout(temporizador);

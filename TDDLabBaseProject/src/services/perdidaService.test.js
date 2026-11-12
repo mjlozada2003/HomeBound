@@ -26,7 +26,7 @@ const foto = {
   size: 1024
 };
 
-const publicacion = {
+const perdida = {
   tipo: 'PERDIDA',
   categoria: 'OBJETO',
   categoriaOtra: '',
@@ -48,56 +48,62 @@ beforeEach(() => {
   subirFoto.mockResolvedValue('https://imagenes.test/uno.jpg');
 });
 
-it('deberia guardar la perdida con la URL de una foto en la colección perdidas', async () => {
-  const resultado = await guardarPerdida(publicacion);
+describe('HU-04 Caso 12: guardar una pérdida con su foto', () => {
+  it('deberia guardar la pérdida con la URL de su foto en la colección perdidas', async () => {
+    const perdidaGuardada = await guardarPerdida(perdida);
 
-  expect(collection).toHaveBeenCalledWith(
-    expect.anything(),
-    'perdidas'
-  );
+    expect(collection).toHaveBeenCalledWith(
+      expect.anything(),
+      'perdidas'
+    );
 
-  expect(subirFoto).toHaveBeenCalledWith(foto);
+    expect(subirFoto).toHaveBeenCalledWith(foto);
 
-  expect(setDoc).toHaveBeenCalledWith({ id: 'perdida-1' }, {
-    ...publicacion,
-    fotos: ['https://imagenes.test/uno.jpg'],
-    creadoEn: 'FECHA_SERVIDOR'
+    expect(setDoc).toHaveBeenCalledWith({ id: 'perdida-1' }, {
+      ...perdida,
+      fotos: ['https://imagenes.test/uno.jpg'],
+      creadoEn: 'FECHA_SERVIDOR'
+    });
+
+    expect(perdidaGuardada.id).toBe('perdida-1');
   });
-
-  expect(resultado.id).toBe('perdida-1');
 });
 
-it('deberia guardar las URLs de todas las fotos en el mismo orden', async () => {
-  const segunda = { ...foto, name: 'detalle.jpg' };
+describe('HU-04 Caso 13: guardar múltiples fotos', () => {
+  it('deberia guardar las URLs de todas las fotos en el mismo orden', async () => {
+    const segundaFoto = { ...foto, name: 'detalle.jpg' };
 
-  subirFoto
-    .mockResolvedValueOnce('https://imagenes.test/uno.jpg')
-    .mockResolvedValueOnce('https://imagenes.test/dos.jpg');
+    subirFoto
+      .mockResolvedValueOnce('https://imagenes.test/uno.jpg')
+      .mockResolvedValueOnce('https://imagenes.test/dos.jpg');
 
-  const resultado = await guardarPerdida({
-    ...publicacion,
-    fotos: [foto, segunda]
+    const perdidaGuardada = await guardarPerdida({
+      ...perdida,
+      fotos: [foto, segundaFoto]
+    });
+
+    expect(subirFoto).toHaveBeenCalledTimes(2);
+    expect(subirFoto).toHaveBeenNthCalledWith(2, segundaFoto);
+
+    expect(perdidaGuardada.fotos).toEqual([
+      'https://imagenes.test/uno.jpg',
+      'https://imagenes.test/dos.jpg'
+    ]);
   });
-
-  expect(subirFoto).toHaveBeenCalledTimes(2);
-  expect(subirFoto).toHaveBeenNthCalledWith(2, segunda);
-
-  expect(resultado.fotos).toEqual([
-    'https://imagenes.test/uno.jpg',
-    'https://imagenes.test/dos.jpg'
-  ]);
 });
 
-it('deberia guardar Pendiente de revisión aunque se reciba otro estado', async () => {
-  await guardarPerdida({
-    ...publicacion,
-    estado: 'Aprobado'
-  });
+describe('HU-04 Caso 14: estado pendiente al persistir', () => {
+  it('deberia guardar Pendiente de revisión aunque se reciba otro estado', async () => {
+    await guardarPerdida({
+      ...perdida,
+      estado: 'Aprobado'
+    });
 
-  expect(setDoc).toHaveBeenCalledWith(
-    expect.anything(),
-    expect.objectContaining({
-      estado: 'Pendiente de revisión'
-    })
-  );
+    expect(setDoc).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({
+        estado: 'Pendiente de revisión'
+      })
+    );
+  });
 });
