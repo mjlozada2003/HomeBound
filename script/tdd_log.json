@@ -2500,9 +2500,23 @@
     "testId": 44
   },
   {
-    "commitId": "HEAD",
+    "commitId": "9e421328b99a90f97a1c8047c6c20964d30dc0ad",
     "commitName": "feat: HU-09 guardar el autor al publicar un hallazgo o una perdida",
     "commitTimestamp": 1794491071322,
     "testId": 44
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491125315,
+    "success": true,
+    "testId": 45
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-09 seccion mis publicaciones con su estado de revision",
+    "commitTimestamp": 1794491268075,
+    "testId": 45
   }
 ]
