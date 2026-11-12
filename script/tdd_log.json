@@ -2528,9 +2528,31 @@
     "testId": 46
   },
   {
-    "commitId": "HEAD",
+    "commitId": "9f6238c62f9f95f65b9a6475bc1fdec76589fcc1",
     "commitName": "feat: HU-09 editar titulo y descripcion desde mis publicaciones",
     "commitTimestamp": 1794491487018,
     "testId": 46
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491509229,
+    "success": true,
+    "testId": 47
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491692963,
+    "success": true,
+    "testId": 47
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-09 eliminar una publicacion propia con confirmacion",
+    "commitTimestamp": 1794491699563,
+    "testId": 47
   }
 ]

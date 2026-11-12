@@ -1,12 +1,14 @@
 import {
   obtenerMisPublicaciones,
   editarPublicacion,
+  eliminarPublicacion,
 } from '../models/Posts/misPublicaciones.js';
 import { obtenerSesionActiva } from '../models/Auth/sesion';
 import { normalizarCorreo } from '../models/Auth/validadorCorreo';
 import {
   obtenerPublicacionesPorAutor,
   actualizarPublicacion,
+  borrarPublicacion,
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 import { crearTarjetaHtml } from './plantillaTarjeta';
@@ -41,6 +43,7 @@ function contenidoTarjeta(pub) {
     <p class="tarjeta-etiquetas"><span class="badge-estado">${pub.estadoTexto}</span></p>
     <div class="acciones-mis-publicaciones">
       <button type="button" class="btn-editar" data-id="${escaparHtml(pub.id)}">Editar</button>
+      <button type="button" class="btn-eliminar" data-id="${escaparHtml(pub.id)}">Eliminar</button>
     </div>
   `;
 }
@@ -125,12 +128,44 @@ async function guardarEdicion(formulario) {
   dibujarMisPublicaciones();
 }
 
+async function eliminar(id) {
+  const publicacion = misPublicacionesCargadas.find((pub) => pub.id === id);
+  if (!publicacion) {return;}
+
+  const confirmado = window.confirm(
+    `¿Seguro que quieres eliminar "${publicacion.titulo}"? Esta acción no se puede deshacer.`
+  );
+  if (!confirmado) {return;}
+
+  let restantes;
+
+  try {
+    restantes = eliminarPublicacion(misPublicacionesCargadas, id, obtenerSesionActiva());
+  } catch (error) {
+    alert(error.message);
+    return;
+  }
+
+  try {
+    await borrarPublicacion(publicacion.coleccion, id);
+  } catch (error) {
+    console.error('Error al eliminar:', error.message);
+    alert('No se pudo eliminar la publicación. Intenta de nuevo.');
+    return;
+  }
+
+  misPublicacionesCargadas = restantes;
+  dibujarMisPublicaciones();
+}
+
 function manejarClicMisPublicaciones(evento) {
   const boton = evento.target;
 
   if (boton.classList.contains('btn-editar')) {
     idEditando = boton.dataset.id;
     dibujarMisPublicaciones();
+  } else if (boton.classList.contains('btn-eliminar')) {
+    eliminar(boton.dataset.id);
   } else if (boton.classList.contains('btn-cancelar')) {
     idEditando = null;
     dibujarMisPublicaciones();

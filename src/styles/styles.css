@@ -335,6 +335,11 @@ body {
     color: #fff;
 }
 
+.btn-eliminar {
+    background-color: var(--color-error);
+    color: #fff;
+}
+
 .btn-cancelar {
     background-color: #e0e0e0;
     color: var(--color-text);

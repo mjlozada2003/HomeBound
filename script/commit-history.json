@@ -855,17 +855,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "9f6238c62f9f95f65b9a6475bc1fdec76589fcc1",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T13:51:24.000Z",
       "message": "feat: HU-09 editar titulo y descripcion desde mis publicaciones",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9f6238c62f9f95f65b9a6475bc1fdec76589fcc1"
     },
     "stats": {
       "total": 167,
       "additions": 160,
       "deletions": 7,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.93,
+    "test_count": 138,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:54:56.000Z",
+      "message": "feat: HU-09 eliminar una publicacion propia con confirmacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 40,
+      "additions": 40,
+      "deletions": 0,
       "date": "2026-11-12"
     },
     "coverage": 96.93,
