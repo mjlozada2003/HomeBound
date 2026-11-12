@@ -2572,7 +2572,7 @@
     "testId": 47
   },
   {
-    "commitId": "HEAD",
+    "commitId": "fe338bfd4cd642a60e79edf8b63508395311b8fa",
     "commitName": "feat: HU-09 eliminar una publicacion propia con confirmacion",
     "commitTimestamp": 1794491699563,
     "testId": 47
@@ -2582,5 +2582,11 @@
     "commitName": "merge: integrar main con el refactor de HU03-04 en HU-09",
     "commitTimestamp": 1794492843333,
     "testId": 48
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
+    "commitTimestamp": 1794493053820,
+    "testId": 49
   }
 ]

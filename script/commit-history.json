@@ -893,12 +893,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "fe338bfd4cd642a60e79edf8b63508395311b8fa",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T13:54:56.000Z",
       "message": "feat: HU-09 eliminar una publicacion propia con confirmacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/fe338bfd4cd642a60e79edf8b63508395311b8fa"
     },
     "stats": {
       "total": 40,
@@ -923,6 +923,25 @@
       "total": 2200,
       "additions": 1177,
       "deletions": 1023,
+      "date": "2026-11-12"
+    },
+    "coverage": 74.06,
+    "test_count": 177,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T14:17:31.000Z",
+      "message": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 81,
+      "additions": 78,
+      "deletions": 3,
       "date": "2026-11-12"
     },
     "coverage": 74.06,

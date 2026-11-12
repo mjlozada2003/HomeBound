@@ -375,6 +375,18 @@
 
     </main>
 
+    <!-- Diálogo de confirmación de la app (HU-09) -->
+    <dialog id="dialogo-confirmacion" class="dialogo" aria-labelledby="dialogo-titulo">
+      <form method="dialog">
+        <h3 id="dialogo-titulo" class="dialogo-titulo"></h3>
+        <p id="dialogo-mensaje" class="dialogo-mensaje"></p>
+        <div class="dialogo-acciones">
+          <button value="cancelar" class="btn-cancelar">Cancelar</button>
+          <button id="dialogo-confirmar" value="confirmar" class="btn-eliminar">Aceptar</button>
+        </div>
+      </form>
+    </dialog>
+
 
     <script type="module" src="./src/presenter.js"></script>
   </body>

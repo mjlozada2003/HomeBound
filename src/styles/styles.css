@@ -368,6 +368,48 @@ body {
     min-height: 1em;
 }
 
+/* Diálogo de confirmación de la app (HU-09) */
+.dialogo {
+    border: none;
+    border-radius: 16px;
+    padding: 1.5rem;
+    max-width: 420px;
+    width: calc(100% - 32px);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dialogo::backdrop {
+    background-color: rgba(31, 45, 36, 0.45);
+}
+
+.dialogo-titulo {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+}
+
+.dialogo-mensaje {
+    margin: 0 0 1.25rem;
+    line-height: 1.4;
+}
+
+.dialogo-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.dialogo-acciones button {
+    border: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 /* HU-03: estilos exclusivos del formulario de hallazgo */
 .hallazgo-card {
   max-width: 640px;

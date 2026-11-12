@@ -12,6 +12,7 @@ import {
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 import { crearTarjetaHtml } from './plantillaTarjeta';
+import { pedirConfirmacion } from './dialogoConfirmacion';
 
 let misPublicacionesCargadas = [];
 let idEditando = null;
@@ -132,9 +133,11 @@ async function eliminar(id) {
   const publicacion = misPublicacionesCargadas.find((pub) => pub.id === id);
   if (!publicacion) {return;}
 
-  const confirmado = window.confirm(
-    `¿Seguro que quieres eliminar "${publicacion.titulo}"? Esta acción no se puede deshacer.`
-  );
+  const confirmado = await pedirConfirmacion({
+    titulo: 'Eliminar publicación',
+    mensaje: `¿Seguro que quieres eliminar "${publicacion.titulo}"? Esta acción no se puede deshacer.`,
+    textoConfirmar: 'Eliminar',
+  });
   if (!confirmado) {return;}
 
   let restantes;
