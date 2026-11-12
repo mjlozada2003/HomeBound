@@ -53,38 +53,51 @@ export function iniciarAuthPresenter() {
   const loginPasswordInput = document.querySelector('#login-password-input');
   const mensajeLoginDiv = document.querySelector('#login-mensaje-div');
 
-  // Funciones para alternar vistas
+  // Helper centralizado para alternar vistas (Router SPA)
+  const todasLasVistas = [
+    vistaRegistro,
+    vistaLogin,
+    vistaHallazgo,
+    vistaPerdida,
+    vistaPublicaciones,
+    vistaModeracion,
+  ];
+
+  function activarVista(vistaActiva) {
+    todasLasVistas.forEach((vista) => {
+      if (vista) {
+        vista.classList.add('oculto');
+      }
+    });
+    if (vistaActiva) {
+      vistaActiva.classList.remove('oculto');
+    }
+  }
+
   function mostrarLogin() {
-    if (vistaHallazgo) {vistaHallazgo.classList.add('oculto');}
-    if (vistaPerdida) {vistaPerdida.classList.add('oculto');}
-    vistaRegistro.classList.add('oculto');
-    if (vistaModeracion) {vistaModeracion.classList.add('oculto');}
-    if (vistaPublicaciones) {vistaPublicaciones.classList.add('oculto');}
-    vistaLogin.classList.remove('oculto');
+    activarVista(vistaLogin);
     mensajeLoginDiv.className = '';
     mensajeLoginDiv.textContent = '';
   }
 
   function mostrarRegistro() {
-    if (vistaHallazgo) {vistaHallazgo.classList.add('oculto');}
-    if (vistaPerdida) {vistaPerdida.classList.add('oculto');}
-    vistaLogin.classList.add('oculto');
-    if (vistaModeracion) {vistaModeracion.classList.add('oculto');}
-    if (vistaPublicaciones) {vistaPublicaciones.classList.add('oculto');}
-    vistaRegistro.classList.remove('oculto');
+    activarVista(vistaRegistro);
     mensajeRegistroDiv.className = '';
     mensajeRegistroDiv.textContent = '';
   }
-
-  function mostrarPublicaciones() {
-    if (vistaHallazgo) {vistaHallazgo.classList.add('oculto');}
-    if (vistaPerdida) {vistaPerdida.classList.add('oculto');}
-    vistaRegistro.classList.add('oculto');
-    vistaLogin.classList.add('oculto');
-    if (vistaModeracion) {vistaModeracion.classList.add('oculto');}
-    if (vistaPublicaciones) {
-      vistaPublicaciones.classList.remove('oculto');
-      renderizarListaPublicaciones();
+  function mostrarPublicaciones(){
+    activarVista(vistaPublicaciones);
+    renderizarListaPublicaciones();
+  }
+  function mostrarModeracion(){
+    activarVista(vistaModeracion);
+    renderizarBandejaModeracion();
+  }
+  function mostrarHallazgo(){
+    activarVista(vistaHallazgo);
+    const categoria = document.querySelector('#hallazgo-categoria');
+    if (categoria) {
+      categoria.focus();
     }
   }
 
@@ -225,18 +238,6 @@ export function iniciarAuthPresenter() {
     });
   }
 
-  function mostrarModeracion() {
-    if (vistaHallazgo) {vistaHallazgo.classList.add('oculto');}
-    if (vistaPerdida) {vistaPerdida.classList.add('oculto');}
-    vistaRegistro.classList.add('oculto');
-    vistaLogin.classList.add('oculto');
-    if (vistaPublicaciones) {vistaPublicaciones.classList.add('oculto');}
-    if (vistaModeracion) {
-      vistaModeracion.classList.remove('oculto');
-      renderizarBandejaModeracion();
-    }
-  }
-
   if (navBtnPanel) {
     navBtnPanel.addEventListener('click', () => {
       const sesionActual = obtenerSesionActiva();
@@ -262,13 +263,7 @@ export function iniciarAuthPresenter() {
         alert('Debes iniciar sesión para publicar un hallazgo o pérdida.');
         mostrarLogin();
       } else {
-        vistaRegistro.classList.add('oculto');
-        vistaLogin.classList.add('oculto');
-        if (vistaPublicaciones) {vistaPublicaciones.classList.add('oculto');}
-        if (vistaModeracion) {vistaModeracion.classList.add('oculto');}
-        if (vistaPerdida) {vistaPerdida.classList.add('oculto');}
-        vistaHallazgo.classList.remove('oculto');
-        document.querySelector('#hallazgo-categoria').focus();
+        mostrarHallazgo();
       }
     });
   }
