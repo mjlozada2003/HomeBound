@@ -2247,9 +2247,6 @@
   },
   {
     "numPassedTests": 115,
-    "failedTests": 0,
-    "numTotalTests": 115,
-    "timestamp": 1794453167145,
     "failedTests": 2,
     "numTotalTests": 117,
     "timestamp": 1794454674674,
@@ -2273,10 +2270,12 @@
     "testId": 32
   },
   {
-    "commitId": "HEAD",
+    "commitId": "6b9bb26",
     "commitName": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
     "commitTimestamp": 1794454237221,
     "testId": 32
+  },
+  {
     "commitId": "b0b68488683c4feae5cefb3bf4ec514c26429933",
     "commitName": "test(auth): agregar pruebas y funcion normalizarCorreo en validador compartido",
     "commitTimestamp": 1794455042536,
@@ -2319,9 +2318,23 @@
     "testId": 35
   },
   {
-    "commitId": "HEAD",
+    "commitId": "91292b6a941e4cb946d090e6d939e4d4cbef96d6",
     "commitName": "test(auth): verificacion final de pruebas despues de refactory",
     "commitTimestamp": 1794455523001,
     "testId": 35
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794456025711,
+    "success": true,
+    "testId": 36
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix(script): corregir formato json en tdd_log tras resolucion de conflictos",
+    "commitTimestamp": 1794456127951,
+    "testId": 36
   }
 ]

@@ -589,21 +589,6 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
-    "author": "Maria Lozada",
-    "commit": {
-      "date": "2026-11-12T03:30:34.000Z",
-      "message": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
-    },
-    "stats": {
-      "total": 373,
-      "additions": 220,
-      "deletions": 153,
-      "date": "2026-11-12"
-    },
-    "coverage": 96.49,
-    "test_count": 115,
     "sha": "b0b68488683c4feae5cefb3bf4ec514c26429933",
     "author": "Maria Lozada",
     "commit": {
@@ -661,11 +646,30 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "91292b6a941e4cb946d090e6d939e4d4cbef96d6",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T03:52:00.000Z",
       "message": "test(auth): verificacion final de pruebas despues de refactory",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/91292b6a941e4cb946d090e6d939e4d4cbef96d6"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T04:02:03.000Z",
+      "message": "fix(script): corregir formato json en tdd_log tras resolucion de conflictos",
       "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
     },
     "stats": {
