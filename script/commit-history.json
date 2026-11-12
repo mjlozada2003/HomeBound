@@ -722,12 +722,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "5b577ce63af93cbc3e870a73a3009fdc05fee1d2",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T13:39:39.000Z",
       "message": "test: HU-09 listar mis publicaciones con su estado de revision",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5b577ce63af93cbc3e870a73a3009fdc05fee1d2"
     },
     "stats": {
       "total": 86,
@@ -737,6 +737,25 @@
     },
     "coverage": 96.69,
     "test_count": 128,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:40:25.000Z",
+      "message": "test: HU-09 editar titulo y descripcion solo si soy el autor",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 63,
+      "additions": 62,
+      "deletions": 1,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.81,
+    "test_count": 132,
     "failed_tests": 0,
     "conclusion": "success"
   }

@@ -1,4 +1,9 @@
-import { esAutor, asignarAutor, obtenerMisPublicaciones } from './misPublicaciones.js';
+import {
+  esAutor,
+  asignarAutor,
+  obtenerMisPublicaciones,
+  editarPublicacion,
+} from './misPublicaciones.js';
 
 describe('HU-09: Gestionar mis publicaciones', () => {
   const usuario = { nombre: 'Maite', correo: 'maite@ucb.edu.bo', rol: 'USER' };
@@ -99,6 +104,39 @@ describe('HU-09: Gestionar mis publicaciones', () => {
         publicaciones: [],
         mensajeVacio: 'Aún no tienes publicaciones',
       });
+    });
+  });
+
+  describe('Editar publicación', () => {
+    test('Debería devolver los cambios de título y descripción sin espacios sobrantes', () => {
+      const resultado = editarPublicacion(
+        publicacion,
+        { titulo: '  Mochila azul con llaves ', descripcion: ' Tiene un llavero rojo ' },
+        usuario
+      );
+
+      expect(resultado).toEqual({
+        esValido: true,
+        cambios: { titulo: 'Mochila azul con llaves', descripcion: 'Tiene un llavero rojo' },
+      });
+    });
+
+    test('Debería rechazar un título vacío', () => {
+      const resultado = editarPublicacion(publicacion, { titulo: '   ', descripcion: 'Algo' }, usuario);
+
+      expect(resultado).toEqual({ esValido: false, mensaje: 'El título es obligatorio' });
+    });
+
+    test('Debería rechazar una descripción vacía', () => {
+      const resultado = editarPublicacion(publicacion, { titulo: 'Mochila', descripcion: '' }, usuario);
+
+      expect(resultado).toEqual({ esValido: false, mensaje: 'La descripción es obligatoria' });
+    });
+
+    test('Debería lanzar un error si quien edita no es el autor', () => {
+      expect(() =>
+        editarPublicacion(publicacion, { titulo: 'Otro', descripcion: 'Otro' }, otroUsuario)
+      ).toThrow('Solo el autor puede editar esta publicación');
     });
   });
 });

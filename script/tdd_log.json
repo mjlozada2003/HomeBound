@@ -2406,9 +2406,31 @@
     "testId": 39
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5b577ce63af93cbc3e870a73a3009fdc05fee1d2",
     "commitName": "test: HU-09 listar mis publicaciones con su estado de revision",
     "commitTimestamp": 1794490783253,
     "testId": 39
+  },
+  {
+    "numPassedTests": 128,
+    "failedTests": 4,
+    "numTotalTests": 132,
+    "timestamp": 1794490808236,
+    "success": false,
+    "testId": 40
+  },
+  {
+    "numPassedTests": 132,
+    "failedTests": 0,
+    "numTotalTests": 132,
+    "timestamp": 1794490821074,
+    "success": true,
+    "testId": 40
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-09 editar titulo y descripcion solo si soy el autor",
+    "commitTimestamp": 1794490832828,
+    "testId": 40
   }
 ]

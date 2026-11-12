@@ -34,3 +34,22 @@ export function obtenerMisPublicaciones(listaPublicaciones = [], usuario) {
 
   return { publicaciones, mensajeVacio: null };
 }
+
+export function editarPublicacion(publicacion, cambios, usuario) {
+  if (!esAutor(publicacion, usuario)) {
+    throw new Error('Solo el autor puede editar esta publicación');
+  }
+
+  const titulo = cambios.titulo?.trim() || '';
+  const descripcion = cambios.descripcion?.trim() || '';
+
+  if (!titulo) {
+    return { esValido: false, mensaje: 'El título es obligatorio' };
+  }
+
+  if (!descripcion) {
+    return { esValido: false, mensaje: 'La descripción es obligatoria' };
+  }
+
+  return { esValido: true, cambios: { titulo, descripcion } };
+}
