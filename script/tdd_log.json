@@ -2206,9 +2206,23 @@
     "testId": 29
   },
   {
-    "commitId": "HEAD",
+    "commitId": "d215de6554c5efd8cde72a3399dcf571404d4a2e",
     "commitName": "test(auth): agregar pruebas y modulo de validador de correo compartido",
     "commitTimestamp": 1794449439630,
     "testId": 29
+  },
+  {
+    "numPassedTests": 115,
+    "failedTests": 0,
+    "numTotalTests": 115,
+    "timestamp": 1794449652411,
+    "success": true,
+    "testId": 30
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor(auth): reutilizar validador de correo compartido en cuenta y sesion",
+    "commitTimestamp": 1794449710573,
+    "testId": 30
   }
 ]
