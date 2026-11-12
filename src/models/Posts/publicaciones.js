@@ -73,6 +73,9 @@ export function obtenerPublicacionPorId(listaPublicaciones = [], id) {
 }
 
 export function formatearDetallePublicacion(pub) {
+  if (!pub) {
+    return null;
+  }
   const whatsapp = pub.contacto?.whatsapp || pub.whatsapp || '';
   const correo = pub.contacto?.correo || pub.correo || '';
 

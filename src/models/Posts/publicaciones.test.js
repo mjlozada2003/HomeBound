@@ -182,5 +182,14 @@ describe('HU-12: Ver detalle de publicación', () => {
     });
   });
 
+  it('Debería formatear correctamente una publicacion sin fotos ni contactos', () => {
+    const detalle = formatearDetallePublicacion(publicacionesDetalleMock[1]);
+    expect(detalle.fotoPrincipal).toBe('');
+    expect(detalle.tipoTexto).toBe('Perdido');
+    expect(detalle.whatsapp).toBe('');
+    expect(detalle.enlaceWhatsapp).toBe('');
+    expect(detalle.correo).toBe('');
+    expect(detalle.enlaceCorreo).toBe('');
+  });
 
 });

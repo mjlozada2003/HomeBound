@@ -2442,9 +2442,31 @@
     "testId": 4
   },
   {
-    "commitId": "HEAD",
+    "commitId": "6cecbb0c25eb1901db7ded9d4077985c0fcca791",
     "commitName": "feat(publicaciones): formatear detalle de publicaciones por id",
     "commitTimestamp": 1794511287895,
     "testId": 4
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 0,
+    "numTotalTests": 160,
+    "timestamp": 1794511368963,
+    "success": true,
+    "testId": 5
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 0,
+    "numTotalTests": 160,
+    "timestamp": 1794511430677,
+    "success": true,
+    "testId": 5
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(publicaciones): obtener y formatear detalle de publicacion por id",
+    "commitTimestamp": 1794511452178,
+    "testId": 5
   }
 ]
