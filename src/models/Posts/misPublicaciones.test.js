@@ -3,6 +3,7 @@ import {
   asignarAutor,
   obtenerMisPublicaciones,
   editarPublicacion,
+  eliminarPublicacion,
 } from './misPublicaciones.js';
 
 describe('HU-09: Gestionar mis publicaciones', () => {
@@ -137,6 +138,31 @@ describe('HU-09: Gestionar mis publicaciones', () => {
       expect(() =>
         editarPublicacion(publicacion, { titulo: 'Otro', descripcion: 'Otro' }, otroUsuario)
       ).toThrow('Solo el autor puede editar esta publicación');
+    });
+  });
+
+  describe('Eliminar publicación', () => {
+    const lista = [
+      publicacion,
+      { id: 'h2', titulo: 'Llaves', autor: 'ana@ucb.edu.bo' },
+    ];
+
+    test('Debería quitar mi publicación y dejar las demás', () => {
+      const resultado = eliminarPublicacion(lista, 'h1', usuario);
+
+      expect(resultado.map((pub) => pub.id)).toEqual(['h2']);
+    });
+
+    test('Debería lanzar un error si quien elimina no es el autor', () => {
+      expect(() => eliminarPublicacion(lista, 'h2', usuario)).toThrow(
+        'Solo el autor puede eliminar esta publicación'
+      );
+    });
+
+    test('Debería lanzar un error si la publicación no existe', () => {
+      expect(() => eliminarPublicacion(lista, 'no-existe', usuario)).toThrow(
+        'Solo el autor puede eliminar esta publicación'
+      );
     });
   });
 });

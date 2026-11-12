@@ -53,3 +53,13 @@ export function editarPublicacion(publicacion, cambios, usuario) {
 
   return { esValido: true, cambios: { titulo, descripcion } };
 }
+
+export function eliminarPublicacion(listaPublicaciones, idPublicacion, usuario) {
+  const publicacion = listaPublicaciones.find((pub) => pub.id === idPublicacion);
+
+  if (!esAutor(publicacion, usuario)) {
+    throw new Error('Solo el autor puede eliminar esta publicación');
+  }
+
+  return listaPublicaciones.filter((pub) => pub.id !== idPublicacion);
+}

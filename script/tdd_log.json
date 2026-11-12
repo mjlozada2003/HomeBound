@@ -2428,9 +2428,31 @@
     "testId": 40
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b82d168374451e87b38c9419f88d0e638e0bb5c5",
     "commitName": "test: HU-09 editar titulo y descripcion solo si soy el autor",
     "commitTimestamp": 1794490832828,
     "testId": 40
+  },
+  {
+    "numPassedTests": 132,
+    "failedTests": 3,
+    "numTotalTests": 135,
+    "timestamp": 1794490861884,
+    "success": false,
+    "testId": 41
+  },
+  {
+    "numPassedTests": 135,
+    "failedTests": 0,
+    "numTotalTests": 135,
+    "timestamp": 1794490873748,
+    "success": true,
+    "testId": 41
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-09 eliminar una publicacion solo si soy el autor",
+    "commitTimestamp": 1794490880451,
+    "testId": 41
   }
 ]
