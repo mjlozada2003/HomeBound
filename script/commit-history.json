@@ -570,12 +570,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "1fb56440bf3faa7447ecb0abcf86f9bbcda1b628",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-12T03:10:46.000Z",
       "message": "fix(script): corregir formato de objetos json en tdd_log tras resolucion de conflictos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/1fb56440bf3faa7447ecb0abcf86f9bbcda1b628"
     },
     "stats": {
       "total": 0,
@@ -585,6 +585,25 @@
     },
     "coverage": 96.49,
     "test_count": 115,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-12T03:43:59.000Z",
+      "message": "test(auth): agregar pruebas y funcion normalizarCorreo en validador compartido",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 17,
+      "additions": 16,
+      "deletions": 1,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.54,
+    "test_count": 117,
     "failed_tests": 0,
     "conclusion": "success"
   }

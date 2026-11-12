@@ -1,4 +1,4 @@
-import { esCorreoValido } from './validadorCorreo';
+import { esCorreoValido, normalizarCorreo } from './validadorCorreo';
 
 describe('Validador de Correo Compartido', () => {
     it('debería aceptar correos validos estadar', () =>{
@@ -23,5 +23,13 @@ describe('Validador de Correo Compartido', () => {
         expect(esCorreoValido('   ')).toBe(false);
         expect(esCorreoValido(null)).toBe(false);
         expect(esCorreoValido(undefined)).toBe(false);
+    });
+    it('deberia normalizar correos eliminando espacios y convirtiendo a minusculas', () => {
+        expect(normalizarCorreo('  Usuario@Example.COM  ')).toBe('usuario@example.com');
+    });
+
+    it('deberia devolver cadena vacia si el valor no es una cadena', () => {
+        expect(normalizarCorreo(null)).toBe('');
+        expect(normalizarCorreo(undefined)).toBe('');
     });
 });

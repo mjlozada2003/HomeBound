@@ -6,3 +6,10 @@ export function esCorreoValido(correo) {
   }
   return REGEX_CORREO.test(correo.trim());
 }
+
+export function normalizarCorreo(correo) {
+  if (typeof correo !== 'string') {
+    return '';
+  }
+  return correo.trim().toLowerCase();
+}
