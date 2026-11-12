@@ -779,12 +779,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "5b2e8fc158d91c591be2c4a637ea784523b4f928",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T13:42:07.000Z",
       "message": "test: HU-09 leer, editar y borrar mis publicaciones en firestore",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5b2e8fc158d91c591be2c4a637ea784523b4f928"
     },
     "stats": {
       "total": 83,
@@ -793,6 +793,25 @@
       "date": "2026-11-12"
     },
     "coverage": 96.97,
+    "test_count": 138,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:43:15.000Z",
+      "message": "refactor: HU-09 consulta comun para buscar publicaciones en ambas colecciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 22,
+      "additions": 7,
+      "deletions": 15,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.93,
     "test_count": 138,
     "failed_tests": 0,
     "conclusion": "success"
