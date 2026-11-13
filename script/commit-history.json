@@ -988,12 +988,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "3f515983518ed1b6f31a20c1875081ebbc553be6",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-13T22:20:23.000Z",
       "message": "test: HU-08 solo el admin puede ver las estadisticas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/3f515983518ed1b6f31a20c1875081ebbc553be6"
     },
     "stats": {
       "total": 20,
@@ -1021,6 +1021,25 @@
       "date": "2026-11-13"
     },
     "coverage": 74.57,
+    "test_count": 183,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:21:31.000Z",
+      "message": "refactor: HU-08 consulta comun por campo para buscar y contar publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 6,
+      "deletions": 6,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
     "test_count": 183,
     "failed_tests": 0,
     "conclusion": "success"

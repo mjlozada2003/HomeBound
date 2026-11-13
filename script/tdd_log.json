@@ -2650,7 +2650,7 @@
     "testId": 52
   },
   {
-    "commitId": "HEAD",
+    "commitId": "3f515983518ed1b6f31a20c1875081ebbc553be6",
     "commitName": "test: HU-08 solo el admin puede ver las estadisticas",
     "commitTimestamp": 1794608427647,
     "testId": 52
@@ -2676,5 +2676,19 @@
     "commitName": "test: HU-08 consulta de conteo de publicaciones por estado",
     "commitTimestamp": 1794608466220,
     "testId": 53
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 0,
+    "numTotalTests": 183,
+    "timestamp": 1794608487871,
+    "success": true,
+    "testId": 54
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: HU-08 consulta comun por campo para buscar y contar publicaciones",
+    "commitTimestamp": 1794608493624,
+    "testId": 54
   }
 ]

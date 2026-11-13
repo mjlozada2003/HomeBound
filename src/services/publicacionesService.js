@@ -13,11 +13,13 @@ import { db } from './firebase';
 
 const COLECCIONES = ['hallazgos', 'perdidas'];
 
+function consultaPorCampo(nombre, campo, valor) {
+  return query(collection(db, nombre), where(campo, '==', valor));
+}
+
 async function buscarEnColecciones(campo, valor) {
   const resultados = await Promise.all(
-    COLECCIONES.map((nombre) =>
-      getDocs(query(collection(db, nombre), where(campo, '==', valor)))
-    )
+    COLECCIONES.map((nombre) => getDocs(consultaPorCampo(nombre, campo, valor)))
   );
 
   return resultados.flatMap((resultado, i) =>
@@ -51,9 +53,7 @@ export async function borrarPublicacion(coleccion, id) {
 
 export async function contarPublicacionesPorEstado(estado) {
   const conteos = await Promise.all(
-    COLECCIONES.map((nombre) =>
-      getCountFromServer(query(collection(db, nombre), where('estado', '==', estado)))
-    )
+    COLECCIONES.map((nombre) => getCountFromServer(consultaPorCampo(nombre, 'estado', estado)))
   );
 
   return Object.fromEntries(
