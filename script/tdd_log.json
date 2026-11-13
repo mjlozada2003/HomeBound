@@ -2584,7 +2584,7 @@
     "testId": 48
   },
   {
-    "commitId": "HEAD",
+    "commitId": "a1961645200fcf428d604bbe87856be0421e67ec",
     "commitName": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
     "commitTimestamp": 1794493053820,
     "testId": 49
@@ -2610,5 +2610,27 @@
     "commitName": "test: HU-08 contar publicaciones activas y resueltas",
     "commitTimestamp": 1794608350449,
     "testId": 50
+  },
+  {
+    "numPassedTests": 179,
+    "failedTests": 1,
+    "numTotalTests": 180,
+    "timestamp": 1794608369285,
+    "success": false,
+    "testId": 51
+  },
+  {
+    "numPassedTests": 180,
+    "failedTests": 0,
+    "numTotalTests": 180,
+    "timestamp": 1794608379665,
+    "success": true,
+    "testId": 51
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-08 contadores en cero cuando no hay publicaciones",
+    "commitTimestamp": 1794608385917,
+    "testId": 51
   }
 ]

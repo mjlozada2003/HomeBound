@@ -931,12 +931,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a1961645200fcf428d604bbe87856be0421e67ec",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T14:17:31.000Z",
       "message": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/a1961645200fcf428d604bbe87856be0421e67ec"
     },
     "stats": {
       "total": 81,
@@ -965,6 +965,25 @@
     },
     "coverage": 74.19,
     "test_count": 179,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:19:43.000Z",
+      "message": "test: HU-08 contadores en cero cuando no hay publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 8,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.19,
+    "test_count": 180,
     "failed_tests": 0,
     "conclusion": "success"
   }

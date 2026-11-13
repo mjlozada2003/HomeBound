@@ -29,5 +29,11 @@ describe('HU-08: Ver estadísticas básicas (Admin)', () => {
         total: 5,
       });
     });
+
+    test('Debería mostrar contadores en cero si no hay publicaciones', () => {
+      const cero = { hallazgos: 0, perdidas: 0, total: 0 };
+
+      expect(calcularEstadisticas({}, admin)).toEqual({ activas: cero, resueltas: cero });
+    });
   });
 });
