@@ -2672,7 +2672,7 @@
     "testId": 53
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e30b362eb9f610b7258354a32fccd8bf5510842b",
     "commitName": "test: HU-11 la lista publica muestra las publicaciones resueltas",
     "commitTimestamp": 1794612582455,
     "testId": 53
@@ -2690,5 +2690,19 @@
     "commitName": "feat: HU-11 boton marcar como resuelto en mis publicaciones",
     "commitTimestamp": 1794612660575,
     "testId": 54
+  },
+  {
+    "numPassedTests": 190,
+    "failedTests": 0,
+    "numTotalTests": 190,
+    "timestamp": 1794612686002,
+    "success": true,
+    "testId": 55
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-11 la lista publica muestra las publicaciones resueltas con cambio visual",
+    "commitTimestamp": 1794612863437,
+    "testId": 55
   }
 ]
