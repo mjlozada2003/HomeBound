@@ -2606,7 +2606,7 @@
     "testId": 50
   },
   {
-    "commitId": "HEAD",
+    "commitId": "3d9286cab4e0f1bcc492250048dd2c072520ea4c",
     "commitName": "test: HU-08 contar publicaciones activas y resueltas",
     "commitTimestamp": 1794608350449,
     "testId": 50
@@ -2632,5 +2632,27 @@
     "commitName": "test: HU-08 contadores en cero cuando no hay publicaciones",
     "commitTimestamp": 1794608385917,
     "testId": 51
+  },
+  {
+    "numPassedTests": 180,
+    "failedTests": 2,
+    "numTotalTests": 182,
+    "timestamp": 1794608403485,
+    "success": false,
+    "testId": 52
+  },
+  {
+    "numPassedTests": 182,
+    "failedTests": 0,
+    "numTotalTests": 182,
+    "timestamp": 1794608419434,
+    "success": true,
+    "testId": 52
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-08 solo el admin puede ver las estadisticas",
+    "commitTimestamp": 1794608427647,
+    "testId": 52
   }
 ]

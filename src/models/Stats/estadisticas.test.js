@@ -36,4 +36,16 @@ describe('HU-08: Ver estadísticas básicas (Admin)', () => {
       expect(calcularEstadisticas({}, admin)).toEqual({ activas: cero, resueltas: cero });
     });
   });
+
+  describe('Acceso solo Admin', () => {
+    test('Debería negar las estadísticas a un usuario normal', () => {
+      const usuario = { nombre: 'Maite', correo: 'maite@ucb.edu.bo', rol: 'USER' };
+
+      expect(() => calcularEstadisticas({}, usuario)).toThrow('No tienes permisos de administrador');
+    });
+
+    test('Debería negar las estadísticas si no hay sesión', () => {
+      expect(() => calcularEstadisticas({}, null)).toThrow('No tienes permisos de administrador');
+    });
+  });
 });

@@ -950,12 +950,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "3d9286cab4e0f1bcc492250048dd2c072520ea4c",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-13T22:19:05.000Z",
       "message": "test: HU-08 contar publicaciones activas y resueltas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/3d9286cab4e0f1bcc492250048dd2c072520ea4c"
     },
     "stats": {
       "total": 43,
@@ -984,6 +984,25 @@
     },
     "coverage": 74.19,
     "test_count": 180,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:20:23.000Z",
+      "message": "test: HU-08 solo el admin puede ver las estadisticas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 19,
+      "deletions": 1,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.31,
+    "test_count": 182,
     "failed_tests": 0,
     "conclusion": "success"
   }
