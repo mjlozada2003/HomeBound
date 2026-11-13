@@ -1007,12 +1007,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "ebc1b15658b708fdd05b083b54659c2c940d471c",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-13T22:21:03.000Z",
       "message": "test: HU-08 consulta de conteo de publicaciones por estado",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ebc1b15658b708fdd05b083b54659c2c940d471c"
     },
     "stats": {
       "total": 46,
@@ -1037,6 +1037,25 @@
       "total": 12,
       "additions": 6,
       "deletions": 6,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 183,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:25:04.000Z",
+      "message": "feat: HU-08 panel de control del admin con contadores de activas y resueltas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 112,
+      "additions": 110,
+      "deletions": 2,
       "date": "2026-11-13"
     },
     "coverage": 74.63,
