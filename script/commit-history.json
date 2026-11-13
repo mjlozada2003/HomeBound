@@ -912,12 +912,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "91387dbef83a689c674d01876da761b7d5ee69c8",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T14:13:59.000Z",
       "message": "merge: integrar main con el refactor de HU03-04 en HU-09",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/91387dbef83a689c674d01876da761b7d5ee69c8"
     },
     "stats": {
       "total": 2200,
@@ -946,6 +946,25 @@
     },
     "coverage": 74.06,
     "test_count": 177,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:27:08.000Z",
+      "message": "test: HU-11 solo el creador puede marcar como resuelta su publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 44,
+      "additions": 44,
+      "deletions": 0,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.12,
+    "test_count": 182,
     "failed_tests": 0,
     "conclusion": "success"
   }

@@ -2578,7 +2578,7 @@
     "testId": 47
   },
   {
-    "commitId": "HEAD",
+    "commitId": "91387dbef83a689c674d01876da761b7d5ee69c8",
     "commitName": "merge: integrar main con el refactor de HU03-04 en HU-09",
     "commitTimestamp": 1794492843333,
     "testId": 48
@@ -2588,5 +2588,27 @@
     "commitName": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
     "commitTimestamp": 1794493053820,
     "testId": 49
+  },
+  {
+    "numPassedTests": 177,
+    "failedTests": 5,
+    "numTotalTests": 182,
+    "timestamp": 1794612401821,
+    "success": false,
+    "testId": 50
+  },
+  {
+    "numPassedTests": 182,
+    "failedTests": 0,
+    "numTotalTests": 182,
+    "timestamp": 1794612421109,
+    "success": true,
+    "testId": 50
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-11 solo el creador puede marcar como resuelta su publicacion",
+    "commitTimestamp": 1794612435887,
+    "testId": 50
   }
 ]
