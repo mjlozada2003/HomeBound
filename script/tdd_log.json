@@ -2532,9 +2532,55 @@
     "testId": 7
   },
   {
-    "commitId": "HEAD",
+    "commitId": "2929681e6e88194744090acd7e5a9d4a8b56b739",
     "commitName": "test(servicios): buscar en colecciones de Firestore",
     "commitTimestamp": 1794595294831,
     "testId": 7
+  },
+  {
+    "numPassedTests": 163,
+    "failedTests": 0,
+    "numTotalTests": 163,
+    "timestamp": 1794598829415,
+    "success": false,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 163,
+    "failedTests": 3,
+    "numTotalTests": 166,
+    "timestamp": 1794598928628,
+    "success": false,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 163,
+    "failedTests": 1,
+    "numTotalTests": 164,
+    "timestamp": 1794599848310,
+    "success": false,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 164,
+    "failedTests": 0,
+    "numTotalTests": 164,
+    "timestamp": 1794599952565,
+    "success": true,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 166,
+    "failedTests": 0,
+    "numTotalTests": 166,
+    "timestamp": 1794600338283,
+    "success": true,
+    "testId": 8
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: renderizar la informacion completa de la publicacion",
+    "commitTimestamp": 1794600352409,
+    "testId": 8
   }
 ]

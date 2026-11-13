@@ -817,12 +817,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "2929681e6e88194744090acd7e5a9d4a8b56b739",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-13T18:41:31.000Z",
       "message": "test(servicios): buscar en colecciones de Firestore",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/2929681e6e88194744090acd7e5a9d4a8b56b739"
     },
     "stats": {
       "total": 25,
@@ -832,6 +832,25 @@
     },
     "coverage": 73.59,
     "test_count": 163,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-13T20:05:49.000Z",
+      "message": "feat: renderizar la informacion completa de la publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 139,
+      "additions": 139,
+      "deletions": 0,
+      "date": "2026-11-13"
+    },
+    "coverage": 72.84,
+    "test_count": 166,
     "failed_tests": 0,
     "conclusion": "success"
   }
