@@ -1,14 +1,16 @@
 import {
   obtenerPublicacionesPorEstado,
-  actualizarEstadoPublicacion
+  actualizarEstadoPublicacion,
+  buscarPublicacionPorId,
 } from './publicacionesService';
-import { collection, doc, getDocs, updateDoc, where } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, updateDoc, where } from 'firebase/firestore';
 
 jest.mock('./firebase', () => ({ db: {} }));
 
 jest.mock('firebase/firestore', () => ({
   collection: jest.fn(),
   doc: jest.fn(),
+  getDoc: jest.fn(),
   getDocs: jest.fn(),
   query: jest.fn(),
   updateDoc: jest.fn(),
@@ -54,4 +56,25 @@ describe('HU-06 y HU-10: Leer publicaciones desde Firestore', () => {
     expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'h1');
     expect(updateDoc).toHaveBeenCalledWith('referencia', { estado: 'APROBADA' });
   });
+});
+
+describe('HU-12: Buscar publicación por id y colección', () => {
+  it('Debería buscar y devolver una publicacion por id  y colección si existe en Firestore', async () => {
+    doc.mockReturnValue('ref-h1');
+    getDoc.mockResolvedValue({
+      exists: () => true,
+      id: 'h1',
+      data: () => ({ titulo: 'Mochila azul', estado: 'APROBADA' }),
+    });
+
+    const resultado = await buscarPublicacionPorId('h1', 'hallazgos');
+    expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'h1');
+    expect(resultado).toEqual({
+      id: 'h1',
+      titulo: 'Mochila azul',
+      estado: 'APROBADA',
+      coleccion: 'hallazgos',
+    });
+  });
+
 });

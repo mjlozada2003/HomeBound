@@ -2464,9 +2464,55 @@
     "testId": 5
   },
   {
-    "commitId": "HEAD",
+    "commitId": "36e551a3c514dd6fc22649974fa35c03979142d9",
     "commitName": "test(publicaciones): obtener y formatear detalle de publicacion por id",
     "commitTimestamp": 1794511452178,
     "testId": 5
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 1,
+    "numTotalTests": 161,
+    "timestamp": 1794594555111,
+    "success": false,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 1,
+    "numTotalTests": 161,
+    "timestamp": 1794594844289,
+    "success": false,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 1,
+    "numTotalTests": 161,
+    "timestamp": 1794594940075,
+    "success": false,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 1,
+    "numTotalTests": 161,
+    "timestamp": 1794595096222,
+    "success": false,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 161,
+    "failedTests": 0,
+    "numTotalTests": 161,
+    "timestamp": 1794595137727,
+    "success": true,
+    "testId": 6
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(servicios): buscar publicacion por id en Firestore",
+    "commitTimestamp": 1794595170100,
+    "testId": 6
   }
 ]
