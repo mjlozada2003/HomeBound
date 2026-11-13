@@ -2584,7 +2584,7 @@
     "testId": 48
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e140ee8b1c8e2f080c30f45523efdf346c2865aa",
     "commitName": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
     "commitTimestamp": 1794493053820,
     "testId": 49
@@ -2610,5 +2610,27 @@
     "commitName": "test: HU-11 solo el creador puede marcar como resuelta su publicacion",
     "commitTimestamp": 1794612435887,
     "testId": 50
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 3,
+    "numTotalTests": 186,
+    "timestamp": 1794612470144,
+    "success": false,
+    "testId": 51
+  },
+  {
+    "numPassedTests": 186,
+    "failedTests": 0,
+    "numTotalTests": 186,
+    "timestamp": 1794612491702,
+    "success": true,
+    "testId": 51
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-11 marcar como resuelta cambia el estado de la publicacion",
+    "commitTimestamp": 1794612500211,
+    "testId": 51
   }
 ]

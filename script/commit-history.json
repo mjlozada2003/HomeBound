@@ -931,12 +931,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "e140ee8b1c8e2f080c30f45523efdf346c2865aa",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T14:17:31.000Z",
       "message": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e140ee8b1c8e2f080c30f45523efdf346c2865aa"
     },
     "stats": {
       "total": 81,
@@ -965,6 +965,25 @@
     },
     "coverage": 74.12,
     "test_count": 182,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:28:18.000Z",
+      "message": "test: HU-11 marcar como resuelta cambia el estado de la publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 41,
+      "additions": 40,
+      "deletions": 1,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.44,
+    "test_count": 186,
     "failed_tests": 0,
     "conclusion": "success"
   }
