@@ -2,6 +2,7 @@ import {
   collection,
   deleteDoc,
   doc,
+  getCountFromServer,
   getDocs,
   query,
   updateDoc,
@@ -46,4 +47,16 @@ export async function actualizarPublicacion(coleccion, id, cambios) {
 
 export async function borrarPublicacion(coleccion, id) {
   await deleteDoc(doc(db, coleccion, id));
+}
+
+export async function contarPublicacionesPorEstado(estado) {
+  const conteos = await Promise.all(
+    COLECCIONES.map((nombre) =>
+      getCountFromServer(query(collection(db, nombre), where('estado', '==', estado)))
+    )
+  );
+
+  return Object.fromEntries(
+    COLECCIONES.map((nombre, i) => [nombre, conteos[i].data().count])
+  );
 }

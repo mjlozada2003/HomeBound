@@ -2628,7 +2628,7 @@
     "testId": 51
   },
   {
-    "commitId": "HEAD",
+    "commitId": "f0ff718bbdce34859f746097e4e9b95e663f3f7f",
     "commitName": "test: HU-08 contadores en cero cuando no hay publicaciones",
     "commitTimestamp": 1794608385917,
     "testId": 51
@@ -2654,5 +2654,27 @@
     "commitName": "test: HU-08 solo el admin puede ver las estadisticas",
     "commitTimestamp": 1794608427647,
     "testId": 52
+  },
+  {
+    "numPassedTests": 182,
+    "failedTests": 1,
+    "numTotalTests": 183,
+    "timestamp": 1794608449513,
+    "success": false,
+    "testId": 53
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 0,
+    "numTotalTests": 183,
+    "timestamp": 1794608460500,
+    "success": true,
+    "testId": 53
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-08 consulta de conteo de publicaciones por estado",
+    "commitTimestamp": 1794608466220,
+    "testId": 53
   }
 ]

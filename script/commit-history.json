@@ -969,12 +969,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "f0ff718bbdce34859f746097e4e9b95e663f3f7f",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-13T22:19:43.000Z",
       "message": "test: HU-08 contadores en cero cuando no hay publicaciones",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f0ff718bbdce34859f746097e4e9b95e663f3f7f"
     },
     "stats": {
       "total": 10,
@@ -1003,6 +1003,25 @@
     },
     "coverage": 74.31,
     "test_count": 182,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:21:03.000Z",
+      "message": "test: HU-08 consulta de conteo de publicaciones por estado",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 46,
+      "additions": 44,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.57,
+    "test_count": 183,
     "failed_tests": 0,
     "conclusion": "success"
   }
