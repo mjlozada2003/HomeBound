@@ -1,4 +1,5 @@
 import { puedeMarcarComoResuelta, marcarComoResuelta } from './resolucion.js';
+import { obtenerMisPublicaciones } from './misPublicaciones.js';
 
 describe('HU-11: Marcar publicación como resuelta', () => {
   const creador = { nombre: 'Maite', correo: 'maite@ucb.edu.bo', rol: 'USER' };
@@ -59,6 +60,16 @@ describe('HU-11: Marcar publicación como resuelta', () => {
       expect(() => marcarComoResuelta(pendiente, creador)).toThrow(
         'Solo se puede marcar como resuelta una publicación publicada'
       );
+    });
+  });
+
+  describe('Estado visible', () => {
+    test('Debería mostrar el estado Resuelto en mis publicaciones', () => {
+      const resuelta = { ...publicada, estado: 'RESUELTA' };
+
+      const [pub] = obtenerMisPublicaciones([resuelta], creador).publicaciones;
+
+      expect(pub.estadoTexto).toBe('Resuelto');
     });
   });
 });

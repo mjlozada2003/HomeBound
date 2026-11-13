@@ -950,12 +950,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "6f97a80b933d1ec491d19bbf2ce7f4a590e54f11",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-13T23:27:08.000Z",
       "message": "test: HU-11 solo el creador puede marcar como resuelta su publicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/6f97a80b933d1ec491d19bbf2ce7f4a590e54f11"
     },
     "stats": {
       "total": 44,
@@ -984,6 +984,25 @@
     },
     "coverage": 74.44,
     "test_count": 186,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:28:52.000Z",
+      "message": "test: HU-11 mis publicaciones muestra el estado resuelto",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 12,
+      "deletions": 0,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.44,
+    "test_count": 187,
     "failed_tests": 0,
     "conclusion": "success"
   }

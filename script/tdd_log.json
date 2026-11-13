@@ -2606,7 +2606,7 @@
     "testId": 50
   },
   {
-    "commitId": "HEAD",
+    "commitId": "6f97a80b933d1ec491d19bbf2ce7f4a590e54f11",
     "commitName": "test: HU-11 solo el creador puede marcar como resuelta su publicacion",
     "commitTimestamp": 1794612435887,
     "testId": 50
@@ -2632,5 +2632,27 @@
     "commitName": "test: HU-11 marcar como resuelta cambia el estado de la publicacion",
     "commitTimestamp": 1794612500211,
     "testId": 51
+  },
+  {
+    "numPassedTests": 186,
+    "failedTests": 1,
+    "numTotalTests": 187,
+    "timestamp": 1794612518838,
+    "success": false,
+    "testId": 52
+  },
+  {
+    "numPassedTests": 187,
+    "failedTests": 0,
+    "numTotalTests": 187,
+    "timestamp": 1794612529424,
+    "success": true,
+    "testId": 52
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: HU-11 mis publicaciones muestra el estado resuelto",
+    "commitTimestamp": 1794612534785,
+    "testId": 52
   }
 ]
