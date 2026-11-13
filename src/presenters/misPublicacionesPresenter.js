@@ -3,12 +3,15 @@ import {
   editarPublicacion,
   eliminarPublicacion,
 } from '../models/Posts/misPublicaciones.js';
+import { puedeMarcarComoResuelta, marcarComoResuelta } from '../models/Posts/resolucion.js';
+import { ESTADOS } from '../models/Posts/estados.js';
 import { obtenerSesionActiva } from '../models/Auth/sesion';
 import { normalizarCorreo } from '../models/Auth/validadorCorreo';
 import {
   obtenerPublicacionesPorAutor,
   actualizarPublicacion,
   borrarPublicacion,
+  actualizarEstadoPublicacion,
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 import { crearTarjetaHtml } from './plantillaTarjeta';
@@ -37,7 +40,11 @@ export async function renderizarMisPublicaciones() {
   dibujarMisPublicaciones();
 }
 
-function contenidoTarjeta(pub) {
+function contenidoTarjeta(pub, original) {
+  const botonResolver = puedeMarcarComoResuelta(original, obtenerSesionActiva())
+    ? `<button type="button" class="btn-resolver" data-id="${escaparHtml(pub.id)}">Marcar como Resuelto</button>`
+    : '';
+
   return `
     <p class="tarjeta-descripcion">${escaparHtml(pub.descripcion)}</p>
     <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
@@ -45,6 +52,7 @@ function contenidoTarjeta(pub) {
     <div class="acciones-mis-publicaciones">
       <button type="button" class="btn-editar" data-id="${escaparHtml(pub.id)}">Editar</button>
       <button type="button" class="btn-eliminar" data-id="${escaparHtml(pub.id)}">Eliminar</button>
+      ${botonResolver}
     </div>
   `;
 }
@@ -79,13 +87,16 @@ function dibujarMisPublicaciones() {
   }
 
   contenedor.innerHTML = resultado.publicaciones
-    .map((pub) =>
-      crearTarjetaHtml(
+    .map((pub) => {
+      const original = misPublicacionesCargadas.find((cargada) => cargada.id === pub.id);
+      const clases = original.estado === ESTADOS.RESUELTA ? 'tarjeta-mia tarjeta-resuelta' : 'tarjeta-mia';
+
+      return crearTarjetaHtml(
         pub,
-        pub.id === idEditando ? formularioEdicion(pub) : contenidoTarjeta(pub),
-        'tarjeta-mia'
-      )
-    )
+        pub.id === idEditando ? formularioEdicion(pub) : contenidoTarjeta(pub, original),
+        clases
+      );
+    })
     .join('');
 }
 
@@ -161,6 +172,39 @@ async function eliminar(id) {
   dibujarMisPublicaciones();
 }
 
+async function resolver(id) {
+  const publicacion = misPublicacionesCargadas.find((pub) => pub.id === id);
+  if (!publicacion) {return;}
+
+  const confirmado = await pedirConfirmacion({
+    titulo: 'Marcar como Resuelto',
+    mensaje: `¿Confirmas que el caso "${publicacion.titulo}" ya se cerró? La comunidad lo verá como Resuelto.`,
+    textoConfirmar: 'Marcar como Resuelto',
+    claseConfirmar: 'btn-resolver',
+  });
+  if (!confirmado) {return;}
+
+  let resuelta;
+
+  try {
+    resuelta = marcarComoResuelta(publicacion, obtenerSesionActiva());
+  } catch (error) {
+    alert(error.message);
+    return;
+  }
+
+  try {
+    await actualizarEstadoPublicacion(publicacion.coleccion, id, resuelta.estado);
+  } catch (error) {
+    console.error('Error al marcar como resuelta:', error.message);
+    alert('No se pudo marcar la publicación como resuelta. Intenta de nuevo.');
+    return;
+  }
+
+  misPublicacionesCargadas = misPublicacionesCargadas.map((pub) => (pub.id === id ? resuelta : pub));
+  dibujarMisPublicaciones();
+}
+
 function manejarClicMisPublicaciones(evento) {
   const boton = evento.target;
 
@@ -169,6 +213,8 @@ function manejarClicMisPublicaciones(evento) {
     dibujarMisPublicaciones();
   } else if (boton.classList.contains('btn-eliminar')) {
     eliminar(boton.dataset.id);
+  } else if (boton.classList.contains('btn-resolver')) {
+    resolver(boton.dataset.id);
   } else if (boton.classList.contains('btn-cancelar')) {
     idEditando = null;
     dibujarMisPublicaciones();

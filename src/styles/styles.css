@@ -9,6 +9,7 @@
     --color-input-bg: #F5F3E9;
     --color-input-border: #E8E5D8;
     --color-error: #C94A29;
+    --color-resuelto: #3A6EA5;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -343,6 +344,40 @@ body {
 .btn-cancelar {
     background-color: #e0e0e0;
     color: var(--color-text);
+}
+
+/* HU-11: Marcar como resuelto */
+.acciones-mis-publicaciones {
+    flex-wrap: wrap;
+}
+
+.btn-resolver {
+    background-color: var(--color-resuelto);
+    color: #fff;
+}
+
+.acciones-mis-publicaciones .btn-resolver {
+    flex-basis: 100%;
+}
+
+.tarjeta-resuelta {
+    border-left: 5px solid var(--color-resuelto);
+}
+
+.tarjeta-resuelta .tarjeta-foto {
+    filter: grayscale(70%);
+}
+
+.tarjeta-resuelta .badge-estado {
+    background-color: var(--color-resuelto);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.tarjeta-resuelta .badge-estado::before {
+    content: '✓ ';
 }
 
 .form-editar label {
