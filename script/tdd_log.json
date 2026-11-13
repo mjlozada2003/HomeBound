@@ -2510,9 +2510,31 @@
     "testId": 6
   },
   {
-    "commitId": "HEAD",
+    "commitId": "4e644941543ac41c2fdf353443745f4727d3e603",
     "commitName": "test(servicios): buscar publicacion por id en Firestore",
     "commitTimestamp": 1794595170100,
     "testId": 6
+  },
+  {
+    "numPassedTests": 162,
+    "failedTests": 0,
+    "numTotalTests": 162,
+    "timestamp": 1794595213209,
+    "success": true,
+    "testId": 7
+  },
+  {
+    "numPassedTests": 163,
+    "failedTests": 0,
+    "numTotalTests": 163,
+    "timestamp": 1794595255886,
+    "success": true,
+    "testId": 7
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(servicios): buscar en colecciones de Firestore",
+    "commitTimestamp": 1794595294831,
+    "testId": 7
   }
 ]

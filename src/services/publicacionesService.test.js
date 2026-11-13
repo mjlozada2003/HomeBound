@@ -77,4 +77,29 @@ describe('HU-12: Buscar publicación por id y colección', () => {
     });
   });
 
+  it('Debería buscar en ambas colecciones si no se indica la colección y devolverla al encontrarla', async () => {
+    doc.mockReturnValue('ref-p1');
+    getDoc
+      .mockResolvedValueOnce({ exists: () => false })
+      .mockResolvedValueOnce({
+        exists: () => true,
+        id: 'p1',
+        data: () => ({ titulo: 'Perro café' }),
+      });
+    const resultado = await buscarPublicacionPorId('p1');
+    expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'p1');
+    expect(doc).toHaveBeenCalledWith(expect.anything(), 'perdidas', 'p1');
+    expect(resultado).toEqual({
+      id: 'p1',
+      titulo: 'Perro café',
+      coleccion: 'perdidas',
+    });
+  });
+
+  it('Debería devolver null si la publicación no existe en ninguna colección o no se pasa id', async () => {
+    getDoc.mockResolvedValue({ exists: () => false });
+    expect(await buscarPublicacionPorId('inexistente')).toBeNull();
+    expect(await buscarPublicacionPorId('')).toBeNull();
+    expect(await buscarPublicacionPorId(null)).toBeNull();
+  });
 });
