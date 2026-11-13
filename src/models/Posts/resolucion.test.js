@@ -1,5 +1,10 @@
 import { puedeMarcarComoResuelta, marcarComoResuelta } from './resolucion.js';
 import { obtenerMisPublicaciones } from './misPublicaciones.js';
+import {
+  obtenerTextoEstadoPublico,
+  formatearParaTarjeta,
+  obtenerPublicacionesPaginadas,
+} from './publicaciones.js';
 
 describe('HU-11: Marcar publicación como resuelta', () => {
   const creador = { nombre: 'Maite', correo: 'maite@ucb.edu.bo', rol: 'USER' };
@@ -70,6 +75,29 @@ describe('HU-11: Marcar publicación como resuelta', () => {
       const [pub] = obtenerMisPublicaciones([resuelta], creador).publicaciones;
 
       expect(pub.estadoTexto).toBe('Resuelto');
+    });
+
+    test('Debería traducir el estado para la vista pública: Activo o Resuelto', () => {
+      expect(obtenerTextoEstadoPublico('APROBADA')).toBe('Activo');
+      expect(obtenerTextoEstadoPublico('RESUELTA')).toBe('Resuelto');
+    });
+
+    test('Debería mostrar el estado Resuelto en la tarjeta de la lista pública', () => {
+      const resuelta = { ...publicada, estado: 'RESUELTA' };
+
+      expect(formatearParaTarjeta(resuelta).estadoTexto).toBe('Resuelto');
+    });
+
+    test('Debería incluir en la lista pública las publicaciones resueltas', () => {
+      const lista = [
+        { ...publicada, id: 'h1', fecha: '2026-10-10' },
+        { ...publicada, id: 'h2', fecha: '2026-10-12', estado: 'RESUELTA' },
+        { ...publicada, id: 'h3', fecha: '2026-10-14', estado: 'Pendiente de revisión' },
+      ];
+
+      const resultado = obtenerPublicacionesPaginadas(lista, 1, 10);
+
+      expect(resultado.publicaciones.map((pub) => pub.id)).toEqual(['h2', 'h1']);
     });
   });
 });
