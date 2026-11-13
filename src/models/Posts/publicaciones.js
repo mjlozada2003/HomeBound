@@ -82,11 +82,19 @@ export function formatearDetallePublicacion(pub) {
   const enlaceWhatsapp = pub.contacto?.enlaceWhatsapp || (whatsapp ? `https://wa.me/${whatsapp}` : '');
   const enlaceCorreo = pub.contacto?.enlaceCorreo || (correo ? `mailto:${correo}` : '');
 
+  const ubicacion = typeof pub.ubicacion === 'object' && pub.ubicacion !== null
+    ? (pub.ubicacion.texto || '')
+    : (pub.ubicacion || '');
+  const enlaceMapa = typeof pub.ubicacion === 'object' && pub.ubicacion !== null
+    ? (pub.ubicacion.enlace || '')
+    : (pub.enlaceMapa || '');
+
   return {
     id: pub.id,
     titulo: pub.titulo,
     descripcion: pub.descripcion || '',
     categoria: pub.categoria || '',
+    categoriaOtra: pub.categoriaOtra || '',
     fecha: pub.fecha,
     tipoTexto: obtenerTextoTipo(pub.tipo),
     estadoTexto: pub.estado === ESTADOS.APROBADA ? 'Activo' : pub.estado || 'Activo',
@@ -96,5 +104,7 @@ export function formatearDetallePublicacion(pub) {
     enlaceWhatsapp,
     correo,
     enlaceCorreo,
+    ubicacion,
+    enlaceMapa,
   };
 }

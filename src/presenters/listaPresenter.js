@@ -3,6 +3,8 @@ import { ESTADOS } from '../models/Posts/estados.js';
 import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 import { crearTarjetaHtml } from './plantillaTarjeta';
+import { renderizarDetalleEnContenedor } from './detallePresenter';
+import { obtenerPublicacionPorId } from '../models/Posts/publicaciones.js';
 
 let publicacionesCargadas = [];
 let paginaActual = 1;
@@ -77,10 +79,51 @@ function cambiarPagina(evento) {
 
 export function inicializarListaPresenter() {
   const contenedorPaginacion = document.querySelector('#controles-paginacion');
+  const contenedorLista = document.querySelector('#lista-publicaciones');
 
   if (contenedorPaginacion) {
     contenedorPaginacion.addEventListener('click', cambiarPagina);
   }
+  if (contenedorLista) {
+    contenedorLista.addEventListener('click', manejarClickLista);
+  }
 
   renderizarListaPublicaciones();
+}
+
+function abrirDetalle(id) {
+  const publicacion = obtenerPublicacionPorId(publicacionesCargadas, id);
+  if (!publicacion) {
+    return;
+  }
+
+  const vistaPublicaciones = document.querySelector('#seccion-publicaciones');
+  const vistaDetalle = document.querySelector('#seccion-detalle');
+  const contenedorDetalle = document.querySelector('#contenedor-detalle-publicacion');
+
+  if (vistaPublicaciones) {
+    vistaPublicaciones.classList.add('oculto');
+  }
+  if (vistaDetalle) {
+    vistaDetalle.classList.remove('oculto');
+  }
+
+  renderizarDetalleEnContenedor(publicacion, contenedorDetalle, () => {
+    if (vistaDetalle) {
+      vistaDetalle.classList.add('oculto');
+    }
+    if (vistaPublicaciones) {
+      vistaPublicaciones.classList.remove('oculto');
+    }
+  });
+}
+
+function manejarClickLista(evento) {
+  const tarjeta = evento.target.closest('.tarjeta-publicacion');
+  if (tarjeta) {
+    const id = tarjeta.getAttribute('data-id');
+    if (id) {
+      abrirDetalle(id);
+    }
+  }
 }

@@ -836,12 +836,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "29aeac0443aa1d13a1d57cf947f151cc8981a431",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-13T20:05:49.000Z",
       "message": "feat: renderizar la informacion completa de la publicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/29aeac0443aa1d13a1d57cf947f151cc8981a431"
     },
     "stats": {
       "total": 139,
@@ -851,6 +851,25 @@
     },
     "coverage": 72.84,
     "test_count": 166,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-13T20:54:01.000Z",
+      "message": "feat(detalle): implementar vista y navegacion de detalle de publicacion segun diseno visual (HU-12)",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 616,
+      "additions": 555,
+      "deletions": 61,
+      "date": "2026-11-13"
+    },
+    "coverage": 75.33,
+    "test_count": 168,
     "failed_tests": 0,
     "conclusion": "success"
   }

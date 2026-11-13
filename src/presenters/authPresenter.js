@@ -204,6 +204,7 @@ export function iniciarAuthPresenter() {
   const vistaPerdida = document.querySelector('#perdida-seccion');
   const vistaPublicaciones = document.querySelector('#seccion-publicaciones');
   const vistaModeracion = document.querySelector('#seccion-moderacion');
+  const vistaDetalle = document.querySelector('#seccion-detalle');
   const btnVolverPublicaciones = document.querySelector('#btn-volver-publicaciones');
 
   // Elementos del Navbar
@@ -239,6 +240,7 @@ export function iniciarAuthPresenter() {
     vistaHallazgo,
     vistaPerdida,
     vistaPublicaciones,
+    vistaDetalle,
     vistaModeracion,
   ];
 

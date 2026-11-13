@@ -170,6 +170,7 @@ describe('HU-12: Ver detalle de publicación', () => {
       titulo: 'Mochila negra encontrada',
       descripcion: 'Encontrada en la banca de la plaza principal.',
       categoria: 'OBJETO',
+      categoriaOtra: '',
       fecha: '2026-10-20',
       tipoTexto: 'Encontrado',
       estadoTexto: 'Activo',
@@ -179,6 +180,8 @@ describe('HU-12: Ver detalle de publicación', () => {
       enlaceWhatsapp: 'https://wa.me/59171234567',
       correo: 'contacto@example.com',
       enlaceCorreo: 'mailto:contacto@example.com',
+      ubicacion: 'Plaza Murillo',
+      enlaceMapa: 'https://maps.google.com/?q=Plaza+Murillo',
     });
   });
 
@@ -190,6 +193,8 @@ describe('HU-12: Ver detalle de publicación', () => {
     expect(detalle.enlaceWhatsapp).toBe('');
     expect(detalle.correo).toBe('');
     expect(detalle.enlaceCorreo).toBe('');
+    expect(detalle.ubicacion).toBe('');
+    expect(detalle.enlaceMapa).toBe('');
   });
 
 });

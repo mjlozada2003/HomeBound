@@ -2578,9 +2578,55 @@
     "testId": 8
   },
   {
-    "commitId": "HEAD",
+    "commitId": "29aeac0443aa1d13a1d57cf947f151cc8981a431",
     "commitName": "feat: renderizar la informacion completa de la publicacion",
     "commitTimestamp": 1794600352409,
     "testId": 8
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794600392791,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794600753364,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794602815306,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794602964896,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794603179371,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat(detalle): implementar vista y navegacion de detalle de publicacion segun diseno visual (HU-12)",
+    "commitTimestamp": 1794603245167,
+    "testId": 9
   }
 ]
