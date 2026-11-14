@@ -1406,12 +1406,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a3df65f99152d447043529d72cd4ecb4d3697c76",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T20:24:24.000Z",
       "message": "test(publicaciones): verificar visibilidad de 1 semana para resueltas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/a3df65f99152d447043529d72cd4ecb4d3697c76"
     },
     "stats": {
       "total": 37,
@@ -1478,6 +1478,25 @@
     },
     "coverage": 78.1,
     "test_count": 239,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T21:08:15.000Z",
+      "message": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 11,
+      "additions": 11,
+      "deletions": 0,
+      "date": "2026-11-14"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
     "failed_tests": 0,
     "conclusion": "success"
   }

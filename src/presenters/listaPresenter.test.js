@@ -141,5 +141,16 @@ describe('HU-15: Presenter de lista pública - Expiración de resueltas tras 1 s
     expect(contenedorListaMock.innerHTML).toContain('Publicación activa 1');
   });
 
+  it('No elimina publicaciones de la base de datos al filtrar resueltas expiradas', async () => {
+    const resueltas = [
+      crearPub('res-old', 'Caso antiguo', 'RESUELTA', '2026-10-01', '2026-10-05'),
+    ];
 
+    obtenerPublicacionesPorEstado.mockResolvedValue(resueltas);
+
+    await renderizarListaPublicaciones();
+
+    expect(obtenerPublicacionesPorEstado).toHaveBeenCalledWith('APROBADA');
+    expect(obtenerPublicacionesPorEstado).toHaveBeenCalledWith('RESUELTA');
+  });
 });

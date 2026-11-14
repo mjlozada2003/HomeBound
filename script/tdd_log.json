@@ -3375,7 +3375,7 @@
     "testId": 67
   },
   {
-    "commitId": "HEAD",
+    "commitId": "a3df65f99152d447043529d72cd4ecb4d3697c76",
     "commitName": "test(publicaciones): verificar tiempo de 1 semana para resueltas",
     "commitTimestamp": 1794687755297,
     "testId": 67
@@ -3443,5 +3443,19 @@
     "commitName": "test(lista): deberia calcular la paginacion de publicaciones visibles",
     "commitTimestamp": 1794690424598,
     "testId": 71
+  },
+  {
+    "numPassedTests": 240,
+    "failedTests": 0,
+    "numTotalTests": 240,
+    "timestamp": 1794690458672,
+    "success": true,
+    "testId": 72
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
+    "commitTimestamp": 1794690497748,
+    "testId": 72
   }
 ]
