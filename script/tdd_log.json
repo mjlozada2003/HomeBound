@@ -3121,7 +3121,7 @@
     "testId": 57
   },
   {
-    "commitId": "HEAD",
+    "commitId": "7cdb46978ea31e0524f1d7022402740300084388",
     "commitName": "docs: agregar lista de pruebas para HU-07 generar link de publicacion",
     "commitTimestamp": 1794628922245,
     "testId": 58
@@ -3245,5 +3245,19 @@
     "commitName": "feature(posts): abrir publicaciones por enlace",
     "commitTimestamp": 1794631493173,
     "testId": 62
+  },
+  {
+    "numPassedTests": 222,
+    "failedTests": 0,
+    "numTotalTests": 222,
+    "timestamp": 1794631604080,
+    "success": true,
+    "testId": 63
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(posts): apertura directa de publicacion por enlace unico",
+    "commitTimestamp": 1794631816782,
+    "testId": 63
   }
 ]

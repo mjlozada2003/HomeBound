@@ -1235,12 +1235,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "7cdb46978ea31e0524f1d7022402740300084388",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T04:15:26.000Z",
       "message": "feat(posts): implementar generacion de enlace de publicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/7cdb46978ea31e0524f1d7022402740300084388"
     },
     "stats": {
       "total": 101,
@@ -1307,6 +1307,25 @@
     },
     "coverage": 77,
     "test_count": 221,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T04:50:13.000Z",
+      "message": "test(posts): apertura directa de publicacion por enlace unico",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 75,
+      "additions": 75,
+      "deletions": 0,
+      "date": "2026-11-14"
+    },
+    "coverage": 79.79,
+    "test_count": 222,
     "failed_tests": 0,
     "conclusion": "success"
   }
