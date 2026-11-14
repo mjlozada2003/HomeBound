@@ -3093,7 +3093,7 @@
     "testId": 55
   },
   {
-    "commitId": "HEAD",
+    "commitId": "1d8247c79006da3f5383fe1fdc64977fb64a11ec",
     "commitName": "merge: integrar main con HU-08 en HU-11",
     "commitTimestamp": 1794615803118,
     "testId": 56
@@ -3185,5 +3185,35 @@
     "commitName": "feat(posts): extraccion de enlace unico de publicacion",
     "commitTimestamp": 1794629906787,
     "testId": 60
+  },
+  {
+    "numPassedTests": 219,
+    "failedTests": 0,
+    "numTotalTests": 219,
+    "timestamp": 1794630282914,
+    "success": true,
+    "testId": 61
+  },
+  {
+    "numPassedTests": 213,
+    "failedTests": 6,
+    "numTotalTests": 219,
+    "timestamp": 1794630492377,
+    "success": false,
+    "testId": 61
+  },
+  {
+    "numPassedTests": 219,
+    "failedTests": 0,
+    "numTotalTests": 219,
+    "timestamp": 1794630595493,
+    "success": true,
+    "testId": 61
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat(compartir): implementar boton compartir, copia al portapapeles y mensaje visual (HU-07)",
+    "commitTimestamp": 1794630716914,
+    "testId": 61
   }
 ]

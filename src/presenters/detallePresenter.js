@@ -1,5 +1,8 @@
 import { escaparHtml } from '../models/html';
 import { formatearDetallePublicacion } from '../models/Posts/publicaciones';
+import { generarEnlacePublicacion } from '../models/Posts/enlacePublicacion';
+
+let temporizadorMensaje = null;
 
 const MESES = [
   'ene', 'feb', 'mar', 'abr', 'may', 'jun',
@@ -156,6 +159,27 @@ export function crearDetalleHtml(detalle) {
 
             ${filaContacto}
           </div>
+
+          <button id="btn-compartir" class="btn-compartir" type="button">
+            <svg class="icono-compartir" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Compartir
+          </button>
+
+          <div id="mensaje-enlace-copiado" class="toast-enlace-copiado oculto" role="status" aria-live="polite">
+            <span class="icono-check-circulo" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" fill="#0E7A43" />
+                <path d="M8 12.5l2.5 2.5 5.5-5.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="texto-enlace-copiado">Enlace copiado. ¡Compártelo en tus redes!</span>
+          </div>
         </div>
       </div>
     </div>
@@ -172,5 +196,31 @@ export function renderizarDetalleEnContenedor(publicacion, contenedor, onVolver)
   const btnVolver = contenedor.querySelector('#btn-volver-lista');
   if (btnVolver && typeof onVolver === 'function') {
     btnVolver.addEventListener('click', onVolver);
+  }
+
+  const btnCompartir = contenedor.querySelector('#btn-compartir');
+  const mensajeCopiado = contenedor.querySelector('#mensaje-enlace-copiado');
+
+  if (btnCompartir) {
+    btnCompartir.addEventListener('click', async () => {
+      const enlace = generarEnlacePublicacion(publicacion.id);
+      try {
+        if (typeof window !== 'undefined' && window.navigator?.clipboard) {
+          await window.navigator.clipboard.writeText(enlace);
+        }
+      } catch {
+        // Fallback silencioso si el portapapeles no tiene permisos
+      }
+
+      if (mensajeCopiado) {
+        mensajeCopiado.classList.remove('oculto');
+        if (temporizadorMensaje) {
+          clearTimeout(temporizadorMensaje);
+        }
+        temporizadorMensaje = setTimeout(() => {
+          mensajeCopiado.classList.add('oculto');
+        }, 3000);
+      }
+    });
   }
 }
