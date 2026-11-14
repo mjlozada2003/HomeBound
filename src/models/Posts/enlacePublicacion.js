@@ -26,3 +26,22 @@ export function generarEnlacePublicacion(id, urlBase) {
   }
 }
 
+export function obtenerIdPublicacionDeUrl(urlCompletaOQuery) {
+  if (!urlCompletaOQuery || typeof urlCompletaOQuery !== 'string' || !urlCompletaOQuery.trim()) {
+    return null;
+  }
+
+  const texto = urlCompletaOQuery.trim();
+
+  try {
+    const url = texto.includes('://')
+      ? new URL(texto)
+      : new URL(texto.startsWith('?') ? texto : `?${texto}`, 'https://homebound.local');
+
+    const id = url.searchParams.get('id');
+    return id && id.trim() ? id.trim() : null;
+  } catch {
+    return null;
+  }
+}
+

@@ -1178,12 +1178,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "fa3f8aceca16ec034cdb04f3080d0a7a37ff4d89",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-14T00:23:21.000Z",
       "message": "merge: integrar main con HU-08 en HU-11",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/fa3f8aceca16ec034cdb04f3080d0a7a37ff4d89"
     },
     "stats": {
       "total": 230,
@@ -1250,6 +1250,25 @@
     },
     "coverage": 77.41,
     "test_count": 213,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T04:18:22.000Z",
+      "message": "feat(posts): extraccion de enlace unico de publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 50,
+      "additions": 49,
+      "deletions": 1,
+      "date": "2026-11-14"
+    },
+    "coverage": 77.57,
+    "test_count": 218,
     "failed_tests": 0,
     "conclusion": "success"
   }

@@ -3087,7 +3087,7 @@
     "testId": 55
   },
   {
-    "commitId": "HEAD",
+    "commitId": "fa3f8aceca16ec034cdb04f3080d0a7a37ff4d89",
     "commitName": "feat: HU-11 la lista publica muestra las publicaciones resueltas con cambio visual",
     "commitTimestamp": 1794612863437,
     "testId": 55
@@ -3163,5 +3163,27 @@
     "commitName": "feat(posts): implementar generacion de enlace de publicacion",
     "commitTimestamp": 1794629729619,
     "testId": 59
+  },
+  {
+    "numPassedTests": 213,
+    "failedTests": 5,
+    "numTotalTests": 218,
+    "timestamp": 1794629802033,
+    "success": false,
+    "testId": 60
+  },
+  {
+    "numPassedTests": 218,
+    "failedTests": 0,
+    "numTotalTests": 218,
+    "timestamp": 1794629822844,
+    "success": true,
+    "testId": 60
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat(posts): extraccion de enlace unico de publicacion",
+    "commitTimestamp": 1794629906787,
+    "testId": 60
   }
 ]

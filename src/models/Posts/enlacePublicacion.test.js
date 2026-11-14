@@ -1,6 +1,6 @@
 import {
   generarEnlacePublicacion,
- // obtenerIdPublicacionDeUrl,
+  obtenerIdPublicacionDeUrl,
 } from './enlacePublicacion';
 
 describe('HU-07 (Ciclo 1): Generación y extracción de enlace único de publicación', () => {
@@ -51,6 +51,35 @@ describe('HU-07 (Ciclo 1): Generación y extracción de enlace único de publica
       if (locationOriginal) {
         global.window.location = locationOriginal;
       }
+    });
+  });
+
+  describe('obtenerIdPublicacionDeUrl', () => {
+    it('Debería extraer el id desde una URL completa', () => {
+      const id = obtenerIdPublicacionDeUrl('https://homebound.app/?id=pub-101');
+      expect(id).toBe('pub-101');
+    });
+
+    it('Debería extraer el id cuando hay múltiples query params', () => {
+      const id = obtenerIdPublicacionDeUrl('https://homebound.app/index.html?tema=oscuro&id=pub-555&modo=vista');
+      expect(id).toBe('pub-555');
+    });
+
+    it('Debería extraer el id desde un search string relativo ej. ?id=pub-999', () => {
+      const id = obtenerIdPublicacionDeUrl('?id=pub-999');
+      expect(id).toBe('pub-999');
+    });
+
+    it('Debería retornar null si no existe el parámetro id en la URL', () => {
+      expect(obtenerIdPublicacionDeUrl('https://homebound.app/')).toBeNull();
+      expect(obtenerIdPublicacionDeUrl('https://homebound.app/?otro=123')).toBeNull();
+    });
+
+    it('Debería retornar null si la URL es nula, vacía o inválida', () => {
+      expect(obtenerIdPublicacionDeUrl(null)).toBeNull();
+      expect(obtenerIdPublicacionDeUrl(undefined)).toBeNull();
+      expect(obtenerIdPublicacionDeUrl('')).toBeNull();
+      expect(obtenerIdPublicacionDeUrl('   ')).toBeNull();
     });
   });
 
