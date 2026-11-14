@@ -3,9 +3,18 @@ import {
   actualizarEstadoPublicacion,
   obtenerPublicacionesPorAutor,
   actualizarPublicacion,
-  borrarPublicacion
+  borrarPublicacion,
+  contarPublicacionesPorEstado
 } from './publicacionesService';
-import { collection, deleteDoc, doc, getDocs, updateDoc, where } from 'firebase/firestore';
+import {
+  collection,
+  deleteDoc,
+  doc,
+  getCountFromServer,
+  getDocs,
+  updateDoc,
+  where
+} from 'firebase/firestore';
 
 jest.mock('./firebase', () => ({ db: {} }));
 
@@ -13,6 +22,7 @@ jest.mock('firebase/firestore', () => ({
   collection: jest.fn(),
   deleteDoc: jest.fn(),
   doc: jest.fn(),
+  getCountFromServer: jest.fn(),
   getDocs: jest.fn(),
   query: jest.fn(),
   updateDoc: jest.fn(),
@@ -100,5 +110,24 @@ describe('HU-09: Gestionar mis publicaciones en Firestore', () => {
 
     expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'h1');
     expect(deleteDoc).toHaveBeenCalledWith('referencia');
+  });
+});
+
+describe('HU-08: Contar publicaciones por estado en Firestore', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+
+  test('Debería contar en hallazgos y perdidas las publicaciones con el estado pedido', async () => {
+    getCountFromServer
+      .mockResolvedValueOnce({ data: () => ({ count: 3 }) })
+      .mockResolvedValueOnce({ data: () => ({ count: 2 }) });
+
+    const resultado = await contarPublicacionesPorEstado('APROBADA');
+
+    expect(collection).toHaveBeenCalledWith(expect.anything(), 'hallazgos');
+    expect(collection).toHaveBeenCalledWith(expect.anything(), 'perdidas');
+    expect(where).toHaveBeenCalledWith('estado', '==', 'APROBADA');
+    expect(resultado).toEqual({ hallazgos: 3, perdidas: 2 });
   });
 });

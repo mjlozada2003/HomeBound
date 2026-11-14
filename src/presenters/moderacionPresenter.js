@@ -10,6 +10,7 @@ import {
 import { escaparHtml } from '../models/html';
 import { obtenerSesionActiva } from '../models/Auth/sesion';
 import { crearTarjetaHtml } from './plantillaTarjeta';
+import { renderizarEstadisticas } from './statsPresenter';
 
 let pendientesCargadas = [];
 
@@ -39,6 +40,8 @@ async function moderar(coleccion, id, estado) {
 export async function renderizarBandejaModeracion() {
   const contenedorPendientes = document.querySelector('#lista-pendientes');
   if (!contenedorPendientes) {return;}
+
+  renderizarEstadisticas();
 
   let pendientesFirestore;
 

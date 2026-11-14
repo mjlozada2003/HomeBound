@@ -280,6 +280,46 @@ body {
     margin-bottom: 1rem;
 }
 
+/* HU-08: Estadísticas del panel de control */
+.panel-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 1.5rem;
+}
+
+.tarjeta-contador {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-input-border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+}
+
+.contador-titulo {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+}
+
+.contador-total {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 4px 0;
+}
+
+.contador-detalle {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.subtitulo-panel {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
 .tarjeta-descripcion {
     font-size: 0.9rem;
     color: var(--color-text);
