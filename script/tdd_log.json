@@ -3073,7 +3073,7 @@
     "testId": 54
   },
   {
-    "commitId": "HEAD",
+    "commitId": "62a2a5391f535b1d8214a75633735ce54b54c5c7",
     "commitName": "feat: HU-11 boton marcar como resuelto en mis publicaciones",
     "commitTimestamp": 1794612660575,
     "testId": 54
@@ -3125,5 +3125,43 @@
     "commitName": "docs: agregar lista de pruebas para HU-07 generar link de publicacion",
     "commitTimestamp": 1794628922245,
     "testId": 58
+  },
+  {
+    "numPassedTests": 218,
+    "failedTests": 0,
+    "numTotalTests": 218,
+    "timestamp": 1794629171621,
+    "success": true,
+    "testId": 59
+  },
+  {
+    "numPassedTests": 208,
+    "failedTests": 10,
+    "numTotalTests": 218,
+    "timestamp": 1794629467543,
+    "success": false,
+    "testId": 59
+  },
+  {
+    "numPassedTests": 213,
+    "failedTests": 5,
+    "numTotalTests": 218,
+    "timestamp": 1794629519089,
+    "success": false,
+    "testId": 59
+  },
+  {
+    "numPassedTests": 213,
+    "failedTests": 0,
+    "numTotalTests": 213,
+    "timestamp": 1794629608292,
+    "success": true,
+    "testId": 59
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat(posts): implementar generacion de enlace de publicacion",
+    "commitTimestamp": 1794629729619,
+    "testId": 59
   }
 ]

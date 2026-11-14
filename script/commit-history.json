@@ -1159,12 +1159,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "62a2a5391f535b1d8214a75633735ce54b54c5c7",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-13T23:34:18.000Z",
       "message": "feat: HU-11 la lista publica muestra las publicaciones resueltas con cambio visual",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/62a2a5391f535b1d8214a75633735ce54b54c5c7"
     },
     "stats": {
       "total": 38,
@@ -1231,6 +1231,25 @@
     },
     "coverage": 77.38,
     "test_count": 208,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T04:15:26.000Z",
+      "message": "feat(posts): implementar generacion de enlace de publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 101,
+      "additions": 93,
+      "deletions": 8,
+      "date": "2026-11-14"
+    },
+    "coverage": 77.41,
+    "test_count": 213,
     "failed_tests": 0,
     "conclusion": "success"
   }
