@@ -6,6 +6,7 @@ const TEXTO_ESTADO = {
   [ESTADOS.PENDIENTE]: 'Pendiente de revisión',
   [ESTADOS.APROBADA]: 'Publicada',
   [ESTADOS.RECHAZADA]: 'Rechazada',
+  [ESTADOS.RESUELTA]: 'Resuelto',
 };
 
 export function esAutor(publicacion, usuario) {

@@ -1026,12 +1026,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "c35febd9df75be7effe0376a87f317e772b178b3",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-13T22:21:31.000Z",
       "message": "refactor: HU-08 consulta comun por campo para buscar y contar publicaciones",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/c35febd9df75be7effe0376a87f317e772b178b3"
     },
     "stats": {
       "total": 12,
@@ -1060,6 +1060,139 @@
     },
     "coverage": 74.63,
     "test_count": 183,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "6f97a80b933d1ec491d19bbf2ce7f4a590e54f11",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:27:08.000Z",
+      "message": "test: HU-11 solo el creador puede marcar como resuelta su publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/6f97a80b933d1ec491d19bbf2ce7f4a590e54f11"
+    },
+    "stats": {
+      "total": 44,
+      "additions": 44,
+      "deletions": 0,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.12,
+    "test_count": 182,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "f9f5957b13363cdca5e38cf6b89b3eea50600a27",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:28:18.000Z",
+      "message": "test: HU-11 marcar como resuelta cambia el estado de la publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f9f5957b13363cdca5e38cf6b89b3eea50600a27"
+    },
+    "stats": {
+      "total": 41,
+      "additions": 40,
+      "deletions": 1,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.44,
+    "test_count": 186,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "091a7c2237e72f5648de57cd997c4db347233452",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:28:52.000Z",
+      "message": "test: HU-11 mis publicaciones muestra el estado resuelto",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/091a7c2237e72f5648de57cd997c4db347233452"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 12,
+      "deletions": 0,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.44,
+    "test_count": 187,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "e30b362eb9f610b7258354a32fccd8bf5510842b",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:29:38.000Z",
+      "message": "test: HU-11 la lista publica muestra las publicaciones resueltas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e30b362eb9f610b7258354a32fccd8bf5510842b"
+    },
+    "stats": {
+      "total": 44,
+      "additions": 41,
+      "deletions": 3,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 190,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:30:55.000Z",
+      "message": "feat: HU-11 boton marcar como resuelto en mis publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 106,
+      "additions": 97,
+      "deletions": 9,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 190,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:34:18.000Z",
+      "message": "feat: HU-11 la lista publica muestra las publicaciones resueltas con cambio visual",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 38,
+      "additions": 36,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 190,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-14T00:23:21.000Z",
+      "message": "merge: integrar main con HU-08 en HU-11",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 230,
+      "additions": 223,
+      "deletions": 7,
+      "date": "2026-11-14"
+    },
+    "coverage": 75.18,
+    "test_count": 196,
     "failed_tests": 0,
     "conclusion": "success"
   }
