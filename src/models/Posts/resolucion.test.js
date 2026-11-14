@@ -42,15 +42,36 @@ describe('HU-11: Marcar publicación como resuelta', () => {
     });
   });
 
-  describe('Cambio de estado', () => {
+  describe('Cambio de estado y fecha de resolución (HU-15)', () => {
     test('Debería cambiar el estado de la publicación a resuelta', () => {
-      expect(marcarComoResuelta(publicada, creador)).toEqual({ ...publicada, estado: 'RESUELTA' });
+      const resuelta = marcarComoResuelta(publicada, creador);
+
+      expect(resuelta.estado).toBe('RESUELTA');
     });
 
     test('Debería devolver una copia sin modificar la publicación original', () => {
       marcarComoResuelta(publicada, creador);
 
       expect(publicada.estado).toBe('APROBADA');
+    });
+
+    test('Debería asignar la fecha actual en formato YYYY-MM-DD por defecto', () => {
+      const resuelta = marcarComoResuelta(publicada, creador);
+
+      expect(resuelta.fechaResolucion).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    });
+
+    test('Debería permitir registrar una fecha de resolución fija en formato string', () => {
+      const resuelta = marcarComoResuelta(publicada, creador, '2026-11-01');
+
+      expect(resuelta.fechaResolucion).toBe('2026-11-01');
+    });
+
+    test('Debería permitir registrar una fecha de resolución enviando un objeto Date', () => {
+      const fecha = new Date(2026, 10, 5);
+      const resuelta = marcarComoResuelta(publicada, creador, fecha);
+
+      expect(resuelta.fechaResolucion).toBe('2026-11-05');
     });
 
     test('Debería lanzar un error si quien la marca no es el creador', () => {
@@ -88,14 +109,14 @@ describe('HU-11: Marcar publicación como resuelta', () => {
       expect(formatearParaTarjeta(resuelta).estadoTexto).toBe('Resuelto');
     });
 
-    test('Debería incluir en la lista pública las publicaciones resueltas', () => {
+    test('Debería incluir en la lista pública las publicaciones resueltas vigentes', () => {
       const lista = [
         { ...publicada, id: 'h1', fecha: '2026-10-10' },
-        { ...publicada, id: 'h2', fecha: '2026-10-12', estado: 'RESUELTA' },
+        { ...publicada, id: 'h2', fecha: '2026-10-12', estado: 'RESUELTA', fechaResolucion: '2026-10-12' },
         { ...publicada, id: 'h3', fecha: '2026-10-14', estado: 'Pendiente de revisión' },
       ];
 
-      const resultado = obtenerPublicacionesPaginadas(lista, 1, 10);
+      const resultado = obtenerPublicacionesPaginadas(lista, 1, 10, '2026-10-15');
 
       expect(resultado.publicaciones.map((pub) => pub.id)).toEqual(['h2', 'h1']);
     });

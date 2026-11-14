@@ -11,7 +11,6 @@ import {
   obtenerPublicacionesPorAutor,
   actualizarPublicacion,
   borrarPublicacion,
-  actualizarEstadoPublicacion,
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 import { crearTarjetaHtml } from './plantillaTarjeta';
@@ -194,7 +193,10 @@ async function resolver(id) {
   }
 
   try {
-    await actualizarEstadoPublicacion(publicacion.coleccion, id, resuelta.estado);
+    await actualizarPublicacion(publicacion.coleccion, id, {
+      estado: resuelta.estado,
+      fechaResolucion: resuelta.fechaResolucion,
+    });
   } catch (error) {
     console.error('Error al marcar como resuelta:', error.message);
     alert('No se pudo marcar la publicación como resuelta. Intenta de nuevo.');

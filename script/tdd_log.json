@@ -3159,7 +3159,7 @@
     "testId": 59
   },
   {
-    "commitId": "HEAD",
+    "commitId": "2db617ec2ebcfedef42478809d2b2d3929d49a3a",
     "commitName": "feat(posts): implementar generacion de enlace de publicacion",
     "commitTimestamp": 1794629729619,
     "testId": 59
@@ -3181,7 +3181,7 @@
     "testId": 60
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5b6b394d8686b6ffb2b8613ec99a2da36f722837",
     "commitName": "feat(posts): extraccion de enlace unico de publicacion",
     "commitTimestamp": 1794629906787,
     "testId": 60
@@ -3211,7 +3211,7 @@
     "testId": 61
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e7993537aa19a7e6d35b1130f5df241f965f1d7f",
     "commitName": "feat(compartir): implementar boton compartir, copia al portapapeles y mensaje visual (HU-07)",
     "commitTimestamp": 1794630716914,
     "testId": 61
@@ -3241,7 +3241,7 @@
     "testId": 62
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8f3fb4ddf1aa27c9bf67f06d5ea9ed4c828e6a23",
     "commitName": "feature(posts): abrir publicaciones por enlace",
     "commitTimestamp": 1794631493173,
     "testId": 62
@@ -3255,9 +3255,207 @@
     "testId": 63
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b9896ed8ca46fdcd2735285f0a385f9039aa35a6",
     "commitName": "test(posts): apertura directa de publicacion por enlace unico",
     "commitTimestamp": 1794631816782,
     "testId": 63
+  },
+  {
+    "commitId": "01a108b5f2b01ee9ff49965e2c41fc5be047ba4c",
+    "commitName": "docs: agregar lista de pruebas para HU-15 ocultar publicaciones resueltas tras 1 semana",
+    "commitTimestamp": 1794685349152,
+    "testId": 64
+  },
+  {
+    "numPassedTests": 225,
+    "failedTests": 0,
+    "numTotalTests": 225,
+    "timestamp": 1794685481177,
+    "success": true,
+    "testId": 65
+  },
+  {
+    "numPassedTests": 222,
+    "failedTests": 0,
+    "numTotalTests": 222,
+    "timestamp": 1794686360033,
+    "success": true,
+    "testId": 65
+  },
+  {
+    "numPassedTests": 222,
+    "failedTests": 0,
+    "numTotalTests": 222,
+    "timestamp": 1794686529694,
+    "success": true,
+    "testId": 65
+  },
+  {
+    "numPassedTests": 222,
+    "failedTests": 3,
+    "numTotalTests": 225,
+    "timestamp": 1794686545083,
+    "success": false,
+    "testId": 65
+  },
+  {
+    "numPassedTests": 225,
+    "failedTests": 0,
+    "numTotalTests": 225,
+    "timestamp": 1794686575804,
+    "success": true,
+    "testId": 65
+  },
+  {
+    "commitId": "fc2c0ef8ec3aef7380f41c6372d705a21a8992c8",
+    "commitName": "feat(resolucion): guardar fechaResolucion al marcar publicacion como resuelta (HU-15 Ciclo 1)",
+    "commitTimestamp": 1794686615956,
+    "testId": 65
+  },
+  {
+    "numPassedTests": 236,
+    "failedTests": 0,
+    "numTotalTests": 236,
+    "timestamp": 1794686852393,
+    "success": true,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 223,
+    "failedTests": 13,
+    "numTotalTests": 236,
+    "timestamp": 1794687144059,
+    "success": false,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 225,
+    "failedTests": 11,
+    "numTotalTests": 236,
+    "timestamp": 1794687194675,
+    "success": false,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 225,
+    "failedTests": 2,
+    "numTotalTests": 227,
+    "timestamp": 1794687271699,
+    "success": false,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 226,
+    "failedTests": 1,
+    "numTotalTests": 227,
+    "timestamp": 1794687459053,
+    "success": false,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 227,
+    "failedTests": 0,
+    "numTotalTests": 227,
+    "timestamp": 1794687492814,
+    "success": true,
+    "testId": 66
+  },
+  {
+    "commitId": "855f8ea41e7c85359d7cfcb5484aef1033643a3b",
+    "commitName": "feat(publicaciones): implementar calculo de 1 semana para resueltas",
+    "commitTimestamp": 1794687658759,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 234,
+    "failedTests": 0,
+    "numTotalTests": 234,
+    "timestamp": 1794687717026,
+    "success": true,
+    "testId": 67
+  },
+  {
+    "commitId": "a3df65f99152d447043529d72cd4ecb4d3697c76",
+    "commitName": "test(publicaciones): verificar tiempo de 1 semana para resueltas",
+    "commitTimestamp": 1794687755297,
+    "testId": 67
+  },
+  {
+    "numPassedTests": 236,
+    "failedTests": 0,
+    "numTotalTests": 236,
+    "timestamp": 1794687797416,
+    "success": true,
+    "testId": 68
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(publicaciones): verificar visibilidad de 1 semana para resueltas",
+    "commitTimestamp": 1794687866885,
+    "testId": 68
+  },
+  {
+    "numPassedTests": 240,
+    "failedTests": 0,
+    "numTotalTests": 240,
+    "timestamp": 1794688123289,
+    "success": true,
+    "testId": 69
+  },
+  {
+    "numPassedTests": 237,
+    "failedTests": 0,
+    "numTotalTests": 237,
+    "timestamp": 1794688803952,
+    "success": true,
+    "testId": 69
+  },
+  {
+    "numPassedTests": 240,
+    "failedTests": 0,
+    "numTotalTests": 240,
+    "timestamp": 1794689428276,
+    "success": true,
+    "testId": 69
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(lista): deberia mostrar publicaciones activas y resueltas vigentes",
+    "commitTimestamp": 1794689576477,
+    "testId": 69
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
+    "commitTimestamp": 1794689963438,
+    "testId": 70
+  },
+  {
+    "numPassedTests": 239,
+    "failedTests": 0,
+    "numTotalTests": 239,
+    "timestamp": 1794690067618,
+    "success": true,
+    "testId": 71
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(lista): deberia calcular la paginacion de publicaciones visibles",
+    "commitTimestamp": 1794690424598,
+    "testId": 71
+  },
+  {
+    "numPassedTests": 240,
+    "failedTests": 0,
+    "numTotalTests": 240,
+    "timestamp": 1794690458672,
+    "success": true,
+    "testId": 72
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
+    "commitTimestamp": 1794690497748,
+    "testId": 72
   }
 ]
