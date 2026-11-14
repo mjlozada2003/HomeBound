@@ -1387,12 +1387,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "855f8ea41e7c85359d7cfcb5484aef1033643a3b",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T20:22:32.000Z",
       "message": "test(publicaciones): verificar tiempo de 1 semana para resueltas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/855f8ea41e7c85359d7cfcb5484aef1033643a3b"
     },
     "stats": {
       "total": 40,
@@ -1459,6 +1459,25 @@
     },
     "coverage": 76.42,
     "test_count": 238,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T21:07:02.000Z",
+      "message": "test(lista): deberia calcular la paginacion de publicaciones visibles",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 36,
+      "additions": 35,
+      "deletions": 1,
+      "date": "2026-11-14"
+    },
+    "coverage": 78.1,
+    "test_count": 239,
     "failed_tests": 0,
     "conclusion": "success"
   }

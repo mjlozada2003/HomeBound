@@ -1,4 +1,4 @@
-import { renderizarListaPublicaciones } from './listaPresenter';
+import { renderizarListaPublicaciones, inicializarListaPresenter } from './listaPresenter';
 import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
 
 jest.mock('../services/publicacionesService', () => ({
@@ -107,5 +107,39 @@ describe('HU-15: Presenter de lista pública - Expiración de resueltas tras 1 s
     expect(contenedorListaMock.innerHTML).toContain('Aún no hay publicaciones');
     expect(contenedorPaginacionMock.innerHTML).toBe('');
   });
+
+  it('Debería calcular la paginación considerando únicamente las publicaciones visibles', async () => {
+    // 11 publicaciones aprobadas + 2 resueltas expiradas
+    const activas = Array.from({ length: 11 }, (_, i) =>
+      crearPub(`act-${i + 1}`, `Publicación activa ${i + 1}`, 'APROBADA', `2026-11-${String(i + 1).padStart(2, '0')}`)
+    );
+    const resueltasExpiradas = [
+      crearPub('exp-1', 'Expirada 1', 'RESUELTA', '2026-10-01', '2026-10-10'),
+      crearPub('exp-2', 'Expirada 2', 'RESUELTA', '2026-10-01', '2026-10-15'),
+    ];
+
+    obtenerPublicacionesPorEstado.mockImplementation((estado) => {
+      if (estado === 'APROBADA') {
+        return Promise.resolve(activas);
+      }
+      if (estado === 'RESUELTA') {
+        return Promise.resolve(resueltasExpiradas);
+      }
+      return Promise.resolve([]);
+    });
+
+    inicializarListaPresenter();
+    await renderizarListaPublicaciones();
+
+    expect(contenedorPaginacionMock.innerHTML).toContain('Página 1 de 2');
+    // Simular clic en siguiente
+    const clickHandler = contenedorPaginacionMock.addEventListener.mock.calls.find(
+      ([evento]) => evento === 'click'
+    )[1];
+    clickHandler({ target: { id: 'btn-siguiente' } });
+    expect(contenedorPaginacionMock.innerHTML).toContain('Página 2 de 2');
+    expect(contenedorListaMock.innerHTML).toContain('Publicación activa 1');
+  });
+
 
 });

@@ -3361,7 +3361,7 @@
     "testId": 66
   },
   {
-    "commitId": "HEAD",
+    "commitId": "855f8ea41e7c85359d7cfcb5484aef1033643a3b",
     "commitName": "feat(publicaciones): implementar calculo de 1 semana para resueltas",
     "commitTimestamp": 1794687658759,
     "testId": 66
@@ -3429,5 +3429,19 @@
     "commitName": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
     "commitTimestamp": 1794689963438,
     "testId": 70
+  },
+  {
+    "numPassedTests": 239,
+    "failedTests": 0,
+    "numTotalTests": 239,
+    "timestamp": 1794690067618,
+    "success": true,
+    "testId": 71
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(lista): deberia calcular la paginacion de publicaciones visibles",
+    "commitTimestamp": 1794690424598,
+    "testId": 71
   }
 ]
