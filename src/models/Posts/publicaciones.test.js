@@ -6,7 +6,7 @@ import {
   formatearDatosComunes,
   obtenerPublicacionPorId,
   formatearDetallePublicacion,
-  //esResueltaVigente,
+  esResueltaVigente,
   //filtrarVisiblesEnLista,
   calcularDiasTranscurridos,
 } from './publicaciones.js';
@@ -216,5 +216,43 @@ describe('HU-15: Ocultar publicaciones resueltas tras 1 semana (Derivada de HU-0
     });
   });
 
+  describe('Vigencia de publicaciones resueltas (esResueltaVigente)', () => {
+    it('Debería ser vigente si se resolvió el mismo día (0 días)', () => {
+      const pub = { estado: 'RESUELTA', fechaResolucion: '2026-11-14' };
+      expect(esResueltaVigente(pub, hoyRef)).toBe(true);
+    });
+
+    it('Debería ser vigente si se resolvió hace 3 días', () => {
+      const pub = { estado: 'RESUELTA', fechaResolucion: '2026-11-11' };
+      expect(esResueltaVigente(pub, hoyRef)).toBe(true);
+    });
+
+    it('Debería ser vigente si se resolvió hace exactamente 7 días', () => {
+      const pub = { estado: 'RESUELTA', fechaResolucion: '2026-11-07' };
+      expect(esResueltaVigente(pub, hoyRef)).toBe(true);
+    });
+
+    it('NO debería ser vigente si se resolvió hace 8 días', () => {
+      const pub = { estado: 'RESUELTA', fechaResolucion: '2026-11-06' };
+      expect(esResueltaVigente(pub, hoyRef)).toBe(false);
+    });
+
+    it('NO debería ser vigente si se resolvió hace 30 días', () => {
+      const pub = { estado: 'RESUELTA', fechaResolucion: '2026-10-15' };
+      expect(esResueltaVigente(pub, hoyRef)).toBe(false);
+    });
+
+    it('Debería usar fecha de la publicación como fallback si no tiene fechaResolucion', () => {
+      const pubVigente = { estado: 'RESUELTA', fecha: '2026-11-10' };
+      const pubExpirada = { estado: 'RESUELTA', fecha: '2026-10-01' };
+
+      expect(esResueltaVigente(pubVigente, hoyRef)).toBe(true);
+      expect(esResueltaVigente(pubExpirada, hoyRef)).toBe(false);
+    });
+
+    it('Debería retornar false si no tiene fechaResolucion ni fecha', () => {
+      expect(esResueltaVigente({ estado: 'RESUELTA' }, hoyRef)).toBe(false);
+    });
+  });
 
 });

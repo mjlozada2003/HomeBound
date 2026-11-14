@@ -3241,7 +3241,7 @@
     "testId": 62
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8f3fb4ddf1aa27c9bf67f06d5ea9ed4c828e6a23",
     "commitName": "feature(posts): abrir publicaciones por enlace",
     "commitTimestamp": 1794631493173,
     "testId": 62
@@ -3365,5 +3365,19 @@
     "commitName": "feat(publicaciones): implementar calculo de 1 semana para resueltas",
     "commitTimestamp": 1794687658759,
     "testId": 66
+  },
+  {
+    "numPassedTests": 234,
+    "failedTests": 0,
+    "numTotalTests": 234,
+    "timestamp": 1794687717026,
+    "success": true,
+    "testId": 67
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(publicaciones): verificar tiempo de 1 semana para resueltas",
+    "commitTimestamp": 1794687755297,
+    "testId": 67
   }
 ]
