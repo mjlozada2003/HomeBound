@@ -1273,12 +1273,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "5b6b394d8686b6ffb2b8613ec99a2da36f722837",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T04:31:52.000Z",
       "message": "feat(compartir): implementar boton compartir, copia al portapapeles y mensaje visual (HU-07)",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5b6b394d8686b6ffb2b8613ec99a2da36f722837"
     },
     "stats": {
       "total": 175,
@@ -1345,6 +1345,25 @@
     },
     "coverage": 79.79,
     "test_count": 222,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T20:03:32.000Z",
+      "message": "feat(resolucion): guardar fechaResolucion al marcar publicacion como resuelta (HU-15 Ciclo 1)",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 46,
+      "additions": 36,
+      "deletions": 10,
+      "date": "2026-11-14"
+    },
+    "coverage": 79.83,
+    "test_count": 225,
     "failed_tests": 0,
     "conclusion": "success"
   }

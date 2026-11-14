@@ -42,15 +42,36 @@ describe('HU-11: Marcar publicación como resuelta', () => {
     });
   });
 
-  describe('Cambio de estado', () => {
+  describe('Cambio de estado y fecha de resolución (HU-15)', () => {
     test('Debería cambiar el estado de la publicación a resuelta', () => {
-      expect(marcarComoResuelta(publicada, creador)).toEqual({ ...publicada, estado: 'RESUELTA' });
+      const resuelta = marcarComoResuelta(publicada, creador);
+
+      expect(resuelta.estado).toBe('RESUELTA');
     });
 
     test('Debería devolver una copia sin modificar la publicación original', () => {
       marcarComoResuelta(publicada, creador);
 
       expect(publicada.estado).toBe('APROBADA');
+    });
+
+    test('Debería asignar la fecha actual en formato YYYY-MM-DD por defecto', () => {
+      const resuelta = marcarComoResuelta(publicada, creador);
+
+      expect(resuelta.fechaResolucion).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    });
+
+    test('Debería permitir registrar una fecha de resolución fija en formato string', () => {
+      const resuelta = marcarComoResuelta(publicada, creador, '2026-11-01');
+
+      expect(resuelta.fechaResolucion).toBe('2026-11-01');
+    });
+
+    test('Debería permitir registrar una fecha de resolución enviando un objeto Date', () => {
+      const fecha = new Date(2026, 10, 5);
+      const resuelta = marcarComoResuelta(publicada, creador, fecha);
+
+      expect(resuelta.fechaResolucion).toBe('2026-11-05');
     });
 
     test('Debería lanzar un error si quien la marca no es el creador', () => {

@@ -3181,7 +3181,7 @@
     "testId": 60
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5b6b394d8686b6ffb2b8613ec99a2da36f722837",
     "commitName": "feat(posts): extraccion de enlace unico de publicacion",
     "commitTimestamp": 1794629906787,
     "testId": 60
@@ -3265,5 +3265,51 @@
     "commitName": "docs: agregar lista de pruebas para HU-15 ocultar publicaciones resueltas tras 1 semana",
     "commitTimestamp": 1794685349152,
     "testId": 64
+  },
+  {
+    "numPassedTests": 225,
+    "failedTests": 0,
+    "numTotalTests": 225,
+    "timestamp": 1794685481177,
+    "success": true,
+    "testId": 65
+  },
+  {
+    "numPassedTests": 222,
+    "failedTests": 0,
+    "numTotalTests": 222,
+    "timestamp": 1794686360033,
+    "success": true,
+    "testId": 65
+  },
+  {
+    "numPassedTests": 222,
+    "failedTests": 0,
+    "numTotalTests": 222,
+    "timestamp": 1794686529694,
+    "success": true,
+    "testId": 65
+  },
+  {
+    "numPassedTests": 222,
+    "failedTests": 3,
+    "numTotalTests": 225,
+    "timestamp": 1794686545083,
+    "success": false,
+    "testId": 65
+  },
+  {
+    "numPassedTests": 225,
+    "failedTests": 0,
+    "numTotalTests": 225,
+    "timestamp": 1794686575804,
+    "success": true,
+    "testId": 65
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat(resolucion): guardar fechaResolucion al marcar publicacion como resuelta (HU-15 Ciclo 1)",
+    "commitTimestamp": 1794686615956,
+    "testId": 65
   }
 ]
