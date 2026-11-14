@@ -1349,12 +1349,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "01a108b5f2b01ee9ff49965e2c41fc5be047ba4c",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T20:03:32.000Z",
       "message": "feat(resolucion): guardar fechaResolucion al marcar publicacion como resuelta (HU-15 Ciclo 1)",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/01a108b5f2b01ee9ff49965e2c41fc5be047ba4c"
     },
     "stats": {
       "total": 46,
@@ -1421,6 +1421,25 @@
     },
     "coverage": 80.41,
     "test_count": 236,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T20:52:52.000Z",
+      "message": "test(lista): deberia mostrar publicaciones activas y resueltas vigentes",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 101,
+      "additions": 95,
+      "deletions": 6,
+      "date": "2026-11-14"
+    },
+    "coverage": 75.8,
+    "test_count": 237,
     "failed_tests": 0,
     "conclusion": "success"
   }

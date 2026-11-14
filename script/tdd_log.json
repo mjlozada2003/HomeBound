@@ -3261,7 +3261,7 @@
     "testId": 63
   },
   {
-    "commitId": "HEAD",
+    "commitId": "01a108b5f2b01ee9ff49965e2c41fc5be047ba4c",
     "commitName": "docs: agregar lista de pruebas para HU-15 ocultar publicaciones resueltas tras 1 semana",
     "commitTimestamp": 1794685349152,
     "testId": 64
@@ -3393,5 +3393,35 @@
     "commitName": "test(publicaciones): verificar visibilidad de 1 semana para resueltas",
     "commitTimestamp": 1794687866885,
     "testId": 68
+  },
+  {
+    "numPassedTests": 240,
+    "failedTests": 0,
+    "numTotalTests": 240,
+    "timestamp": 1794688123289,
+    "success": true,
+    "testId": 69
+  },
+  {
+    "numPassedTests": 237,
+    "failedTests": 0,
+    "numTotalTests": 237,
+    "timestamp": 1794688803952,
+    "success": true,
+    "testId": 69
+  },
+  {
+    "numPassedTests": 240,
+    "failedTests": 0,
+    "numTotalTests": 240,
+    "timestamp": 1794689428276,
+    "success": true,
+    "testId": 69
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(lista): deberia mostrar publicaciones activas y resueltas vigentes",
+    "commitTimestamp": 1794689576477,
+    "testId": 69
   }
 ]
