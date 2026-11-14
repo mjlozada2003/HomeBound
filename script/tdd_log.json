@@ -2655,10 +2655,12 @@
     "testId": 9
   },
   {
-    "commitId": "HEAD",
+    "commitId": "4c71e9a47ba3920e46c7484b4276a0986dbf48e2",
     "commitName": "feat(detalle): implementar vista y navegacion de detalle de publicacion segun diseno visual (HU-12)",
     "commitTimestamp": 1794603245167,
     "testId": 9
+  },
+  {
     "numPassedTests": 122,
     "failedTests": 2,
     "numTotalTests": 124,
@@ -3095,5 +3097,27 @@
     "commitName": "merge: integrar main con HU-08 en HU-11",
     "commitTimestamp": 1794615803118,
     "testId": 56
+  },
+  {
+    "numPassedTests": 208,
+    "failedTests": 0,
+    "numTotalTests": 208,
+    "timestamp": 1794628093766,
+    "success": true,
+    "testId": 57
+  },
+  {
+    "numPassedTests": 208,
+    "failedTests": 0,
+    "numTotalTests": 208,
+    "timestamp": 1794628263061,
+    "success": true,
+    "testId": 57
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix(script): corregir sintaxis JSON en commit-history y tdd_log tras resolucion de merge",
+    "commitTimestamp": 1794628286709,
+    "testId": 57
   }
 ]
