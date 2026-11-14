@@ -109,14 +109,14 @@ describe('HU-11: Marcar publicación como resuelta', () => {
       expect(formatearParaTarjeta(resuelta).estadoTexto).toBe('Resuelto');
     });
 
-    test('Debería incluir en la lista pública las publicaciones resueltas', () => {
+    test('Debería incluir en la lista pública las publicaciones resueltas vigentes', () => {
       const lista = [
         { ...publicada, id: 'h1', fecha: '2026-10-10' },
-        { ...publicada, id: 'h2', fecha: '2026-10-12', estado: 'RESUELTA' },
+        { ...publicada, id: 'h2', fecha: '2026-10-12', estado: 'RESUELTA', fechaResolucion: '2026-10-12' },
         { ...publicada, id: 'h3', fecha: '2026-10-14', estado: 'Pendiente de revisión' },
       ];
 
-      const resultado = obtenerPublicacionesPaginadas(lista, 1, 10);
+      const resultado = obtenerPublicacionesPaginadas(lista, 1, 10, '2026-10-15');
 
       expect(resultado.publicaciones.map((pub) => pub.id)).toEqual(['h2', 'h1']);
     });

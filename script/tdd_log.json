@@ -3211,7 +3211,7 @@
     "testId": 61
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e7993537aa19a7e6d35b1130f5df241f965f1d7f",
     "commitName": "feat(compartir): implementar boton compartir, copia al portapapeles y mensaje visual (HU-07)",
     "commitTimestamp": 1794630716914,
     "testId": 61
@@ -3311,5 +3311,59 @@
     "commitName": "feat(resolucion): guardar fechaResolucion al marcar publicacion como resuelta (HU-15 Ciclo 1)",
     "commitTimestamp": 1794686615956,
     "testId": 65
+  },
+  {
+    "numPassedTests": 236,
+    "failedTests": 0,
+    "numTotalTests": 236,
+    "timestamp": 1794686852393,
+    "success": true,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 223,
+    "failedTests": 13,
+    "numTotalTests": 236,
+    "timestamp": 1794687144059,
+    "success": false,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 225,
+    "failedTests": 11,
+    "numTotalTests": 236,
+    "timestamp": 1794687194675,
+    "success": false,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 225,
+    "failedTests": 2,
+    "numTotalTests": 227,
+    "timestamp": 1794687271699,
+    "success": false,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 226,
+    "failedTests": 1,
+    "numTotalTests": 227,
+    "timestamp": 1794687459053,
+    "success": false,
+    "testId": 66
+  },
+  {
+    "numPassedTests": 227,
+    "failedTests": 0,
+    "numTotalTests": 227,
+    "timestamp": 1794687492814,
+    "success": true,
+    "testId": 66
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat(publicaciones): implementar calculo de 1 semana para resueltas",
+    "commitTimestamp": 1794687658759,
+    "testId": 66
   }
 ]

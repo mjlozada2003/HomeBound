@@ -1,17 +1,47 @@
 import { ESTADOS } from './estados.js';
+import { obtenerFechaLocal } from './reglasPublicacion.js';
+
+export const DIAS_LIMITE_RESUELTA = 7;
 
 export function obtenerTextoTipo(tipo) {
   return tipo === 'HALLAZGO' ? 'Encontrado' : 'Perdido';
 }
 
+export function calcularDiasTranscurridos(fechaInicio, fechaFin = new Date()) {
+  const inicioStr = typeof fechaInicio === 'string' ? fechaInicio : obtenerFechaLocal(fechaInicio);
+  const finStr = typeof fechaFin === 'string' ? fechaFin : obtenerFechaLocal(fechaFin);
+  const inicio = new Date(`${inicioStr}T00:00:00`);
+  const fin = new Date(`${finStr}T00:00:00`);
+  const msPorDia = 1000 * 60 * 60 * 24;
+  return Math.round((fin.getTime() - inicio.getTime()) / msPorDia);
+}
+
+export function esVisibleEnLista(publicacion, hoy = new Date()) {
+  if (publicacion.estado === ESTADOS.APROBADA) {
+    return true;
+  }
+  if (publicacion.estado === ESTADOS.RESUELTA) {
+    return esResueltaVigente(publicacion, hoy);
+  }
+  return false;
+}
+
+export function esResueltaVigente(publicacion, hoy = new Date()) {
+  const fechaRef = publicacion.fechaResolucion || publicacion.fecha;
+  if (!fechaRef) {
+    return false;
+  }
+  const dias = calcularDiasTranscurridos(fechaRef, hoy);
+  return dias >= 0 && dias <= DIAS_LIMITE_RESUELTA;
+}
+
+
 export function filtrarSoloAprobadas(listaPublicaciones = []) {
   return listaPublicaciones.filter((pub) => pub.estado === ESTADOS.APROBADA);
 }
 
-export function filtrarVisiblesEnLista(listaPublicaciones = []) {
-  return listaPublicaciones.filter(
-    (pub) => pub.estado === ESTADOS.APROBADA || pub.estado === ESTADOS.RESUELTA
-  );
+export function filtrarVisiblesEnLista(listaPublicaciones = [], hoy = new Date()) {
+  return listaPublicaciones.filter((pub) => esVisibleEnLista(pub, hoy));
 }
 
 export function obtenerTextoEstadoPublico(estado) {
@@ -44,9 +74,10 @@ export function formatearParaTarjeta(pub) {
 export function obtenerPublicacionesPaginadas(
   listaPublicaciones = [],
   pagina = 1,
-  porPagina = 10
+  porPagina = 10,
+  hoy = new Date()
 ) {
-  const visibles = filtrarVisiblesEnLista(listaPublicaciones);
+  const visibles = filtrarVisiblesEnLista(listaPublicaciones, hoy);
   const ordenadas = ordenarPorFechaReciente(visibles);
 
   if (ordenadas.length === 0) {

@@ -1292,12 +1292,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "e7993537aa19a7e6d35b1130f5df241f965f1d7f",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T04:44:49.000Z",
       "message": "feature(posts): abrir publicaciones por enlace",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e7993537aa19a7e6d35b1130f5df241f965f1d7f"
     },
     "stats": {
       "total": 90,
@@ -1364,6 +1364,25 @@
     },
     "coverage": 79.83,
     "test_count": 225,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T20:20:56.000Z",
+      "message": "feat(publicaciones): implementar calculo de 1 semana para resueltas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 91,
+      "additions": 71,
+      "deletions": 20,
+      "date": "2026-11-14"
+    },
+    "coverage": 80.24,
+    "test_count": 227,
     "failed_tests": 0,
     "conclusion": "success"
   }

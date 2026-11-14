@@ -6,6 +6,9 @@ import {
   formatearDatosComunes,
   obtenerPublicacionPorId,
   formatearDetallePublicacion,
+  //esResueltaVigente,
+  //filtrarVisiblesEnLista,
+  calcularDiasTranscurridos,
 } from './publicaciones.js';
 
 describe('HU-06: Ver vista básica de publicaciones recientes', () => {
@@ -196,5 +199,22 @@ describe('HU-12: Ver detalle de publicación', () => {
     expect(detalle.ubicacion).toBe('');
     expect(detalle.enlaceMapa).toBe('');
   });
+});
+
+describe('HU-15: Ocultar publicaciones resueltas tras 1 semana (Derivada de HU-06)', () => {
+  const hoyRef = '2026-11-14';
+
+  describe('Cálculo de días transcurridos', () => {
+    it('Debería retornar 0 si las fechas son el mismo día', () => {
+      expect(calcularDiasTranscurridos('2026-11-14', hoyRef)).toBe(0);
+    });
+
+    it('Debería calcular correctamente la diferencia de días', () => {
+      expect(calcularDiasTranscurridos('2026-11-07', hoyRef)).toBe(7);
+      expect(calcularDiasTranscurridos('2026-11-06', hoyRef)).toBe(8);
+      expect(calcularDiasTranscurridos('2026-10-15', hoyRef)).toBe(30);
+    });
+  });
+
 
 });
