@@ -3307,7 +3307,7 @@
     "testId": 65
   },
   {
-    "commitId": "HEAD",
+    "commitId": "fc2c0ef8ec3aef7380f41c6372d705a21a8992c8",
     "commitName": "feat(resolucion): guardar fechaResolucion al marcar publicacion como resuelta (HU-15 Ciclo 1)",
     "commitTimestamp": 1794686615956,
     "testId": 65
@@ -3423,5 +3423,11 @@
     "commitName": "test(lista): deberia mostrar publicaciones activas y resueltas vigentes",
     "commitTimestamp": 1794689576477,
     "testId": 69
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
+    "commitTimestamp": 1794689963438,
+    "testId": 70
   }
 ]

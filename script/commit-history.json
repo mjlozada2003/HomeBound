@@ -1368,12 +1368,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "fc2c0ef8ec3aef7380f41c6372d705a21a8992c8",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T20:20:56.000Z",
       "message": "feat(publicaciones): implementar calculo de 1 semana para resueltas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/fc2c0ef8ec3aef7380f41c6372d705a21a8992c8"
     },
     "stats": {
       "total": 91,
@@ -1440,6 +1440,25 @@
     },
     "coverage": 75.8,
     "test_count": 237,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T20:59:20.000Z",
+      "message": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 22,
+      "additions": 22,
+      "deletions": 0,
+      "date": "2026-11-14"
+    },
+    "coverage": 76.42,
+    "test_count": 238,
     "failed_tests": 0,
     "conclusion": "success"
   }

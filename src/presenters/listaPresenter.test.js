@@ -86,4 +86,26 @@ describe('HU-15: Presenter de lista pública - Expiración de resueltas tras 1 s
     expect(contenedor.innerHTML).not.toContain('Celular resuelto hace un mes');
   });
 
+  it('Debería mostrar mensaje de lista vacía si solo existen publicaciones resueltas expiradas', async () => {
+    const resueltasExpiradas = [
+      crearPub('res-exp', 'Perro resuelto hace 20 días', 'RESUELTA', '2026-10-01', '2026-10-25'),
+    ];
+
+    obtenerPublicacionesPorEstado.mockImplementation((estado) => {
+      if (estado === 'APROBADA') {
+        return Promise.resolve([]);
+      }
+      if (estado === 'RESUELTA') {
+        return Promise.resolve(resueltasExpiradas);
+      }
+      return Promise.resolve([]);
+    });
+
+    await renderizarListaPublicaciones();
+
+    expect(contenedorListaMock.innerHTML).toContain('mensaje-vacio');
+    expect(contenedorListaMock.innerHTML).toContain('Aún no hay publicaciones');
+    expect(contenedorPaginacionMock.innerHTML).toBe('');
+  });
+
 });
