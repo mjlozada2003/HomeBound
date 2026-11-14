@@ -3,6 +3,7 @@ import { iniciarPostPresenter } from './presenters/postPresenter';
 import { inicializarListaPresenter } from './presenters/listaPresenter';
 import { inicializarModeracionPresenter } from './presenters/moderacionPresenter';
 import { inicializarMisPublicacionesPresenter } from './presenters/misPublicacionesPresenter';
+import { abrirPublicacionPorEnlace } from './presenters/enlaceNavegacion';
 
 function iniciarAplicacion() {
   iniciarAuthPresenter();
@@ -10,6 +11,7 @@ function iniciarAplicacion() {
   inicializarListaPresenter();
   inicializarModeracionPresenter();
   inicializarMisPublicacionesPresenter();
+  abrirPublicacionPorEnlace();
 }
 
 if (document.readyState === 'loading') {

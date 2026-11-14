@@ -1140,12 +1140,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "e1275a19caa3e4c08e16fb982014153a49e8fd29",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-13T23:30:55.000Z",
       "message": "feat: HU-11 boton marcar como resuelto en mis publicaciones",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e1275a19caa3e4c08e16fb982014153a49e8fd29"
     },
     "stats": {
       "total": 106,
@@ -1159,12 +1159,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "62a2a5391f535b1d8214a75633735ce54b54c5c7",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-13T23:34:18.000Z",
       "message": "feat: HU-11 la lista publica muestra las publicaciones resueltas con cambio visual",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/62a2a5391f535b1d8214a75633735ce54b54c5c7"
     },
     "stats": {
       "total": 38,
@@ -1178,12 +1178,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "fa3f8aceca16ec034cdb04f3080d0a7a37ff4d89",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-14T00:23:21.000Z",
       "message": "merge: integrar main con HU-08 en HU-11",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/fa3f8aceca16ec034cdb04f3080d0a7a37ff4d89"
     },
     "stats": {
       "total": 230,
@@ -1197,12 +1197,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "1d8247c79006da3f5383fe1fdc64977fb64a11ec",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T03:51:22.000Z",
       "message": "fix(script): corregir sintaxis JSON en commit-history y tdd_log tras resolucion de merge",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/1d8247c79006da3f5383fe1fdc64977fb64a11ec"
     },
     "stats": {
       "total": 0,
@@ -1212,6 +1212,120 @@
     },
     "coverage": 77.38,
     "test_count": 208,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "13b2d12f068eac3f3134f7ffaff3f9e9c27d6353",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T04:01:57.000Z",
+      "message": "docs: agregar lista de pruebas para HU-07 generar link de publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/13b2d12f068eac3f3134f7ffaff3f9e9c27d6353"
+    },
+    "stats": {
+      "total": 44,
+      "additions": 44,
+      "deletions": 0,
+      "date": "2026-11-14"
+    },
+    "coverage": 77.38,
+    "test_count": 208,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "7cdb46978ea31e0524f1d7022402740300084388",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T04:15:26.000Z",
+      "message": "feat(posts): implementar generacion de enlace de publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/7cdb46978ea31e0524f1d7022402740300084388"
+    },
+    "stats": {
+      "total": 101,
+      "additions": 93,
+      "deletions": 8,
+      "date": "2026-11-14"
+    },
+    "coverage": 77.41,
+    "test_count": 213,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T04:18:22.000Z",
+      "message": "feat(posts): extraccion de enlace unico de publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 50,
+      "additions": 49,
+      "deletions": 1,
+      "date": "2026-11-14"
+    },
+    "coverage": 77.57,
+    "test_count": 218,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T04:31:52.000Z",
+      "message": "feat(compartir): implementar boton compartir, copia al portapapeles y mensaje visual (HU-07)",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 175,
+      "additions": 167,
+      "deletions": 8,
+      "date": "2026-11-14"
+    },
+    "coverage": 78.74,
+    "test_count": 219,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T04:44:49.000Z",
+      "message": "feature(posts): abrir publicaciones por enlace",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 90,
+      "additions": 86,
+      "deletions": 4,
+      "date": "2026-11-14"
+    },
+    "coverage": 77,
+    "test_count": 221,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maria Lozada",
+    "commit": {
+      "date": "2026-11-14T04:50:13.000Z",
+      "message": "test(posts): apertura directa de publicacion por enlace unico",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 75,
+      "additions": 75,
+      "deletions": 0,
+      "date": "2026-11-14"
+    },
+    "coverage": 79.79,
+    "test_count": 222,
     "failed_tests": 0,
     "conclusion": "success"
   }

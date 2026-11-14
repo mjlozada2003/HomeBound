@@ -35,7 +35,8 @@ describe('HU-12: Presentador y Plantilla de Detalle de Publicación', () => {
     expect(html).toContain('Plaza Murillo');
     expect(html).toContain('href="https://maps.google.com/?q=Plaza+Murillo"');
     expect(html).toContain('id="btn-volver-lista"');
-    expect(html).not.toContain('id="btn-compartir"');
+    expect(html).toContain('id="btn-compartir"');
+    expect(html).toContain('id="mensaje-enlace-copiado"');
   });
 
   it('Debería renderizar una pérdida con badge PERDIDO y verbo correspondiente', () => {
@@ -132,5 +133,90 @@ describe('HU-12: Presentador y Plantilla de Detalle de Publicación', () => {
 
     clickListener();
     expect(onVolverMock).toHaveBeenCalledTimes(1);
+  });
+
+  describe('HU-07: Compartir publicación', () => {
+    beforeEach(() => {
+      jest.useFakeTimers();
+    });
+
+    afterEach(() => {
+      jest.runOnlyPendingTimers();
+      jest.useRealTimers();
+    });
+
+    it('Debería copiar el enlace al portapapeles y mostrar el mensaje al presionar el botón Compartir', async () => {
+      let listenerCompartir = null;
+
+      const btnVolverMock = {
+        addEventListener: jest.fn(),
+      };
+
+      const btnCompartirMock = {
+        addEventListener: jest.fn((evento, callback) => {
+          if (evento === 'click') {
+            listenerCompartir = callback;
+          }
+        }),
+      };
+
+      const toastMensajeMock = {
+        classList: {
+          remove: jest.fn(),
+          add: jest.fn(),
+        },
+        textContent: '',
+      };
+
+      const contenedorMock = {
+        innerHTML: '',
+        querySelector: jest.fn((selector) => {
+          if (selector === '#btn-volver-lista') {
+            return btnVolverMock;
+          }
+          if (selector === '#btn-compartir') {
+            return btnCompartirMock;
+          }
+          if (selector === '#mensaje-enlace-copiado') {
+            return toastMensajeMock;
+          }
+          return null;
+        }),
+      };
+
+      const writeTextMock = jest.fn().mockResolvedValue();
+      const windowOriginal = global.window;
+      global.window = {
+        ...global.window,
+        navigator: {
+          clipboard: {
+            writeText: writeTextMock,
+          },
+        },
+      };
+
+      const publicacion = {
+        id: 'pub-compartir-123',
+        titulo: 'Mochila encontrada',
+        tipo: 'HALLAZGO',
+        fecha: '2026-10-25',
+      };
+
+      renderizarDetalleEnContenedor(publicacion, contenedorMock, jest.fn());
+
+      expect(btnCompartirMock.addEventListener).toHaveBeenCalledWith('click', expect.any(Function));
+
+      await listenerCompartir();
+
+      expect(writeTextMock).toHaveBeenCalledTimes(1);
+      const enlaceCopiado = writeTextMock.mock.calls[0][0];
+      expect(enlaceCopiado).toContain('?id=pub-compartir-123');
+      expect(toastMensajeMock.classList.remove).toHaveBeenCalledWith('oculto');
+
+      jest.advanceTimersByTime(3000);
+      expect(toastMensajeMock.classList.add).toHaveBeenCalledWith('oculto');
+
+      global.window = windowOriginal;
+    });
   });
 });
