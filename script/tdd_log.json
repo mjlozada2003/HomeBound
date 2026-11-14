@@ -3115,7 +3115,7 @@
     "testId": 57
   },
   {
-    "commitId": "HEAD",
+    "commitId": "13b2d12f068eac3f3134f7ffaff3f9e9c27d6353",
     "commitName": "fix(script): corregir sintaxis JSON en commit-history y tdd_log tras resolucion de merge",
     "commitTimestamp": 1794628286709,
     "testId": 57
@@ -3215,5 +3215,35 @@
     "commitName": "feat(compartir): implementar boton compartir, copia al portapapeles y mensaje visual (HU-07)",
     "commitTimestamp": 1794630716914,
     "testId": 61
+  },
+  {
+    "numPassedTests": 222,
+    "failedTests": 0,
+    "numTotalTests": 222,
+    "timestamp": 1794630969011,
+    "success": true,
+    "testId": 62
+  },
+  {
+    "numPassedTests": 219,
+    "failedTests": 3,
+    "numTotalTests": 222,
+    "timestamp": 1794631240341,
+    "success": false,
+    "testId": 62
+  },
+  {
+    "numPassedTests": 221,
+    "failedTests": 0,
+    "numTotalTests": 221,
+    "timestamp": 1794631416320,
+    "success": true,
+    "testId": 62
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feature(posts): abrir publicaciones por enlace",
+    "commitTimestamp": 1794631493173,
+    "testId": 62
   }
 ]
