@@ -74,3 +74,47 @@ export function obtenerPublicacionesPaginadas(
     mensajeVacio: null,
   };
 }
+
+export function obtenerPublicacionPorId(listaPublicaciones = [], id) {
+  if(!id || !Array.isArray(listaPublicaciones)) {
+    return null;
+  }
+  return listaPublicaciones.find((pub) => pub.id === id) || null;
+}
+
+export function formatearDetallePublicacion(pub) {
+  if (!pub) {
+    return null;
+  }
+  const whatsapp = pub.contacto?.whatsapp || pub.whatsapp || '';
+  const correo = pub.contacto?.correo || pub.correo || '';
+
+  const enlaceWhatsapp = pub.contacto?.enlaceWhatsapp || (whatsapp ? `https://wa.me/${whatsapp}` : '');
+  const enlaceCorreo = pub.contacto?.enlaceCorreo || (correo ? `mailto:${correo}` : '');
+
+  const ubicacion = typeof pub.ubicacion === 'object' && pub.ubicacion !== null
+    ? (pub.ubicacion.texto || '')
+    : (pub.ubicacion || '');
+  const enlaceMapa = typeof pub.ubicacion === 'object' && pub.ubicacion !== null
+    ? (pub.ubicacion.enlace || '')
+    : (pub.enlaceMapa || '');
+
+  return {
+    id: pub.id,
+    titulo: pub.titulo,
+    descripcion: pub.descripcion || '',
+    categoria: pub.categoria || '',
+    categoriaOtra: pub.categoriaOtra || '',
+    fecha: pub.fecha,
+    tipoTexto: obtenerTextoTipo(pub.tipo),
+    estadoTexto: pub.estado === ESTADOS.APROBADA ? 'Activo' : pub.estado || 'Activo',
+    fotoPrincipal: pub.fotos?.[0] || pub.foto || '',
+    fotos: Array.isArray(pub.fotos) ? pub.fotos : [],
+    whatsapp,
+    enlaceWhatsapp,
+    correo,
+    enlaceCorreo,
+    ubicacion,
+    enlaceMapa,
+  };
+}

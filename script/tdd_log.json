@@ -2354,6 +2354,7 @@
     "testId": 0
   },
   {
+    "commitId": "27ec449176d551484f12734b4f29e549baf099bd",
     "numPassedTests": 117,
     "failedTests": 0,
     "numTotalTests": 117,
@@ -2390,6 +2391,274 @@
     "testId": 0
   },
   {
+    "commitId": "ea0d6d13dff6f739ee898694c7c98de0185d703e",
+    "commitName": "docs: agregar lista de pruebas para HU-12 ver detalle de publicacion",
+    "commitTimestamp": 1794509979306,
+    "testId": 1
+  },
+  {
+    "numPassedTests": 156,
+    "failedTests": 1,
+    "numTotalTests": 157,
+    "timestamp": 1794510270512,
+    "success": false,
+    "testId": 2
+  },
+  {
+    "numPassedTests": 156,
+    "failedTests": 2,
+    "numTotalTests": 158,
+    "timestamp": 1794510423874,
+    "success": false,
+    "testId": 2
+  },
+  {
+    "numPassedTests": 157,
+    "failedTests": 1,
+    "numTotalTests": 158,
+    "timestamp": 1794510542062,
+    "success": false,
+    "testId": 2
+  },
+  {
+    "numPassedTests": 157,
+    "failedTests": 0,
+    "numTotalTests": 157,
+    "timestamp": 1794510590260,
+    "success": true,
+    "testId": 2
+  },
+  {
+    "commitId": "8488f67847656a2e3f51b80e46291cf96957ebf8",
+    "commitName": "feat(publicaciones): obtener detalle de publicacion por id",
+    "commitTimestamp": 1794510760350,
+    "testId": 2
+  },
+  {
+    "numPassedTests": 157,
+    "failedTests": 1,
+    "numTotalTests": 158,
+    "timestamp": 1794510792435,
+    "success": false,
+    "testId": 3
+  },
+  {
+    "numPassedTests": 158,
+    "failedTests": 0,
+    "numTotalTests": 158,
+    "timestamp": 1794510832075,
+    "success": true,
+    "testId": 3
+  },
+  {
+    "commitId": "593fc51a3502c3fbb9a8734ebefe07e6ceb2c3d5",
+    "commitName": "feat(publicaciones): verificar lista de publicaciones si esta vacía o no existe",
+    "commitTimestamp": 1794510887153,
+    "testId": 3
+  },
+  {
+    "numPassedTests": 158,
+    "failedTests": 1,
+    "numTotalTests": 159,
+    "timestamp": 1794511027275,
+    "success": false,
+    "testId": 4
+  },
+  {
+    "numPassedTests": 159,
+    "failedTests": 0,
+    "numTotalTests": 159,
+    "timestamp": 1794511236072,
+    "success": true,
+    "testId": 4
+  },
+  {
+    "commitId": "6cecbb0c25eb1901db7ded9d4077985c0fcca791",
+    "commitName": "feat(publicaciones): formatear detalle de publicaciones por id",
+    "commitTimestamp": 1794511287895,
+    "testId": 4
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 0,
+    "numTotalTests": 160,
+    "timestamp": 1794511368963,
+    "success": true,
+    "testId": 5
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 0,
+    "numTotalTests": 160,
+    "timestamp": 1794511430677,
+    "success": true,
+    "testId": 5
+  },
+  {
+    "commitId": "36e551a3c514dd6fc22649974fa35c03979142d9",
+    "commitName": "test(publicaciones): obtener y formatear detalle de publicacion por id",
+    "commitTimestamp": 1794511452178,
+    "testId": 5
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 1,
+    "numTotalTests": 161,
+    "timestamp": 1794594555111,
+    "success": false,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 1,
+    "numTotalTests": 161,
+    "timestamp": 1794594844289,
+    "success": false,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 1,
+    "numTotalTests": 161,
+    "timestamp": 1794594940075,
+    "success": false,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 160,
+    "failedTests": 1,
+    "numTotalTests": 161,
+    "timestamp": 1794595096222,
+    "success": false,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 161,
+    "failedTests": 0,
+    "numTotalTests": 161,
+    "timestamp": 1794595137727,
+    "success": true,
+    "testId": 6
+  },
+  {
+    "commitId": "4e644941543ac41c2fdf353443745f4727d3e603",
+    "commitName": "test(servicios): buscar publicacion por id en Firestore",
+    "commitTimestamp": 1794595170100,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 162,
+    "failedTests": 0,
+    "numTotalTests": 162,
+    "timestamp": 1794595213209,
+    "success": true,
+    "testId": 7
+  },
+  {
+    "numPassedTests": 163,
+    "failedTests": 0,
+    "numTotalTests": 163,
+    "timestamp": 1794595255886,
+    "success": true,
+    "testId": 7
+  },
+  {
+    "commitId": "2929681e6e88194744090acd7e5a9d4a8b56b739",
+    "commitName": "test(servicios): buscar en colecciones de Firestore",
+    "commitTimestamp": 1794595294831,
+    "testId": 7
+  },
+  {
+    "numPassedTests": 163,
+    "failedTests": 0,
+    "numTotalTests": 163,
+    "timestamp": 1794598829415,
+    "success": false,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 163,
+    "failedTests": 3,
+    "numTotalTests": 166,
+    "timestamp": 1794598928628,
+    "success": false,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 163,
+    "failedTests": 1,
+    "numTotalTests": 164,
+    "timestamp": 1794599848310,
+    "success": false,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 164,
+    "failedTests": 0,
+    "numTotalTests": 164,
+    "timestamp": 1794599952565,
+    "success": true,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 166,
+    "failedTests": 0,
+    "numTotalTests": 166,
+    "timestamp": 1794600338283,
+    "success": true,
+    "testId": 8
+  },
+  {
+    "commitId": "29aeac0443aa1d13a1d57cf947f151cc8981a431",
+    "commitName": "feat: renderizar la informacion completa de la publicacion",
+    "commitTimestamp": 1794600352409,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794600392791,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794600753364,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794602815306,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794602964896,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 168,
+    "failedTests": 0,
+    "numTotalTests": 168,
+    "timestamp": 1794603179371,
+    "success": true,
+    "testId": 9
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat(detalle): implementar vista y navegacion de detalle de publicacion segun diseno visual (HU-12)",
+    "commitTimestamp": 1794603245167,
+    "testId": 9
     "numPassedTests": 122,
     "failedTests": 2,
     "numTotalTests": 124,

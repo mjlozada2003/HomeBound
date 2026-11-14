@@ -1,6 +1,7 @@
 import {
   obtenerPublicacionesPorEstado,
   actualizarEstadoPublicacion,
+  buscarPublicacionPorId,
   obtenerPublicacionesPorAutor,
   actualizarPublicacion,
   borrarPublicacion,
@@ -11,6 +12,7 @@ import {
   deleteDoc,
   doc,
   getCountFromServer,
+  getDoc,
   getDocs,
   updateDoc,
   where
@@ -22,6 +24,7 @@ jest.mock('firebase/firestore', () => ({
   collection: jest.fn(),
   deleteDoc: jest.fn(),
   doc: jest.fn(),
+  getDoc: jest.fn(),
   getCountFromServer: jest.fn(),
   getDocs: jest.fn(),
   query: jest.fn(),
@@ -67,6 +70,52 @@ describe('HU-06 y HU-10: Leer publicaciones desde Firestore', () => {
 
     expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'h1');
     expect(updateDoc).toHaveBeenCalledWith('referencia', { estado: 'APROBADA' });
+  });
+});
+
+describe('HU-12: Buscar publicación por id y colección', () => {
+  it('Debería buscar y devolver una publicacion por id  y colección si existe en Firestore', async () => {
+    doc.mockReturnValue('ref-h1');
+    getDoc.mockResolvedValue({
+      exists: () => true,
+      id: 'h1',
+      data: () => ({ titulo: 'Mochila azul', estado: 'APROBADA' }),
+    });
+
+    const resultado = await buscarPublicacionPorId('h1', 'hallazgos');
+    expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'h1');
+    expect(resultado).toEqual({
+      id: 'h1',
+      titulo: 'Mochila azul',
+      estado: 'APROBADA',
+      coleccion: 'hallazgos',
+    });
+  });
+
+  it('Debería buscar en ambas colecciones si no se indica la colección y devolverla al encontrarla', async () => {
+    doc.mockReturnValue('ref-p1');
+    getDoc
+      .mockResolvedValueOnce({ exists: () => false })
+      .mockResolvedValueOnce({
+        exists: () => true,
+        id: 'p1',
+        data: () => ({ titulo: 'Perro café' }),
+      });
+    const resultado = await buscarPublicacionPorId('p1');
+    expect(doc).toHaveBeenCalledWith(expect.anything(), 'hallazgos', 'p1');
+    expect(doc).toHaveBeenCalledWith(expect.anything(), 'perdidas', 'p1');
+    expect(resultado).toEqual({
+      id: 'p1',
+      titulo: 'Perro café',
+      coleccion: 'perdidas',
+    });
+  });
+
+  it('Debería devolver null si la publicación no existe en ninguna colección o no se pasa id', async () => {
+    getDoc.mockResolvedValue({ exists: () => false });
+    expect(await buscarPublicacionPorId('inexistente')).toBeNull();
+    expect(await buscarPublicacionPorId('')).toBeNull();
+    expect(await buscarPublicacionPorId(null)).toBeNull();
   });
 });
 

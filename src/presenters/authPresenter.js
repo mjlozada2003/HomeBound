@@ -210,6 +210,7 @@ export function iniciarAuthPresenter() {
   const vistaPerdida = document.querySelector('#perdida-seccion');
   const vistaPublicaciones = document.querySelector('#seccion-publicaciones');
   const vistaModeracion = document.querySelector('#seccion-moderacion');
+  const vistaDetalle = document.querySelector('#seccion-detalle');
   const vistaMisPublicaciones = document.querySelector('#seccion-mis-publicaciones');
   const btnVolverPublicaciones = document.querySelector('#btn-volver-publicaciones');
 
@@ -247,6 +248,7 @@ export function iniciarAuthPresenter() {
     vistaHallazgo,
     vistaPerdida,
     vistaPublicaciones,
+    vistaDetalle,
     vistaModeracion,
     vistaMisPublicaciones,
   ];
