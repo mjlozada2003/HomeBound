@@ -7,7 +7,7 @@ import {
   obtenerPublicacionPorId,
   formatearDetallePublicacion,
   esResueltaVigente,
-  //filtrarVisiblesEnLista,
+  filtrarVisiblesEnLista,
   calcularDiasTranscurridos,
 } from './publicaciones.js';
 
@@ -254,5 +254,40 @@ describe('HU-15: Ocultar publicaciones resueltas tras 1 semana (Derivada de HU-0
       expect(esResueltaVigente({ estado: 'RESUELTA' }, hoyRef)).toBe(false);
     });
   });
+  describe('Filtrado de publicaciones visibles en lista (filtrarVisiblesEnLista)', () => {
+    const lista = [
+      { id: '1', titulo: 'Activa 1', estado: 'APROBADA', fecha: '2026-09-01' },
+      { id: '2', titulo: 'Resuelta hoy', estado: 'RESUELTA', fechaResolucion: '2026-11-14' },
+      { id: '3', titulo: 'Resuelta hace 7 días', estado: 'RESUELTA', fechaResolucion: '2026-11-07' },
+      { id: '4', titulo: 'Resuelta hace 8 días', estado: 'RESUELTA', fechaResolucion: '2026-11-06' },
+      { id: '5', titulo: 'Resuelta hace un mes', estado: 'RESUELTA', fechaResolucion: '2026-10-14' },
+      { id: '6', titulo: 'Pendiente', estado: 'Pendiente de revisión', fecha: '2026-11-14' },
+      { id: '7', titulo: 'Rechazada', estado: 'RECHAZADA', fecha: '2026-11-14' },
+    ];
 
+    it('Debería incluir APROBADAS y RESUELTAS de hasta 7 días, excluyendo las demás', () => {
+      const visibles = filtrarVisiblesEnLista(lista, hoyRef);
+      const ids = visibles.map((p) => p.id);
+
+      expect(ids).toContain('1');
+      expect(ids).toContain('2');
+      expect(ids).toContain('3');
+      expect(ids).not.toContain('4');
+      expect(ids).not.toContain('5');
+      expect(ids).not.toContain('6');
+      expect(ids).not.toContain('7');
+      expect(visibles.length).toBe(3);
+    });
+
+    it('En obtenerPublicacionesPaginadas debería excluir resueltas mayores a 1 semana', () => {
+      const resultado = obtenerPublicacionesPaginadas(lista, 1, 10, hoyRef);
+      const ids = resultado.publicaciones.map((p) => p.id);
+
+      expect(ids).toContain('1');
+      expect(ids).toContain('2');
+      expect(ids).toContain('3');
+      expect(ids).not.toContain('4');
+      expect(ids).not.toContain('5');
+    });
+  });
 });

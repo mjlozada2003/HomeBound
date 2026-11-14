@@ -3255,7 +3255,7 @@
     "testId": 63
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b9896ed8ca46fdcd2735285f0a385f9039aa35a6",
     "commitName": "test(posts): apertura directa de publicacion por enlace unico",
     "commitTimestamp": 1794631816782,
     "testId": 63
@@ -3379,5 +3379,19 @@
     "commitName": "test(publicaciones): verificar tiempo de 1 semana para resueltas",
     "commitTimestamp": 1794687755297,
     "testId": 67
+  },
+  {
+    "numPassedTests": 236,
+    "failedTests": 0,
+    "numTotalTests": 236,
+    "timestamp": 1794687797416,
+    "success": true,
+    "testId": 68
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test(publicaciones): verificar visibilidad de 1 semana para resueltas",
+    "commitTimestamp": 1794687866885,
+    "testId": 68
   }
 ]
