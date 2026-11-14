@@ -2578,15 +2578,131 @@
     "testId": 47
   },
   {
-    "commitId": "HEAD",
+    "commitId": "91387dbef83a689c674d01876da761b7d5ee69c8",
     "commitName": "merge: integrar main con el refactor de HU03-04 en HU-09",
     "commitTimestamp": 1794492843333,
     "testId": 48
   },
   {
-    "commitId": "HEAD",
+    "commitId": "a1961645200fcf428d604bbe87856be0421e67ec",
     "commitName": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
     "commitTimestamp": 1794493053820,
     "testId": 49
+  },
+  {
+    "numPassedTests": 177,
+    "failedTests": 2,
+    "numTotalTests": 179,
+    "timestamp": 1794608324886,
+    "success": false,
+    "testId": 50
+  },
+  {
+    "numPassedTests": 179,
+    "failedTests": 0,
+    "numTotalTests": 179,
+    "timestamp": 1794608342090,
+    "success": true,
+    "testId": 50
+  },
+  {
+    "commitId": "3d9286cab4e0f1bcc492250048dd2c072520ea4c",
+    "commitName": "test: HU-08 contar publicaciones activas y resueltas",
+    "commitTimestamp": 1794608350449,
+    "testId": 50
+  },
+  {
+    "numPassedTests": 179,
+    "failedTests": 1,
+    "numTotalTests": 180,
+    "timestamp": 1794608369285,
+    "success": false,
+    "testId": 51
+  },
+  {
+    "numPassedTests": 180,
+    "failedTests": 0,
+    "numTotalTests": 180,
+    "timestamp": 1794608379665,
+    "success": true,
+    "testId": 51
+  },
+  {
+    "commitId": "f0ff718bbdce34859f746097e4e9b95e663f3f7f",
+    "commitName": "test: HU-08 contadores en cero cuando no hay publicaciones",
+    "commitTimestamp": 1794608385917,
+    "testId": 51
+  },
+  {
+    "numPassedTests": 180,
+    "failedTests": 2,
+    "numTotalTests": 182,
+    "timestamp": 1794608403485,
+    "success": false,
+    "testId": 52
+  },
+  {
+    "numPassedTests": 182,
+    "failedTests": 0,
+    "numTotalTests": 182,
+    "timestamp": 1794608419434,
+    "success": true,
+    "testId": 52
+  },
+  {
+    "commitId": "3f515983518ed1b6f31a20c1875081ebbc553be6",
+    "commitName": "test: HU-08 solo el admin puede ver las estadisticas",
+    "commitTimestamp": 1794608427647,
+    "testId": 52
+  },
+  {
+    "numPassedTests": 182,
+    "failedTests": 1,
+    "numTotalTests": 183,
+    "timestamp": 1794608449513,
+    "success": false,
+    "testId": 53
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 0,
+    "numTotalTests": 183,
+    "timestamp": 1794608460500,
+    "success": true,
+    "testId": 53
+  },
+  {
+    "commitId": "ebc1b15658b708fdd05b083b54659c2c940d471c",
+    "commitName": "test: HU-08 consulta de conteo de publicaciones por estado",
+    "commitTimestamp": 1794608466220,
+    "testId": 53
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 0,
+    "numTotalTests": 183,
+    "timestamp": 1794608487871,
+    "success": true,
+    "testId": 54
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: HU-08 consulta comun por campo para buscar y contar publicaciones",
+    "commitTimestamp": 1794608493624,
+    "testId": 54
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 0,
+    "numTotalTests": 183,
+    "timestamp": 1794608535641,
+    "success": true,
+    "testId": 55
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-08 panel de control del admin con contadores de activas y resueltas",
+    "commitTimestamp": 1794608707199,
+    "testId": 55
   }
 ]

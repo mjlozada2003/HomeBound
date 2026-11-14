@@ -912,12 +912,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "91387dbef83a689c674d01876da761b7d5ee69c8",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T14:13:59.000Z",
       "message": "merge: integrar main con el refactor de HU03-04 en HU-09",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/91387dbef83a689c674d01876da761b7d5ee69c8"
     },
     "stats": {
       "total": 2200,
@@ -931,12 +931,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a1961645200fcf428d604bbe87856be0421e67ec",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-12T14:17:31.000Z",
       "message": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/a1961645200fcf428d604bbe87856be0421e67ec"
     },
     "stats": {
       "total": 81,
@@ -946,6 +946,120 @@
     },
     "coverage": 74.06,
     "test_count": 177,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "3d9286cab4e0f1bcc492250048dd2c072520ea4c",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:19:05.000Z",
+      "message": "test: HU-08 contar publicaciones activas y resueltas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/3d9286cab4e0f1bcc492250048dd2c072520ea4c"
+    },
+    "stats": {
+      "total": 43,
+      "additions": 43,
+      "deletions": 0,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.19,
+    "test_count": 179,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "f0ff718bbdce34859f746097e4e9b95e663f3f7f",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:19:43.000Z",
+      "message": "test: HU-08 contadores en cero cuando no hay publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f0ff718bbdce34859f746097e4e9b95e663f3f7f"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 8,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.19,
+    "test_count": 180,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "3f515983518ed1b6f31a20c1875081ebbc553be6",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:20:23.000Z",
+      "message": "test: HU-08 solo el admin puede ver las estadisticas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/3f515983518ed1b6f31a20c1875081ebbc553be6"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 19,
+      "deletions": 1,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.31,
+    "test_count": 182,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "ebc1b15658b708fdd05b083b54659c2c940d471c",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:21:03.000Z",
+      "message": "test: HU-08 consulta de conteo de publicaciones por estado",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ebc1b15658b708fdd05b083b54659c2c940d471c"
+    },
+    "stats": {
+      "total": 46,
+      "additions": 44,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.57,
+    "test_count": 183,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:21:31.000Z",
+      "message": "refactor: HU-08 consulta comun por campo para buscar y contar publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 6,
+      "deletions": 6,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 183,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:25:04.000Z",
+      "message": "feat: HU-08 panel de control del admin con contadores de activas y resueltas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 112,
+      "additions": 110,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 183,
     "failed_tests": 0,
     "conclusion": "success"
   }
