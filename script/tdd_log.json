@@ -2971,7 +2971,7 @@
     "testId": 55
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e1275a19caa3e4c08e16fb982014153a49e8fd29",
     "commitName": "feat: HU-08 panel de control del admin con contadores de activas y resueltas",
     "commitTimestamp": 1794608707199,
     "testId": 55
@@ -3119,5 +3119,11 @@
     "commitName": "fix(script): corregir sintaxis JSON en commit-history y tdd_log tras resolucion de merge",
     "commitTimestamp": 1794628286709,
     "testId": 57
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: agregar lista de pruebas para HU-07 generar link de publicacion",
+    "commitTimestamp": 1794628922245,
+    "testId": 58
   }
 ]
