@@ -3159,7 +3159,7 @@
     "testId": 59
   },
   {
-    "commitId": "HEAD",
+    "commitId": "2db617ec2ebcfedef42478809d2b2d3929d49a3a",
     "commitName": "feat(posts): implementar generacion de enlace de publicacion",
     "commitTimestamp": 1794629729619,
     "testId": 59
@@ -3259,5 +3259,11 @@
     "commitName": "test(posts): apertura directa de publicacion por enlace unico",
     "commitTimestamp": 1794631816782,
     "testId": 63
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: agregar lista de pruebas para HU-15 ocultar publicaciones resueltas tras 1 semana",
+    "commitTimestamp": 1794685349152,
+    "testId": 64
   }
 ]
