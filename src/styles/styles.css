@@ -9,6 +9,7 @@
     --color-input-bg: #F5F3E9;
     --color-input-border: #E8E5D8;
     --color-error: #C94A29;
+    --color-resuelto: #3A6EA5;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -279,6 +280,46 @@ body {
     margin-bottom: 1rem;
 }
 
+/* HU-08: Estadísticas del panel de control */
+.panel-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 1.5rem;
+}
+
+.tarjeta-contador {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-input-border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+}
+
+.contador-titulo {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+}
+
+.contador-total {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 4px 0;
+}
+
+.contador-detalle {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.subtitulo-panel {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
 .tarjeta-descripcion {
     font-size: 0.9rem;
     color: var(--color-text);
@@ -309,6 +350,137 @@ body {
     border: none;
     padding: 0.45rem;
     border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Mis publicaciones (HU-09) */
+.acciones-mis-publicaciones {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.acciones-mis-publicaciones button {
+    flex: 1;
+    border: none;
+    padding: 0.45rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-editar,
+.btn-guardar {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-eliminar {
+    background-color: var(--color-error);
+    color: #fff;
+}
+
+.btn-cancelar {
+    background-color: #e0e0e0;
+    color: var(--color-text);
+}
+
+/* HU-11: Marcar como resuelto */
+.acciones-mis-publicaciones {
+    flex-wrap: wrap;
+}
+
+.btn-resolver {
+    background-color: var(--color-resuelto);
+    color: #fff;
+}
+
+.acciones-mis-publicaciones .btn-resolver {
+    flex-basis: 100%;
+}
+
+.tarjeta-resuelta {
+    border-left: 5px solid var(--color-resuelto);
+}
+
+.tarjeta-resuelta .tarjeta-foto {
+    filter: grayscale(70%);
+}
+
+.tarjeta-resuelta .badge-estado {
+    background-color: var(--color-resuelto);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.tarjeta-resuelta .badge-estado::before {
+    content: '✓ ';
+}
+
+.form-editar label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 6px 0;
+}
+
+.form-editar input,
+.form-editar textarea {
+    width: 100%;
+    margin-top: 4px;
+    padding: 0.45rem;
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    font: inherit;
+}
+
+.mensaje-edicion {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    min-height: 1em;
+}
+
+/* Diálogo de confirmación de la app (HU-09) */
+.dialogo {
+    border: none;
+    border-radius: 16px;
+    padding: 1.5rem;
+    max-width: 420px;
+    width: calc(100% - 32px);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dialogo::backdrop {
+    background-color: rgba(31, 45, 36, 0.45);
+}
+
+.dialogo-titulo {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0 0 0.5rem;
+}
+
+.dialogo-mensaje {
+    margin: 0 0 1.25rem;
+    line-height: 1.4;
+}
+
+.dialogo-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.dialogo-acciones button {
+    border: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 9999px;
     font-weight: 600;
     cursor: pointer;
 }

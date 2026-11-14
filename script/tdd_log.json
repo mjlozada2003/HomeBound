@@ -2206,12 +2206,6 @@
     "testId": 29
   },
   {
-    "commitId": "63dec2b",
-    "commitName": "refactor(auth): centralizar alternancia de vistas en authPresenter",
-    "commitTimestamp": 1794451275158,
-    "testId": 29
-  },
-  {
     "commitId": "d215de6554c5efd8cde72a3399dcf571404d4a2e",
     "commitName": "test(auth): agregar pruebas y modulo de validador de correo compartido",
     "commitTimestamp": 1794449439630,
@@ -2232,6 +2226,12 @@
     "testId": 30
   },
   {
+    "commitId": "63dec2b",
+    "commitName": "refactor(auth): centralizar alternancia de vistas en authPresenter",
+    "commitTimestamp": 1794451275158,
+    "testId": 29
+  },
+  {
     "numPassedTests": 115,
     "failedTests": 0,
     "numTotalTests": 115,
@@ -2247,6 +2247,20 @@
   },
   {
     "numPassedTests": 115,
+    "failedTests": 0,
+    "numTotalTests": 115,
+    "timestamp": 1794454202336,
+    "success": true,
+    "testId": 32
+  },
+  {
+    "commitId": "6b9bb26",
+    "commitName": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
+    "commitTimestamp": 1794454237221,
+    "testId": 32
+  },
+  {
+    "numPassedTests": 115,
     "failedTests": 2,
     "numTotalTests": 117,
     "timestamp": 1794454674674,
@@ -2259,20 +2273,6 @@
     "numTotalTests": 117,
     "timestamp": 1794454737088,
     "success": true,
-    "testId": 32
-  },
-  {
-    "numPassedTests": 115,
-    "failedTests": 0,
-    "numTotalTests": 115,
-    "timestamp": 1794454202336,
-    "success": true,
-    "testId": 32
-  },
-  {
-    "commitId": "6b9bb26",
-    "commitName": "refactor(auth): modularizar iniciarAuthPresenter en submodulos de configuracion",
-    "commitTimestamp": 1794454237221,
     "testId": 32
   },
   {
@@ -2355,6 +2355,37 @@
   },
   {
     "commitId": "27ec449176d551484f12734b4f29e549baf099bd",
+    "numPassedTests": 117,
+    "failedTests": 0,
+    "numTotalTests": 117,
+    "timestamp": 1794490642966,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 117,
+    "failedTests": 5,
+    "numTotalTests": 122,
+    "timestamp": 1794490654884,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 122,
+    "failedTests": 0,
+    "numTotalTests": 122,
+    "timestamp": 1794490668494,
+    "success": true,
+    "testId": 37
+  },
+  {
+    "commitId": "bd9f9e6bf8797d969edaa85d00b9912fa623b151",
+    "commitName": "test: HU-09 solo el autor tiene permiso sobre su publicacion",
+    "commitTimestamp": 1794490681524,
+    "testId": 37
+  },
+  {
+    "commitId": "0766c0291fe83013e662785518d377a859e89c1a",
     "commitName": "merge: integrar main con nueva estructura de carpetas en refactor HU03-04",
     "commitTimestamp": 1794490693002,
     "testId": 0
@@ -2628,5 +2659,441 @@
     "commitName": "feat(detalle): implementar vista y navegacion de detalle de publicacion segun diseno visual (HU-12)",
     "commitTimestamp": 1794603245167,
     "testId": 9
+    "numPassedTests": 122,
+    "failedTests": 2,
+    "numTotalTests": 124,
+    "timestamp": 1794490704966,
+    "success": false,
+    "testId": 38
+  },
+  {
+    "numPassedTests": 124,
+    "failedTests": 0,
+    "numTotalTests": 124,
+    "timestamp": 1794490716436,
+    "success": true,
+    "testId": 38
+  },
+  {
+    "commitId": "dbcdebd070f17280948535407699b66feb84645c",
+    "commitName": "test: HU-09 asignar el autor a una publicacion nueva",
+    "commitTimestamp": 1794490724711,
+    "testId": 38
+  },
+  {
+    "numPassedTests": 124,
+    "failedTests": 4,
+    "numTotalTests": 128,
+    "timestamp": 1794490756819,
+    "success": false,
+    "testId": 39
+  },
+  {
+    "numPassedTests": 128,
+    "failedTests": 0,
+    "numTotalTests": 128,
+    "timestamp": 1794490771225,
+    "success": true,
+    "testId": 39
+  },
+  {
+    "commitId": "5b577ce63af93cbc3e870a73a3009fdc05fee1d2",
+    "commitName": "test: HU-09 listar mis publicaciones con su estado de revision",
+    "commitTimestamp": 1794490783253,
+    "testId": 39
+  },
+  {
+    "numPassedTests": 128,
+    "failedTests": 4,
+    "numTotalTests": 132,
+    "timestamp": 1794490808236,
+    "success": false,
+    "testId": 40
+  },
+  {
+    "numPassedTests": 132,
+    "failedTests": 0,
+    "numTotalTests": 132,
+    "timestamp": 1794490821074,
+    "success": true,
+    "testId": 40
+  },
+  {
+    "commitId": "b82d168374451e87b38c9419f88d0e638e0bb5c5",
+    "commitName": "test: HU-09 editar titulo y descripcion solo si soy el autor",
+    "commitTimestamp": 1794490832828,
+    "testId": 40
+  },
+  {
+    "numPassedTests": 132,
+    "failedTests": 3,
+    "numTotalTests": 135,
+    "timestamp": 1794490861884,
+    "success": false,
+    "testId": 41
+  },
+  {
+    "numPassedTests": 135,
+    "failedTests": 0,
+    "numTotalTests": 135,
+    "timestamp": 1794490873748,
+    "success": true,
+    "testId": 41
+  },
+  {
+    "commitId": "efd48182367947d46ca7bdb5a7d5a9642748038a",
+    "commitName": "test: HU-09 eliminar una publicacion solo si soy el autor",
+    "commitTimestamp": 1794490880451,
+    "testId": 41
+  },
+  {
+    "numPassedTests": 135,
+    "failedTests": 3,
+    "numTotalTests": 138,
+    "timestamp": 1794490906940,
+    "success": false,
+    "testId": 42
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794490921887,
+    "success": true,
+    "testId": 42
+  },
+  {
+    "commitId": "5b2e8fc158d91c591be2c4a637ea784523b4f928",
+    "commitName": "test: HU-09 leer, editar y borrar mis publicaciones en firestore",
+    "commitTimestamp": 1794490931903,
+    "testId": 42
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794490990327,
+    "success": true,
+    "testId": 43
+  },
+  {
+    "commitId": "da3352d347ff434dc8a710f432f66049383d77f0",
+    "commitName": "refactor: HU-09 consulta comun para buscar publicaciones en ambas colecciones",
+    "commitTimestamp": 1794490997725,
+    "testId": 43
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491062224,
+    "success": true,
+    "testId": 44
+  },
+  {
+    "commitId": "9e421328b99a90f97a1c8047c6c20964d30dc0ad",
+    "commitName": "feat: HU-09 guardar el autor al publicar un hallazgo o una perdida",
+    "commitTimestamp": 1794491071322,
+    "testId": 44
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491125315,
+    "success": true,
+    "testId": 45
+  },
+  {
+    "commitId": "7bf163e00b8efd8b5231dbfde30d946f75b6a57c",
+    "commitName": "feat: HU-09 seccion mis publicaciones con su estado de revision",
+    "commitTimestamp": 1794491268075,
+    "testId": 45
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491309798,
+    "success": true,
+    "testId": 46
+  },
+  {
+    "commitId": "9f6238c62f9f95f65b9a6475bc1fdec76589fcc1",
+    "commitName": "feat: HU-09 editar titulo y descripcion desde mis publicaciones",
+    "commitTimestamp": 1794491487018,
+    "testId": 46
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491509229,
+    "success": true,
+    "testId": 47
+  },
+  {
+    "numPassedTests": 138,
+    "failedTests": 0,
+    "numTotalTests": 138,
+    "timestamp": 1794491692963,
+    "success": true,
+    "testId": 47
+  },
+  {
+    "commitId": "fe338bfd4cd642a60e79edf8b63508395311b8fa",
+    "commitName": "feat: HU-09 eliminar una publicacion propia con confirmacion",
+    "commitTimestamp": 1794491699563,
+    "testId": 47
+  },
+  {
+    "commitId": "91387dbef83a689c674d01876da761b7d5ee69c8",
+    "commitName": "merge: integrar main con el refactor de HU03-04 en HU-09",
+    "commitTimestamp": 1794492843333,
+    "testId": 48
+  },
+  {
+    "commitId": "a1961645200fcf428d604bbe87856be0421e67ec",
+    "commitName": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
+    "commitTimestamp": 1794493053820,
+    "testId": 49
+  },
+  {
+    "numPassedTests": 177,
+    "failedTests": 2,
+    "numTotalTests": 179,
+    "timestamp": 1794608324886,
+    "success": false,
+    "testId": 50
+  },
+  {
+    "numPassedTests": 179,
+    "failedTests": 0,
+    "numTotalTests": 179,
+    "timestamp": 1794608342090,
+    "success": true,
+    "testId": 50
+  },
+  {
+    "commitId": "3d9286cab4e0f1bcc492250048dd2c072520ea4c",
+    "commitName": "test: HU-08 contar publicaciones activas y resueltas",
+    "commitTimestamp": 1794608350449,
+    "testId": 50
+  },
+  {
+    "numPassedTests": 179,
+    "failedTests": 1,
+    "numTotalTests": 180,
+    "timestamp": 1794608369285,
+    "success": false,
+    "testId": 51
+  },
+  {
+    "numPassedTests": 180,
+    "failedTests": 0,
+    "numTotalTests": 180,
+    "timestamp": 1794608379665,
+    "success": true,
+    "testId": 51
+  },
+  {
+    "commitId": "f0ff718bbdce34859f746097e4e9b95e663f3f7f",
+    "commitName": "test: HU-08 contadores en cero cuando no hay publicaciones",
+    "commitTimestamp": 1794608385917,
+    "testId": 51
+  },
+  {
+    "numPassedTests": 180,
+    "failedTests": 2,
+    "numTotalTests": 182,
+    "timestamp": 1794608403485,
+    "success": false,
+    "testId": 52
+  },
+  {
+    "numPassedTests": 182,
+    "failedTests": 0,
+    "numTotalTests": 182,
+    "timestamp": 1794608419434,
+    "success": true,
+    "testId": 52
+  },
+  {
+    "commitId": "3f515983518ed1b6f31a20c1875081ebbc553be6",
+    "commitName": "test: HU-08 solo el admin puede ver las estadisticas",
+    "commitTimestamp": 1794608427647,
+    "testId": 52
+  },
+  {
+    "numPassedTests": 182,
+    "failedTests": 1,
+    "numTotalTests": 183,
+    "timestamp": 1794608449513,
+    "success": false,
+    "testId": 53
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 0,
+    "numTotalTests": 183,
+    "timestamp": 1794608460500,
+    "success": true,
+    "testId": 53
+  },
+  {
+    "commitId": "ebc1b15658b708fdd05b083b54659c2c940d471c",
+    "commitName": "test: HU-08 consulta de conteo de publicaciones por estado",
+    "commitTimestamp": 1794608466220,
+    "testId": 53
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 0,
+    "numTotalTests": 183,
+    "timestamp": 1794608487871,
+    "success": true,
+    "testId": 54
+  },
+  {
+    "commitId": "c35febd9df75be7effe0376a87f317e772b178b3",
+    "commitName": "refactor: HU-08 consulta comun por campo para buscar y contar publicaciones",
+    "commitTimestamp": 1794608493624,
+    "testId": 54
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 0,
+    "numTotalTests": 183,
+    "timestamp": 1794608535641,
+    "success": true,
+    "testId": 55
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-08 panel de control del admin con contadores de activas y resueltas",
+    "commitTimestamp": 1794608707199,
+    "testId": 55
+  },
+  {
+    "numPassedTests": 177,
+    "failedTests": 5,
+    "numTotalTests": 182,
+    "timestamp": 1794612401821,
+    "success": false,
+    "testId": 50
+  },
+  {
+    "numPassedTests": 182,
+    "failedTests": 0,
+    "numTotalTests": 182,
+    "timestamp": 1794612421109,
+    "success": true,
+    "testId": 50
+  },
+  {
+    "commitId": "6f97a80b933d1ec491d19bbf2ce7f4a590e54f11",
+    "commitName": "test: HU-11 solo el creador puede marcar como resuelta su publicacion",
+    "commitTimestamp": 1794612435887,
+    "testId": 50
+  },
+  {
+    "numPassedTests": 183,
+    "failedTests": 3,
+    "numTotalTests": 186,
+    "timestamp": 1794612470144,
+    "success": false,
+    "testId": 51
+  },
+  {
+    "numPassedTests": 186,
+    "failedTests": 0,
+    "numTotalTests": 186,
+    "timestamp": 1794612491702,
+    "success": true,
+    "testId": 51
+  },
+  {
+    "commitId": "f9f5957b13363cdca5e38cf6b89b3eea50600a27",
+    "commitName": "test: HU-11 marcar como resuelta cambia el estado de la publicacion",
+    "commitTimestamp": 1794612500211,
+    "testId": 51
+  },
+  {
+    "numPassedTests": 186,
+    "failedTests": 1,
+    "numTotalTests": 187,
+    "timestamp": 1794612518838,
+    "success": false,
+    "testId": 52
+  },
+  {
+    "numPassedTests": 187,
+    "failedTests": 0,
+    "numTotalTests": 187,
+    "timestamp": 1794612529424,
+    "success": true,
+    "testId": 52
+  },
+  {
+    "commitId": "091a7c2237e72f5648de57cd997c4db347233452",
+    "commitName": "test: HU-11 mis publicaciones muestra el estado resuelto",
+    "commitTimestamp": 1794612534785,
+    "testId": 52
+  },
+  {
+    "numPassedTests": 187,
+    "failedTests": 3,
+    "numTotalTests": 190,
+    "timestamp": 1794612555716,
+    "success": false,
+    "testId": 53
+  },
+  {
+    "numPassedTests": 190,
+    "failedTests": 0,
+    "numTotalTests": 190,
+    "timestamp": 1794612570744,
+    "success": true,
+    "testId": 53
+  },
+  {
+    "commitId": "e30b362eb9f610b7258354a32fccd8bf5510842b",
+    "commitName": "test: HU-11 la lista publica muestra las publicaciones resueltas",
+    "commitTimestamp": 1794612582455,
+    "testId": 53
+  },
+  {
+    "numPassedTests": 190,
+    "failedTests": 0,
+    "numTotalTests": 190,
+    "timestamp": 1794612641619,
+    "success": true,
+    "testId": 54
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-11 boton marcar como resuelto en mis publicaciones",
+    "commitTimestamp": 1794612660575,
+    "testId": 54
+  },
+  {
+    "numPassedTests": 190,
+    "failedTests": 0,
+    "numTotalTests": 190,
+    "timestamp": 1794612686002,
+    "success": true,
+    "testId": 55
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: HU-11 la lista publica muestra las publicaciones resueltas con cambio visual",
+    "commitTimestamp": 1794612863437,
+    "testId": 55
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "merge: integrar main con HU-08 en HU-11",
+    "commitTimestamp": 1794615803118,
+    "testId": 56
   }
 ]

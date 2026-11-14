@@ -8,6 +8,16 @@ export function filtrarSoloAprobadas(listaPublicaciones = []) {
   return listaPublicaciones.filter((pub) => pub.estado === ESTADOS.APROBADA);
 }
 
+export function filtrarVisiblesEnLista(listaPublicaciones = []) {
+  return listaPublicaciones.filter(
+    (pub) => pub.estado === ESTADOS.APROBADA || pub.estado === ESTADOS.RESUELTA
+  );
+}
+
+export function obtenerTextoEstadoPublico(estado) {
+  return estado === ESTADOS.RESUELTA ? 'Resuelto' : 'Activo';
+}
+
 export function ordenarPorFechaReciente(listaPublicaciones = []) {
   return [...listaPublicaciones].sort((a, b) => {
     return new Date(b.fecha).getTime() - new Date(a.fecha).getTime();
@@ -27,7 +37,7 @@ export function formatearDatosComunes(pub) {
 export function formatearParaTarjeta(pub) {
   return {
     ...formatearDatosComunes(pub),
-    estadoTexto: 'Activo',
+    estadoTexto: obtenerTextoEstadoPublico(pub.estado),
   };
 }
 
@@ -36,8 +46,8 @@ export function obtenerPublicacionesPaginadas(
   pagina = 1,
   porPagina = 10
 ) {
-  const aprobadas = filtrarSoloAprobadas(listaPublicaciones);
-  const ordenadas = ordenarPorFechaReciente(aprobadas);
+  const visibles = filtrarVisiblesEnLista(listaPublicaciones);
+  const ordenadas = ordenarPorFechaReciente(visibles);
 
   if (ordenadas.length === 0) {
     return {

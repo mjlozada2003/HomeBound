@@ -685,11 +685,32 @@
   },
   {
     "sha": "27ec449176d551484f12734b4f29e549baf099bd",
+    "sha": "bd9f9e6bf8797d969edaa85d00b9912fa623b151",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:37:54.000Z",
+      "message": "test: HU-09 solo el autor tiene permiso sobre su publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/bd9f9e6bf8797d969edaa85d00b9912fa623b151"
+    },
+    "stats": {
+      "total": 50,
+      "additions": 50,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.57,
+    "test_count": 122,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "0766c0291fe83013e662785518d377a859e89c1a",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-12T13:38:06.000Z",
       "message": "merge: integrar main con nueva estructura de carpetas en refactor HU03-04",
       "url": "https://github.com/mjlozada2003/HomeBound/commit/27ec449176d551484f12734b4f29e549baf099bd"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/0766c0291fe83013e662785518d377a859e89c1a"
     },
     "stats": {
       "total": 2213,
@@ -718,6 +739,21 @@
     },
     "coverage": 72.33,
     "test_count": 156,
+    "sha": "dbcdebd070f17280948535407699b66feb84645c",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:38:41.000Z",
+      "message": "test: HU-09 asignar el autor a una publicacion nueva",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/dbcdebd070f17280948535407699b66feb84645c"
+    },
+    "stats": {
+      "total": 24,
+      "additions": 23,
+      "deletions": 1,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.58,
+    "test_count": 124,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -737,6 +773,21 @@
     },
     "coverage": 72.48,
     "test_count": 157,
+    "sha": "5b577ce63af93cbc3e870a73a3009fdc05fee1d2",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:39:39.000Z",
+      "message": "test: HU-09 listar mis publicaciones con su estado de revision",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5b577ce63af93cbc3e870a73a3009fdc05fee1d2"
+    },
+    "stats": {
+      "total": 86,
+      "additions": 85,
+      "deletions": 1,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.69,
+    "test_count": 128,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -756,6 +807,40 @@
     },
     "coverage": 72.63,
     "test_count": 158,
+    "sha": "b82d168374451e87b38c9419f88d0e638e0bb5c5",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:40:25.000Z",
+      "message": "test: HU-09 editar titulo y descripcion solo si soy el autor",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b82d168374451e87b38c9419f88d0e638e0bb5c5"
+    },
+    "stats": {
+      "total": 63,
+      "additions": 62,
+      "deletions": 1,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.81,
+    "test_count": 132,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "efd48182367947d46ca7bdb5a7d5a9642748038a",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:41:17.000Z",
+      "message": "test: HU-09 eliminar una publicacion solo si soy el autor",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/efd48182367947d46ca7bdb5a7d5a9642748038a"
+    },
+    "stats": {
+      "total": 39,
+      "additions": 39,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.89,
+    "test_count": 135,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -775,6 +860,21 @@
     },
     "coverage": 72.99,
     "test_count": 159,
+    "sha": "5b2e8fc158d91c591be2c4a637ea784523b4f928",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:42:07.000Z",
+      "message": "test: HU-09 leer, editar y borrar mis publicaciones en firestore",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/5b2e8fc158d91c591be2c4a637ea784523b4f928"
+    },
+    "stats": {
+      "total": 83,
+      "additions": 81,
+      "deletions": 2,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.97,
+    "test_count": 138,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -794,6 +894,230 @@
     },
     "coverage": 72.87,
     "test_count": 160,
+    "sha": "da3352d347ff434dc8a710f432f66049383d77f0",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:43:15.000Z",
+      "message": "refactor: HU-09 consulta comun para buscar publicaciones en ambas colecciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da3352d347ff434dc8a710f432f66049383d77f0"
+    },
+    "stats": {
+      "total": 22,
+      "additions": 7,
+      "deletions": 15,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.93,
+    "test_count": 138,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "9e421328b99a90f97a1c8047c6c20964d30dc0ad",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:44:27.000Z",
+      "message": "feat: HU-09 guardar el autor al publicar un hallazgo o una perdida",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9e421328b99a90f97a1c8047c6c20964d30dc0ad"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 7,
+      "deletions": 2,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.93,
+    "test_count": 138,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "7bf163e00b8efd8b5231dbfde30d946f75b6a57c",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:47:45.000Z",
+      "message": "feat: HU-09 seccion mis publicaciones con su estado de revision",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/7bf163e00b8efd8b5231dbfde30d946f75b6a57c"
+    },
+    "stats": {
+      "total": 76,
+      "additions": 76,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.93,
+    "test_count": 138,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "9f6238c62f9f95f65b9a6475bc1fdec76589fcc1",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:51:24.000Z",
+      "message": "feat: HU-09 editar titulo y descripcion desde mis publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9f6238c62f9f95f65b9a6475bc1fdec76589fcc1"
+    },
+    "stats": {
+      "total": 167,
+      "additions": 160,
+      "deletions": 7,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.93,
+    "test_count": 138,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "fe338bfd4cd642a60e79edf8b63508395311b8fa",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T13:54:56.000Z",
+      "message": "feat: HU-09 eliminar una publicacion propia con confirmacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/fe338bfd4cd642a60e79edf8b63508395311b8fa"
+    },
+    "stats": {
+      "total": 40,
+      "additions": 40,
+      "deletions": 0,
+      "date": "2026-11-12"
+    },
+    "coverage": 96.93,
+    "test_count": 138,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "91387dbef83a689c674d01876da761b7d5ee69c8",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T14:13:59.000Z",
+      "message": "merge: integrar main con el refactor de HU03-04 en HU-09",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/91387dbef83a689c674d01876da761b7d5ee69c8"
+    },
+    "stats": {
+      "total": 2200,
+      "additions": 1177,
+      "deletions": 1023,
+      "date": "2026-11-12"
+    },
+    "coverage": 74.06,
+    "test_count": 177,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "a1961645200fcf428d604bbe87856be0421e67ec",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-12T14:17:31.000Z",
+      "message": "feat: HU-09 dialogo de confirmacion propio de la app al eliminar",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/a1961645200fcf428d604bbe87856be0421e67ec"
+    },
+    "stats": {
+      "total": 81,
+      "additions": 78,
+      "deletions": 3,
+      "date": "2026-11-12"
+    },
+    "coverage": 74.06,
+    "test_count": 177,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "3d9286cab4e0f1bcc492250048dd2c072520ea4c",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:19:05.000Z",
+      "message": "test: HU-08 contar publicaciones activas y resueltas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/3d9286cab4e0f1bcc492250048dd2c072520ea4c"
+    },
+    "stats": {
+      "total": 43,
+      "additions": 43,
+      "deletions": 0,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.19,
+    "test_count": 179,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "f0ff718bbdce34859f746097e4e9b95e663f3f7f",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:19:43.000Z",
+      "message": "test: HU-08 contadores en cero cuando no hay publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f0ff718bbdce34859f746097e4e9b95e663f3f7f"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 8,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.19,
+    "test_count": 180,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "3f515983518ed1b6f31a20c1875081ebbc553be6",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:20:23.000Z",
+      "message": "test: HU-08 solo el admin puede ver las estadisticas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/3f515983518ed1b6f31a20c1875081ebbc553be6"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 19,
+      "deletions": 1,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.31,
+    "test_count": 182,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "ebc1b15658b708fdd05b083b54659c2c940d471c",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:21:03.000Z",
+      "message": "test: HU-08 consulta de conteo de publicaciones por estado",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ebc1b15658b708fdd05b083b54659c2c940d471c"
+    },
+    "stats": {
+      "total": 46,
+      "additions": 44,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.57,
+    "test_count": 183,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "c35febd9df75be7effe0376a87f317e772b178b3",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:21:31.000Z",
+      "message": "refactor: HU-08 consulta comun por campo para buscar y contar publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/c35febd9df75be7effe0376a87f317e772b178b3"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 6,
+      "deletions": 6,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 183,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -813,6 +1137,21 @@
     },
     "coverage": 71.79,
     "test_count": 161,
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T22:25:04.000Z",
+      "message": "feat: HU-08 panel de control del admin con contadores de activas y resueltas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 112,
+      "additions": 110,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 183,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -832,6 +1171,21 @@
     },
     "coverage": 73.59,
     "test_count": 163,
+    "sha": "6f97a80b933d1ec491d19bbf2ce7f4a590e54f11",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:27:08.000Z",
+      "message": "test: HU-11 solo el creador puede marcar como resuelta su publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/6f97a80b933d1ec491d19bbf2ce7f4a590e54f11"
+    },
+    "stats": {
+      "total": 44,
+      "additions": 44,
+      "deletions": 0,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.12,
+    "test_count": 182,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -851,6 +1205,59 @@
     },
     "coverage": 72.84,
     "test_count": 166,
+    "sha": "f9f5957b13363cdca5e38cf6b89b3eea50600a27",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:28:18.000Z",
+      "message": "test: HU-11 marcar como resuelta cambia el estado de la publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f9f5957b13363cdca5e38cf6b89b3eea50600a27"
+    },
+    "stats": {
+      "total": 41,
+      "additions": 40,
+      "deletions": 1,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.44,
+    "test_count": 186,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "091a7c2237e72f5648de57cd997c4db347233452",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:28:52.000Z",
+      "message": "test: HU-11 mis publicaciones muestra el estado resuelto",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/091a7c2237e72f5648de57cd997c4db347233452"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 12,
+      "deletions": 0,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.44,
+    "test_count": 187,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "e30b362eb9f610b7258354a32fccd8bf5510842b",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:29:38.000Z",
+      "message": "test: HU-11 la lista publica muestra las publicaciones resueltas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e30b362eb9f610b7258354a32fccd8bf5510842b"
+    },
+    "stats": {
+      "total": 44,
+      "additions": 41,
+      "deletions": 3,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 190,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -870,6 +1277,58 @@
     },
     "coverage": 75.33,
     "test_count": 168,
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:30:55.000Z",
+      "message": "feat: HU-11 boton marcar como resuelto en mis publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 106,
+      "additions": 97,
+      "deletions": 9,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 190,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-13T23:34:18.000Z",
+      "message": "feat: HU-11 la lista publica muestra las publicaciones resueltas con cambio visual",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 38,
+      "additions": 36,
+      "deletions": 2,
+      "date": "2026-11-13"
+    },
+    "coverage": 74.63,
+    "test_count": 190,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-14T00:23:21.000Z",
+      "message": "merge: integrar main con HU-08 en HU-11",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 230,
+      "additions": 223,
+      "deletions": 7,
+      "date": "2026-11-14"
+    },
+    "coverage": 75.18,
+    "test_count": 196,
     "failed_tests": 0,
     "conclusion": "success"
   }

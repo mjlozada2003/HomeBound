@@ -1,6 +1,7 @@
 import { crearHallazgo } from '../models/Posts/hallazgo';
 import { crearPerdida, esCategoriaOtro } from '../models/Posts/perdida';
 import { crearEnlaceMapa, obtenerFechaLocal } from '../models/Posts/reglasPublicacion';
+import { asignarAutor } from '../models/Posts/misPublicaciones';
 import { guardarHallazgo } from '../services/hallazgoService';
 import { guardarPerdida } from '../services/perdidaService';
 
@@ -148,7 +149,9 @@ function iniciarFormularioPublicacion({
     campo('resumen').hidden = true;
 
     try {
-      const resultado = await enviar(datos, guardar, ahora());
+      const guardarConAutor = (publicacion) =>
+        guardar(asignarAutor(publicacion, obtenerSesionActiva()));
+      const resultado = await enviar(datos, guardarConAutor, ahora());
       mostrarMensajeEstado(mensajeEstado, resultado.esValido ? 'exito' : 'error', resultado.mensaje);
 
       if (resultado.esValido) {

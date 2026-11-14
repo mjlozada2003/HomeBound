@@ -15,7 +15,11 @@ export async function renderizarListaPublicaciones() {
   if (!contenedorLista) {return;}
 
   try {
-    publicacionesCargadas = await obtenerPublicacionesPorEstado(ESTADOS.APROBADA);
+    const [activas, resueltas] = await Promise.all([
+      obtenerPublicacionesPorEstado(ESTADOS.APROBADA),
+      obtenerPublicacionesPorEstado(ESTADOS.RESUELTA),
+    ]);
+    publicacionesCargadas = [...activas, ...resueltas];
   } catch (error) {
     console.error('Error al cargar publicaciones:', error.message);
     contenedorLista.innerHTML = '<p class="mensaje-vacio">No se pudieron cargar las publicaciones. Intenta de nuevo.</p>';
@@ -51,7 +55,8 @@ function dibujarListaPublicaciones() {
           <span class="badge-tipo">${pub.tipoTexto}</span> |
           <span class="badge-estado">${pub.estadoTexto}</span>
         </p>
-      `
+      `,
+        pub.estadoTexto === 'Resuelto' ? 'tarjeta-resuelta' : ''
       )
     )
     .join('');
