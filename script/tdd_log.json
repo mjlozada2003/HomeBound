@@ -3531,7 +3531,7 @@
     "testId": 76
   },
   {
-    "commitId": "HEAD",
+    "commitId": "381f50529baed7e60e8e86a9ccfd70fbd892cfa4",
     "commitName": "test: deberia crear una clave de borrador por tipo y por usuario",
     "commitTimestamp": 1794879528590,
     "testId": 76
@@ -3553,13 +3553,13 @@
     "testId": 77
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ee80e2b831c3c523cf63503b2b90db15ecb0fb03",
     "commitName": "test: deberia guardar, recuperar y eliminar el borrador en el navegador",
     "commitTimestamp": 1794879582025,
     "testId": 77
   },
   {
-    "commitId": "HEAD",
+    "commitId": "da0458f8cb9366365d1efb70939bb7c6704f726b",
     "commitName": "feat: boton volver en publicar que pregunta si guardar borrador o descartar",
     "commitTimestamp": 1794879830159,
     "testId": 78
@@ -3639,5 +3639,39 @@
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882921831,
     "testId": 82
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: el boton publicar solo se muestra con la sesion iniciada",
+    "commitTimestamp": 1794884586265,
+    "testId": 83
+  },
+  {
+    "numPassedTests": 256,
+    "failedTests": 3,
+    "numTotalTests": 259,
+    "timestamp": 1794884617402,
+    "success": false,
+    "testId": 84
+  },
+  {
+    "numPassedTests": 259,
+    "failedTests": 0,
+    "numTotalTests": 259,
+    "timestamp": 1794884653412,
+    "success": true,
+    "testId": 84
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
+    "commitTimestamp": 1794884714269,
+    "testId": 84
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
+    "commitTimestamp": 1794884807413,
+    "testId": 85
   }
 ]

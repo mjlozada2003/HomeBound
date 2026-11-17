@@ -299,6 +299,8 @@ export function iniciarAuthPresenter() {
   }
 
   function actualizarNavbar(usuario) {
+    // "Publicar" solo se muestra a quien puede publicar (con sesión iniciada).
+    navBtnPublicar.classList.toggle('oculto', !puedeAccederAPublicar(usuario));
     if (usuario) {
       navBtnIngresar.classList.add('oculto');
       navUserInfo.classList.remove('oculto');
