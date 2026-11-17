@@ -2014,12 +2014,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "17e43986f8147d2e77b461a40349e309710cd53d",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:44:47.000Z",
       "message": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/17e43986f8147d2e77b461a40349e309710cd53d"
     },
     "stats": {
       "total": 70,
@@ -2500,6 +2500,25 @@
       "total": 62,
       "additions": 46,
       "deletions": 16,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:01:56.000Z",
+      "message": "style: quitar el credito de iconos del footer",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 1,
+      "additions": 0,
+      "deletions": 1,
       "date": "2026-11-17"
     },
     "coverage": 73.24,

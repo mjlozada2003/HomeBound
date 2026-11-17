@@ -3763,7 +3763,7 @@
     "testId": 86
   },
   {
-    "commitId": "HEAD",
+    "commitId": "17e43986f8147d2e77b461a40349e309710cd53d",
     "commitName": "fix: la contrasena del admin ya no esta en texto plano y el login verifica el hash",
     "commitTimestamp": 1794885957305,
     "testId": 86
@@ -4007,5 +4007,11 @@
     "commitName": "feat: videos de fondo del hero que se turnan con un fundido",
     "commitTimestamp": 1794908528448,
     "testId": 107
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "style: quitar el credito de iconos del footer",
+    "commitTimestamp": 1794909721863,
+    "testId": 108
   }
 ]
