@@ -3565,7 +3565,7 @@
     "testId": 78
   },
   {
-    "commitId": "HEAD",
+    "commitId": "1ab5ab3d172f5b5936caf75a3d4a5beeec594084",
     "commitName": "docs: lista de casos de prueba del borrador de publicacion",
     "commitTimestamp": 1794879881349,
     "testId": 79
@@ -3705,5 +3705,27 @@
     "commitName": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
     "commitTimestamp": 1794885832012,
     "testId": 85
+  },
+  {
+    "numPassedTests": 265,
+    "failedTests": 1,
+    "numTotalTests": 266,
+    "timestamp": 1794885870824,
+    "success": false,
+    "testId": 86
+  },
+  {
+    "numPassedTests": 266,
+    "failedTests": 0,
+    "numTotalTests": 266,
+    "timestamp": 1794885907374,
+    "success": true,
+    "testId": 86
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: la contrasena del admin ya no esta en texto plano y el login verifica el hash",
+    "commitTimestamp": 1794885957305,
+    "testId": 86
   }
 ]

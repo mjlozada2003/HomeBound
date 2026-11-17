@@ -1,6 +1,7 @@
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from './firebase';
-import { CUENTA_ADMIN_PRECONFIGURADA } from '../models/Auth/sesion';
+import { CUENTA_ADMIN_PRECONFIGURADA, autenticarUsuario } from '../models/Auth/sesion';
+import { normalizarCorreo } from '../models/Auth/validadorCorreo';
 
 export async function guardarUsuario(usuario) {
   const correoNormalizado = usuario.correo.trim().toLowerCase();
@@ -67,43 +68,12 @@ export async function registrarUsuarioFirebase(usuario) {
 }
 
 export async function autenticarUsuarioFirebase(correo, password) {
-  const correoNormalizado = correo.trim().toLowerCase();
+  const correoNormalizado = normalizarCorreo(correo);
+  const esAdmin = correoNormalizado === normalizarCorreo(CUENTA_ADMIN_PRECONFIGURADA.correo);
 
-  // Caso especial: Cuenta Admin preconfigurada
-  if (correoNormalizado === CUENTA_ADMIN_PRECONFIGURADA.correo.toLowerCase()) {
-    if (password === CUENTA_ADMIN_PRECONFIGURADA.password) {
-      return {
-        exito: true,
-        mensaje: '¡Inicio de sesión exitoso!',
-        usuario: {
-          nombre: CUENTA_ADMIN_PRECONFIGURADA.nombre,
-          correo: CUENTA_ADMIN_PRECONFIGURADA.correo,
-          rol: CUENTA_ADMIN_PRECONFIGURADA.rol
-        }
-      };
-    }
-    return {
-      exito: false,
-      mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
-    };
-  }
+  // El Admin está preconfigurado en el código: no se consulta Firestore.
+  const usuario = esAdmin ? null : await buscarUsuarioPorCorreo(correoNormalizado);
 
-  const usuario = await buscarUsuarioPorCorreo(correoNormalizado);
-
-  if (!usuario || usuario.password !== password) {
-    return {
-      exito: false,
-      mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.'
-    };
-  }
-
-  return {
-    exito: true,
-    mensaje: '¡Inicio de sesión exitoso!',
-    usuario: {
-      nombre: usuario.nombre,
-      correo: usuario.correo,
-      rol: usuario.rol || 'USER'
-    }
-  };
+  // La decisión (¿la contraseña es correcta?, ¿qué rol tiene?) la toma el modelo.
+  return autenticarUsuario(correoNormalizado, password, usuario ? [usuario] : []);
 }

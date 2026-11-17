@@ -1,5 +1,5 @@
 import { validarCamposLogin } from './sesion';
-import { autenticarUsuario, obtenerSesionActiva, guardarSesion, cerrarSesion, puedeAccederAPublicar, puedeAccederAAdmin } from './sesion';
+import { CUENTA_ADMIN_PRECONFIGURADA, autenticarUsuario, obtenerSesionActiva, guardarSesion, cerrarSesion, puedeAccederAPublicar, puedeAccederAAdmin } from './sesion';
 
 describe('HU-02: Iniciar sesión - Validaciones de campos', () => {
     it('Caso 1 - Escenario 1: Debería rechazar si ambos campos están vacíos', () => {
@@ -44,24 +44,24 @@ describe('HU-02: Caso 2 - Autenticacion de credenciales', () => {
         password: 'password123'
     }];
 
-    it('Caso 2 - Escenario 1: Debería rechazar si el correo no está registrado', () => {
-        const resultado = autenticarUsuario('noexiste@gmail.com','123456', usuariosRegistrados);
+    it('Caso 2 - Escenario 1: Debería rechazar si el correo no está registrado', async () => {
+        const resultado = await autenticarUsuario('noexiste@gmail.com','123456', usuariosRegistrados);
         expect(resultado.exito).toBe(false);
         expect(resultado.mensaje).toEqual('Credenciales incorrectas. Verifica tu correo y contraseña.');
     });
-    it('Escenario 2: Debería rechazar si la contraseña es incorrecta', () => {
-        const resultado = autenticarUsuario('juan@example.com', 'claveerronea', usuariosRegistrados);
+    it('Escenario 2: Debería rechazar si la contraseña es incorrecta', async () => {
+        const resultado = await autenticarUsuario('juan@example.com', 'claveerronea', usuariosRegistrados);
         expect(resultado.exito).toBe(false);
         expect(resultado.mensaje).toEqual('Credenciales incorrectas. Verifica tu correo y contraseña.');
     });
-    it('Escenario 3: Debería autenticar exitosamente cuando el correo y la contraseña coinciden', () => {
-        const resultado = autenticarUsuario('juan@example.com', 'password123', usuariosRegistrados);
+    it('Escenario 3: Debería autenticar exitosamente cuando el correo y la contraseña coinciden', async () => {
+        const resultado = await autenticarUsuario('juan@example.com', 'password123', usuariosRegistrados);
         expect(resultado.exito).toBe(true);
         expect(resultado.mensaje).toEqual('¡Inicio de sesión exitoso!');
         expect(resultado.usuario.nombre).toEqual('Juan Perez');
     });
-    it('Escenario 4: Debería permitir iniciar sesión si el correo se escribió con mayúsculas', () => {
-        const resultado = autenticarUsuario('JUAN@EXAMPLE.COM', 'password123', usuariosRegistrados);
+    it('Escenario 4: Debería permitir iniciar sesión si el correo se escribió con mayúsculas', async () => {
+        const resultado = await autenticarUsuario('JUAN@EXAMPLE.COM', 'password123', usuariosRegistrados);
         expect(resultado.exito).toBe(true);
         expect(resultado.mensaje).toEqual('¡Inicio de sesión exitoso!');
         expect(resultado.usuario.correo).toEqual('juan@example.com');
@@ -69,24 +69,28 @@ describe('HU-02: Caso 2 - Autenticacion de credenciales', () => {
 });
 
 describe('Caso 3: Distinción de roles y Admin preconfigurado', () => {
-    it('Escenario 1: Debería autenticar con la cuenta Admin preconfigurada y asignar rol ADMIN', () => {
-        const resultadoAdmin = autenticarUsuario('admin@homebound.com', 'admin123');
+    it('Escenario 0: No debería guardar la contraseña del Admin en texto plano en el código', () => {
+        expect(CUENTA_ADMIN_PRECONFIGURADA).not.toHaveProperty('password');
+        expect(CUENTA_ADMIN_PRECONFIGURADA.passwordHash).toMatch(/^[0-9a-f]{64}$/);
+    });
+    it('Escenario 1: Debería autenticar con la cuenta Admin preconfigurada y asignar rol ADMIN', async () => {
+        const resultadoAdmin = await autenticarUsuario('admin@homebound.com', 'admin123');
         expect(resultadoAdmin.exito).toBe(true);
         expect(resultadoAdmin.usuario.rol).toEqual('ADMIN');
     });
-    it('Escenario 2: Deberia asignar rol USER a un usuario común registrado', () => {
+    it('Escenario 2: Deberia asignar rol USER a un usuario común registrado', async () => {
         const usuariosRegistrados = [
         {
         nombre: 'Carlos Lopez',
         correo: 'carlos@example.com',
         password: 'password123'
         }];
-        const resultadoUsuario = autenticarUsuario('carlos@example.com', 'password123', usuariosRegistrados);
+        const resultadoUsuario = await autenticarUsuario('carlos@example.com', 'password123', usuariosRegistrados);
         expect(resultadoUsuario.exito).toBe(true);
         expect(resultadoUsuario.usuario.rol).toEqual('USER');
     });
-    it('Escenario 3: Debería rechazar si intentan ingresar como Admin con contraseña incorrecta', () => {
-        const resultado = autenticarUsuario('admin@homebound.com', 'claveIncorrecta');
+    it('Escenario 3: Debería rechazar si intentan ingresar como Admin con contraseña incorrecta', async () => {
+        const resultado = await autenticarUsuario('admin@homebound.com', 'claveIncorrecta');
         expect(resultado.exito).toBe(false);
         expect(resultado.mensaje).toEqual('Credenciales incorrectas. Verifica tu correo y contraseña.');
     });
