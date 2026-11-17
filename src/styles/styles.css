@@ -233,7 +233,7 @@ body {
 /* Vista de Publicaciones (HU-06) */
 .vista-publicaciones {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1280px;
 }
 
 .publicaciones-titulo {
@@ -246,7 +246,7 @@ body {
 
 .grid-publicaciones {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 16px;
     margin-top: 16px;
 }
@@ -260,7 +260,7 @@ body {
 
 .tarjeta-foto {
     width: 100%;
-    height: 140px;
+    height: 180px;
     object-fit: contain;
     background-color: #f5f5f5;
     border-radius: 10px;
@@ -454,7 +454,8 @@ body {
     border-radius: 999px;
     font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     white-space: nowrap;
 }
 
@@ -535,7 +536,8 @@ body {
 
 /* Volver desde publicar y diálogo de borrador */
 .btn-volver-formulario {
-    display: block;
+    display: flex;
+    width: fit-content;
     margin: 0 auto 0.75rem 0;
 }
 
@@ -550,7 +552,34 @@ body {
 
 /* HU-03: estilos exclusivos del formulario de hallazgo */
 .hallazgo-card {
-  max-width: 640px;
+  max-width: 860px;
+  text-align: left;
+}
+
+.hallazgo-card .card-title,
+.hallazgo-card .card-subtitle,
+.hallazgo-card .login-link {
+  text-align: center;
+}
+
+/* Pantallas anchas: los campos cortos del formulario van de a dos */
+@media (min-width: 768px) {
+  #hallazgo-form,
+  #perdida-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.25rem;
+  }
+
+  #hallazgo-form > *,
+  #perdida-form > * {
+    grid-column: 1 / -1;
+  }
+
+  #hallazgo-form > .campo-mitad,
+  #perdida-form > .campo-mitad {
+    grid-column: auto;
+  }
 }
 
 .hallazgo-card .form-group select,
@@ -784,6 +813,8 @@ body {
 }
 
 .badge-categoria {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   background-color: #E2ECE5;
   color: #205A3E;
   padding: 0.35rem 0.95rem;
@@ -956,4 +987,155 @@ body {
   .detalle-columna-foto {
     min-height: 280px;
   }
+}
+
+/* ===== Diseño responsive: aprovechar pantallas anchas y adaptarse al celular ===== */
+
+/* Inicio de sesión y registro: tarjeta dividida con panel de bienvenida */
+.card-auth {
+    max-width: 960px;
+    padding: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.auth-panel {
+    background: linear-gradient(160deg, var(--color-primary) 0%, #1E4D37 100%);
+    color: #fff;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 0.75rem;
+}
+
+.auth-panel-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+}
+
+.auth-panel-titulo {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.auth-panel-texto {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+}
+
+.auth-panel-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.auth-panel-lista li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+}
+
+.auth-panel-lista .icono {
+    width: 22px;
+    height: 22px;
+    padding: 8px;
+    box-sizing: content-box;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+.auth-form {
+    padding: 3rem 2.75rem;
+}
+
+/* En pantallas anchas el logo ya está en el panel verde */
+.card-auth .card-logo {
+    display: none;
+}
+
+/* Tablet y celular */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.75rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .nav-actions {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .user-info {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .card-auth {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .auth-panel {
+        display: none;
+    }
+
+    .card-auth .card-logo {
+        display: inline-block;
+    }
+
+    .auth-form {
+        padding: 2.25rem 1.5rem;
+    }
+
+    .encabezado-moderacion,
+    .encabezado-seccion {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
+
+/* Celular: la marca y los botones de la barra muestran solo su ícono */
+@media (max-width: 480px) {
+    .brand span {
+        display: none;
+    }
+
+    .navbar {
+        flex-wrap: nowrap;
+    }
+
+    .nav-actions,
+    .user-info {
+        flex-wrap: nowrap;
+        gap: 0.4rem;
+    }
+
+    .nav-actions .btn-con-icono {
+        font-size: 0;
+        gap: 0;
+        padding: 0.55rem;
+    }
+
+    .nav-actions .btn-con-icono .icono {
+        width: 20px;
+        height: 20px;
+    }
+
+    #nav-user-name,
+    .etiqueta-admin {
+        display: none;
+    }
+
+    .grid-publicaciones {
+        grid-template-columns: 1fr;
+    }
 }

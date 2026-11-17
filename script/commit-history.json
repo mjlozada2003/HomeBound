@@ -1653,12 +1653,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "b017e141e53a7bded61aa2fdf5ce99bc7b8d47ba",
+    "sha": "ee80e2b831c3c523cf63503b2b90db15ecb0fb03",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:47:48.000Z",
       "message": "chore: agregar la libreria de iconos lucide",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/b017e141e53a7bded61aa2fdf5ce99bc7b8d47ba"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ee80e2b831c3c523cf63503b2b90db15ecb0fb03"
     },
     "stats": {
       "total": 19,
@@ -1672,12 +1672,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "66ece5bc0b7645126e768191522e34c3b63d8b73",
+    "sha": "da0458f8cb9366365d1efb70939bb7c6704f726b",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:51:08.000Z",
       "message": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/66ece5bc0b7645126e768191522e34c3b63d8b73"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da0458f8cb9366365d1efb70939bb7c6704f726b"
     },
     "stats": {
       "total": 79,
@@ -1691,12 +1691,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "1ab5ab3d172f5b5936caf75a3d4a5beeec594084",
+    "sha": "7f9df2b93b5662aff64cd67d5779d8803ddca463",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:02:25.000Z",
       "message": "test: deberia crear el svg de un icono de lucide como texto html",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/1ab5ab3d172f5b5936caf75a3d4a5beeec594084"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/7f9df2b93b5662aff64cd67d5779d8803ddca463"
     },
     "stats": {
       "total": 52,
@@ -1710,12 +1710,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "c5b6e1a56f5fe078bb92ee0a360e7147b2dd6cb1",
+    "sha": "7475c0ad2817cfa5f84f70b89944fdf55c55b5bd",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:05:16.000Z",
       "message": "feat: iconos de lucide en el detalle y formato unico para todos los iconos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/c5b6e1a56f5fe078bb92ee0a360e7147b2dd6cb1"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/7475c0ad2817cfa5f84f70b89944fdf55c55b5bd"
     },
     "stats": {
       "total": 104,
@@ -1729,12 +1729,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "a0415a365381e86776c654904abf0cc247a01839",
+    "sha": "HEAD",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:05:47.000Z",
       "message": "style: flecha de volver con el icono arrow-left de lucide",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/a0415a365381e86776c654904abf0cc247a01839"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
     },
     "stats": {
       "total": 4,
@@ -1816,6 +1816,82 @@
       "total": 25,
       "additions": 14,
       "deletions": 11,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.21,
+    "test_count": 255,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:03:00.000Z",
+      "message": "fix: el boton publicar solo se muestra con la sesion iniciada",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 4,
+      "deletions": 2,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.21,
+    "test_count": 255,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:05:11.000Z",
+      "message": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 41,
+      "additions": 40,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.32,
+    "test_count": 259,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:06:42.000Z",
+      "message": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 23,
+      "additions": 12,
+      "deletions": 11,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.32,
+    "test_count": 259,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:17:29.000Z",
+      "message": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 352,
+      "additions": 284,
+      "deletions": 68,
       "date": "2026-11-17"
     },
     "coverage": 72.21,
@@ -1934,6 +2010,44 @@
     },
     "coverage": 72.76,
     "test_count": 269,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:44:47.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 70,
+      "additions": 56,
+      "deletions": 14,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.32,
+    "test_count": 259,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:56:38.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 422,
+      "additions": 340,
+      "deletions": 82,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.87,
+    "test_count": 273,
     "failed_tests": 0,
     "conclusion": "success"
   }

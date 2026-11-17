@@ -3553,31 +3553,31 @@
     "testId": 77
   },
   {
-    "commitId": "b017e141e53a7bded61aa2fdf5ce99bc7b8d47ba",
+    "commitId": "ee80e2b831c3c523cf63503b2b90db15ecb0fb03",
     "commitName": "test: deberia guardar, recuperar y eliminar el borrador en el navegador",
     "commitTimestamp": 1794879582025,
     "testId": 77
   },
   {
-    "commitId": "66ece5bc0b7645126e768191522e34c3b63d8b73",
+    "commitId": "da0458f8cb9366365d1efb70939bb7c6704f726b",
     "commitName": "feat: boton volver en publicar que pregunta si guardar borrador o descartar",
     "commitTimestamp": 1794879830159,
     "testId": 78
   },
   {
-    "commitId": "1ab5ab3d172f5b5936caf75a3d4a5beeec594084",
+    "commitId": "7f9df2b93b5662aff64cd67d5779d8803ddca463",
     "commitName": "docs: lista de casos de prueba del borrador de publicacion",
     "commitTimestamp": 1794879881349,
     "testId": 79
   },
   {
-    "commitId": "c5b6e1a56f5fe078bb92ee0a360e7147b2dd6cb1",
+    "commitId": "7475c0ad2817cfa5f84f70b89944fdf55c55b5bd",
     "commitName": "chore: agregar la libreria de iconos lucide",
     "commitTimestamp": 1794880071993,
     "testId": 74
   },
   {
-    "commitId": "a0415a365381e86776c654904abf0cc247a01839",
+    "commitId": "HEAD",
     "commitName": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
     "commitTimestamp": 1794880272230,
     "testId": 75
@@ -3639,6 +3639,46 @@
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882921831,
     "testId": 82
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: el boton publicar solo se muestra con la sesion iniciada",
+    "commitTimestamp": 1794884586265,
+    "testId": 83
+  },
+  {
+    "numPassedTests": 256,
+    "failedTests": 3,
+    "numTotalTests": 259,
+    "timestamp": 1794884617402,
+    "success": false,
+    "testId": 84
+  },
+  {
+    "numPassedTests": 259,
+    "failedTests": 0,
+    "numTotalTests": 259,
+    "timestamp": 1794884653412,
+    "success": true,
+    "testId": 84
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
+    "commitTimestamp": 1794884714269,
+    "testId": 84
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
+    "commitTimestamp": 1794884807413,
+    "testId": 85
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
+    "commitTimestamp": 1794885452737,
+    "testId": 83
   },
   {
     "numPassedTests": 256,
@@ -3763,5 +3803,17 @@
     "commitName": "docs: lista de casos de prueba de contrasenas cifradas",
     "commitTimestamp": 1794886105499,
     "testId": 88
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794887091051,
+    "testId": 84
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794887805378,
+    "testId": 85
   }
 ]

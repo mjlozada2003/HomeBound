@@ -2,7 +2,7 @@ import { obtenerPublicacionesPaginadas } from '../models/Posts/publicaciones.js'
 import { ESTADOS } from '../models/Posts/estados.js';
 import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
-import { crearTarjetaHtml } from './plantillaTarjeta';
+import { crearTarjetaHtml, crearEtiquetasHtml } from './plantillaTarjeta';
 import { renderizarDetalleEnContenedor } from './detallePresenter';
 import { obtenerPublicacionPorId } from '../models/Posts/publicaciones.js';
 
@@ -51,10 +51,7 @@ function dibujarListaPublicaciones() {
         pub,
         `
         <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)}</p>
-        <p class="tarjeta-etiquetas">
-          <span class="badge-tipo ${pub.tipoTexto === 'Perdido' ? 'badge-tipo-perdido' : 'badge-tipo-hallazgo'}">${pub.tipoTexto}</span>
-          <span class="badge-estado">${pub.estadoTexto}</span>
-        </p>
+        ${crearEtiquetasHtml(pub)}
       `,
         pub.estadoTexto === 'Resuelto' ? 'tarjeta-resuelta' : ''
       )
