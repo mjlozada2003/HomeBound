@@ -3663,7 +3663,7 @@
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b21b006518cf478bb38ca4d795524f8d2d9113e7",
     "commitName": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
     "commitTimestamp": 1794884714269,
     "testId": 84
@@ -3931,5 +3931,27 @@
     "commitName": "refactor: mover los estilos responsive a su propio archivo",
     "commitTimestamp": 1794902334905,
     "testId": 101
+  },
+  {
+    "numPassedTests": 332,
+    "failedTests": 4,
+    "numTotalTests": 336,
+    "timestamp": 1794902395304,
+    "success": false,
+    "testId": 102
+  },
+  {
+    "numPassedTests": 336,
+    "failedTests": 0,
+    "numTotalTests": 336,
+    "timestamp": 1794902418510,
+    "success": true,
+    "testId": 102
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia calcular el paso activo de como funciona segun el scroll",
+    "commitTimestamp": 1794902437068,
+    "testId": 102
   }
 ]

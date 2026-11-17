@@ -1900,12 +1900,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "b21b006518cf478bb38ca4d795524f8d2d9113e7",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:18:59.000Z",
       "message": "test: deberia cifrar la contrasena con pbkdf2 y una sal",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b21b006518cf478bb38ca4d795524f8d2d9113e7"
     },
     "stats": {
       "total": 47,
@@ -2390,6 +2390,25 @@
     },
     "coverage": 72.94,
     "test_count": 328,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:00:30.000Z",
+      "message": "test: deberia calcular el paso activo de como funciona segun el scroll",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 61,
+      "additions": 61,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.16,
+    "test_count": 336,
     "failed_tests": 0,
     "conclusion": "success"
   }
