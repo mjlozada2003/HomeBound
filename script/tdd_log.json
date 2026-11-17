@@ -3425,7 +3425,7 @@
     "testId": 69
   },
   {
-    "commitId": "HEAD",
+    "commitId": "596c88b9f5206dfa19cf979883ffc7b506a9f975",
     "commitName": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
     "commitTimestamp": 1794689963438,
     "testId": 70
@@ -3469,5 +3469,11 @@
     "commitName": "feat: boton para volver a publicaciones recientes desde mis publicaciones",
     "commitTimestamp": 1794879361334,
     "testId": 74
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "style: flecha de volver con el icono arrow-left de lucide",
+    "commitTimestamp": 1794881150782,
+    "testId": 75
   }
 ]

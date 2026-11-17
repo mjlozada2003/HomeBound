@@ -1463,12 +1463,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "596c88b9f5206dfa19cf979883ffc7b506a9f975",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T21:07:02.000Z",
       "message": "test(lista): deberia calcular la paginacion de publicaciones visibles",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/596c88b9f5206dfa19cf979883ffc7b506a9f975"
     },
     "stats": {
       "total": 36,
@@ -1531,6 +1531,25 @@
       "total": 25,
       "additions": 14,
       "deletions": 11,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T02:05:47.000Z",
+      "message": "style: flecha de volver con el icono arrow-left de lucide",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
       "date": "2026-11-17"
     },
     "coverage": 78.1,
