@@ -131,6 +131,20 @@ export function crearDetalleHtml(detalle) {
        </div>`
     : '';
 
+  // HU-14: el mapa con el marcador solo se muestra si se indicó una ubicación ubicable.
+  const mapaHtml = detalle.mapaEmbebido
+    ? `<div class="detalle-mapa">
+         <iframe
+           id="detalle-mapa"
+           class="detalle-mapa-iframe"
+           src="${escaparHtml(detalle.mapaEmbebido)}"
+           title="Mapa de la ubicación: ${escaparHtml(ubicacionTexto)}"
+           loading="lazy"
+           referrerpolicy="no-referrer-when-downgrade"
+         ></iframe>
+       </div>`
+    : '';
+
   return `
     <div class="detalle-vista">
       <button id="btn-volver-lista" class="btn-volver-detalle" type="button">${iconoSvg(ArrowLeft)}Volver a la lista</button>
@@ -163,6 +177,8 @@ export function crearDetalleHtml(detalle) {
 
             ${filaContacto}
           </div>
+
+          ${mapaHtml}
 
           <button id="btn-compartir" class="btn-compartir" type="button">
             ${iconoSvg(Share2, 'icono-compartir')}
