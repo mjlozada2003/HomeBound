@@ -3805,7 +3805,7 @@
     "testId": 88
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8ad2162e1ae04ea74b4a4d8fb808936e3aeb73d3",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794887091051,
     "testId": 84
@@ -4041,5 +4041,11 @@
     "commitName": "fix: el hero de la landing muestra una publicacion de cada estado",
     "commitTimestamp": 1794910095893,
     "testId": 110
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: quitar el parpadeo al cambiar de paso en como funciona",
+    "commitTimestamp": 1794910626027,
+    "testId": 111
   }
 ]

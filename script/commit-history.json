@@ -2071,12 +2071,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "8ad2162e1ae04ea74b4a4d8fb808936e3aeb73d3",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:54:59.000Z",
       "message": "test: deberia mostrar el mapa en el detalle solo si se indico ubicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/8ad2162e1ae04ea74b4a4d8fb808936e3aeb73d3"
     },
     "stats": {
       "total": 47,
@@ -2557,6 +2557,25 @@
       "total": 20,
       "additions": 12,
       "deletions": 8,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:16:58.000Z",
+      "message": "fix: quitar el parpadeo al cambiar de paso en como funciona",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 24,
+      "additions": 19,
+      "deletions": 5,
       "date": "2026-11-17"
     },
     "coverage": 73.6,

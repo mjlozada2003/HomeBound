@@ -294,9 +294,10 @@ body:has(#vista-inicio:not(.oculto)) .navbar:not(.con-scroll) .btn-panel {
     height: 400vh;
     background-color: var(--fondo);
     color: var(--tinta);
-    transition: background-color 600ms ease, color 600ms ease;
 }
 
+/* El cambio de color se anima solo en la parte fija (una pantalla),
+   no en toda la sección de 4 pantallas: así no se repinta de más. */
 .pasos-fijo {
     position: sticky;
     top: 0;
@@ -304,6 +305,8 @@ body:has(#vista-inicio:not(.oculto)) .navbar:not(.con-scroll) .btn-panel {
     display: flex;
     align-items: center;
     overflow: hidden;
+    background-color: var(--fondo);
+    transition: background-color 600ms ease, color 600ms ease;
 }
 
 .pasos-titulo {
@@ -369,18 +372,27 @@ body:has(#vista-inicio:not(.oculto)) .navbar:not(.con-scroll) .btn-panel {
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 350ms ease, visibility 0s linear 350ms;
+    will-change: opacity;
+    /* Sale rápido y sin moverse: */
+    transition: opacity 160ms ease, visibility 0s linear 160ms;
 }
 
+/* Entra cuando el anterior ya casi se fue, así nunca se ven los dos a medias. */
 .paso.activo {
     opacity: 1;
     visibility: visible;
-    transition: opacity 500ms var(--ease-salida);
+    transition: opacity 450ms var(--ease-salida) 90ms;
 }
 
+/* El texto y el panel vuelven a su posición inicial recién cuando el paso ya no se ve
+   (la espera de 160ms), así el paso que sale no "rebobina" su animación. */
 .paso-texto {
     transform: translateY(24px);
-    transition: transform 650ms var(--ease-salida);
+    transition: transform 0s linear 160ms;
+}
+
+.paso.activo .paso-texto {
+    transition: transform 650ms var(--ease-salida) 90ms;
 }
 
 .paso.activo .paso-texto {
@@ -412,11 +424,12 @@ body:has(#vista-inicio:not(.oculto)) .navbar:not(.con-scroll) .btn-panel {
     background-color: var(--panel);
     overflow: hidden;
     clip-path: inset(6% 6% 6% 6% round 28px);
-    transition: clip-path 700ms var(--ease-salida);
+    transition: clip-path 0s linear 160ms;
 }
 
 .paso.activo .paso-visual {
     clip-path: inset(0 round 28px);
+    transition: clip-path 700ms var(--ease-salida) 90ms;
 }
 
 .paso-numero {
@@ -1119,6 +1132,7 @@ body:has(#vista-inicio:not(.oculto)) .navbar:not(.con-scroll) .btn-panel {
         position: static;
         height: auto;
         overflow: visible;
+        background-color: transparent;
     }
 
     .pasos-titulo {
