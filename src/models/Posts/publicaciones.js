@@ -1,8 +1,10 @@
 import { ESTADOS } from './estados.js';
 import { obtenerFechaLocal } from './reglasPublicacion.js';
 import { crearUrlMapaEmbebido } from './mapa.js';
+import { buscarPublicaciones, MENSAJE_SIN_RESULTADOS } from './busqueda.js';
 
 export const DIAS_LIMITE_RESUELTA = 7;
+export const MENSAJE_SIN_PUBLICACIONES = 'Aún no hay publicaciones';
 
 export function obtenerTextoTipo(tipo) {
   return tipo === 'HALLAZGO' ? 'Encontrado' : 'Perdido';
@@ -76,17 +78,19 @@ export function obtenerPublicacionesPaginadas(
   listaPublicaciones = [],
   pagina = 1,
   porPagina = 10,
-  hoy = new Date()
+  hoy = new Date(),
+  filtros = {}
 ) {
   const visibles = filtrarVisiblesEnLista(listaPublicaciones, hoy);
-  const ordenadas = ordenarPorFechaReciente(visibles);
+  const ordenadas = buscarPublicaciones(visibles, filtros, hoy);
 
   if (ordenadas.length === 0) {
     return {
       publicaciones: [],
       paginaActual: 1,
       totalPaginas: 1,
-      mensajeVacio: 'Aún no hay publicaciones',
+      totalResultados: 0,
+      mensajeVacio: visibles.length === 0 ? MENSAJE_SIN_PUBLICACIONES : MENSAJE_SIN_RESULTADOS,
     };
   }
 
@@ -103,6 +107,7 @@ export function obtenerPublicacionesPaginadas(
     publicaciones: publicacionesPagina,
     paginaActual: paginaSegura,
     totalPaginas,
+    totalResultados: ordenadas.length,
     mensajeVacio: null,
   };
 }

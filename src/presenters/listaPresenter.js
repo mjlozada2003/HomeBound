@@ -5,9 +5,12 @@ import { escaparHtml } from '../models/html';
 import { crearTarjetaHtml, crearEtiquetasHtml } from './plantillaTarjeta';
 import { renderizarDetalleEnContenedor } from './detallePresenter';
 import { obtenerPublicacionPorId } from '../models/Posts/publicaciones.js';
+import { describirResultados, hayFiltrosActivos } from '../models/Posts/busqueda';
+import { iniciarFiltros } from './filtrosPresenter';
 
 let publicacionesCargadas = [];
 let paginaActual = 1;
+let filtrosActuales = {};
 const POR_PAGINA = 10;
 
 export async function renderizarListaPublicaciones() {
@@ -35,12 +38,25 @@ function dibujarListaPublicaciones() {
 
   if (!contenedorLista) {return;}
 
-  const resultado = obtenerPublicacionesPaginadas(publicacionesCargadas, paginaActual, POR_PAGINA);
+  const resultado = obtenerPublicacionesPaginadas(
+    publicacionesCargadas,
+    paginaActual,
+    POR_PAGINA,
+    new Date(),
+    filtrosActuales
+  );
 
   paginaActual = resultado.paginaActual;
 
+  const resumen = document.querySelector('#filtro-resumen');
+  if (resumen) {
+    resumen.textContent = hayFiltrosActivos(filtrosActuales) && !resultado.mensajeVacio
+      ? describirResultados(resultado.totalResultados)
+      : '';
+  }
+
   if (resultado.mensajeVacio) {
-    contenedorLista.innerHTML = `<p id="mensaje-vacio" class="mensaje-vacio">${resultado.mensajeVacio}</p>`;
+    contenedorLista.innerHTML = `<p id="mensaje-vacio" class="mensaje-vacio">${escaparHtml(resultado.mensajeVacio)}</p>`;
     if (contenedorPaginacion) {contenedorPaginacion.innerHTML = '';}
     return;
   }
@@ -89,6 +105,14 @@ export function inicializarListaPresenter() {
   if (contenedorLista) {
     contenedorLista.addEventListener('click', manejarClickLista);
   }
+
+  // HU-05: al aplicar un filtro se vuelve a la primera página y se redibuja la lista.
+  const obtenerFiltros = iniciarFiltros((filtros) => {
+    filtrosActuales = filtros;
+    paginaActual = 1;
+    dibujarListaPublicaciones();
+  });
+  filtrosActuales = obtenerFiltros();
 
   renderizarListaPublicaciones();
 }

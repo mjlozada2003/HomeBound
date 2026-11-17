@@ -118,6 +118,40 @@ describe('HU-06: Ver vista básica de publicaciones recientes', () => {
   });
 });
 
+describe('HU-05: Lista paginada con búsqueda, filtros y orden', () => {
+  const hoy = '2026-10-20';
+  const lista = [
+    { id: '1', titulo: 'Llaves encontradas en la plazuela', fecha: '2026-10-10', tipo: 'HALLAZGO', categoria: 'OBJETO', fotos: [], estado: 'APROBADA' },
+    { id: '2', titulo: 'Perrito mestizo perdido', fecha: '2026-10-15', tipo: 'PERDIDA', categoria: 'MASCOTA', fotos: [], estado: 'APROBADA' },
+    { id: '3', titulo: 'Billetera negra encontrada', fecha: '2026-10-18', tipo: 'HALLAZGO', categoria: 'OBJETO', fotos: [], estado: 'APROBADA' },
+    { id: '4', titulo: 'Perro pendiente', fecha: '2026-10-19', tipo: 'PERDIDA', categoria: 'MASCOTA', fotos: [], estado: 'Pendiente de revisión' },
+  ];
+
+  test('Debería aplicar los filtros solo sobre las publicaciones visibles', () => {
+    const resultado = obtenerPublicacionesPaginadas(lista, 1, 10, hoy, { texto: 'perr' });
+    expect(resultado.publicaciones.map((p) => p.id)).toEqual(['2']);
+  });
+
+  test('Debería filtrar por categoría y ordenar por más recientes', () => {
+    const resultado = obtenerPublicacionesPaginadas(lista, 1, 10, hoy, { categoria: 'OBJETO', orden: 'RECIENTES' });
+    expect(resultado.publicaciones.map((p) => p.id)).toEqual(['3', '1']);
+    expect(resultado.totalResultados).toBe(2);
+  });
+
+  test('Debería mostrar un mensaje en español si los filtros no tienen resultados', () => {
+    const resultado = obtenerPublicacionesPaginadas(lista, 1, 10, hoy, { texto: 'bicicleta' });
+    expect(resultado.publicaciones).toEqual([]);
+    expect(resultado.mensajeVacio).toBe(
+      'No encontramos publicaciones con esos filtros. Prueba con otras palabras o quita algún filtro.'
+    );
+  });
+
+  test('Debería mantener el mensaje \'Aún no hay publicaciones\' si no hay publicaciones visibles', () => {
+    const resultado = obtenerPublicacionesPaginadas([lista[3]], 1, 10, hoy, { texto: 'perro' });
+    expect(resultado.mensajeVacio).toBe('Aún no hay publicaciones');
+  });
+});
+
 describe('HU-12: Ver detalle de publicación', () => {
   const publicacionesDetalleMock = [
     {

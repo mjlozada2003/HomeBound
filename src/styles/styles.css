@@ -1026,153 +1026,78 @@ body {
   height: 280px;
 }
 
-/* ===== Diseño responsive: aprovechar pantallas anchas y adaptarse al celular ===== */
-
-/* Inicio de sesión y registro: tarjeta dividida con panel de bienvenida */
-.card-auth {
-    max-width: 960px;
-    padding: 0;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* HU-05: Buscar por filtro y ordenar */
+.filtros-publicaciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.75rem 1rem;
+  align-items: end;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-input-border);
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.auth-panel {
-    background: linear-gradient(160deg, var(--color-primary) 0%, #1E4D37 100%);
-    color: #fff;
-    padding: 3rem 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    gap: 0.75rem;
+.filtro-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
 }
 
-.auth-panel-logo {
-    width: 64px;
-    height: 64px;
-    border-radius: 14px;
+.filtro-campo[hidden] {
+  display: none;
 }
 
-.auth-panel-titulo {
-    font-size: 2rem;
-    font-weight: 800;
+.filtro-busqueda {
+  grid-column: 1 / -1;
 }
 
-.auth-panel-texto {
-    font-size: 1.05rem;
-    opacity: 0.9;
-    margin-bottom: 0.75rem;
+.filtro-campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
 }
 
-.auth-panel-lista {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
+.filtro-campo input,
+.filtro-campo select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--color-input-border);
+  background-color: var(--color-input-bg);
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s;
 }
 
-.auth-panel-lista li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-weight: 600;
+.filtro-campo input:focus,
+.filtro-campo select:focus {
+  border-color: var(--color-primary);
+  background-color: #FFFFFF;
 }
 
-.auth-panel-lista .icono {
-    width: 22px;
-    height: 22px;
-    padding: 8px;
-    box-sizing: content-box;
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
+.filtro-limpiar {
+  justify-self: start;
+  align-self: end;
 }
 
-.auth-form {
-    padding: 3rem 2.75rem;
+.filtro-limpiar[hidden] {
+  display: none;
 }
 
-/* En pantallas anchas el logo ya está en el panel verde */
-.card-auth .card-logo {
-    display: none;
+.filtro-resumen {
+  min-height: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
 }
 
-/* Tablet y celular */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0.75rem 1rem;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-    }
-
-    .nav-actions {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .user-info {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .card-auth {
-        grid-template-columns: 1fr;
-        max-width: 480px;
-    }
-
-    .auth-panel {
-        display: none;
-    }
-
-    .card-auth .card-logo {
-        display: inline-block;
-    }
-
-    .auth-form {
-        padding: 2.25rem 1.5rem;
-    }
-
-    .encabezado-moderacion,
-    .encabezado-seccion {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-    }
-}
-
-/* Celular: la marca y los botones de la barra muestran solo su ícono */
-@media (max-width: 480px) {
-    .brand span {
-        display: none;
-    }
-
-    .navbar {
-        flex-wrap: nowrap;
-    }
-
-    .nav-actions,
-    .user-info {
-        flex-wrap: nowrap;
-        gap: 0.4rem;
-    }
-
-    .nav-actions .btn-con-icono {
-        font-size: 0;
-        gap: 0;
-        padding: 0.55rem;
-    }
-
-    .nav-actions .btn-con-icono .icono {
-        width: 20px;
-        height: 20px;
-    }
-
-    #nav-user-name,
-    .etiqueta-admin {
-        display: none;
-    }
-
-    .grid-publicaciones {
-        grid-template-columns: 1fr;
-    }
+.grid-publicaciones > .mensaje-vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--color-text-muted);
 }
