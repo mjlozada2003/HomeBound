@@ -3629,7 +3629,7 @@
     "testId": 76
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b8eaaa3dff5bd33392144903f2c4f43e93a319d2",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json\n#\tsrc/presenter.js",
     "commitTimestamp": 1794882116289,
     "testId": 81
@@ -3729,5 +3729,11 @@
     "commitName": "feat: buscar publicaciones por texto, categoria, fecha y ordenarlas",
     "commitTimestamp": 1794889273202,
     "testId": 93
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: aplicar filtros en la lista paginada y mensaje sin resultados en español",
+    "commitTimestamp": 1794889304818,
+    "testId": 94
   }
 ]

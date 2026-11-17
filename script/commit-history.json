@@ -1843,12 +1843,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "b8eaaa3dff5bd33392144903f2c4f43e93a319d2",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:05:11.000Z",
       "message": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b8eaaa3dff5bd33392144903f2c4f43e93a319d2"
     },
     "stats": {
       "total": 41,
@@ -2025,6 +2025,25 @@
       "total": 214,
       "additions": 214,
       "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.51,
+    "test_count": 314,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-17T04:21:39.000Z",
+      "message": "feat: aplicar filtros en la lista paginada y mensaje sin resultados en español",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 45,
+      "additions": 42,
+      "deletions": 3,
       "date": "2026-11-17"
     },
     "coverage": 72.51,
