@@ -9,8 +9,8 @@ import { abrirPublicacionPorEnlace } from './presenters/enlaceNavegacion';
 function iniciarAplicacion() {
   // Primero los íconos: createIcons reemplaza los <i> por <svg> y los presenters usan esos nodos.
   iniciarIconos();
-  iniciarAuthPresenter();
-  iniciarPostPresenter();
+  const navegacion = iniciarAuthPresenter();
+  iniciarPostPresenter({ alVolver: navegacion.mostrarPublicaciones });
   inicializarListaPresenter();
   inicializarModeracionPresenter();
   inicializarMisPublicacionesPresenter();

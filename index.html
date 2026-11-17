@@ -131,6 +131,7 @@
 
     <!-- VISTA 5: PUBLICAR HALLAZGO -->
       <section id="hallazgo-seccion" class="card hallazgo-card oculto" aria-labelledby="hallazgo-titulo">
+        <button type="button" id="hallazgo-volver" class="btn-ingresar btn-volver-formulario btn-con-icono"><i data-lucide="arrow-left"></i>Volver</button>
         <h1 id="hallazgo-titulo" class="card-title">Publicar hallazgo</h1>
         <p class="card-subtitle">Ayuda a que un objeto o una mascota vuelva a casa.</p>
 
@@ -252,6 +253,7 @@
   class="card hallazgo-card oculto"
   aria-labelledby="perdida-titulo"
 >
+  <button type="button" id="perdida-volver" class="btn-ingresar btn-volver-formulario btn-con-icono"><i data-lucide="arrow-left"></i>Volver</button>
   <h1 id="perdida-titulo" class="card-title">Publicar pérdida</h1>
 
   <p class="card-subtitle">
@@ -398,6 +400,22 @@
         <div class="dialogo-acciones">
           <button value="cancelar" class="btn-cancelar">Cancelar</button>
           <button id="dialogo-confirmar" value="confirmar" class="btn-eliminar">Aceptar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Diálogo al salir de publicar con datos sin enviar -->
+    <dialog id="dialogo-salir-publicar" class="dialogo" aria-labelledby="dialogo-salir-titulo">
+      <form method="dialog">
+        <h3 id="dialogo-salir-titulo" class="dialogo-titulo">¿Salir sin publicar?</h3>
+        <p class="dialogo-mensaje">
+          Tienes datos sin enviar. Puedes guardarlos como borrador para terminar después
+          (las fotos tendrás que elegirlas de nuevo) o descartarlos.
+        </p>
+        <div class="dialogo-acciones dialogo-acciones-salida">
+          <button value="cancelar" class="btn-cancelar">Seguir editando</button>
+          <button value="descartar" class="btn-eliminar">Descartar</button>
+          <button value="borrador" class="btn-borrador">Guardar borrador</button>
         </div>
       </form>
     </dialog>

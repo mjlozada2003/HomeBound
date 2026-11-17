@@ -3465,10 +3465,110 @@
     "testId": 73
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e9dd23ff8ed7b4a5384ee075cadb51d02eb0a034",
     "commitName": "feat: boton para volver a publicaciones recientes desde mis publicaciones",
     "commitTimestamp": 1794879361334,
     "testId": 74
+  },
+  {
+    "numPassedTests": 242,
+    "failedTests": 2,
+    "numTotalTests": 244,
+    "timestamp": 1794879412106,
+    "success": false,
+    "testId": 74
+  },
+  {
+    "numPassedTests": 244,
+    "failedTests": 0,
+    "numTotalTests": 244,
+    "timestamp": 1794879427571,
+    "success": true,
+    "testId": 74
+  },
+  {
+    "commitId": "671c87e665a03951328ac64fcbb9dd6ace4f0620",
+    "commitName": "test: deberia detectar si el formulario de publicar tiene datos ingresados",
+    "commitTimestamp": 1794879437203,
+    "testId": 74
+  },
+  {
+    "numPassedTests": 245,
+    "failedTests": 1,
+    "numTotalTests": 246,
+    "timestamp": 1794879459931,
+    "success": false,
+    "testId": 75
+  },
+  {
+    "numPassedTests": 246,
+    "failedTests": 0,
+    "numTotalTests": 246,
+    "timestamp": 1794879480028,
+    "success": true,
+    "testId": 75
+  },
+  {
+    "commitId": "a0b388ecbf8149179ace3f8c15fc5e9a79c53fa4",
+    "commitName": "test: deberia crear el borrador de la publicacion sin las fotos",
+    "commitTimestamp": 1794879487736,
+    "testId": 75
+  },
+  {
+    "numPassedTests": 246,
+    "failedTests": 2,
+    "numTotalTests": 248,
+    "timestamp": 1794879507656,
+    "success": false,
+    "testId": 76
+  },
+  {
+    "numPassedTests": 248,
+    "failedTests": 0,
+    "numTotalTests": 248,
+    "timestamp": 1794879521440,
+    "success": true,
+    "testId": 76
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear una clave de borrador por tipo y por usuario",
+    "commitTimestamp": 1794879528590,
+    "testId": 76
+  },
+  {
+    "numPassedTests": 248,
+    "failedTests": 4,
+    "numTotalTests": 252,
+    "timestamp": 1794879550640,
+    "success": false,
+    "testId": 77
+  },
+  {
+    "numPassedTests": 252,
+    "failedTests": 0,
+    "numTotalTests": 252,
+    "timestamp": 1794879575245,
+    "success": true,
+    "testId": 77
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia guardar, recuperar y eliminar el borrador en el navegador",
+    "commitTimestamp": 1794879582025,
+    "testId": 77
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: boton volver en publicar que pregunta si guardar borrador o descartar",
+    "commitTimestamp": 1794879830159,
+    "testId": 78
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: lista de casos de prueba del borrador de publicacion",
+    "commitTimestamp": 1794879881349,
+    "testId": 79
   },
   {
     "commitId": "HEAD",
@@ -3518,8 +3618,26 @@
   },
   {
     "commitId": "HEAD",
+    "commitName": "style: flecha de volver con el icono arrow-left de lucide",
+    "commitTimestamp": 1794881165908,
+    "testId": 80
+  },
+  {
+    "commitId": "HEAD",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/volver-desde-mis-publicaciones\n\n# Conflicts:\n#\tindex.html\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882073514,
     "testId": 76
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json\n#\tsrc/presenter.js",
+    "commitTimestamp": 1794882116289,
+    "testId": 81
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794882921831,
+    "testId": 82
   }
 ]

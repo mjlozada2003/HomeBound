@@ -4,6 +4,9 @@ import { crearEnlaceMapa, obtenerFechaLocal } from '../models/Posts/reglasPublic
 import { asignarAutor } from '../models/Posts/misPublicaciones';
 import { guardarHallazgo } from '../services/hallazgoService';
 import { guardarPerdida } from '../services/perdidaService';
+import { tieneDatosIngresados, crearBorrador, claveBorrador } from '../models/Posts/borrador';
+import { guardarBorrador, obtenerBorrador, eliminarBorrador } from '../services/borradorService';
+import { pedirDecisionSalida } from './dialogoConfirmacion';
 
 import {
   obtenerSesionActiva,
@@ -87,6 +90,27 @@ function mostrarResumen(campo, publicacion) {
   campo('resumen').hidden = false;
 }
 
+// Campo del borrador -> sufijo del id del input en el formulario.
+const CAMPOS_DEL_BORRADOR = {
+  categoria: 'categoria',
+  titulo: 'nombre',
+  descripcion: 'descripcion',
+  fecha: 'fecha',
+  ubicacion: 'ubicacion',
+  whatsapp: 'whatsapp',
+  correo: 'correo',
+  categoriaOtra: 'categoria-otra'
+};
+
+function rellenarFormulario(campo, borrador) {
+  for (const [clave, sufijo] of Object.entries(CAMPOS_DEL_BORRADOR)) {
+    const input = campo(sufijo);
+    if (input && typeof borrador[clave] === 'string') {
+      input.value = borrador[clave];
+    }
+  }
+}
+
 function leerDatosComunes(campo) {
   return {
     categoria: campo('categoria').value,
@@ -108,7 +132,8 @@ function iniciarFormularioPublicacion({
   ahora,
   mensajes,
   leerDatosAdicionales = () => ({}),
-  alReiniciarFormulario = () => {}
+  alReiniciarFormulario = () => {},
+  alVolver = () => {}
 }) {
   const formulario = document.querySelector('#' + prefijo + '-form');
   if (!formulario) {
@@ -127,8 +152,58 @@ function iniciarFormularioPublicacion({
   actualizarFechaMaxima();
   formulario.addEventListener('focusin', actualizarFechaMaxima);
 
-  campo('ubicacion').addEventListener('input', () => {
+  const actualizarEnlaceMapa = () => {
     campo('maps').href = crearEnlaceMapa(campo('ubicacion').value) || ENLACE_GOOGLE_MAPS;
+  };
+  campo('ubicacion').addEventListener('input', actualizarEnlaceMapa);
+
+  const leerDatos = () => ({ ...leerDatosComunes(campo), ...leerDatosAdicionales(campo) });
+  const claveDelUsuario = () => claveBorrador(prefijo, obtenerSesionActiva());
+
+  const limpiarFormulario = () => {
+    formulario.reset();
+    alReiniciarFormulario();
+    campo('maps').href = ENLACE_GOOGLE_MAPS;
+    mostrarMensajeEstado(mensajeEstado, '', '');
+    campo('resumen').hidden = true;
+  };
+
+  // Si el usuario tiene un borrador y el formulario está vacío, lo vuelve a llenar.
+  const restaurarBorrador = () => {
+    if (!obtenerSesionActiva() || tieneDatosIngresados(leerDatos())) {
+      return;
+    }
+    const borrador = obtenerBorrador(claveDelUsuario());
+    if (!borrador) {
+      return;
+    }
+    rellenarFormulario(campo, borrador);
+    alReiniciarFormulario();
+    actualizarEnlaceMapa();
+    mostrarMensajeEstado(
+      mensajeEstado,
+      'exito',
+      'Recuperamos tu borrador. Vuelve a elegir las fotos antes de enviar.'
+    );
+  };
+
+  restaurarBorrador();
+
+  campo('volver').addEventListener('click', async () => {
+    const datos = leerDatos();
+    if (!tieneDatosIngresados(datos)) {
+      alVolver();
+      return;
+    }
+    const decision = await pedirDecisionSalida();
+    if (decision === 'borrador') {
+      guardarBorrador(claveDelUsuario(), crearBorrador(datos));
+      alVolver();
+    } else if (decision === 'descartar') {
+      eliminarBorrador(claveDelUsuario());
+      limpiarFormulario();
+      alVolver();
+    }
   });
 
   formulario.addEventListener('submit', async (evento) => {
@@ -141,7 +216,7 @@ function iniciarFormularioPublicacion({
       return;
     }
 
-    const datos = { ...leerDatosComunes(campo), ...leerDatosAdicionales(campo) };
+    const datos = leerDatos();
 
     estaEnviando = true;
     botonEnviar.disabled = true;
@@ -155,6 +230,7 @@ function iniciarFormularioPublicacion({
       mostrarMensajeEstado(mensajeEstado, resultado.esValido ? 'exito' : 'error', resultado.mensaje);
 
       if (resultado.esValido) {
+        eliminarBorrador(claveDelUsuario());
         mostrarResumen(campo, resultado.publicacion);
         formulario.reset();
         alReiniciarFormulario();
@@ -167,21 +243,29 @@ function iniciarFormularioPublicacion({
     }
   });
 
-  return { campo, actualizarFechaMaxima };
+  return { campo, actualizarFechaMaxima, restaurarBorrador };
 }
 
-function iniciarFormularioHallazgo(guardar, ahora) {
-  iniciarFormularioPublicacion({
+function iniciarFormularioHallazgo(guardar, ahora, alVolver) {
+  const formularioHallazgo = iniciarFormularioPublicacion({
     prefijo: 'hallazgo',
     enviar: enviarHallazgo,
     guardar,
     ahora,
-    mensajes: MENSAJES_HALLAZGO
+    mensajes: MENSAJES_HALLAZGO,
+    alVolver
   });
+
+  // Al entrar a publicar (por ejemplo, después de iniciar sesión) se recupera el borrador.
+  if (formularioHallazgo) {
+    document
+      .querySelector('#nav-btn-publicar')
+      .addEventListener('click', formularioHallazgo.restaurarBorrador);
+  }
 }
 
 function iniciarNavegacionEntreFormularios(formularioPerdida) {
-  const { campo, actualizarFechaMaxima } = formularioPerdida;
+  const { campo, actualizarFechaMaxima, restaurarBorrador } = formularioPerdida;
 
   document.querySelector('#hallazgo-ir-perdida').addEventListener('click', () => {
     if (!puedeAccederAPublicar(obtenerSesionActiva())) {
@@ -191,6 +275,7 @@ function iniciarNavegacionEntreFormularios(formularioPerdida) {
     document.querySelector('#hallazgo-seccion').classList.add('oculto');
     campo('seccion').classList.remove('oculto');
     actualizarFechaMaxima();
+    restaurarBorrador();
     campo('categoria').focus();
   });
 
@@ -199,7 +284,7 @@ function iniciarNavegacionEntreFormularios(formularioPerdida) {
   });
 }
 
-function iniciarFormularioPerdida(guardar, ahora) {
+function iniciarFormularioPerdida(guardar, ahora, alVolver) {
   const campo = (nombre) => document.querySelector('#perdida-' + nombre);
 
   const actualizarCategoriaOtra = () => {
@@ -219,7 +304,8 @@ function iniciarFormularioPerdida(guardar, ahora) {
     ahora,
     mensajes: MENSAJES_PERDIDA,
     leerDatosAdicionales: () => ({ categoriaOtra: campo('categoria-otra').value }),
-    alReiniciarFormulario: actualizarCategoriaOtra
+    alReiniciarFormulario: actualizarCategoriaOtra,
+    alVolver
   });
 
   if (!formularioPerdida) {
@@ -233,8 +319,9 @@ function iniciarFormularioPerdida(guardar, ahora) {
 
 export function iniciarPostPresenter({
   guardar = guardarHallazgo,
-  ahora = () => new Date()
+  ahora = () => new Date(),
+  alVolver = () => {}
 } = {}) {
-  iniciarFormularioPerdida(guardarPerdida, ahora);
-  iniciarFormularioHallazgo(guardar, ahora);
+  iniciarFormularioPerdida(guardarPerdida, ahora, alVolver);
+  iniciarFormularioHallazgo(guardar, ahora, alVolver);
 }
