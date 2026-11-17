@@ -303,7 +303,8 @@ body {
 }
 
 /* Estilos Bandeja de Moderación (HU-10) */
-.encabezado-moderacion {
+.encabezado-moderacion,
+.encabezado-seccion {
     display: flex;
     justify-content: space-between;
     align-items: center;

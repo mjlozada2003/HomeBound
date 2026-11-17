@@ -123,7 +123,7 @@ function configurarNavegacionNavbar(elementos, callbacks) {
     linkIrRegistro,
     brandLogo,
     navBtnLogout,
-    btnVolverPublicaciones,
+    botonesVolverPublicaciones,
     navBtnPanel,
     navBtnPublicar,
     navBtnMisPublicaciones,
@@ -171,11 +171,10 @@ function configurarNavegacionNavbar(elementos, callbacks) {
       mostrarLogin();
     });
   }
-  if (btnVolverPublicaciones) {
-    btnVolverPublicaciones.addEventListener('click', () => {
-      mostrarPublicaciones();
-    });
-  }
+  // Todos los botones "Volver" (Panel de control y Mis publicaciones) llevan a la lista pública.
+  botonesVolverPublicaciones.forEach((boton) => {
+    boton.addEventListener('click', () => mostrarPublicaciones());
+  });
   if (navBtnPanel) {
     navBtnPanel.addEventListener('click', () => {
       const sesionActual = obtenerSesionActiva();
@@ -212,7 +211,7 @@ export function iniciarAuthPresenter() {
   const vistaModeracion = document.querySelector('#seccion-moderacion');
   const vistaDetalle = document.querySelector('#seccion-detalle');
   const vistaMisPublicaciones = document.querySelector('#seccion-mis-publicaciones');
-  const btnVolverPublicaciones = document.querySelector('#btn-volver-publicaciones');
+  const botonesVolverPublicaciones = document.querySelectorAll('.btn-volver-publicaciones');
 
   // Elementos del Navbar
   const navBtnPanel = document.querySelector('#nav-btn-panel');
@@ -338,7 +337,7 @@ export function iniciarAuthPresenter() {
       linkIrRegistro,
       brandLogo,
       navBtnLogout,
-      btnVolverPublicaciones,
+      botonesVolverPublicaciones,
       navBtnPanel,
       navBtnPublicar,
       navBtnMisPublicaciones,
