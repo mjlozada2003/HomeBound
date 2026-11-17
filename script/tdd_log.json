@@ -3617,7 +3617,7 @@
     "testId": 75
   },
   {
-    "commitId": "HEAD",
+    "commitId": "06b11a88944d1ab475161034be235db9ce26fb31",
     "commitName": "style: flecha de volver con el icono arrow-left de lucide",
     "commitTimestamp": 1794881165908,
     "testId": 80
@@ -3676,6 +3676,142 @@
   },
   {
     "commitId": "HEAD",
+    "commitName": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
+    "commitTimestamp": 1794885452737,
+    "testId": 83
+  },
+  {
+    "numPassedTests": 256,
+    "failedTests": 2,
+    "numTotalTests": 258,
+    "timestamp": 1794885497984,
+    "success": false,
+    "testId": 83
+  },
+  {
+    "numPassedTests": 258,
+    "failedTests": 0,
+    "numTotalTests": 258,
+    "timestamp": 1794885529054,
+    "success": true,
+    "testId": 83
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia cifrar la contrasena con pbkdf2 y una sal",
+    "commitTimestamp": 1794885543295,
+    "testId": 83
+  },
+  {
+    "numPassedTests": 258,
+    "failedTests": 2,
+    "numTotalTests": 260,
+    "timestamp": 1794885570830,
+    "success": false,
+    "testId": 84
+  },
+  {
+    "numPassedTests": 260,
+    "failedTests": 0,
+    "numTotalTests": 260,
+    "timestamp": 1794885679254,
+    "success": true,
+    "testId": 84
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
+    "commitTimestamp": 1794885694104,
+    "testId": 84
+  },
+  {
+    "numPassedTests": 262,
+    "failedTests": 3,
+    "numTotalTests": 265,
+    "timestamp": 1794885757544,
+    "success": false,
+    "testId": 85
+  },
+  {
+    "numPassedTests": 265,
+    "failedTests": 0,
+    "numTotalTests": 265,
+    "timestamp": 1794885791540,
+    "success": true,
+    "testId": 85
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
+    "commitTimestamp": 1794885832012,
+    "testId": 85
+  },
+  {
+    "numPassedTests": 265,
+    "failedTests": 1,
+    "numTotalTests": 266,
+    "timestamp": 1794885870824,
+    "success": false,
+    "testId": 86
+  },
+  {
+    "numPassedTests": 266,
+    "failedTests": 0,
+    "numTotalTests": 266,
+    "timestamp": 1794885907374,
+    "success": true,
+    "testId": 86
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: la contrasena del admin ya no esta en texto plano y el login verifica el hash",
+    "commitTimestamp": 1794885957305,
+    "testId": 86
+  },
+  {
+    "numPassedTests": 266,
+    "failedTests": 3,
+    "numTotalTests": 269,
+    "timestamp": 1794886002501,
+    "success": false,
+    "testId": 87
+  },
+  {
+    "numPassedTests": 269,
+    "failedTests": 0,
+    "numTotalTests": 269,
+    "timestamp": 1794886032788,
+    "success": true,
+    "testId": 87
+  },
+  {
+    "numPassedTests": 269,
+    "failedTests": 0,
+    "numTotalTests": 269,
+    "timestamp": 1794886060146,
+    "success": true,
+    "testId": 87
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
+    "commitTimestamp": 1794886075067,
+    "testId": 87
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: lista de casos de prueba de contrasenas cifradas",
+    "commitTimestamp": 1794886105499,
+    "testId": 88
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794887091051,
+    "testId": 84
+  },
+  {
+    "commitId": "HEAD",
     "commitName": "test: deberia generar la url del mapa embebido a partir de la ubicacion",
     "commitTimestamp": 1794887636217,
     "testId": 86
@@ -3706,8 +3842,20 @@
   },
   {
     "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794887805378,
+    "testId": 85
+  },
+  {
+    "commitId": "HEAD",
     "commitName": "docs: agregar lista de pruebas de HU-14",
     "commitTimestamp": 1794887819679,
     "testId": 91
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794888452456,
+    "testId": 92
   }
 ]

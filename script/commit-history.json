@@ -1805,12 +1805,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "06b11a88944d1ab475161034be235db9ce26fb31",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:35:18.000Z",
       "message": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/06b11a88944d1ab475161034be235db9ce26fb31"
     },
     "stats": {
       "total": 25,
@@ -1873,6 +1873,158 @@
       "total": 23,
       "additions": 12,
       "deletions": 11,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.32,
+    "test_count": 259,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:17:29.000Z",
+      "message": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 352,
+      "additions": 284,
+      "deletions": 68,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.21,
+    "test_count": 255,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:18:59.000Z",
+      "message": "test: deberia cifrar la contrasena con pbkdf2 y una sal",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 47,
+      "additions": 47,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.47,
+    "test_count": 258,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:21:28.000Z",
+      "message": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 30,
+      "additions": 29,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.58,
+    "test_count": 260,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:23:48.000Z",
+      "message": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 51,
+      "additions": 50,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.8,
+    "test_count": 265,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:25:53.000Z",
+      "message": "fix: la contrasena del admin ya no esta en texto plano y el login verifica el hash",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 89,
+      "additions": 33,
+      "deletions": 56,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.62,
+    "test_count": 266,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:27:52.000Z",
+      "message": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 67,
+      "additions": 62,
+      "deletions": 5,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.76,
+    "test_count": 269,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:28:22.000Z",
+      "message": "docs: lista de casos de prueba de contrasenas cifradas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 28,
+      "additions": 28,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.76,
+    "test_count": 269,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:44:47.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 70,
+      "additions": 56,
+      "deletions": 14,
       "date": "2026-11-17"
     },
     "coverage": 72.32,
@@ -1977,6 +2129,25 @@
   },
   {
     "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:56:38.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 422,
+      "additions": 340,
+      "deletions": 82,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.87,
+    "test_count": 273,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:56:56.000Z",
@@ -1991,6 +2162,25 @@
     },
     "coverage": 69.37,
     "test_count": 273,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T04:07:25.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 520,
+      "additions": 368,
+      "deletions": 152,
+      "date": "2026-11-17"
+    },
+    "coverage": 69.93,
+    "test_count": 287,
     "failed_tests": 0,
     "conclusion": "success"
   }

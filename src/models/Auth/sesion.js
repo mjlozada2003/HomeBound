@@ -1,4 +1,5 @@
 import { esCorreoValido, normalizarCorreo } from './validadorCorreo';
+import { verificarContrasena } from './contrasena';
 
 export function validarCamposLogin(correo, password){
     if(!correo?.trim() || !password?.trim()){
@@ -21,15 +22,17 @@ export function validarCamposLogin(correo, password){
 };
 
 
+// La contraseña del Admin no se escribe en el código: solo su hash PBKDF2 y la sal.
 export const CUENTA_ADMIN_PRECONFIGURADA = {
   nombre: 'Administrador HomeBound',
   correo: 'admin@homebound.com',
-  password: 'admin123',
+  passwordHash: 'ce65674611f7bdd4a6448705cc121c900470da7f88bd1a40de45d7068af44d78',
+  sal: '7450a8284d3c5bc106d3cec389b20bfa',
   rol: 'ADMIN'
 };
 
 
-export function autenticarUsuario(correo, password, usuarios = []) {
+export async function autenticarUsuario(correo, password, usuarios = []) {
   const correoNormalizado = normalizarCorreo(correo);
   const todosLosUsuarios = [CUENTA_ADMIN_PRECONFIGURADA, ...usuarios];
 
@@ -37,7 +40,7 @@ export function autenticarUsuario(correo, password, usuarios = []) {
     (u) => normalizarCorreo(u.correo) === correoNormalizado
   );
 
-  if (!usuarioEncontrado || password !== usuarioEncontrado.password) {
+  if (!(await verificarContrasena(password, usuarioEncontrado))) {
     return {
       exito: false,
       mensaje: 'Credenciales incorrectas. Verifica tu correo y contraseña.',
