@@ -3611,7 +3611,7 @@
     "testId": 77
   },
   {
-    "commitId": "HEAD",
+    "commitId": "c0f66f1ba834d5ac573c5141ca6c54539a32cc1e",
     "commitName": "style: flecha de volver con el icono arrow-left de lucide",
     "commitTimestamp": 1794881150782,
     "testId": 75
@@ -3703,5 +3703,11 @@
     "commitName": "feat: marcar ubicacion con vista previa de Google Maps en el formulario",
     "commitTimestamp": 1794887753420,
     "testId": 90
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: agregar lista de pruebas de HU-14",
+    "commitTimestamp": 1794887819679,
+    "testId": 91
   }
 ]
