@@ -1824,12 +1824,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "98aa67ddeb8c35c8d890b03eb334e9431f02fa33",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:03:00.000Z",
       "message": "fix: el boton publicar solo se muestra con la sesion iniciada",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/98aa67ddeb8c35c8d890b03eb334e9431f02fa33"
     },
     "stats": {
       "total": 6,
@@ -2177,6 +2177,25 @@
       "total": 520,
       "additions": 368,
       "deletions": 152,
+      "date": "2026-11-17"
+    },
+    "coverage": 69.93,
+    "test_count": 287,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T04:18:48.000Z",
+      "message": "fix: restaurar los estilos responsive que se perdieron al mergear HU-14",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 151,
+      "additions": 151,
+      "deletions": 0,
       "date": "2026-11-17"
     },
     "coverage": 69.93,

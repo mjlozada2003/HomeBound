@@ -3623,7 +3623,7 @@
     "testId": 80
   },
   {
-    "commitId": "HEAD",
+    "commitId": "98aa67ddeb8c35c8d890b03eb334e9431f02fa33",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/volver-desde-mis-publicaciones\n\n# Conflicts:\n#\tindex.html\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882073514,
     "testId": 76
@@ -3857,5 +3857,11 @@
     "commitName": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794888452456,
     "testId": 92
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: restaurar los estilos responsive que se perdieron al mergear HU-14",
+    "commitTimestamp": 1794889134450,
+    "testId": 93
   }
 ]
