@@ -3577,7 +3577,7 @@
     "testId": 74
   },
   {
-    "commitId": "HEAD",
+    "commitId": "222b888d7cfc52c845ca010b4777cc1d07af341b",
     "commitName": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
     "commitTimestamp": 1794880272230,
     "testId": 75
@@ -3685,5 +3685,11 @@
     "commitName": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
     "commitTimestamp": 1794887669629,
     "testId": 87
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia mostrar el mapa en el detalle solo si se indico ubicacion",
+    "commitTimestamp": 1794887703246,
+    "testId": 88
   }
 ]
