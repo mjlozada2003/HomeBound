@@ -2033,12 +2033,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "70a64d44fc8b07bdd796c0bab51b186fce9fcb75",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:53:52.000Z",
       "message": "test: deberia generar la url del mapa embebido a partir de la ubicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/70a64d44fc8b07bdd796c0bab51b186fce9fcb75"
     },
     "stats": {
       "total": 62,
@@ -2523,6 +2523,25 @@
     },
     "coverage": 73.24,
     "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:07:18.000Z",
+      "message": "test: deberia elegir una publicacion de cada estado para el hero de la landing",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 117,
+      "additions": 117,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
     "failed_tests": 0,
     "conclusion": "success"
   }

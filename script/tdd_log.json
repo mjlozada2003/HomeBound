@@ -3793,7 +3793,7 @@
     "testId": 87
   },
   {
-    "commitId": "HEAD",
+    "commitId": "70a64d44fc8b07bdd796c0bab51b186fce9fcb75",
     "commitName": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
     "commitTimestamp": 1794886075067,
     "testId": 87
@@ -4013,5 +4013,27 @@
     "commitName": "style: quitar el credito de iconos del footer",
     "commitTimestamp": 1794909721863,
     "testId": 108
+  },
+  {
+    "numPassedTests": 340,
+    "failedTests": 6,
+    "numTotalTests": 346,
+    "timestamp": 1794909908065,
+    "success": false,
+    "testId": 109
+  },
+  {
+    "numPassedTests": 346,
+    "failedTests": 0,
+    "numTotalTests": 346,
+    "timestamp": 1794910017477,
+    "success": true,
+    "testId": 109
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia elegir una publicacion de cada estado para el hero de la landing",
+    "commitTimestamp": 1794910045269,
+    "testId": 109
   }
 ]
