@@ -1444,12 +1444,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "69c953de57c6d2faee8cc5bc4b4a52e7305d8a58",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T20:59:20.000Z",
       "message": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/69c953de57c6d2faee8cc5bc4b4a52e7305d8a58"
     },
     "stats": {
       "total": 22,
@@ -1516,6 +1516,25 @@
     },
     "coverage": 78.1,
     "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:37:14.000Z",
+      "message": "test: deberia detectar si el formulario de publicar tiene datos ingresados",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 42,
+      "additions": 42,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.23,
+    "test_count": 244,
     "failed_tests": 0,
     "conclusion": "success"
   }
