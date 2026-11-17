@@ -1425,12 +1425,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "4e9a3b8a7e86f042580042f51baf288a00885606",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T20:52:52.000Z",
       "message": "test(lista): deberia mostrar publicaciones activas y resueltas vigentes",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/4e9a3b8a7e86f042580042f51baf288a00885606"
     },
     "stats": {
       "total": 101,
@@ -1494,6 +1494,25 @@
       "additions": 11,
       "deletions": 0,
       "date": "2026-11-14"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:09:37.000Z",
+      "message": "fix: las etiquetas de tipo y estado de la tarjeta se ven como pildoras en una fila",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 31,
+      "additions": 24,
+      "deletions": 7,
+      "date": "2026-11-17"
     },
     "coverage": 78.1,
     "test_count": 240,

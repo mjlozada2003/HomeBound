@@ -408,16 +408,33 @@ body {
     filter: grayscale(70%);
 }
 
-.tarjeta-resuelta .badge-estado {
-    background-color: var(--color-resuelto);
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 999px;
-    font-weight: 700;
+/* Etiquetas de la tarjeta: tipo y estado como píldoras en una sola fila */
+.tarjeta-etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
 }
 
-.tarjeta-resuelta .badge-estado::before {
-    content: '✓ ';
+.tarjeta-etiquetas .badge-tipo,
+.tarjeta-etiquetas .badge-estado {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.tarjeta-etiquetas .badge-estado {
+    background-color: #E2ECE5;
+    color: #205A3E;
+}
+
+.tarjeta-resuelta .tarjeta-etiquetas .badge-estado {
+    background-color: var(--color-resuelto);
+    color: #fff;
 }
 
 .form-editar label {
