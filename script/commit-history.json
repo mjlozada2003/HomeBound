@@ -1482,12 +1482,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "ffcdf4cc0ce11da87a4efabafd30b32b1a3cc447",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T21:08:15.000Z",
       "message": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ffcdf4cc0ce11da87a4efabafd30b32b1a3cc447"
     },
     "stats": {
       "total": 11,
@@ -1554,6 +1554,25 @@
     },
     "coverage": 78.1,
     "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T02:02:25.000Z",
+      "message": "test: deberia crear el svg de un icono de lucide como texto html",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 52,
+      "additions": 52,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.21,
+    "test_count": 243,
     "failed_tests": 0,
     "conclusion": "success"
   }

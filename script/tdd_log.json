@@ -3439,7 +3439,7 @@
     "testId": 71
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ffcdf4cc0ce11da87a4efabafd30b32b1a3cc447",
     "commitName": "test(lista): deberia calcular la paginacion de publicaciones visibles",
     "commitTimestamp": 1794690424598,
     "testId": 71
@@ -3475,5 +3475,27 @@
     "commitName": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
     "commitTimestamp": 1794880272230,
     "testId": 75
+  },
+  {
+    "numPassedTests": 240,
+    "failedTests": 3,
+    "numTotalTests": 243,
+    "timestamp": 1794880920585,
+    "success": false,
+    "testId": 76
+  },
+  {
+    "numPassedTests": 243,
+    "failedTests": 0,
+    "numTotalTests": 243,
+    "timestamp": 1794880940631,
+    "success": true,
+    "testId": 76
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear el svg de un icono de lucide como texto html",
+    "commitTimestamp": 1794880949392,
+    "testId": 76
   }
 ]
