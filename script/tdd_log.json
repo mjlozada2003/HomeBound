@@ -3425,7 +3425,7 @@
     "testId": 69
   },
   {
-    "commitId": "HEAD",
+    "commitId": "3284c1289fa9276fe828b696260585fc659a7bb2",
     "commitName": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
     "commitTimestamp": 1794689963438,
     "testId": 70
@@ -3485,5 +3485,27 @@
     "commitName": "test: deberia detectar si el formulario de publicar tiene datos ingresados",
     "commitTimestamp": 1794879437203,
     "testId": 74
+  },
+  {
+    "numPassedTests": 245,
+    "failedTests": 1,
+    "numTotalTests": 246,
+    "timestamp": 1794879459931,
+    "success": false,
+    "testId": 75
+  },
+  {
+    "numPassedTests": 246,
+    "failedTests": 0,
+    "numTotalTests": 246,
+    "timestamp": 1794879480028,
+    "success": true,
+    "testId": 75
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear el borrador de la publicacion sin las fotos",
+    "commitTimestamp": 1794879487736,
+    "testId": 75
   }
 ]
