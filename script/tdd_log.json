@@ -3641,7 +3641,7 @@
     "testId": 82
   },
   {
-    "commitId": "HEAD",
+    "commitId": "93e02d762b3df6781313e21d3e691863e1aecda8",
     "commitName": "fix: el boton publicar solo se muestra con la sesion iniciada",
     "commitTimestamp": 1794884586265,
     "testId": 83
@@ -3925,5 +3925,11 @@
     "commitName": "chore: ignorar la carpeta local de skills de claude en git y eslint",
     "commitTimestamp": 1794902280502,
     "testId": 100
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: mover los estilos responsive a su propio archivo",
+    "commitTimestamp": 1794902334905,
+    "testId": 101
   }
 ]

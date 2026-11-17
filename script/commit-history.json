@@ -1881,12 +1881,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "93e02d762b3df6781313e21d3e691863e1aecda8",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:17:29.000Z",
       "message": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/93e02d762b3df6781313e21d3e691863e1aecda8"
     },
     "stats": {
       "total": 352,
@@ -2367,6 +2367,25 @@
       "total": 5,
       "additions": 4,
       "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.94,
+    "test_count": 328,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T07:58:47.000Z",
+      "message": "refactor: mover los estilos responsive a su propio archivo",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 304,
+      "additions": 153,
+      "deletions": 151,
       "date": "2026-11-17"
     },
     "coverage": 72.94,
