@@ -1805,12 +1805,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "e8aad58390c3a33506e28bcfa7bd7c0fecfdcdb6",
+    "sha": "06b11a88944d1ab475161034be235db9ce26fb31",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:35:18.000Z",
       "message": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/e8aad58390c3a33506e28bcfa7bd7c0fecfdcdb6"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/06b11a88944d1ab475161034be235db9ce26fb31"
     },
     "stats": {
       "total": 25,
@@ -1824,12 +1824,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "00c46a38c2a943aec90a9b9aa6bb8b82b0b991d2",
+    "sha": "98aa67ddeb8c35c8d890b03eb334e9431f02fa33",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:03:00.000Z",
       "message": "fix: el boton publicar solo se muestra con la sesion iniciada",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/00c46a38c2a943aec90a9b9aa6bb8b82b0b991d2"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/98aa67ddeb8c35c8d890b03eb334e9431f02fa33"
     },
     "stats": {
       "total": 6,
@@ -1843,12 +1843,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "b8eaaa3dff5bd33392144903f2c4f43e93a319d2",
+    "sha": "bddfd5b112d2ca91e8ba87dfdb06d338edc8073b",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:05:11.000Z",
       "message": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/b8eaaa3dff5bd33392144903f2c4f43e93a319d2"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/bddfd5b112d2ca91e8ba87dfdb06d338edc8073b"
     },
     "stats": {
       "total": 41,
@@ -1862,12 +1862,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "b6906812392979a1646d8f98788ff4a97081b8bd",
+    "sha": "HEAD",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:06:42.000Z",
       "message": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/b6906812392979a1646d8f98788ff4a97081b8bd"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
     },
     "stats": {
       "total": 23,
@@ -1881,12 +1881,164 @@
     "conclusion": "success"
   },
   {
-    "sha": "016377ed5e6a453777136f83b0926065ef000d4b",
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:17:29.000Z",
+      "message": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 352,
+      "additions": 284,
+      "deletions": 68,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.21,
+    "test_count": 255,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:18:59.000Z",
+      "message": "test: deberia cifrar la contrasena con pbkdf2 y una sal",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 47,
+      "additions": 47,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.47,
+    "test_count": 258,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:21:28.000Z",
+      "message": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 30,
+      "additions": 29,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.58,
+    "test_count": 260,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:23:48.000Z",
+      "message": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 51,
+      "additions": 50,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.8,
+    "test_count": 265,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:25:53.000Z",
+      "message": "fix: la contrasena del admin ya no esta en texto plano y el login verifica el hash",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 89,
+      "additions": 33,
+      "deletions": 56,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.62,
+    "test_count": 266,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:27:52.000Z",
+      "message": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 67,
+      "additions": 62,
+      "deletions": 5,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.76,
+    "test_count": 269,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:28:22.000Z",
+      "message": "docs: lista de casos de prueba de contrasenas cifradas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 28,
+      "additions": 28,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.76,
+    "test_count": 269,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:44:47.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 70,
+      "additions": 56,
+      "deletions": 14,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.32,
+    "test_count": 259,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:53:52.000Z",
       "message": "test: deberia generar la url del mapa embebido a partir de la ubicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/016377ed5e6a453777136f83b0926065ef000d4b"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
     },
     "stats": {
       "total": 62,
@@ -1900,12 +2052,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "9c0b5a2cce917444cd5d556b5fd6a3196ca16427",
+    "sha": "HEAD",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:54:25.000Z",
       "message": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/9c0b5a2cce917444cd5d556b5fd6a3196ca16427"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
     },
     "stats": {
       "total": 52,
@@ -1919,12 +2071,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "5794151a4dc7bf1d65075833a00a6d1fc50d3538",
+    "sha": "HEAD",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:54:59.000Z",
       "message": "test: deberia mostrar el mapa en el detalle solo si se indico ubicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/5794151a4dc7bf1d65075833a00a6d1fc50d3538"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
     },
     "stats": {
       "total": 47,
@@ -2010,6 +2162,44 @@
     },
     "coverage": 69.37,
     "test_count": 273,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T04:07:25.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 520,
+      "additions": 368,
+      "deletions": 152,
+      "date": "2026-11-17"
+    },
+    "coverage": 69.93,
+    "test_count": 287,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T04:18:48.000Z",
+      "message": "fix: restaurar los estilos responsive que se perdieron al mergear HU-14",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 151,
+      "additions": 151,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 69.93,
+    "test_count": 287,
     "failed_tests": 0,
     "conclusion": "success"
   },
@@ -2143,6 +2333,25 @@
     },
     "coverage": 72.51,
     "test_count": 314,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T07:24:55.000Z",
+      "message": "fix: restaurar estilos responsive y entradas del historial perdidas al mergear HU-05",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 151,
+      "additions": 151,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.94,
+    "test_count": 328,
     "failed_tests": 0,
     "conclusion": "success"
   }
