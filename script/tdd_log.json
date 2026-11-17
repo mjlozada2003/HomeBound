@@ -3553,7 +3553,7 @@
     "testId": 77
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ee80e2b831c3c523cf63503b2b90db15ecb0fb03",
     "commitName": "test: deberia guardar, recuperar y eliminar el borrador en el navegador",
     "commitTimestamp": 1794879582025,
     "testId": 77
@@ -3645,5 +3645,27 @@
     "commitName": "fix: el boton publicar solo se muestra con la sesion iniciada",
     "commitTimestamp": 1794884586265,
     "testId": 83
+  },
+  {
+    "numPassedTests": 256,
+    "failedTests": 3,
+    "numTotalTests": 259,
+    "timestamp": 1794884617402,
+    "success": false,
+    "testId": 84
+  },
+  {
+    "numPassedTests": 259,
+    "failedTests": 0,
+    "numTotalTests": 259,
+    "timestamp": 1794884653412,
+    "success": true,
+    "testId": 84
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
+    "commitTimestamp": 1794884714269,
+    "testId": 84
   }
 ]
