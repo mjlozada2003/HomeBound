@@ -3799,7 +3799,7 @@
     "testId": 87
   },
   {
-    "commitId": "HEAD",
+    "commitId": "f8e73ad29310a72b50e36e3e1b79df16bc2c044c",
     "commitName": "docs: lista de casos de prueba de contrasenas cifradas",
     "commitTimestamp": 1794886105499,
     "testId": 88
@@ -4035,5 +4035,11 @@
     "commitName": "test: deberia elegir una publicacion de cada estado para el hero de la landing",
     "commitTimestamp": 1794910045269,
     "testId": 109
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: el hero de la landing muestra una publicacion de cada estado",
+    "commitTimestamp": 1794910095893,
+    "testId": 110
   }
 ]

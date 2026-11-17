@@ -2052,12 +2052,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "f8e73ad29310a72b50e36e3e1b79df16bc2c044c",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:54:25.000Z",
       "message": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f8e73ad29310a72b50e36e3e1b79df16bc2c044c"
     },
     "stats": {
       "total": 52,
@@ -2538,6 +2538,25 @@
       "total": 117,
       "additions": 117,
       "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:08:09.000Z",
+      "message": "fix: el hero de la landing muestra una publicacion de cada estado",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 12,
+      "deletions": 8,
       "date": "2026-11-17"
     },
     "coverage": 73.6,
