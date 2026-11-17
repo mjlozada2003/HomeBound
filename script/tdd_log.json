@@ -3635,7 +3635,7 @@
     "testId": 81
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b6906812392979a1646d8f98788ff4a97081b8bd",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882921831,
     "testId": 82
@@ -3735,5 +3735,11 @@
     "commitName": "feat: aplicar filtros en la lista paginada y mensaje sin resultados en español",
     "commitTimestamp": 1794889304818,
     "testId": 94
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia actualizar los resultados al aplicar un filtro",
+    "commitTimestamp": 1794889335492,
+    "testId": 95
   }
 ]

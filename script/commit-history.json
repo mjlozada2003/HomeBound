@@ -1862,12 +1862,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "b6906812392979a1646d8f98788ff4a97081b8bd",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:06:42.000Z",
       "message": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b6906812392979a1646d8f98788ff4a97081b8bd"
     },
     "stats": {
       "total": 23,
@@ -2044,6 +2044,25 @@
       "total": 45,
       "additions": 42,
       "deletions": 3,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.51,
+    "test_count": 314,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-17T04:22:10.000Z",
+      "message": "test: deberia actualizar los resultados al aplicar un filtro",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 166,
+      "additions": 166,
+      "deletions": 0,
       "date": "2026-11-17"
     },
     "coverage": 72.51,
