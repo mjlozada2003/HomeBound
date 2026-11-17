@@ -3565,7 +3565,7 @@
     "testId": 78
   },
   {
-    "commitId": "HEAD",
+    "commitId": "1501406c2e5e63622b7d8b80dcf21397c2d9358e",
     "commitName": "docs: lista de casos de prueba del borrador de publicacion",
     "commitTimestamp": 1794879881349,
     "testId": 79
@@ -3673,5 +3673,11 @@
     "commitName": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
     "commitTimestamp": 1794884807413,
     "testId": 85
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia generar la url del mapa embebido a partir de la ubicacion",
+    "commitTimestamp": 1794887636217,
+    "testId": 86
   }
 ]
