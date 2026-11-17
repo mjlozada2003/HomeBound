@@ -1520,6 +1520,25 @@
     "conclusion": "success"
   },
   {
+    "sha": "95941e4afab1eeedaf35a46216265d1889055657",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:35:57.000Z",
+      "message": "feat: boton para volver a publicaciones recientes desde mis publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/95941e4afab1eeedaf35a46216265d1889055657"
+    },
+    "stats": {
+      "total": 25,
+      "additions": 14,
+      "deletions": 11,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
     "sha": "9ae340d1a12b90702c414656b7708496585c0889",
     "author": "Maite Arauco",
     "commit": {
@@ -1596,12 +1615,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "e9dd23ff8ed7b4a5384ee075cadb51d02eb0a034",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:43:46.000Z",
       "message": "feat: boton volver en publicar que pregunta si guardar borrador o descartar",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e9dd23ff8ed7b4a5384ee075cadb51d02eb0a034"
     },
     "stats": {
       "total": 167,
@@ -1713,6 +1732,25 @@
     "sha": "HEAD",
     "author": "Maite Arauco",
     "commit": {
+      "date": "2026-11-17T02:05:47.000Z",
+      "message": "style: flecha de volver con el icono arrow-left de lucide",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
       "date": "2026-11-17T02:06:01.000Z",
       "message": "style: flecha de volver con el icono arrow-left de lucide",
       "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
@@ -1732,6 +1770,25 @@
     "sha": "HEAD",
     "author": "Maite Arauco",
     "commit": {
+      "date": "2026-11-17T02:21:09.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into feat/volver-desde-mis-publicaciones\n\n# Conflicts:\n#\tindex.html\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 222,
+      "additions": 180,
+      "deletions": 42,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.21,
+    "test_count": 243,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
       "date": "2026-11-17T02:21:52.000Z",
       "message": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json\n#\tsrc/presenter.js",
       "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
@@ -1740,6 +1797,25 @@
       "total": 224,
       "additions": 181,
       "deletions": 43,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.21,
+    "test_count": 255,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T02:35:18.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 25,
+      "additions": 14,
+      "deletions": 11,
       "date": "2026-11-17"
     },
     "coverage": 72.21,

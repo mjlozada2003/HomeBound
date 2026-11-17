@@ -3459,10 +3459,16 @@
     "testId": 72
   },
   {
-    "commitId": "b94045b6439763e7b0e6f5c182d84f22aede755b",
+    "commitId": "95941e4afab1eeedaf35a46216265d1889055657",
     "commitName": "fix: las etiquetas de tipo y estado de la tarjeta se ven como pildoras en una fila",
     "commitTimestamp": 1794877780155,
     "testId": 73
+  },
+  {
+    "commitId": "e9dd23ff8ed7b4a5384ee075cadb51d02eb0a034",
+    "commitName": "feat: boton para volver a publicaciones recientes desde mis publicaciones",
+    "commitTimestamp": 1794879361334,
+    "testId": 74
   },
   {
     "numPassedTests": 242,
@@ -3607,13 +3613,31 @@
   {
     "commitId": "HEAD",
     "commitName": "style: flecha de volver con el icono arrow-left de lucide",
+    "commitTimestamp": 1794881150782,
+    "testId": 75
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "style: flecha de volver con el icono arrow-left de lucide",
     "commitTimestamp": 1794881165908,
     "testId": 80
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into feat/volver-desde-mis-publicaciones\n\n# Conflicts:\n#\tindex.html\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794882073514,
+    "testId": 76
   },
   {
     "commitId": "HEAD",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json\n#\tsrc/presenter.js",
     "commitTimestamp": 1794882116289,
     "testId": 81
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794882921831,
+    "testId": 82
   }
 ]
