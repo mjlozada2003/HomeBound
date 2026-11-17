@@ -3,10 +3,12 @@ import {
   ArrowLeft,
   CircleUserRound,
   FileText,
+  HandHeart,
   LayoutDashboard,
   LogIn,
   LogOut,
   Plus,
+  Search,
   ShieldCheck,
 } from 'lucide';
 import { escaparHtml } from '../models/html';
@@ -15,7 +17,18 @@ import { escaparHtml } from '../models/html';
 // Solo se importan los íconos que usa la app, así el bundle queda pequeño.
 export function iniciarIconos() {
   createIcons({
-    icons: { ArrowLeft, CircleUserRound, FileText, LayoutDashboard, LogIn, LogOut, Plus, ShieldCheck },
+    icons: {
+      ArrowLeft,
+      CircleUserRound,
+      FileText,
+      HandHeart,
+      LayoutDashboard,
+      LogIn,
+      LogOut,
+      Plus,
+      Search,
+      ShieldCheck,
+    },
     attrs: { class: 'icono', 'aria-hidden': 'true' },
   });
 }
