@@ -3531,7 +3531,7 @@
     "testId": 76
   },
   {
-    "commitId": "HEAD",
+    "commitId": "381f50529baed7e60e8e86a9ccfd70fbd892cfa4",
     "commitName": "test: deberia crear una clave de borrador por tipo y por usuario",
     "commitTimestamp": 1794879528590,
     "testId": 76
@@ -3639,5 +3639,27 @@
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882921831,
     "testId": 82
+  },
+  {
+    "numPassedTests": 256,
+    "failedTests": 2,
+    "numTotalTests": 258,
+    "timestamp": 1794885497984,
+    "success": false,
+    "testId": 83
+  },
+  {
+    "numPassedTests": 258,
+    "failedTests": 0,
+    "numTotalTests": 258,
+    "timestamp": 1794885529054,
+    "success": true,
+    "testId": 83
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia cifrar la contrasena con pbkdf2 y una sal",
+    "commitTimestamp": 1794885543295,
+    "testId": 83
   }
 ]
