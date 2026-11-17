@@ -3719,7 +3719,7 @@
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "423aebaa5b1575e8bdf51a9238e4c84b8a3841c8",
     "commitName": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
     "commitTimestamp": 1794885694104,
     "testId": 84
@@ -3987,5 +3987,11 @@
     "commitName": "feat: acabados visuales en toda la app con textura, transiciones, carga y estados de foco",
     "commitTimestamp": 1794904127069,
     "testId": 105
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: lista de casos de prueba de la landing y los acabados",
+    "commitTimestamp": 1794904202920,
+    "testId": 106
   }
 ]

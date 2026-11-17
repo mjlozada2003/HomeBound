@@ -1976,12 +1976,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "423aebaa5b1575e8bdf51a9238e4c84b8a3841c8",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:27:52.000Z",
       "message": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/423aebaa5b1575e8bdf51a9238e4c84b8a3841c8"
     },
     "stats": {
       "total": 67,
@@ -2462,6 +2462,25 @@
       "total": 216,
       "additions": 211,
       "deletions": 5,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:29:55.000Z",
+      "message": "docs: lista de casos de prueba de la landing y los acabados",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 30,
+      "additions": 30,
+      "deletions": 0,
       "date": "2026-11-17"
     },
     "coverage": 73.24,
