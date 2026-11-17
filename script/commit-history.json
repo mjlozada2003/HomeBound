@@ -1539,12 +1539,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "671c87e665a03951328ac64fcbb9dd6ace4f0620",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:38:04.000Z",
       "message": "test: deberia crear el borrador de la publicacion sin las fotos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/671c87e665a03951328ac64fcbb9dd6ace4f0620"
     },
     "stats": {
       "total": 23,
@@ -1607,6 +1607,25 @@
       "total": 167,
       "additions": 152,
       "deletions": 15,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.04,
+    "test_count": 252,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:44:34.000Z",
+      "message": "docs: lista de casos de prueba del borrador de publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 26,
+      "additions": 26,
+      "deletions": 0,
       "date": "2026-11-17"
     },
     "coverage": 72.04,

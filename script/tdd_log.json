@@ -3481,7 +3481,7 @@
     "testId": 74
   },
   {
-    "commitId": "HEAD",
+    "commitId": "671c87e665a03951328ac64fcbb9dd6ace4f0620",
     "commitName": "test: deberia detectar si el formulario de publicar tiene datos ingresados",
     "commitTimestamp": 1794879437203,
     "testId": 74
@@ -3557,5 +3557,11 @@
     "commitName": "feat: boton volver en publicar que pregunta si guardar borrador o descartar",
     "commitTimestamp": 1794879830159,
     "testId": 78
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: lista de casos de prueba del borrador de publicacion",
+    "commitTimestamp": 1794879881349,
+    "testId": 79
   }
 ]
