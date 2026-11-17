@@ -13,7 +13,7 @@ import {
   borrarPublicacion,
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
-import { crearTarjetaHtml } from './plantillaTarjeta';
+import { crearTarjetaHtml, crearEtiquetasHtml } from './plantillaTarjeta';
 import { pedirConfirmacion } from './dialogoConfirmacion';
 
 let misPublicacionesCargadas = [];
@@ -46,8 +46,8 @@ function contenidoTarjeta(pub, original) {
 
   return `
     <p class="tarjeta-descripcion">${escaparHtml(pub.descripcion)}</p>
-    <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
-    <p class="tarjeta-etiquetas"><span class="badge-estado">${pub.estadoTexto}</span></p>
+    <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)}</p>
+    ${crearEtiquetasHtml(pub)}
     <div class="acciones-mis-publicaciones">
       <button type="button" class="btn-editar" data-id="${escaparHtml(pub.id)}">Editar</button>
       <button type="button" class="btn-eliminar" data-id="${escaparHtml(pub.id)}">Eliminar</button>

@@ -3559,7 +3559,7 @@
     "testId": 77
   },
   {
-    "commitId": "HEAD",
+    "commitId": "da0458f8cb9366365d1efb70939bb7c6704f726b",
     "commitName": "feat: boton volver en publicar que pregunta si guardar borrador o descartar",
     "commitTimestamp": 1794879830159,
     "testId": 78
@@ -3667,5 +3667,11 @@
     "commitName": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
     "commitTimestamp": 1794884714269,
     "testId": 84
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
+    "commitTimestamp": 1794884807413,
+    "testId": 85
   }
 ]

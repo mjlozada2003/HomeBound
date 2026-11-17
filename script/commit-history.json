@@ -1672,12 +1672,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "da0458f8cb9366365d1efb70939bb7c6704f726b",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:51:08.000Z",
       "message": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da0458f8cb9366365d1efb70939bb7c6704f726b"
     },
     "stats": {
       "total": 79,
@@ -1854,6 +1854,25 @@
       "total": 41,
       "additions": 40,
       "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.32,
+    "test_count": 259,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:06:42.000Z",
+      "message": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 23,
+      "additions": 12,
+      "deletions": 11,
       "date": "2026-11-17"
     },
     "coverage": 72.32,
