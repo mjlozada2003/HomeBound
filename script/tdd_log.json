@@ -3817,7 +3817,7 @@
     "testId": 86
   },
   {
-    "commitId": "HEAD",
+    "commitId": "0b0e1e5783724a67b16285f8126a855073c1c38f",
     "commitName": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
     "commitTimestamp": 1794887669629,
     "testId": 87
@@ -4053,5 +4053,19 @@
     "commitName": "docs: casos de prueba de las publicaciones destacadas y del cambio de paso",
     "commitTimestamp": 1794910686196,
     "testId": 112
+  },
+  {
+    "numPassedTests": 346,
+    "failedTests": 0,
+    "numTotalTests": 346,
+    "timestamp": 1794911158650,
+    "success": true,
+    "testId": 113
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: la landing no muestra la publicacion de prueba del calculador",
+    "commitTimestamp": 1794911185934,
+    "testId": 113
   }
 ]

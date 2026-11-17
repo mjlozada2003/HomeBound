@@ -18,6 +18,10 @@ export const VIDEOS_FONDO_HERO = [
 const PUBLICACIONES_EN_HERO = 3;
 const PUBLICACIONES_RECIENTES = 4;
 
+// Publicaciones reales que la landing no muestra (siguen en la lista pública).
+// "calculador": prueba del docente con una foto que no coincide con el título.
+const PUBLICACIONES_OCULTAS_EN_LANDING = ['K4LesYmzn596GPC12Goc'];
+
 function reducirMovimiento() {
   return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
 }
@@ -214,7 +218,9 @@ async function cargarPublicacionesReales(irA) {
       obtenerPublicacionesPorEstado(ESTADOS.APROBADA),
       obtenerPublicacionesPorEstado(ESTADOS.RESUELTA),
     ]);
-    todas = [...activas, ...resueltas];
+    todas = [...activas, ...resueltas].filter(
+      (pub) => !PUBLICACIONES_OCULTAS_EN_LANDING.includes(pub.id)
+    );
   } catch {
     sinTarjetasEnHero();
     return;

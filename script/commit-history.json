@@ -2109,12 +2109,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "0b0e1e5783724a67b16285f8126a855073c1c38f",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:55:50.000Z",
       "message": "feat: marcar ubicacion con vista previa de Google Maps en el formulario",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/0b0e1e5783724a67b16285f8126a855073c1c38f"
     },
     "stats": {
       "total": 139,
@@ -2595,6 +2595,25 @@
       "total": 14,
       "additions": 12,
       "deletions": 2,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:26:18.000Z",
+      "message": "fix: la landing no muestra la publicacion de prueba del calculador",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 7,
+      "deletions": 1,
       "date": "2026-11-17"
     },
     "coverage": 73.6,
