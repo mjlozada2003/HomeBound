@@ -3419,13 +3419,13 @@
     "testId": 69
   },
   {
-    "commitId": "HEAD",
+    "commitId": "69c953de57c6d2faee8cc5bc4b4a52e7305d8a58",
     "commitName": "test(lista): deberia mostrar publicaciones activas y resueltas vigentes",
     "commitTimestamp": 1794689576477,
     "testId": 69
   },
   {
-    "commitId": "HEAD",
+    "commitId": "3b4b588e78007952d50e4c9ed58c3839fb577ac6",
     "commitName": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
     "commitTimestamp": 1794689963438,
     "testId": 70
@@ -3439,7 +3439,7 @@
     "testId": 71
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ffcdf4cc0ce11da87a4efabafd30b32b1a3cc447",
     "commitName": "test(lista): deberia calcular la paginacion de publicaciones visibles",
     "commitTimestamp": 1794690424598,
     "testId": 71
@@ -3453,7 +3453,7 @@
     "testId": 72
   },
   {
-    "commitId": "HEAD",
+    "commitId": "053cf429c426092b04c634c2f6ea3533cbb67626",
     "commitName": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
     "commitTimestamp": 1794690497748,
     "testId": 72
@@ -3463,5 +3463,45 @@
     "commitName": "fix: las etiquetas de tipo y estado de la tarjeta se ven como pildoras en una fila",
     "commitTimestamp": 1794877780155,
     "testId": 73
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "chore: agregar la libreria de iconos lucide",
+    "commitTimestamp": 1794880071993,
+    "testId": 74
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
+    "commitTimestamp": 1794880272230,
+    "testId": 75
+  },
+  {
+    "numPassedTests": 240,
+    "failedTests": 3,
+    "numTotalTests": 243,
+    "timestamp": 1794880920585,
+    "success": false,
+    "testId": 76
+  },
+  {
+    "numPassedTests": 243,
+    "failedTests": 0,
+    "numTotalTests": 243,
+    "timestamp": 1794880940631,
+    "success": true,
+    "testId": 76
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear el svg de un icono de lucide como texto html",
+    "commitTimestamp": 1794880949392,
+    "testId": 76
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: iconos de lucide en el detalle y formato unico para todos los iconos",
+    "commitTimestamp": 1794881119712,
+    "testId": 77
   }
 ]

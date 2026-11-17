@@ -1444,12 +1444,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "69c953de57c6d2faee8cc5bc4b4a52e7305d8a58",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T20:59:20.000Z",
       "message": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/69c953de57c6d2faee8cc5bc4b4a52e7305d8a58"
     },
     "stats": {
       "total": 22,
@@ -1463,12 +1463,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "3b4b588e78007952d50e4c9ed58c3839fb577ac6",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T21:07:02.000Z",
       "message": "test(lista): deberia calcular la paginacion de publicaciones visibles",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/3b4b588e78007952d50e4c9ed58c3839fb577ac6"
     },
     "stats": {
       "total": 36,
@@ -1482,12 +1482,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "ffcdf4cc0ce11da87a4efabafd30b32b1a3cc447",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T21:08:15.000Z",
       "message": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ffcdf4cc0ce11da87a4efabafd30b32b1a3cc447"
     },
     "stats": {
       "total": 11,
@@ -1501,12 +1501,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "053cf429c426092b04c634c2f6ea3533cbb67626",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:09:37.000Z",
       "message": "fix: las etiquetas de tipo y estado de la tarjeta se ven como pildoras en una fila",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/053cf429c426092b04c634c2f6ea3533cbb67626"
     },
     "stats": {
       "total": 31,
@@ -1516,6 +1516,82 @@
     },
     "coverage": 78.1,
     "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:47:48.000Z",
+      "message": "chore: agregar la libreria de iconos lucide",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 19,
+      "additions": 19,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:51:08.000Z",
+      "message": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 79,
+      "additions": 67,
+      "deletions": 12,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T02:02:25.000Z",
+      "message": "test: deberia crear el svg de un icono de lucide como texto html",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 52,
+      "additions": 52,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.21,
+    "test_count": 243,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T02:05:16.000Z",
+      "message": "feat: iconos de lucide en el detalle y formato unico para todos los iconos",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 104,
+      "additions": 58,
+      "deletions": 46,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.21,
+    "test_count": 243,
     "failed_tests": 0,
     "conclusion": "success"
   }
