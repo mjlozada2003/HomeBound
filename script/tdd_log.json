@@ -3635,7 +3635,7 @@
     "testId": 81
   },
   {
-    "commitId": "HEAD",
+    "commitId": "7b833b3969926195705f3c9f1b8f3b24f87d566f",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882921831,
     "testId": 82
@@ -3919,5 +3919,11 @@
     "commitName": "fix: restaurar estilos responsive y entradas del historial perdidas al mergear HU-05",
     "commitTimestamp": 1794900300113,
     "testId": 99
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "chore: ignorar la carpeta local de skills de claude en git y eslint",
+    "commitTimestamp": 1794902280502,
+    "testId": 100
   }
 ]

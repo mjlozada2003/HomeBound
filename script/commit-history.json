@@ -1862,12 +1862,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "7b833b3969926195705f3c9f1b8f3b24f87d566f",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:06:42.000Z",
       "message": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/7b833b3969926195705f3c9f1b8f3b24f87d566f"
     },
     "stats": {
       "total": 23,
@@ -2348,6 +2348,25 @@
       "total": 151,
       "additions": 151,
       "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.94,
+    "test_count": 328,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T07:57:55.000Z",
+      "message": "chore: ignorar la carpeta local de skills de claude en git y eslint",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 5,
+      "additions": 4,
+      "deletions": 1,
       "date": "2026-11-17"
     },
     "coverage": 72.94,
