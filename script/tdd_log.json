@@ -3439,7 +3439,7 @@
     "testId": 71
   },
   {
-    "commitId": "HEAD",
+    "commitId": "a943cbff151bf164aba3aa7eeff4f484be105e80",
     "commitName": "test(lista): deberia calcular la paginacion de publicaciones visibles",
     "commitTimestamp": 1794690424598,
     "testId": 71
@@ -3507,5 +3507,27 @@
     "commitName": "test: deberia crear el borrador de la publicacion sin las fotos",
     "commitTimestamp": 1794879487736,
     "testId": 75
+  },
+  {
+    "numPassedTests": 246,
+    "failedTests": 2,
+    "numTotalTests": 248,
+    "timestamp": 1794879507656,
+    "success": false,
+    "testId": 76
+  },
+  {
+    "numPassedTests": 248,
+    "failedTests": 0,
+    "numTotalTests": 248,
+    "timestamp": 1794879521440,
+    "success": true,
+    "testId": 76
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear una clave de borrador por tipo y por usuario",
+    "commitTimestamp": 1794879528590,
+    "testId": 76
   }
 ]

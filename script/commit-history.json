@@ -1482,12 +1482,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a943cbff151bf164aba3aa7eeff4f484be105e80",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T21:08:15.000Z",
       "message": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/a943cbff151bf164aba3aa7eeff4f484be105e80"
     },
     "stats": {
       "total": 11,
@@ -1554,6 +1554,25 @@
     },
     "coverage": 78.3,
     "test_count": 246,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:38:45.000Z",
+      "message": "test: deberia crear una clave de borrador por tipo y por usuario",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 24,
+      "additions": 22,
+      "deletions": 2,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.33,
+    "test_count": 248,
     "failed_tests": 0,
     "conclusion": "success"
   }

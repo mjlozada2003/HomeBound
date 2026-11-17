@@ -1,4 +1,4 @@
-import { tieneDatosIngresados, crearBorrador } from './borrador.js';
+import { tieneDatosIngresados, crearBorrador, claveBorrador } from './borrador.js';
 
 describe('Borrador de publicación: salir del formulario', () => {
   const formularioVacio = {
@@ -41,6 +41,20 @@ describe('Borrador de publicación: salir del formulario', () => {
     test('Debería dejar fuera las fotos porque no se pueden guardar en el navegador', () => {
       const datos = { ...formularioVacio, titulo: 'Gato', fotos: [{ name: 'gato.jpg' }] };
       expect(crearBorrador(datos)).not.toHaveProperty('fotos');
+    });
+  });
+
+  describe('claveBorrador', () => {
+    test('Debería crear una clave distinta por tipo de publicación y por usuario', () => {
+      const usuario = { correo: 'maite@ucb.edu.bo' };
+      expect(claveBorrador('hallazgo', usuario)).toBe('borrador-hallazgo-maite@ucb.edu.bo');
+      expect(claveBorrador('perdida', usuario)).toBe('borrador-perdida-maite@ucb.edu.bo');
+    });
+
+    test('Debería normalizar el correo del usuario', () => {
+      expect(claveBorrador('hallazgo', { correo: '  Maite@UCB.edu.bo ' })).toBe(
+        'borrador-hallazgo-maite@ucb.edu.bo'
+      );
     });
   });
 });
