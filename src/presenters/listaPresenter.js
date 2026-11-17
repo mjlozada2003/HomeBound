@@ -52,7 +52,7 @@ function dibujarListaPublicaciones() {
         `
         <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)}</p>
         <p class="tarjeta-etiquetas">
-          <span class="badge-tipo">${pub.tipoTexto}</span> |
+          <span class="badge-tipo ${pub.tipoTexto === 'Perdido' ? 'badge-tipo-perdido' : 'badge-tipo-hallazgo'}">${pub.tipoTexto}</span>
           <span class="badge-estado">${pub.estadoTexto}</span>
         </p>
       `,

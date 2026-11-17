@@ -3389,7 +3389,7 @@
     "testId": 68
   },
   {
-    "commitId": "HEAD",
+    "commitId": "4e9a3b8a7e86f042580042f51baf288a00885606",
     "commitName": "test(publicaciones): verificar visibilidad de 1 semana para resueltas",
     "commitTimestamp": 1794687866885,
     "testId": 68
@@ -3457,5 +3457,11 @@
     "commitName": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
     "commitTimestamp": 1794690497748,
     "testId": 72
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: las etiquetas de tipo y estado de la tarjeta se ven como pildoras en una fila",
+    "commitTimestamp": 1794877780155,
+    "testId": 73
   }
 ]
