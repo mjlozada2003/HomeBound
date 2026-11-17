@@ -1729,12 +1729,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a0415a365381e86776c654904abf0cc247a01839",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:05:47.000Z",
       "message": "style: flecha de volver con el icono arrow-left de lucide",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/a0415a365381e86776c654904abf0cc247a01839"
     },
     "stats": {
       "total": 4,
@@ -1911,6 +1911,25 @@
       "total": 67,
       "additions": 62,
       "deletions": 5,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.76,
+    "test_count": 269,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:28:22.000Z",
+      "message": "docs: lista de casos de prueba de contrasenas cifradas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 28,
+      "additions": 28,
+      "deletions": 0,
       "date": "2026-11-17"
     },
     "coverage": 72.76,

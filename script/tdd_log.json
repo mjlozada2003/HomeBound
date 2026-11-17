@@ -3577,7 +3577,7 @@
     "testId": 74
   },
   {
-    "commitId": "HEAD",
+    "commitId": "a0415a365381e86776c654904abf0cc247a01839",
     "commitName": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
     "commitTimestamp": 1794880272230,
     "testId": 75
@@ -3757,5 +3757,11 @@
     "commitName": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
     "commitTimestamp": 1794886075067,
     "testId": 87
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: lista de casos de prueba de contrasenas cifradas",
+    "commitTimestamp": 1794886105499,
+    "testId": 88
   }
 ]
