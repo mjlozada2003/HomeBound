@@ -3617,7 +3617,7 @@
     "testId": 75
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e8aad58390c3a33506e28bcfa7bd7c0fecfdcdb6",
     "commitName": "style: flecha de volver con el icono arrow-left de lucide",
     "commitTimestamp": 1794881165908,
     "testId": 80
@@ -3709,5 +3709,11 @@
     "commitName": "docs: agregar lista de pruebas de HU-14",
     "commitTimestamp": 1794887819679,
     "testId": 91
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia buscar, filtrar por categoria y fecha, y ordenar publicaciones",
+    "commitTimestamp": 1794889222928,
+    "testId": 92
   }
 ]

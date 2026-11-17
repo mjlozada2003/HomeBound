@@ -1805,12 +1805,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "e8aad58390c3a33506e28bcfa7bd7c0fecfdcdb6",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:35:18.000Z",
       "message": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/e8aad58390c3a33506e28bcfa7bd7c0fecfdcdb6"
     },
     "stats": {
       "total": 25,
@@ -1991,6 +1991,25 @@
     },
     "coverage": 69.37,
     "test_count": 273,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-17T04:20:17.000Z",
+      "message": "test: deberia buscar, filtrar por categoria y fecha, y ordenar publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 218,
+      "additions": 218,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.51,
+    "test_count": 314,
     "failed_tests": 0,
     "conclusion": "success"
   }
