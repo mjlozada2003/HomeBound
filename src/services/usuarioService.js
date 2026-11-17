@@ -1,16 +1,18 @@
-import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc, getDoc, updateDoc, deleteField, serverTimestamp } from 'firebase/firestore';
 import { db } from './firebase';
 import { CUENTA_ADMIN_PRECONFIGURADA, autenticarUsuario } from '../models/Auth/sesion';
 import { normalizarCorreo } from '../models/Auth/validadorCorreo';
+import { crearCredenciales, tieneContrasenaSinCifrar } from '../models/Auth/contrasena';
 
 export async function guardarUsuario(usuario) {
   const correoNormalizado = usuario.correo.trim().toLowerCase();
   const referenciaDoc = doc(db, 'usuarios', correoNormalizado);
 
+  // Se guarda el hash y la sal; la contraseña nunca llega a Firestore.
   const datosAGuardar = {
     nombre: usuario.nombre.trim(),
     correo: correoNormalizado,
-    password: usuario.password,
+    ...(await crearCredenciales(usuario.password)),
     rol: 'USER',
     creadoEn: serverTimestamp()
   };
@@ -75,5 +77,20 @@ export async function autenticarUsuarioFirebase(correo, password) {
   const usuario = esAdmin ? null : await buscarUsuarioPorCorreo(correoNormalizado);
 
   // La decisión (¿la contraseña es correcta?, ¿qué rol tiene?) la toma el modelo.
-  return autenticarUsuario(correoNormalizado, password, usuario ? [usuario] : []);
+  const resultado = await autenticarUsuario(correoNormalizado, password, usuario ? [usuario] : []);
+
+  // Usuario antiguo: aprovecha que escribió bien su contraseña para cifrarla y borrar la de texto plano.
+  // Si la migración falla, el login sigue siendo válido; se reintenta en el próximo inicio de sesión.
+  if (resultado.exito && tieneContrasenaSinCifrar(usuario)) {
+    try {
+      await updateDoc(doc(db, 'usuarios', correoNormalizado), {
+        ...(await crearCredenciales(password)),
+        password: deleteField()
+      });
+    } catch {
+      // Sin acción: el usuario ya está autenticado.
+    }
+  }
+
+  return resultado;
 }

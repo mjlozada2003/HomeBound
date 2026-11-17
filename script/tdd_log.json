@@ -3571,7 +3571,7 @@
     "testId": 79
   },
   {
-    "commitId": "HEAD",
+    "commitId": "c5b6e1a56f5fe078bb92ee0a360e7147b2dd6cb1",
     "commitName": "chore: agregar la libreria de iconos lucide",
     "commitTimestamp": 1794880071993,
     "testId": 74
@@ -3727,5 +3727,35 @@
     "commitName": "fix: la contrasena del admin ya no esta en texto plano y el login verifica el hash",
     "commitTimestamp": 1794885957305,
     "testId": 86
+  },
+  {
+    "numPassedTests": 266,
+    "failedTests": 3,
+    "numTotalTests": 269,
+    "timestamp": 1794886002501,
+    "success": false,
+    "testId": 87
+  },
+  {
+    "numPassedTests": 269,
+    "failedTests": 0,
+    "numTotalTests": 269,
+    "timestamp": 1794886032788,
+    "success": true,
+    "testId": 87
+  },
+  {
+    "numPassedTests": 269,
+    "failedTests": 0,
+    "numTotalTests": 269,
+    "timestamp": 1794886060146,
+    "success": true,
+    "testId": 87
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
+    "commitTimestamp": 1794886075067,
+    "testId": 87
   }
 ]

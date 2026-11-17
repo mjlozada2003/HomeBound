@@ -4,7 +4,8 @@ import {
   autenticarUsuarioFirebase,
   registrarUsuarioFirebase
 } from './usuarioService';
-import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc, getDoc, updateDoc, deleteField, serverTimestamp } from 'firebase/firestore';
+import { verificarContrasena } from '../models/Auth/contrasena';
 
 jest.mock('./firebase', () => ({ db: {} }));
 
@@ -12,6 +13,8 @@ jest.mock('firebase/firestore', () => ({
   doc: jest.fn(),
   setDoc: jest.fn(),
   getDoc: jest.fn(),
+  updateDoc: jest.fn(),
+  deleteField: jest.fn(),
   serverTimestamp: jest.fn()
 }));
 
@@ -43,7 +46,8 @@ describe('Servicio de Usuarios (Firestore)', () => {
       {
         nombre: 'Carlos Perez',
         correo: 'carlos@example.com',
-        password: 'password123',
+        passwordHash: expect.stringMatching(/^[0-9a-f]{64}$/),
+        sal: expect.stringMatching(/^[0-9a-f]{32}$/),
         rol: 'USER',
         creadoEn: 'FECHA_SERVIDOR'
       }
@@ -212,5 +216,41 @@ describe('Servicio de Usuarios (Firestore)', () => {
     expect(resultado.exito).toBe(true);
     expect(resultado.mensaje).toBe('¡Cuenta creada exitosamente! Bienvenido a HomeBound.');
     expect(setDoc).toHaveBeenCalled();
+  });
+
+  it('no deberia guardar la contraseña en texto plano al registrar, pero si poder verificarla', async () => {
+    await guardarUsuario(usuarioMock);
+
+    const datosGuardados = setDoc.mock.calls[0][1];
+    expect(datosGuardados).not.toHaveProperty('password');
+    expect(await verificarContrasena('password123', datosGuardados)).toBe(true);
+  });
+
+  it('deberia migrar al usuario antiguo: guardar el hash y borrar la contraseña en texto plano', async () => {
+    deleteField.mockReturnValue('CAMPO_BORRADO');
+    getDoc.mockResolvedValue({
+      exists: () => true,
+      id: 'carlos@example.com',
+      data: () => ({ nombre: 'Carlos Perez', correo: 'carlos@example.com', password: 'password123', rol: 'USER' })
+    });
+
+    const resultado = await autenticarUsuarioFirebase('carlos@example.com', 'password123');
+
+    expect(resultado.exito).toBe(true);
+    const cambios = updateDoc.mock.calls[0][1];
+    expect(cambios.password).toBe('CAMPO_BORRADO');
+    expect(await verificarContrasena('password123', cambios)).toBe(true);
+  });
+
+  it('no deberia migrar si la contraseña del usuario antiguo es incorrecta', async () => {
+    getDoc.mockResolvedValue({
+      exists: () => true,
+      id: 'carlos@example.com',
+      data: () => ({ nombre: 'Carlos Perez', correo: 'carlos@example.com', password: 'password123', rol: 'USER' })
+    });
+
+    await autenticarUsuarioFirebase('carlos@example.com', 'incorrecta');
+
+    expect(updateDoc).not.toHaveBeenCalled();
   });
 });

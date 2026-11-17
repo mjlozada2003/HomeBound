@@ -1710,12 +1710,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "c5b6e1a56f5fe078bb92ee0a360e7147b2dd6cb1",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:05:16.000Z",
       "message": "feat: iconos de lucide en el detalle y formato unico para todos los iconos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/c5b6e1a56f5fe078bb92ee0a360e7147b2dd6cb1"
     },
     "stats": {
       "total": 104,
@@ -1896,6 +1896,25 @@
     },
     "coverage": 72.62,
     "test_count": 266,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:27:52.000Z",
+      "message": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 67,
+      "additions": 62,
+      "deletions": 5,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.76,
+    "test_count": 269,
     "failed_tests": 0,
     "conclusion": "success"
   }
