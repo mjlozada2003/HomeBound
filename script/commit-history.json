@@ -1767,12 +1767,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "9b2cca0edb43fec3168d6e764c8b96fa23cb5366",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:21:09.000Z",
       "message": "Merge remote-tracking branch 'origin/main' into feat/volver-desde-mis-publicaciones\n\n# Conflicts:\n#\tindex.html\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9b2cca0edb43fec3168d6e764c8b96fa23cb5366"
     },
     "stats": {
       "total": 222,
@@ -1949,6 +1949,25 @@
       "total": 19,
       "additions": 19,
       "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 69.37,
+    "test_count": 273,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-17T03:55:50.000Z",
+      "message": "feat: marcar ubicacion con vista previa de Google Maps en el formulario",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 139,
+      "additions": 127,
+      "deletions": 12,
       "date": "2026-11-17"
     },
     "coverage": 69.37,

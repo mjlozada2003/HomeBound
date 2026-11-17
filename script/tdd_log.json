@@ -3605,7 +3605,7 @@
     "testId": 76
   },
   {
-    "commitId": "HEAD",
+    "commitId": "9b2cca0edb43fec3168d6e764c8b96fa23cb5366",
     "commitName": "feat: iconos de lucide en el detalle y formato unico para todos los iconos",
     "commitTimestamp": 1794881119712,
     "testId": 77
@@ -3697,5 +3697,11 @@
     "commitName": "feat: mostrar mapa con marcador en el detalle de la publicacion",
     "commitTimestamp": 1794887728836,
     "testId": 89
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: marcar ubicacion con vista previa de Google Maps en el formulario",
+    "commitTimestamp": 1794887753420,
+    "testId": 90
   }
 ]

@@ -960,3 +960,40 @@ body {
     min-height: 280px;
   }
 }
+/* HU-14: Ubicación con Google Maps */
+.ubicacion-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.formulario-mapa,
+.detalle-mapa {
+  width: 100%;
+  border: 1px solid #E8E5DC;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #F5F3EE;
+}
+
+.formulario-mapa {
+  margin-top: 0.75rem;
+}
+
+.detalle-mapa {
+  margin-bottom: 1.25rem;
+}
+
+.formulario-mapa-iframe,
+.detalle-mapa-iframe {
+  display: block;
+  width: 100%;
+  height: 240px;
+  border: 0;
+}
+
+.detalle-mapa-iframe {
+  height: 280px;
+}

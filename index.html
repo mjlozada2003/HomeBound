@@ -190,12 +190,25 @@
               placeholder="Dirección, coordenadas o enlace de Google Maps"
             >
             <p class="ayuda">Puedes copiar coordenadas o un enlace desde Google Maps.</p>
-            <a
-              id="hallazgo-maps"
-              href="https://www.google.com/maps"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Abrir Google Maps</a>
+            <div class="ubicacion-acciones">
+              <button type="button" id="hallazgo-mi-ubicacion" class="btn-ingresar">Usar mi ubicación actual</button>
+              <a
+                id="hallazgo-maps"
+                href="https://www.google.com/maps"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Abrir Google Maps</a>
+            </div>
+            <p id="hallazgo-ubicacion-estado" class="ayuda" role="status" aria-live="polite"></p>
+            <div id="hallazgo-mapa-vista" class="formulario-mapa" hidden>
+              <iframe
+                id="hallazgo-mapa"
+                class="formulario-mapa-iframe"
+                title="Vista previa de la ubicación en Google Maps"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
 
           <p class="ayuda contacto-ayuda">
@@ -325,12 +338,25 @@
       <p class="ayuda">
         Puedes copiar coordenadas o un enlace desde Google Maps.
       </p>
-      <a
-        id="perdida-maps"
-        href="https://www.google.com/maps"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Abrir Google Maps</a>
+      <div class="ubicacion-acciones">
+        <button type="button" id="perdida-mi-ubicacion" class="btn-ingresar">Usar mi ubicación actual</button>
+        <a
+          id="perdida-maps"
+          href="https://www.google.com/maps"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Abrir Google Maps</a>
+      </div>
+      <p id="perdida-ubicacion-estado" class="ayuda" role="status" aria-live="polite"></p>
+      <div id="perdida-mapa-vista" class="formulario-mapa" hidden>
+        <iframe
+          id="perdida-mapa"
+          class="formulario-mapa-iframe"
+          title="Vista previa de la ubicación en Google Maps"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
 
     <p class="ayuda contacto-ayuda">
