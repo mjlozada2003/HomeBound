@@ -1995,12 +1995,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "8e85eb66d70b636846d3ce65ac5b9fad2fa515cb",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:28:22.000Z",
       "message": "docs: lista de casos de prueba de contrasenas cifradas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/8e85eb66d70b636846d3ce65ac5b9fad2fa515cb"
     },
     "stats": {
       "total": 28,
@@ -2481,6 +2481,25 @@
       "total": 30,
       "additions": 30,
       "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T09:42:04.000Z",
+      "message": "feat: videos de fondo del hero que se turnan con un fundido",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 62,
+      "additions": 46,
+      "deletions": 16,
       "date": "2026-11-17"
     },
     "coverage": 73.24,

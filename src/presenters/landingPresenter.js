@@ -6,9 +6,13 @@ import { escaparHtml } from '../models/html';
 import { crearTarjetaHtml, crearEtiquetasHtml, crearEsqueletosHtml } from './plantillaTarjeta';
 import { calcularProgresoSeccion, calcularPasoActivo } from './pasosLanding';
 
-// URL del video de fondo del hero (por ejemplo, un video subido a Cloudinary).
-// Vacío = el hero usa su fondo verde sin video.
-export const VIDEO_FONDO_HERO = '';
+// Videos de fondo del hero (Cloudinary). Se turnan: al terminar uno empieza el otro.
+// "q_auto,w_1600,c_limit" le pide a Cloudinary una versión comprimida (de 41 MB a ~3 MB).
+// Lista vacía = el hero usa su fondo verde sin video.
+export const VIDEOS_FONDO_HERO = [
+  'https://res.cloudinary.com/d1d7bvti/video/upload/q_auto,w_1600,c_limit/v1794908067/giving_keys.mp4',
+  'https://res.cloudinary.com/d1d7bvti/video/upload/q_auto,w_1600,c_limit/v1794908137/find_your_pet.mp4',
+];
 
 const PUBLICACIONES_EN_HERO = 3;
 const PUBLICACIONES_RECIENTES = 4;
@@ -60,31 +64,51 @@ function crearNavegador(navegacion) {
   };
 }
 
-// ---------- Video del hero ----------
-function montarVideoHero(url) {
+// ---------- Videos del hero ----------
+function crearVideo(url, indice, unoSolo) {
+  const video = document.createElement('video');
+  video.className = indice === 0 ? 'hero-video activo' : 'hero-video';
+  video.muted = true;
+  video.loop = unoSolo;
+  video.playsInline = true;
+  video.preload = indice === 0 ? 'auto' : 'metadata';
+  video.setAttribute('muted', '');
+  video.src = url;
+  return video;
+}
+
+function montarVideosHero(urls) {
   const fondo = document.querySelector('#hero-fondo');
-  if (!fondo || !url) {
+  if (!fondo || urls.length === 0) {
     return;
   }
 
-  const video = document.createElement('video');
-  video.className = 'hero-video';
-  video.muted = true;
-  video.loop = true;
-  video.playsInline = true;
-  video.preload = 'metadata';
-  video.setAttribute('muted', '');
-  video.src = url;
-  fondo.append(video);
+  const videos = urls.map((url, i) => crearVideo(url, i, urls.length === 1));
+  fondo.append(...videos);
   fondo.classList.add('con-video');
+  let actual = 0;
 
   // Con "menos movimiento" el video queda quieto en su primer cuadro.
   if (reducirMovimiento() || !('IntersectionObserver' in window)) {
     return;
   }
 
+  // Al terminar un video empieza el siguiente; el cambio se ve como un fundido (CSS).
+  videos.forEach((video, i) => {
+    video.addEventListener('ended', () => {
+      const siguiente = videos[(i + 1) % videos.length];
+      actual = videos.indexOf(siguiente);
+      siguiente.currentTime = 0;
+      siguiente.addEventListener('playing', () => {
+        videos.forEach((v) => v.classList.toggle('activo', v === siguiente));
+      }, { once: true });
+      siguiente.play().catch(() => {});
+    });
+  });
+
   // Solo se reproduce mientras el hero está en pantalla.
   new window.IntersectionObserver(([entrada]) => {
+    const video = videos[actual];
     if (entrada.isIntersecting) {
       video.play().catch(() => {});
     } else {
@@ -264,7 +288,7 @@ export function iniciarLanding(navegacion) {
   });
 
   iniciarBarraConScroll();
-  montarVideoHero(VIDEO_FONDO_HERO);
+  montarVideosHero(VIDEOS_FONDO_HERO);
   iniciarPasos();
   pausarBuclesFueraDePantalla();
   cargarPublicacionesReales(irA);

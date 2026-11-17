@@ -3741,7 +3741,7 @@
     "testId": 85
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8e85eb66d70b636846d3ce65ac5b9fad2fa515cb",
     "commitName": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
     "commitTimestamp": 1794885832012,
     "testId": 85
@@ -3993,5 +3993,19 @@
     "commitName": "docs: lista de casos de prueba de la landing y los acabados",
     "commitTimestamp": 1794904202920,
     "testId": 106
+  },
+  {
+    "numPassedTests": 339,
+    "failedTests": 0,
+    "numTotalTests": 339,
+    "timestamp": 1794908253582,
+    "success": true,
+    "testId": 107
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: videos de fondo del hero que se turnan con un fundido",
+    "commitTimestamp": 1794908528448,
+    "testId": 107
   }
 ]
