@@ -1,5 +1,6 @@
 import { ESTADOS } from './estados.js';
 import { obtenerFechaLocal } from './reglasPublicacion.js';
+import { crearUrlMapaEmbebido } from './mapa.js';
 
 export const DIAS_LIMITE_RESUELTA = 7;
 
@@ -147,5 +148,6 @@ export function formatearDetallePublicacion(pub) {
     enlaceCorreo,
     ubicacion,
     enlaceMapa,
+    mapaEmbebido: crearUrlMapaEmbebido(ubicacion),
   };
 }

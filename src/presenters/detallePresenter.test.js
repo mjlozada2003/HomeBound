@@ -135,6 +135,53 @@ describe('HU-12: Presentador y Plantilla de Detalle de Publicación', () => {
     expect(onVolverMock).toHaveBeenCalledTimes(1);
   });
 
+  describe('HU-14: Mapa de la ubicación en el detalle', () => {
+    it('deberia mostrar el mapa con el marcador si se indico ubicacion', () => {
+      const html = crearDetalleHtml({
+        ...detalleCompleto,
+        mapaEmbebido: 'https://maps.google.com/maps?q=Plaza%20Murillo&z=16&output=embed',
+      });
+
+      expect(html).toContain('id="detalle-mapa"');
+      expect(html).toContain('src="https://maps.google.com/maps?q=Plaza%20Murillo&amp;z=16&amp;output=embed"');
+    });
+
+    it('no deberia mostrar el mapa si no se indico ubicacion', () => {
+      const html = crearDetalleHtml({ ...detalleCompleto, ubicacion: '', enlaceMapa: '', mapaEmbebido: '' });
+
+      expect(html).not.toContain('id="detalle-mapa"');
+    });
+
+    it('deberia generar el mapa a partir de la ubicacion guardada de la publicacion', () => {
+      const contenedorMock = { innerHTML: '', querySelector: jest.fn(() => null) };
+
+      renderizarDetalleEnContenedor({
+        id: 'pub-2',
+        titulo: 'Gato',
+        tipo: 'PERDIDA',
+        fecha: '2026-10-25',
+        ubicacion: { texto: '-16.4956,-68.1336', enlace: 'https://www.google.com/maps/search/?api=1&query=-16.4956%2C-68.1336' },
+      }, contenedorMock, jest.fn());
+
+      expect(contenedorMock.innerHTML).toContain('id="detalle-mapa"');
+      expect(contenedorMock.innerHTML).toContain('maps.google.com/maps?q=-16.4956%2C-68.1336');
+    });
+
+    it('no deberia generar el mapa si la publicacion no tiene ubicacion', () => {
+      const contenedorMock = { innerHTML: '', querySelector: jest.fn(() => null) };
+
+      renderizarDetalleEnContenedor({
+        id: 'pub-3',
+        titulo: 'Gato',
+        tipo: 'PERDIDA',
+        fecha: '2026-10-25',
+        ubicacion: { texto: '', enlace: '' },
+      }, contenedorMock, jest.fn());
+
+      expect(contenedorMock.innerHTML).not.toContain('id="detalle-mapa"');
+    });
+  });
+
   describe('HU-07: Compartir publicación', () => {
     beforeEach(() => {
       jest.useFakeTimers();

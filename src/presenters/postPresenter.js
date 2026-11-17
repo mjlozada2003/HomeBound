@@ -1,6 +1,7 @@
 import { crearHallazgo } from '../models/Posts/hallazgo';
 import { crearPerdida, esCategoriaOtro } from '../models/Posts/perdida';
 import { crearEnlaceMapa, obtenerFechaLocal } from '../models/Posts/reglasPublicacion';
+import { crearUrlMapaEmbebido, formatearCoordenadas } from '../models/Posts/mapa';
 import { asignarAutor } from '../models/Posts/misPublicaciones';
 import { guardarHallazgo } from '../services/hallazgoService';
 import { guardarPerdida } from '../services/perdidaService';
@@ -14,6 +15,13 @@ import {
 } from '../models/Auth/sesion';
 
 const ENLACE_GOOGLE_MAPS = 'https://www.google.com/maps';
+const RETARDO_VISTA_PREVIA_MS = 600;
+
+const MENSAJES_UBICACION = {
+  buscando: 'Obteniendo tu ubicación…',
+  encontrada: 'Ubicación marcada. Revisa el mapa y ajústala si hace falta.',
+  error: 'No pudimos obtener tu ubicación. Escribe una dirección o pega un enlace de Google Maps.'
+};
 
 const MENSAJES_HALLAZGO = {
   exito: 'Hallazgo enviado. Pendiente de revisión.',
@@ -124,6 +132,81 @@ function leerDatosComunes(campo) {
   };
 }
 
+// HU-14: vista previa del mapa con el marcador de la ubicación ingresada.
+function iniciarVistaPreviaMapa(campo) {
+  const contenedor = campo('mapa-vista');
+  const iframe = campo('mapa');
+  let temporizador = null;
+
+  const mostrar = (url) => {
+    if (!contenedor || !iframe) {
+      return;
+    }
+    contenedor.hidden = !url;
+    if (url && iframe.getAttribute('src') !== url) {
+      iframe.src = url;
+    } else if (!url) {
+      iframe.removeAttribute('src');
+    }
+  };
+
+  return {
+    // Espera a que la persona deje de escribir para no recargar el mapa en cada tecla.
+    actualizar() {
+      clearTimeout(temporizador);
+      temporizador = setTimeout(
+        () => mostrar(crearUrlMapaEmbebido(campo('ubicacion').value)),
+        RETARDO_VISTA_PREVIA_MS
+      );
+    },
+    limpiar() {
+      clearTimeout(temporizador);
+      mostrar('');
+      const estado = campo('ubicacion-estado');
+      if (estado) {
+        estado.textContent = '';
+      }
+    }
+  };
+}
+
+// HU-14: marca la ubicación actual del dispositivo como coordenadas.
+function iniciarBotonMiUbicacion(campo, alCambiarUbicacion) {
+  const boton = campo('mi-ubicacion');
+  const estado = campo('ubicacion-estado');
+  if (!boton) {
+    return;
+  }
+  const mostrarEstado = (texto) => {
+    if (estado) {
+      estado.textContent = texto;
+    }
+  };
+
+  if (!window.navigator?.geolocation) {
+    boton.hidden = true;
+    return;
+  }
+
+  boton.addEventListener('click', () => {
+    boton.disabled = true;
+    mostrarEstado(MENSAJES_UBICACION.buscando);
+    window.navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        campo('ubicacion').value = formatearCoordenadas(coords.latitude, coords.longitude);
+        mostrarEstado(MENSAJES_UBICACION.encontrada);
+        boton.disabled = false;
+        alCambiarUbicacion();
+      },
+      () => {
+        mostrarEstado(MENSAJES_UBICACION.error);
+        boton.disabled = false;
+      },
+      { enableHighAccuracy: true, timeout: 15000 }
+    );
+  });
+}
+
 // Comportamiento compartido por los formularios de hallazgo y pérdida.
 function iniciarFormularioPublicacion({
   prefijo,
@@ -152,10 +235,14 @@ function iniciarFormularioPublicacion({
   actualizarFechaMaxima();
   formulario.addEventListener('focusin', actualizarFechaMaxima);
 
+  const vistaMapa = iniciarVistaPreviaMapa(campo);
+
   const actualizarEnlaceMapa = () => {
     campo('maps').href = crearEnlaceMapa(campo('ubicacion').value) || ENLACE_GOOGLE_MAPS;
+    vistaMapa.actualizar();
   };
   campo('ubicacion').addEventListener('input', actualizarEnlaceMapa);
+  iniciarBotonMiUbicacion(campo, actualizarEnlaceMapa);
 
   const leerDatos = () => ({ ...leerDatosComunes(campo), ...leerDatosAdicionales(campo) });
   const claveDelUsuario = () => claveBorrador(prefijo, obtenerSesionActiva());
@@ -164,6 +251,7 @@ function iniciarFormularioPublicacion({
     formulario.reset();
     alReiniciarFormulario();
     campo('maps').href = ENLACE_GOOGLE_MAPS;
+    vistaMapa.limpiar();
     mostrarMensajeEstado(mensajeEstado, '', '');
     campo('resumen').hidden = true;
   };
@@ -235,6 +323,7 @@ function iniciarFormularioPublicacion({
         formulario.reset();
         alReiniciarFormulario();
         campo('maps').href = ENLACE_GOOGLE_MAPS;
+        vistaMapa.limpiar();
       }
     } finally {
       estaEnviando = false;

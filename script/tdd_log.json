@@ -3565,19 +3565,19 @@
     "testId": 78
   },
   {
-    "commitId": "7f9df2b93b5662aff64cd67d5779d8803ddca463",
+    "commitId": "1501406c2e5e63622b7d8b80dcf21397c2d9358e",
     "commitName": "docs: lista de casos de prueba del borrador de publicacion",
     "commitTimestamp": 1794879881349,
     "testId": 79
   },
   {
-    "commitId": "7475c0ad2817cfa5f84f70b89944fdf55c55b5bd",
+    "commitId": "70ce7d85d0ef473cc164295a0b30bd1d8c6f9e4d",
     "commitName": "chore: agregar la libreria de iconos lucide",
     "commitTimestamp": 1794880071993,
     "testId": 74
   },
   {
-    "commitId": "HEAD",
+    "commitId": "222b888d7cfc52c845ca010b4777cc1d07af341b",
     "commitName": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
     "commitTimestamp": 1794880272230,
     "testId": 75
@@ -3599,25 +3599,25 @@
     "testId": 76
   },
   {
-    "commitId": "HEAD",
+    "commitId": "7895b76a95608e1dd03c40d7ed2d29119e5858bc",
     "commitName": "test: deberia crear el svg de un icono de lucide como texto html",
     "commitTimestamp": 1794880949392,
     "testId": 76
   },
   {
-    "commitId": "HEAD",
+    "commitId": "9b2cca0edb43fec3168d6e764c8b96fa23cb5366",
     "commitName": "feat: iconos de lucide en el detalle y formato unico para todos los iconos",
     "commitTimestamp": 1794881119712,
     "testId": 77
   },
   {
-    "commitId": "HEAD",
+    "commitId": "c0f66f1ba834d5ac573c5141ca6c54539a32cc1e",
     "commitName": "style: flecha de volver con el icono arrow-left de lucide",
     "commitTimestamp": 1794881150782,
     "testId": 75
   },
   {
-    "commitId": "HEAD",
+    "commitId": "06b11a88944d1ab475161034be235db9ce26fb31",
     "commitName": "style: flecha de volver con el icono arrow-left de lucide",
     "commitTimestamp": 1794881165908,
     "testId": 80
@@ -3812,8 +3812,50 @@
   },
   {
     "commitId": "HEAD",
+    "commitName": "test: deberia generar la url del mapa embebido a partir de la ubicacion",
+    "commitTimestamp": 1794887636217,
+    "testId": 86
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
+    "commitTimestamp": 1794887669629,
+    "testId": 87
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia mostrar el mapa en el detalle solo si se indico ubicacion",
+    "commitTimestamp": 1794887703246,
+    "testId": 88
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: mostrar mapa con marcador en el detalle de la publicacion",
+    "commitTimestamp": 1794887728836,
+    "testId": 89
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: marcar ubicacion con vista previa de Google Maps en el formulario",
+    "commitTimestamp": 1794887753420,
+    "testId": 90
+  },
+  {
+    "commitId": "HEAD",
     "commitName": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794887805378,
     "testId": 85
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: agregar lista de pruebas de HU-14",
+    "commitTimestamp": 1794887819679,
+    "testId": 91
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into fix/contrasenas-cifradas\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794888452456,
+    "testId": 92
   }
 ]
