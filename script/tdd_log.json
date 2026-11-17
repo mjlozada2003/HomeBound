@@ -3565,7 +3565,7 @@
     "testId": 78
   },
   {
-    "commitId": "HEAD",
+    "commitId": "7f9df2b93b5662aff64cd67d5779d8803ddca463",
     "commitName": "docs: lista de casos de prueba del borrador de publicacion",
     "commitTimestamp": 1794879881349,
     "testId": 79
@@ -3673,5 +3673,17 @@
     "commitName": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
     "commitTimestamp": 1794884807413,
     "testId": 85
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
+    "commitTimestamp": 1794885452737,
+    "testId": 83
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+    "commitTimestamp": 1794887091051,
+    "testId": 84
   }
 ]
