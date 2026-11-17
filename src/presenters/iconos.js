@@ -1,5 +1,6 @@
 import {
   createIcons,
+  ArrowLeft,
   CircleUserRound,
   FileText,
   LayoutDashboard,
@@ -14,7 +15,8 @@ import { escaparHtml } from '../models/html';
 // Solo se importan los íconos que usa la app, así el bundle queda pequeño.
 export function iniciarIconos() {
   createIcons({
-    icons: { CircleUserRound, FileText, LayoutDashboard, LogIn, LogOut, Plus, ShieldCheck },
+    icons: { ArrowLeft, CircleUserRound, FileText, LayoutDashboard, LogIn, LogOut, Plus, ShieldCheck },
+    attrs: { class: 'icono', 'aria-hidden': 'true' },
   });
 }
 

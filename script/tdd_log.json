@@ -3453,7 +3453,7 @@
     "testId": 72
   },
   {
-    "commitId": "HEAD",
+    "commitId": "053cf429c426092b04c634c2f6ea3533cbb67626",
     "commitName": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
     "commitTimestamp": 1794690497748,
     "testId": 72
@@ -3497,5 +3497,11 @@
     "commitName": "test: deberia crear el svg de un icono de lucide como texto html",
     "commitTimestamp": 1794880949392,
     "testId": 76
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: iconos de lucide en el detalle y formato unico para todos los iconos",
+    "commitTimestamp": 1794881119712,
+    "testId": 77
   }
 ]

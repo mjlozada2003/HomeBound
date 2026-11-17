@@ -188,7 +188,7 @@ body {
   color: var(--color-primary);
   font-size: 0.95rem;
 }
-.user-name svg {
+.user-name .icono {
   width: 22px;
   height: 22px;
 }
@@ -202,16 +202,18 @@ body {
   padding: 2px 8px;
   border-radius: 9999px;
 }
-/* Botones con ícono de Lucide + texto */
+/* Íconos de Lucide: un solo formato en toda la app (tamaño según el texto, color del texto) */
+.icono {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+  vertical-align: -0.2em;
+}
+/* Botones con ícono + texto */
 .btn-con-icono {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-}
-.btn-con-icono svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
 }
 .btn-logout {
   background: transparent;
@@ -721,6 +723,8 @@ body {
 
 .detalle-sin-foto {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
   min-height: 360px;
@@ -821,6 +825,16 @@ body {
   height: 22px;
 }
 
+.detalle-sin-foto .icono {
+  width: 40px;
+  height: 40px;
+}
+
+.detalle-dato-icono .icono {
+  width: 20px;
+  height: 20px;
+}
+
 .detalle-icono-svg {
   stroke: #2D6A4F;
 }
@@ -911,6 +925,7 @@ body {
 }
 
 .icono-check-circulo {
+  color: #0E7A43;
   display: inline-flex;
   align-items: center;
   justify-content: center;
