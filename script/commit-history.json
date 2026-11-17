@@ -1558,12 +1558,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a0b388ecbf8149179ace3f8c15fc5e9a79c53fa4",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:38:45.000Z",
       "message": "test: deberia crear una clave de borrador por tipo y por usuario",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/a0b388ecbf8149179ace3f8c15fc5e9a79c53fa4"
     },
     "stats": {
       "total": 24,
@@ -1626,6 +1626,25 @@
       "total": 26,
       "additions": 26,
       "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.04,
+    "test_count": 252,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T02:06:01.000Z",
+      "message": "style: flecha de volver con el icono arrow-left de lucide",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
       "date": "2026-11-17"
     },
     "coverage": 72.04,

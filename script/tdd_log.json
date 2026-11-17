@@ -3503,7 +3503,7 @@
     "testId": 75
   },
   {
-    "commitId": "HEAD",
+    "commitId": "a0b388ecbf8149179ace3f8c15fc5e9a79c53fa4",
     "commitName": "test: deberia crear el borrador de la publicacion sin las fotos",
     "commitTimestamp": 1794879487736,
     "testId": 75
@@ -3563,5 +3563,11 @@
     "commitName": "docs: lista de casos de prueba del borrador de publicacion",
     "commitTimestamp": 1794879881349,
     "testId": 79
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "style: flecha de volver con el icono arrow-left de lucide",
+    "commitTimestamp": 1794881165908,
+    "testId": 80
   }
 ]
