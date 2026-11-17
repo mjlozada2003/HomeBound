@@ -3599,7 +3599,7 @@
     "testId": 76
   },
   {
-    "commitId": "HEAD",
+    "commitId": "7895b76a95608e1dd03c40d7ed2d29119e5858bc",
     "commitName": "test: deberia crear el svg de un icono de lucide como texto html",
     "commitTimestamp": 1794880949392,
     "testId": 76
@@ -3691,5 +3691,11 @@
     "commitName": "test: deberia mostrar el mapa en el detalle solo si se indico ubicacion",
     "commitTimestamp": 1794887703246,
     "testId": 88
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: mostrar mapa con marcador en el detalle de la publicacion",
+    "commitTimestamp": 1794887728836,
+    "testId": 89
   }
 ]

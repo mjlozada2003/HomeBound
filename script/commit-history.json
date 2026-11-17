@@ -1748,12 +1748,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "7895b76a95608e1dd03c40d7ed2d29119e5858bc",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:06:01.000Z",
       "message": "style: flecha de volver con el icono arrow-left de lucide",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/7895b76a95608e1dd03c40d7ed2d29119e5858bc"
     },
     "stats": {
       "total": 4,
@@ -1929,6 +1929,25 @@
     "stats": {
       "total": 47,
       "additions": 47,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 69.37,
+    "test_count": 273,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-17T03:55:25.000Z",
+      "message": "feat: mostrar mapa con marcador en el detalle de la publicacion",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 19,
+      "additions": 19,
       "deletions": 0,
       "date": "2026-11-17"
     },

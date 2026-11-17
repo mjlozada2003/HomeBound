@@ -185,6 +185,7 @@ describe('HU-12: Ver detalle de publicación', () => {
       enlaceCorreo: 'mailto:contacto@example.com',
       ubicacion: 'Plaza Murillo',
       enlaceMapa: 'https://maps.google.com/?q=Plaza+Murillo',
+      mapaEmbebido: 'https://maps.google.com/maps?q=Plaza%20Murillo&z=16&output=embed',
     });
   });
 
