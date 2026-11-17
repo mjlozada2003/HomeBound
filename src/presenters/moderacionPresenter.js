@@ -9,7 +9,7 @@ import {
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 import { obtenerSesionActiva } from '../models/Auth/sesion';
-import { crearTarjetaHtml } from './plantillaTarjeta';
+import { crearTarjetaHtml, crearEtiquetasHtml } from './plantillaTarjeta';
 import { renderizarEstadisticas } from './statsPresenter';
 
 let pendientesCargadas = [];
@@ -67,7 +67,8 @@ export async function renderizarBandejaModeracion() {
         pub,
         `
         <p class="tarjeta-descripcion">${escaparHtml(pub.descripcion)}</p>
-        <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)} | <strong>Tipo:</strong> ${pub.tipoTexto}</p>
+        <p class="tarjeta-fecha"><strong>Fecha:</strong> ${escaparHtml(pub.fecha)}</p>
+        ${crearEtiquetasHtml({ tipoTexto: pub.tipoTexto })}
         <div class="acciones-moderacion">
           <button class="btn-aprobar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Aprobar</button>
           <button class="btn-rechazar" data-id="${escaparHtml(pub.id)}" data-coleccion="${escaparHtml(pub.coleccion)}">Rechazar</button>

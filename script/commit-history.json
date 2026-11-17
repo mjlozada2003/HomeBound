@@ -1653,12 +1653,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "ee80e2b831c3c523cf63503b2b90db15ecb0fb03",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:47:48.000Z",
       "message": "chore: agregar la libreria de iconos lucide",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ee80e2b831c3c523cf63503b2b90db15ecb0fb03"
     },
     "stats": {
       "total": 19,
@@ -1672,12 +1672,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "da0458f8cb9366365d1efb70939bb7c6704f726b",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:51:08.000Z",
       "message": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/da0458f8cb9366365d1efb70939bb7c6704f726b"
     },
     "stats": {
       "total": 79,
@@ -1691,12 +1691,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "7f9df2b93b5662aff64cd67d5779d8803ddca463",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:02:25.000Z",
       "message": "test: deberia crear el svg de un icono de lucide como texto html",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/7f9df2b93b5662aff64cd67d5779d8803ddca463"
     },
     "stats": {
       "total": 52,
@@ -1827,6 +1827,63 @@
     "sha": "HEAD",
     "author": "Maite Arauco",
     "commit": {
+      "date": "2026-11-17T03:03:00.000Z",
+      "message": "fix: el boton publicar solo se muestra con la sesion iniciada",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 4,
+      "deletions": 2,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.21,
+    "test_count": 255,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:05:11.000Z",
+      "message": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 41,
+      "additions": 40,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.32,
+    "test_count": 259,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:06:42.000Z",
+      "message": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 23,
+      "additions": 12,
+      "deletions": 11,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.32,
+    "test_count": 259,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
       "date": "2026-11-17T03:17:29.000Z",
       "message": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
       "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
@@ -1839,6 +1896,25 @@
     },
     "coverage": 72.21,
     "test_count": 255,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:44:47.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 70,
+      "additions": 56,
+      "deletions": 14,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.32,
+    "test_count": 259,
     "failed_tests": 0,
     "conclusion": "success"
   }
