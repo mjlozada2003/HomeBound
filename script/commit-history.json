@@ -1938,12 +1938,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "33a7f927496cb59a7a9755695d5fec7b2656cf73",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:23:48.000Z",
       "message": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/33a7f927496cb59a7a9755695d5fec7b2656cf73"
     },
     "stats": {
       "total": 51,
@@ -2427,6 +2427,25 @@
       "date": "2026-11-17"
     },
     "coverage": 73.22,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:27:48.000Z",
+      "message": "feat: landing page con hero, como funciona por pasos, caracteristicas, avisos reales y footer",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 1797,
+      "additions": 1793,
+      "deletions": 4,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
     "test_count": 339,
     "failed_tests": 0,
     "conclusion": "success"

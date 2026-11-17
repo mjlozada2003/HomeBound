@@ -3675,7 +3675,7 @@
     "testId": 85
   },
   {
-    "commitId": "HEAD",
+    "commitId": "33a7f927496cb59a7a9755695d5fec7b2656cf73",
     "commitName": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
     "commitTimestamp": 1794885452737,
     "testId": 83
@@ -3975,5 +3975,11 @@
     "commitName": "test: deberia crear tarjetas esqueleto para mostrar mientras cargan las publicaciones",
     "commitTimestamp": 1794902579011,
     "testId": 103
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: landing page con hero, como funciona por pasos, caracteristicas, avisos reales y footer",
+    "commitTimestamp": 1794904072169,
+    "testId": 104
   }
 ]

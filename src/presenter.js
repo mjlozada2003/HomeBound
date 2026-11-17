@@ -5,6 +5,7 @@ import { inicializarListaPresenter } from './presenters/listaPresenter';
 import { inicializarModeracionPresenter } from './presenters/moderacionPresenter';
 import { inicializarMisPublicacionesPresenter } from './presenters/misPublicacionesPresenter';
 import { abrirPublicacionPorEnlace } from './presenters/enlaceNavegacion';
+import { iniciarLanding } from './presenters/landingPresenter';
 
 function iniciarAplicacion() {
   // Primero los íconos: createIcons reemplaza los <i> por <svg> y los presenters usan esos nodos.
@@ -14,6 +15,7 @@ function iniciarAplicacion() {
   inicializarListaPresenter();
   inicializarModeracionPresenter();
   inicializarMisPublicacionesPresenter();
+  iniciarLanding(navegacion);
   abrirPublicacionPorEnlace();
 }
 

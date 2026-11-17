@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/styles/styles.css">
+    <link rel="stylesheet" href="./src/styles/acabados.css">
+    <link rel="stylesheet" href="./src/styles/landing.css">
     <link rel="stylesheet" href="./src/styles/responsive.css">
 
   </head>
@@ -42,10 +44,257 @@
 
 
 
+    <!-- VISTA 0: LANDING (inicio sin sesión) -->
+    <div id="vista-inicio" class="landing vista-publicaciones">
+      <section class="landing-hero" aria-labelledby="landing-titulo">
+        <!-- Fondo del hero: el video (si hay) lo agrega landingPresenter con VIDEO_FONDO_HERO -->
+        <div class="hero-fondo" id="hero-fondo" aria-hidden="true"></div>
+
+        <div class="landing-wrap hero-grid">
+          <div class="hero-texto">
+            <h1 id="landing-titulo" class="hero-titulo">
+              <span class="hero-linea" style="--orden: 0">Objetos y mascotas perdidas,</span>
+              <span class="hero-linea hero-linea-acento" style="--orden: 1">de vuelta a casa.</span>
+            </h1>
+            <p class="hero-bajada" style="--orden: 2">
+              HomeBound junta en un solo lugar los avisos de lo que se perdió y de lo que se encontró
+              en tu comunidad. Un administrador revisa cada aviso antes de publicarlo.
+            </p>
+            <div class="hero-acciones" style="--orden: 3">
+              <button type="button" class="btn-hero-principal btn-con-icono" data-ir="registro">
+                Crear una cuenta<i data-lucide="arrow-right"></i>
+              </button>
+              <button type="button" class="btn-hero-secundario" data-ir="login">Ya tengo cuenta</button>
+            </div>
+            <ul class="hero-chips" style="--orden: 4">
+              <li><i data-lucide="package"></i>Objetos</li>
+              <li><i data-lucide="paw-print"></i>Mascotas</li>
+              <li><i data-lucide="shield-check"></i>Revisado antes de publicar</li>
+            </ul>
+          </div>
+
+          <!-- Las 3 publicaciones más recientes (reales), las dibuja landingPresenter -->
+          <div class="hero-tarjetas" id="hero-tarjetas" aria-hidden="true"></div>
+        </div>
+
+        <svg class="hero-ola" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,52 C180,88 360,92 560,62 C760,32 900,8 1100,26 C1260,40 1360,64 1440,58 L1440,90 L0,90 Z"></path>
+        </svg>
+      </section>
+
+      <!-- CÓMO FUNCIONA: la sección queda fija y cada scroll muestra el siguiente paso -->
+      <section id="como-funciona" class="landing-pasos" data-tono="verde" aria-labelledby="pasos-titulo">
+        <div class="pasos-fijo">
+          <div class="landing-wrap pasos-contenido">
+            <h2 id="pasos-titulo" class="pasos-titulo">Cómo funciona</h2>
+
+            <div class="pasos-cuerpo">
+              <nav class="pasos-rail" aria-label="Pasos">
+                <button type="button" class="rail-item activo" data-paso-ir="0" aria-label="Paso 1: Publica tu aviso"></button>
+                <button type="button" class="rail-item" data-paso-ir="1" aria-label="Paso 2: Un administrador lo revisa"></button>
+                <button type="button" class="rail-item" data-paso-ir="2" aria-label="Paso 3: La comunidad lo encuentra"></button>
+                <button type="button" class="rail-item" data-paso-ir="3" aria-label="Paso 4: Márcalo como resuelto"></button>
+              </nav>
+
+              <div class="pasos-lista">
+                <article class="paso activo" data-tono="verde">
+                  <div class="paso-texto">
+                    <h3 class="paso-titulo">Publica tu aviso en un minuto</h3>
+                    <p class="paso-descripcion">
+                      Sube una o varias fotos, ponle un título y la fecha, y marca en el mapa dónde lo
+                      perdiste o lo encontraste. Si te interrumpen, queda guardado como borrador.
+                    </p>
+                  </div>
+                  <div class="paso-visual">
+                    <span class="paso-numero" aria-hidden="true">01</span>
+                    <div class="maqueta maqueta-form" aria-hidden="true">
+                      <div class="maqueta-foto"><i data-lucide="camera"></i><span>3 fotos</span></div>
+                      <div class="maqueta-campo"><span>Título</span><strong>Mochila negra con laptop</strong></div>
+                      <div class="maqueta-fila">
+                        <div class="maqueta-campo"><span>Fecha</span><strong><i data-lucide="calendar"></i>14 nov</strong></div>
+                        <div class="maqueta-campo"><span>Categoría</span><strong><i data-lucide="package"></i>Objeto</strong></div>
+                      </div>
+                      <div class="maqueta-mapa"><i data-lucide="map-pin"></i></div>
+                      <div class="maqueta-boton">Enviar hallazgo</div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="paso" data-tono="terracota">
+                  <div class="paso-texto">
+                    <h3 class="paso-titulo">Un administrador lo revisa</h3>
+                    <p class="paso-descripcion">
+                      Nada se publica sin revisión. El administrador aprueba los avisos reales y rechaza
+                      los repetidos o falsos, así la lista solo tiene casos que vale la pena mirar.
+                    </p>
+                  </div>
+                  <div class="paso-visual">
+                    <span class="paso-numero" aria-hidden="true">02</span>
+                    <div class="maqueta maqueta-moderacion" aria-hidden="true">
+                      <span class="maqueta-pastilla">Pendiente de revisión</span>
+                      <div class="maqueta-tarjeta">
+                        <div class="maqueta-miniatura"><i data-lucide="paw-print"></i></div>
+                        <div>
+                          <strong>Perrita café con collar rojo</strong>
+                          <span>Perdido · 12 nov</span>
+                        </div>
+                      </div>
+                      <div class="maqueta-acciones">
+                        <span class="maqueta-aprobar"><i data-lucide="check"></i>Aprobar</span>
+                        <span class="maqueta-rechazar"><i data-lucide="x"></i>Rechazar</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="paso" data-tono="arena">
+                  <div class="paso-texto">
+                    <h3 class="paso-titulo">La comunidad lo encuentra</h3>
+                    <p class="paso-descripcion">
+                      Quien busca escribe lo que perdió y filtra por categoría o fecha. Cada aviso se
+                      puede compartir con un enlace directo en WhatsApp o en redes.
+                    </p>
+                  </div>
+                  <div class="paso-visual">
+                    <span class="paso-numero" aria-hidden="true">03</span>
+                    <div class="maqueta maqueta-busqueda" aria-hidden="true">
+                      <div class="maqueta-buscador"><i data-lucide="search"></i>mochila negra</div>
+                      <div class="maqueta-chips"><span>Objeto</span><span>Últimos 7 días</span></div>
+                      <div class="maqueta-resultado"><i data-lucide="backpack"></i><strong>Mochila negra con laptop</strong><em>Encontrado</em></div>
+                      <div class="maqueta-resultado"><i data-lucide="backpack"></i><strong>Mochila negra pequeña</strong><em>Perdido</em></div>
+                      <div class="maqueta-enlace"><i data-lucide="link-2"></i>Enlace copiado</div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="paso" data-tono="azul">
+                  <div class="paso-texto">
+                    <h3 class="paso-titulo">Márcalo como resuelto</h3>
+                    <p class="paso-descripcion">
+                      Cuando el objeto o la mascota vuelve a su dueño, el autor del aviso lo marca como
+                      resuelto. El aviso queda en la lista para que todos sepan que el caso se cerró.
+                    </p>
+                  </div>
+                  <div class="paso-visual">
+                    <span class="paso-numero" aria-hidden="true">04</span>
+                    <div class="maqueta maqueta-resuelto" aria-hidden="true">
+                      <div class="maqueta-foto maqueta-foto-gris"><i data-lucide="key-round"></i></div>
+                      <strong>Llaves con llavero azul</strong>
+                      <div class="maqueta-etiquetas"><span class="maqueta-tipo">Encontrado</span><span class="maqueta-estado"><i data-lucide="circle-check"></i>Resuelto</span></div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LO QUE PUEDES HACER: características reales de la app -->
+      <section id="caracteristicas" class="landing-seccion" aria-labelledby="caracteristicas-titulo">
+        <div class="landing-wrap">
+          <h2 id="caracteristicas-titulo" class="landing-h2">Pensado para encontrar rápido</h2>
+
+          <div class="bento">
+            <article class="bento-item bento-mapa" data-loop>
+              <div class="radar" aria-hidden="true">
+                <span class="radar-onda"></span>
+                <span class="radar-onda radar-onda-2"></span>
+                <span class="radar-anillo radar-anillo-1"></span>
+                <span class="radar-anillo radar-anillo-2"></span>
+                <span class="radar-anillo radar-anillo-3"></span>
+                <span class="radar-calle radar-calle-h"></span>
+                <span class="radar-calle radar-calle-v"></span>
+                <span class="radar-calle radar-calle-d"></span>
+                <span class="radar-punto radar-punto-verde" style="--x: 22%; --y: 30%"></span>
+                <span class="radar-punto radar-punto-naranja" style="--x: 74%; --y: 24%"></span>
+                <span class="radar-punto radar-punto-verde" style="--x: 80%; --y: 70%"></span>
+                <span class="radar-punto radar-punto-naranja" style="--x: 30%; --y: 78%"></span>
+                <span class="radar-pin"><i data-lucide="map-pin"></i></span>
+              </div>
+              <div class="bento-texto">
+                <h3>Marca el lugar exacto en el mapa</h3>
+                <p>Usa tu ubicación actual o pega un enlace de Google Maps. Quien vea el aviso sabe dónde buscar.</p>
+              </div>
+            </article>
+
+            <article class="bento-item bento-filtros">
+              <div class="mini-buscador" aria-hidden="true">
+                <span class="mini-input"><i data-lucide="search"></i>llaves</span>
+                <span class="mini-chip activo">Objeto</span>
+                <span class="mini-chip">Mascota</span>
+                <span class="mini-chip">Más recientes</span>
+              </div>
+              <div class="bento-texto">
+                <h3>Busca y filtra</h3>
+                <p>Por nombre o descripción, por categoría y por fecha.</p>
+              </div>
+            </article>
+
+            <article class="bento-item bento-revision">
+              <div class="mini-revision" aria-hidden="true">
+                <i data-lucide="shield-check"></i>
+              </div>
+              <div class="bento-texto">
+                <h3>Revisado antes de salir</h3>
+                <p>Un administrador aprueba cada aviso. Sin spam en la lista.</p>
+              </div>
+            </article>
+
+            <article class="bento-item bento-enlace">
+              <div class="mini-enlace" aria-hidden="true">
+                <span class="mini-url"><i data-lucide="link-2"></i>homebound/?id=8Fq2…</span>
+                <span class="mini-copiado"><i data-lucide="circle-check"></i>Enlace copiado</span>
+              </div>
+              <div class="bento-texto">
+                <h3>Comparte el aviso con un enlace</h3>
+                <p>Un enlace directo al detalle, listo para pegar en WhatsApp o en un grupo.</p>
+              </div>
+            </article>
+
+            <article class="bento-item bento-borrador">
+              <div class="mini-borrador" aria-hidden="true">
+                <strong>¿Salir sin publicar?</strong>
+                <span class="mini-botones"><span>Descartar</span><span class="mini-guardar">Guardar borrador</span></span>
+              </div>
+              <div class="bento-texto">
+                <h3>Nada se pierde a medias</h3>
+                <p>Si sales del formulario, puedes guardarlo como borrador y seguir después.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- MÁS AVISOS RECIENTES: publicaciones reales -->
+      <section id="landing-recientes" class="landing-seccion landing-recientes oculto" aria-labelledby="recientes-titulo">
+        <div class="landing-wrap">
+          <div class="recientes-encabezado">
+            <h2 id="recientes-titulo" class="landing-h2">Avisos de esta semana</h2>
+            <button type="button" class="btn-enlace btn-con-icono" data-ir="publicaciones">
+              Ver todas las publicaciones<i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+          <div id="landing-recientes-lista" class="grid-publicaciones"></div>
+        </div>
+      </section>
+
+      <!-- CIERRE -->
+      <section class="landing-cierre" aria-labelledby="cierre-titulo">
+        <div class="landing-wrap cierre-contenido">
+          <h2 id="cierre-titulo" class="cierre-titulo">¿Perdiste algo hoy o encontraste algo que no es tuyo?</h2>
+          <button type="button" class="btn-hero-principal btn-con-icono" data-ir="publicar">
+            Publicar un aviso<i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </section>
+    </div>
+
+
         <!-- Card Central (Vistas SPA) -->
     <main class="container">
       <!-- VISTA 1: REGISTRO -->
-      <section id="vista-registro" class="card card-auth">
+      <section id="vista-registro" class="card card-auth oculto">
         <aside class="auth-panel">
           <img src="./src/assets/logo.jpg" alt="" class="auth-panel-logo" />
           <h2 class="auth-panel-titulo">HomeBound</h2>
@@ -492,6 +741,37 @@
 </section>
 
     </main>
+
+    <!-- Footer de toda la app -->
+    <footer class="pie">
+      <div class="landing-wrap pie-grid">
+        <div class="pie-marca">
+          <div class="pie-logo">
+            <img src="./src/assets/logo.jpg" alt="" />
+            <span>HomeBound</span>
+          </div>
+          <p>Avisos de objetos y mascotas perdidas y encontradas, revisados por un administrador antes de publicarse.</p>
+        </div>
+        <nav class="pie-columna" aria-label="Explorar HomeBound">
+          <h3>Explora</h3>
+          <button type="button" data-ir="inicio">Inicio</button>
+          <button type="button" data-ir="publicaciones">Publicaciones</button>
+          <button type="button" data-ir="publicar">Publicar un aviso</button>
+          <button type="button" data-ir="mis-publicaciones">Mis publicaciones</button>
+        </nav>
+        <nav class="pie-columna" aria-label="Sobre HomeBound">
+          <h3>La app</h3>
+          <button type="button" data-ir="como-funciona">Cómo funciona</button>
+          <button type="button" data-ir="caracteristicas">Qué puedes hacer</button>
+          <button type="button" data-ir="login">Iniciar sesión</button>
+        </nav>
+      </div>
+      <div class="landing-wrap pie-base">
+        <p>© 2026 HomeBound · Proyecto de Ingeniería de Software</p>
+        <p>Íconos de Lucide</p>
+      </div>
+    </footer>
+
 
     <!-- Diálogo de confirmación de la app (HU-09) -->
     <dialog id="dialogo-confirmacion" class="dialogo" aria-labelledby="dialogo-titulo">
