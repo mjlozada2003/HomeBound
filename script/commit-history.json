@@ -1463,12 +1463,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "3284c1289fa9276fe828b696260585fc659a7bb2",
+    "sha": "3b4b588e78007952d50e4c9ed58c3839fb577ac6",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T21:07:02.000Z",
       "message": "test(lista): deberia calcular la paginacion de publicaciones visibles",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/3284c1289fa9276fe828b696260585fc659a7bb2"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/3b4b588e78007952d50e4c9ed58c3839fb577ac6"
     },
     "stats": {
       "total": 36,
@@ -1482,12 +1482,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "a943cbff151bf164aba3aa7eeff4f484be105e80",
+    "sha": "ffcdf4cc0ce11da87a4efabafd30b32b1a3cc447",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T21:08:15.000Z",
       "message": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/a943cbff151bf164aba3aa7eeff4f484be105e80"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ffcdf4cc0ce11da87a4efabafd30b32b1a3cc447"
     },
     "stats": {
       "total": 11,
@@ -1501,12 +1501,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "ea17b3d6cdc7b739ac6d0d1eb279377b0733eaa4",
+    "sha": "053cf429c426092b04c634c2f6ea3533cbb67626",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:09:37.000Z",
       "message": "fix: las etiquetas de tipo y estado de la tarjeta se ven como pildoras en una fila",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/ea17b3d6cdc7b739ac6d0d1eb279377b0733eaa4"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/053cf429c426092b04c634c2f6ea3533cbb67626"
     },
     "stats": {
       "total": 31,
@@ -1577,12 +1577,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "b94045b6439763e7b0e6f5c182d84f22aede755b",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:39:39.000Z",
       "message": "test: deberia guardar, recuperar y eliminar el borrador en el navegador",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b94045b6439763e7b0e6f5c182d84f22aede755b"
     },
     "stats": {
       "total": 63,
@@ -1637,6 +1637,82 @@
     "sha": "HEAD",
     "author": "Maite Arauco",
     "commit": {
+      "date": "2026-11-17T01:47:48.000Z",
+      "message": "chore: agregar la libreria de iconos lucide",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 19,
+      "additions": 19,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:51:08.000Z",
+      "message": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 79,
+      "additions": 67,
+      "deletions": 12,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T02:02:25.000Z",
+      "message": "test: deberia crear el svg de un icono de lucide como texto html",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 52,
+      "additions": 52,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.21,
+    "test_count": 243,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T02:05:16.000Z",
+      "message": "feat: iconos de lucide en el detalle y formato unico para todos los iconos",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 104,
+      "additions": 58,
+      "deletions": 46,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.21,
+    "test_count": 243,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
       "date": "2026-11-17T02:06:01.000Z",
       "message": "style: flecha de volver con el icono arrow-left de lucide",
       "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
@@ -1649,6 +1725,25 @@
     },
     "coverage": 72.04,
     "test_count": 252,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T02:21:52.000Z",
+      "message": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json\n#\tsrc/presenter.js",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 224,
+      "additions": 181,
+      "deletions": 43,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.21,
+    "test_count": 255,
     "failed_tests": 0,
     "conclusion": "success"
   }
