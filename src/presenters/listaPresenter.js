@@ -2,7 +2,7 @@ import { obtenerPublicacionesPaginadas } from '../models/Posts/publicaciones.js'
 import { ESTADOS } from '../models/Posts/estados.js';
 import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
-import { crearTarjetaHtml, crearEtiquetasHtml } from './plantillaTarjeta';
+import { crearTarjetaHtml, crearEtiquetasHtml, crearEsqueletosHtml } from './plantillaTarjeta';
 import { renderizarDetalleEnContenedor } from './detallePresenter';
 import { obtenerPublicacionPorId } from '../models/Posts/publicaciones.js';
 import { describirResultados, hayFiltrosActivos } from '../models/Posts/busqueda';
@@ -16,6 +16,8 @@ const POR_PAGINA = 10;
 export async function renderizarListaPublicaciones() {
   const contenedorLista = document.querySelector('#lista-publicaciones');
   if (!contenedorLista) {return;}
+
+  contenedorLista.innerHTML = crearEsqueletosHtml(8);
 
   try {
     const [activas, resueltas] = await Promise.all([

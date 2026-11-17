@@ -1957,12 +1957,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "f64fead6a7cec912a5bc1a8029b93d7329f81469",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:25:53.000Z",
       "message": "fix: la contrasena del admin ya no esta en texto plano y el login verifica el hash",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f64fead6a7cec912a5bc1a8029b93d7329f81469"
     },
     "stats": {
       "total": 89,
@@ -2443,6 +2443,25 @@
       "total": 1797,
       "additions": 1793,
       "deletions": 4,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:28:36.000Z",
+      "message": "feat: acabados visuales en toda la app con textura, transiciones, carga y estados de foco",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 216,
+      "additions": 211,
+      "deletions": 5,
       "date": "2026-11-17"
     },
     "coverage": 73.24,

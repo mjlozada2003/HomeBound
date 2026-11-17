@@ -13,7 +13,7 @@ import {
   borrarPublicacion,
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
-import { crearTarjetaHtml, crearEtiquetasHtml } from './plantillaTarjeta';
+import { crearTarjetaHtml, crearEtiquetasHtml, crearEsqueletosHtml } from './plantillaTarjeta';
 import { pedirConfirmacion } from './dialogoConfirmacion';
 
 let misPublicacionesCargadas = [];
@@ -25,6 +25,7 @@ export async function renderizarMisPublicaciones() {
 
   const usuario = obtenerSesionActiva();
   idEditando = null;
+  contenedor.innerHTML = crearEsqueletosHtml(4);
 
   try {
     misPublicacionesCargadas = usuario

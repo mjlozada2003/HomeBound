@@ -432,7 +432,8 @@ body {
 }
 
 .tarjeta-resuelta {
-    border-left: 5px solid var(--color-resuelto);
+    border-color: color-mix(in srgb, var(--color-resuelto) 35%, transparent);
+    background-color: #F5F8FC;
 }
 
 .tarjeta-resuelta .tarjeta-foto {

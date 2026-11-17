@@ -3697,7 +3697,7 @@
     "testId": 83
   },
   {
-    "commitId": "HEAD",
+    "commitId": "f64fead6a7cec912a5bc1a8029b93d7329f81469",
     "commitName": "test: deberia cifrar la contrasena con pbkdf2 y una sal",
     "commitTimestamp": 1794885543295,
     "testId": 83
@@ -3981,5 +3981,11 @@
     "commitName": "feat: landing page con hero, como funciona por pasos, caracteristicas, avisos reales y footer",
     "commitTimestamp": 1794904072169,
     "testId": 104
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: acabados visuales en toda la app con textura, transiciones, carga y estados de foco",
+    "commitTimestamp": 1794904127069,
+    "testId": 105
   }
 ]
