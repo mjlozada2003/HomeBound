@@ -25,3 +25,13 @@ export async function cifrarContrasena(password, sal) {
   );
   return aHexadecimal(bits);
 }
+
+function generarSal() {
+  return aHexadecimal(globalThis.crypto.getRandomValues(new Uint8Array(16)));
+}
+
+// Lo que se guarda del usuario: el hash y la sal, nunca la contraseña.
+export async function crearCredenciales(password) {
+  const sal = generarSal();
+  return { passwordHash: await cifrarContrasena(password, sal), sal };
+}

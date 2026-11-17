@@ -3553,7 +3553,7 @@
     "testId": 77
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b017e141e53a7bded61aa2fdf5ce99bc7b8d47ba",
     "commitName": "test: deberia guardar, recuperar y eliminar el borrador en el navegador",
     "commitTimestamp": 1794879582025,
     "testId": 77
@@ -3661,5 +3661,27 @@
     "commitName": "test: deberia cifrar la contrasena con pbkdf2 y una sal",
     "commitTimestamp": 1794885543295,
     "testId": 83
+  },
+  {
+    "numPassedTests": 258,
+    "failedTests": 2,
+    "numTotalTests": 260,
+    "timestamp": 1794885570830,
+    "success": false,
+    "testId": 84
+  },
+  {
+    "numPassedTests": 260,
+    "failedTests": 0,
+    "numTotalTests": 260,
+    "timestamp": 1794885679254,
+    "success": true,
+    "testId": 84
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
+    "commitTimestamp": 1794885694104,
+    "testId": 84
   }
 ]

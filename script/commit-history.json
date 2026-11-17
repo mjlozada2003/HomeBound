@@ -1653,12 +1653,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "b017e141e53a7bded61aa2fdf5ce99bc7b8d47ba",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:47:48.000Z",
       "message": "chore: agregar la libreria de iconos lucide",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b017e141e53a7bded61aa2fdf5ce99bc7b8d47ba"
     },
     "stats": {
       "total": 19,
@@ -1839,6 +1839,25 @@
     },
     "coverage": 72.47,
     "test_count": 258,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:21:28.000Z",
+      "message": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 30,
+      "additions": 29,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.58,
+    "test_count": 260,
     "failed_tests": 0,
     "conclusion": "success"
   }

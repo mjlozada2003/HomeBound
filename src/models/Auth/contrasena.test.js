@@ -1,4 +1,4 @@
-import { cifrarContrasena } from './contrasena.js';
+import { cifrarContrasena, crearCredenciales } from './contrasena.js';
 
 describe('Seguridad: contraseñas cifradas', () => {
   describe('cifrarContrasena', () => {
@@ -15,6 +15,24 @@ describe('Seguridad: contraseñas cifradas', () => {
 
     test('Debería dar hashes distintos si cambia la sal', async () => {
       expect(await cifrarContrasena('654321', 'sal-1')).not.toBe(await cifrarContrasena('654321', 'sal-2'));
+    });
+  });
+
+  describe('crearCredenciales', () => {
+    test('Debería guardar el hash y la sal, pero no la contraseña', async () => {
+      const credenciales = await crearCredenciales('654321');
+
+      expect(credenciales).not.toHaveProperty('password');
+      expect(credenciales.sal).toMatch(/^[0-9a-f]{32}$/);
+      expect(credenciales.passwordHash).toBe(await cifrarContrasena('654321', credenciales.sal));
+    });
+
+    test('Debería usar una sal distinta cada vez', async () => {
+      const primera = await crearCredenciales('654321');
+      const segunda = await crearCredenciales('654321');
+
+      expect(primera.sal).not.toBe(segunda.sal);
+      expect(primera.passwordHash).not.toBe(segunda.passwordHash);
     });
   });
 });
