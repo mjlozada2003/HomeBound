@@ -3763,7 +3763,7 @@
     "testId": 86
   },
   {
-    "commitId": "HEAD",
+    "commitId": "17e43986f8147d2e77b461a40349e309710cd53d",
     "commitName": "fix: la contrasena del admin ya no esta en texto plano y el login verifica el hash",
     "commitTimestamp": 1794885957305,
     "testId": 86
@@ -3793,31 +3793,31 @@
     "testId": 87
   },
   {
-    "commitId": "HEAD",
+    "commitId": "70a64d44fc8b07bdd796c0bab51b186fce9fcb75",
     "commitName": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
     "commitTimestamp": 1794886075067,
     "testId": 87
   },
   {
-    "commitId": "HEAD",
+    "commitId": "f8e73ad29310a72b50e36e3e1b79df16bc2c044c",
     "commitName": "docs: lista de casos de prueba de contrasenas cifradas",
     "commitTimestamp": 1794886105499,
     "testId": 88
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8ad2162e1ae04ea74b4a4d8fb808936e3aeb73d3",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794887091051,
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "056cef369612eed50343292ab630b54b05ca3a62",
     "commitName": "test: deberia generar la url del mapa embebido a partir de la ubicacion",
     "commitTimestamp": 1794887636217,
     "testId": 86
   },
   {
-    "commitId": "HEAD",
+    "commitId": "0b0e1e5783724a67b16285f8126a855073c1c38f",
     "commitName": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
     "commitTimestamp": 1794887669629,
     "testId": 87
@@ -4007,5 +4007,65 @@
     "commitName": "feat: videos de fondo del hero que se turnan con un fundido",
     "commitTimestamp": 1794908528448,
     "testId": 107
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "style: quitar el credito de iconos del footer",
+    "commitTimestamp": 1794909721863,
+    "testId": 108
+  },
+  {
+    "numPassedTests": 340,
+    "failedTests": 6,
+    "numTotalTests": 346,
+    "timestamp": 1794909908065,
+    "success": false,
+    "testId": 109
+  },
+  {
+    "numPassedTests": 346,
+    "failedTests": 0,
+    "numTotalTests": 346,
+    "timestamp": 1794910017477,
+    "success": true,
+    "testId": 109
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia elegir una publicacion de cada estado para el hero de la landing",
+    "commitTimestamp": 1794910045269,
+    "testId": 109
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: el hero de la landing muestra una publicacion de cada estado",
+    "commitTimestamp": 1794910095893,
+    "testId": 110
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: quitar el parpadeo al cambiar de paso en como funciona",
+    "commitTimestamp": 1794910626027,
+    "testId": 111
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: casos de prueba de las publicaciones destacadas y del cambio de paso",
+    "commitTimestamp": 1794910686196,
+    "testId": 112
+  },
+  {
+    "numPassedTests": 346,
+    "failedTests": 0,
+    "numTotalTests": 346,
+    "timestamp": 1794911158650,
+    "success": true,
+    "testId": 113
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: la landing no muestra la publicacion de prueba del calculador",
+    "commitTimestamp": 1794911185934,
+    "testId": 113
   }
 ]

@@ -1,6 +1,7 @@
 import { obtenerPublicacionesPorEstado } from '../services/publicacionesService';
 import { ESTADOS } from '../models/Posts/estados.js';
 import { obtenerPublicacionesPaginadas } from '../models/Posts/publicaciones.js';
+import { elegirPublicacionesDestacadas } from '../models/Posts/destacadas.js';
 import { obtenerSesionActiva } from '../models/Auth/sesion';
 import { escaparHtml } from '../models/html';
 import { crearTarjetaHtml, crearEtiquetasHtml, crearEsqueletosHtml } from './plantillaTarjeta';
@@ -16,6 +17,10 @@ export const VIDEOS_FONDO_HERO = [
 
 const PUBLICACIONES_EN_HERO = 3;
 const PUBLICACIONES_RECIENTES = 4;
+
+// Publicaciones reales que la landing no muestra (siguen en la lista pública).
+// "calculador": prueba del docente con una foto que no coincide con el título.
+const PUBLICACIONES_OCULTAS_EN_LANDING = ['K4LesYmzn596GPC12Goc'];
 
 function reducirMovimiento() {
   return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
@@ -207,24 +212,29 @@ async function cargarPublicacionesReales(irA) {
 
   heroTarjetas.innerHTML = crearEsqueletosHtml(PUBLICACIONES_EN_HERO);
 
-  let publicaciones = [];
+  let todas = [];
   try {
     const [activas, resueltas] = await Promise.all([
       obtenerPublicacionesPorEstado(ESTADOS.APROBADA),
       obtenerPublicacionesPorEstado(ESTADOS.RESUELTA),
     ]);
-    publicaciones = obtenerPublicacionesPaginadas(
-      [...activas, ...resueltas],
-      1,
-      PUBLICACIONES_EN_HERO + PUBLICACIONES_RECIENTES
-    ).publicaciones;
+    todas = [...activas, ...resueltas].filter(
+      (pub) => !PUBLICACIONES_OCULTAS_EN_LANDING.includes(pub.id)
+    );
   } catch {
     sinTarjetasEnHero();
     return;
   }
 
-  const delHero = publicaciones.slice(0, PUBLICACIONES_EN_HERO);
-  const recientes = publicaciones.slice(PUBLICACIONES_EN_HERO);
+  // Hero: una de cada estado (encontrada, perdida, resuelta), elegida por el modelo.
+  const delHero = elegirPublicacionesDestacadas(todas);
+  const idsDelHero = delHero.map((pub) => pub.id);
+  // "Avisos de esta semana": las más recientes que no están ya en el hero.
+  const recientes = obtenerPublicacionesPaginadas(
+    todas.filter((pub) => !idsDelHero.includes(pub.id)),
+    1,
+    PUBLICACIONES_RECIENTES
+  ).publicaciones;
 
   if (delHero.length === 0) {
     sinTarjetasEnHero();

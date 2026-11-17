@@ -2014,12 +2014,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "17e43986f8147d2e77b461a40349e309710cd53d",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:44:47.000Z",
       "message": "Merge remote-tracking branch 'origin/main' into feat/diseno-responsive\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/17e43986f8147d2e77b461a40349e309710cd53d"
     },
     "stats": {
       "total": 70,
@@ -2033,12 +2033,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "70a64d44fc8b07bdd796c0bab51b186fce9fcb75",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:53:52.000Z",
       "message": "test: deberia generar la url del mapa embebido a partir de la ubicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/70a64d44fc8b07bdd796c0bab51b186fce9fcb75"
     },
     "stats": {
       "total": 62,
@@ -2052,12 +2052,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "f8e73ad29310a72b50e36e3e1b79df16bc2c044c",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:54:25.000Z",
       "message": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f8e73ad29310a72b50e36e3e1b79df16bc2c044c"
     },
     "stats": {
       "total": 52,
@@ -2071,12 +2071,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "8ad2162e1ae04ea74b4a4d8fb808936e3aeb73d3",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:54:59.000Z",
       "message": "test: deberia mostrar el mapa en el detalle solo si se indico ubicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/8ad2162e1ae04ea74b4a4d8fb808936e3aeb73d3"
     },
     "stats": {
       "total": 47,
@@ -2090,12 +2090,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "056cef369612eed50343292ab630b54b05ca3a62",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:55:25.000Z",
       "message": "feat: mostrar mapa con marcador en el detalle de la publicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/056cef369612eed50343292ab630b54b05ca3a62"
     },
     "stats": {
       "total": 19,
@@ -2109,12 +2109,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "0b0e1e5783724a67b16285f8126a855073c1c38f",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:55:50.000Z",
       "message": "feat: marcar ubicacion con vista previa de Google Maps en el formulario",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/0b0e1e5783724a67b16285f8126a855073c1c38f"
     },
     "stats": {
       "total": 139,
@@ -2504,6 +2504,120 @@
     },
     "coverage": 73.24,
     "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:01:56.000Z",
+      "message": "style: quitar el credito de iconos del footer",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 1,
+      "additions": 0,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:07:18.000Z",
+      "message": "test: deberia elegir una publicacion de cada estado para el hero de la landing",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 117,
+      "additions": 117,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:08:09.000Z",
+      "message": "fix: el hero de la landing muestra una publicacion de cada estado",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 12,
+      "deletions": 8,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:16:58.000Z",
+      "message": "fix: quitar el parpadeo al cambiar de paso en como funciona",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 24,
+      "additions": 19,
+      "deletions": 5,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:17:58.000Z",
+      "message": "docs: casos de prueba de las publicaciones destacadas y del cambio de paso",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 14,
+      "additions": 12,
+      "deletions": 2,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:26:18.000Z",
+      "message": "fix: la landing no muestra la publicacion de prueba del calculador",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 7,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
     "failed_tests": 0,
     "conclusion": "success"
   }

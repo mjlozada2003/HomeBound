@@ -16,11 +16,21 @@
 10. `crearEsqueletosHtml`: ocultos para lectores de pantalla.
 11. `crearEsqueletosHtml`: nada si la cantidad es 0.
 
+### `src/models/Posts/destacadas.js` (hero)
+12. Elige una encontrada activa, una perdida activa y una resuelta.
+13. Para la perdida prefiere una mascota aunque haya un objeto más reciente.
+14. Si no hay mascotas perdidas, usa la perdida más reciente.
+15. Si falta algún estado, completa con las más recientes.
+16. Ignora las publicaciones que no se ven en la lista pública.
+17. Lista vacía si no hay publicaciones.
+18. Devuelve las publicaciones listas para la tarjeta.
+
 ## Manuales
 - Sin sesión, la app abre en la landing (antes abría en el registro).
 - "Crear una cuenta" → registro; "Ya tengo cuenta" → login.
-- El hero muestra las 3 publicaciones más recientes reales; sin conexión, el hero queda sin tarjetas.
-- "Cómo funciona" (pantalla ancha): al bajar, la sección queda fija y cambian los 4 pasos y el color de fondo; las rayas del costado llevan a cada paso.
+- El hero muestra 3 publicaciones reales, una de cada estado (encontrada, perdida —de preferencia mascota— y resuelta); sin conexión, el hero queda sin tarjetas.
+- "Avisos de esta semana" no repite las del hero.
+- "Cómo funciona" (pantalla ancha): al bajar, la sección queda fija y cambian los 4 pasos y el color de fondo; las rayas del costado llevan a cada paso. Al cambiar de paso no hay parpadeo ni se ven dos pasos mezclados.
 - "Cómo funciona" (celular): los 4 pasos uno debajo del otro.
 - "Avisos de esta semana" muestra 4 publicaciones reales; al tocarlas pide iniciar sesión.
 - Footer en todas las vistas; sus enlaces respetan la sesión (sin sesión, "Publicaciones" lleva al login).
