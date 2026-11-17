@@ -1463,12 +1463,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "3b4b588e78007952d50e4c9ed58c3839fb577ac6",
     "author": "Maria Lozada",
     "commit": {
       "date": "2026-11-14T21:07:02.000Z",
       "message": "test(lista): deberia calcular la paginacion de publicaciones visibles",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/3b4b588e78007952d50e4c9ed58c3839fb577ac6"
     },
     "stats": {
       "total": 36,
@@ -1531,6 +1531,25 @@
       "total": 19,
       "additions": 19,
       "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 78.1,
+    "test_count": 240,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:51:08.000Z",
+      "message": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 79,
+      "additions": 67,
+      "deletions": 12,
       "date": "2026-11-17"
     },
     "coverage": 78.1,

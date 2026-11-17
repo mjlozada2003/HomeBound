@@ -303,12 +303,13 @@ export function iniciarAuthPresenter() {
     if (usuario) {
       navBtnIngresar.classList.add('oculto');
       navUserInfo.classList.remove('oculto');
-      navUserName.textContent = `👤 ${usuario.nombre}`;
-      if (puedeAccederAAdmin(usuario)) {
-        navBtnPanel.classList.remove('oculto');
-      } else {
-        navBtnPanel.classList.add('oculto');
-      }
+      navUserName.textContent = usuario.nombre;
+      const esAdmin = puedeAccederAAdmin(usuario);
+      navBtnPanel.classList.toggle('oculto', !esAdmin);
+      // El Admin se ve con un escudo y la etiqueta "Admin"; el usuario normal, con su avatar.
+      navUserInfo.querySelector('.icono-usuario').classList.toggle('oculto', esAdmin);
+      navUserInfo.querySelector('.icono-admin').classList.toggle('oculto', !esAdmin);
+      navUserInfo.querySelector('.etiqueta-admin').classList.toggle('oculto', !esAdmin);
     } else {
       navBtnIngresar.classList.remove('oculto');
       navUserInfo.classList.add('oculto');

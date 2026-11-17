@@ -1,3 +1,4 @@
+import { iniciarIconos } from './presenters/iconos';
 import { iniciarAuthPresenter } from './presenters/authPresenter';
 import { iniciarPostPresenter } from './presenters/postPresenter';
 import { inicializarListaPresenter } from './presenters/listaPresenter';
@@ -6,6 +7,8 @@ import { inicializarMisPublicacionesPresenter } from './presenters/misPublicacio
 import { abrirPublicacionPorEnlace } from './presenters/enlaceNavegacion';
 
 function iniciarAplicacion() {
+  // Primero los íconos: createIcons reemplaza los <i> por <svg> y los presenters usan esos nodos.
+  iniciarIconos();
   iniciarAuthPresenter();
   iniciarPostPresenter();
   inicializarListaPresenter();

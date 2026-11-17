@@ -3425,7 +3425,7 @@
     "testId": 69
   },
   {
-    "commitId": "HEAD",
+    "commitId": "3b4b588e78007952d50e4c9ed58c3839fb577ac6",
     "commitName": "test(lista): deberia mostrar lista vacia si solo hay publicaciones resueltas expiradas",
     "commitTimestamp": 1794689963438,
     "testId": 70
@@ -3469,5 +3469,11 @@
     "commitName": "chore: agregar la libreria de iconos lucide",
     "commitTimestamp": 1794880071993,
     "testId": 74
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
+    "commitTimestamp": 1794880272230,
+    "testId": 75
   }
 ]

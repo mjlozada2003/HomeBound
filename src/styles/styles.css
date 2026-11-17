@@ -181,9 +181,37 @@ body {
   gap: 0.75rem;
 }
 .user-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-weight: 700;
   color: var(--color-primary);
   font-size: 0.95rem;
+}
+.user-name svg {
+  width: 22px;
+  height: 22px;
+}
+.etiqueta-admin {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+/* Botones con ícono de Lucide + texto */
+.btn-con-icono {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.btn-con-icono svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 .btn-logout {
   background: transparent;
