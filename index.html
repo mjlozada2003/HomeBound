@@ -124,6 +124,56 @@
       <!-- VISTA 3: PUBLICACIONES RECIENTES (Oculto mientras no inicie sesión) -->
       <section id="seccion-publicaciones" class="vista-publicaciones oculto">
         <h2 class="publicaciones-titulo">Publicaciones Recientes</h2>
+
+        <!-- HU-05: Buscar por filtro y ordenar -->
+        <form id="filtros-publicaciones" class="filtros-publicaciones" role="search" novalidate>
+          <div class="filtro-campo filtro-busqueda">
+            <label for="filtro-texto">Buscar</label>
+            <input id="filtro-texto" type="search" placeholder="Busca por nombre o descripción, por ejemplo: mochila negra" autocomplete="off">
+          </div>
+
+          <div class="filtro-campo">
+            <label for="filtro-categoria">Categoría</label>
+            <select id="filtro-categoria">
+              <option value="">Todas</option>
+              <option value="OBJETO">Objetos</option>
+              <option value="MASCOTA">Mascotas</option>
+              <option value="OTRO">Otro</option>
+            </select>
+          </div>
+
+          <div id="filtro-subcategoria-grupo" class="filtro-campo" hidden>
+            <label for="filtro-subcategoria">Tipo</label>
+            <select id="filtro-subcategoria"></select>
+          </div>
+
+          <div id="filtro-otra-mascota-grupo" class="filtro-campo" hidden>
+            <label for="filtro-otra-mascota">¿Qué mascota?</label>
+            <input id="filtro-otra-mascota" type="text" placeholder="Ej.: conejo, tortuga" autocomplete="off">
+          </div>
+
+          <div class="filtro-campo">
+            <label for="filtro-fecha">Fecha</label>
+            <select id="filtro-fecha">
+              <option value="">Cualquier fecha</option>
+              <option value="HOY">Hoy</option>
+              <option value="SEMANA">Últimos 7 días</option>
+              <option value="MES">Últimos 30 días</option>
+            </select>
+          </div>
+
+          <div class="filtro-campo">
+            <label for="filtro-orden">Ordenar por</label>
+            <select id="filtro-orden">
+              <option value="RECIENTES">Más recientes</option>
+              <option value="RELEVANCIA">Relevancia</option>
+            </select>
+          </div>
+
+          <button type="reset" id="filtro-limpiar" class="btn-ingresar filtro-limpiar" hidden>Limpiar filtros</button>
+        </form>
+        <p id="filtro-resumen" class="filtro-resumen" role="status" aria-live="polite"></p>
+
         <div id="lista-publicaciones" class="grid-publicaciones"></div>
         <div id="controles-paginacion" class="paginacion"></div>
       </section>

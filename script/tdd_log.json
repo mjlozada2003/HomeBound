@@ -3641,7 +3641,7 @@
     "testId": 82
   },
   {
-    "commitId": "HEAD",
+    "commitId": "016377ed5e6a453777136f83b0926065ef000d4b",
     "commitName": "fix: el boton publicar solo se muestra con la sesion iniciada",
     "commitTimestamp": 1794884586265,
     "testId": 83
@@ -3741,5 +3741,11 @@
     "commitName": "test: deberia actualizar los resultados al aplicar un filtro",
     "commitTimestamp": 1794889335492,
     "testId": 95
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: agregar barra de busqueda, filtros desplegables y orden en la lista",
+    "commitTimestamp": 1794889367877,
+    "testId": 96
   }
 ]
