@@ -3559,7 +3559,7 @@
     "testId": 77
   },
   {
-    "commitId": "HEAD",
+    "commitId": "66ece5bc0b7645126e768191522e34c3b63d8b73",
     "commitName": "feat: boton volver en publicar que pregunta si guardar borrador o descartar",
     "commitTimestamp": 1794879830159,
     "testId": 78
@@ -3683,5 +3683,27 @@
     "commitName": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
     "commitTimestamp": 1794885694104,
     "testId": 84
+  },
+  {
+    "numPassedTests": 262,
+    "failedTests": 3,
+    "numTotalTests": 265,
+    "timestamp": 1794885757544,
+    "success": false,
+    "testId": 85
+  },
+  {
+    "numPassedTests": 265,
+    "failedTests": 0,
+    "numTotalTests": 265,
+    "timestamp": 1794885791540,
+    "success": true,
+    "testId": 85
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
+    "commitTimestamp": 1794885832012,
+    "testId": 85
   }
 ]

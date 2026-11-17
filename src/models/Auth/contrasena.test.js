@@ -1,4 +1,9 @@
-import { cifrarContrasena, crearCredenciales } from './contrasena.js';
+import {
+  cifrarContrasena,
+  crearCredenciales,
+  verificarContrasena,
+  tieneContrasenaSinCifrar,
+} from './contrasena.js';
 
 describe('Seguridad: contraseñas cifradas', () => {
   describe('cifrarContrasena', () => {
@@ -33,6 +38,35 @@ describe('Seguridad: contraseñas cifradas', () => {
 
       expect(primera.sal).not.toBe(segunda.sal);
       expect(primera.passwordHash).not.toBe(segunda.passwordHash);
+    });
+  });
+
+  describe('verificarContrasena', () => {
+    test('Debería aceptar la contraseña correcta de un usuario con hash', async () => {
+      const usuario = await crearCredenciales('654321');
+      expect(await verificarContrasena('654321', usuario)).toBe(true);
+    });
+
+    test('Debería rechazar una contraseña incorrecta de un usuario con hash', async () => {
+      const usuario = await crearCredenciales('654321');
+      expect(await verificarContrasena('123456', usuario)).toBe(false);
+    });
+
+    test('Debería aceptar a un usuario antiguo que aún tiene la contraseña sin cifrar', async () => {
+      expect(await verificarContrasena('654321', { password: '654321' })).toBe(true);
+      expect(await verificarContrasena('123456', { password: '654321' })).toBe(false);
+    });
+
+    test('Debería rechazar si no hay usuario', async () => {
+      expect(await verificarContrasena('654321', null)).toBe(false);
+    });
+  });
+
+  describe('tieneContrasenaSinCifrar', () => {
+    test('Debería detectar a los usuarios antiguos que hay que migrar', async () => {
+      expect(tieneContrasenaSinCifrar({ password: '654321' })).toBe(true);
+      expect(tieneContrasenaSinCifrar(await crearCredenciales('654321'))).toBe(false);
+      expect(tieneContrasenaSinCifrar(null)).toBe(false);
     });
   });
 });

@@ -1672,12 +1672,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "66ece5bc0b7645126e768191522e34c3b63d8b73",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:51:08.000Z",
       "message": "feat: iconos de lucide en la barra de navegacion para usuario, admin y panel",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/66ece5bc0b7645126e768191522e34c3b63d8b73"
     },
     "stats": {
       "total": 79,
@@ -1858,6 +1858,25 @@
     },
     "coverage": 72.58,
     "test_count": 260,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T03:23:48.000Z",
+      "message": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 51,
+      "additions": 50,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.8,
+    "test_count": 265,
     "failed_tests": 0,
     "conclusion": "success"
   }

@@ -35,3 +35,18 @@ export async function crearCredenciales(password) {
   const sal = generarSal();
   return { passwordHash: await cifrarContrasena(password, sal), sal };
 }
+
+// Usuarios creados antes de cifrar las contraseñas: todavía tienen el campo "password".
+export function tieneContrasenaSinCifrar(usuario) {
+  return typeof usuario?.password === 'string' && !usuario.passwordHash;
+}
+
+export async function verificarContrasena(password, usuario) {
+  if (usuario?.passwordHash && usuario.sal) {
+    return (await cifrarContrasena(password, usuario.sal)) === usuario.passwordHash;
+  }
+  if (tieneContrasenaSinCifrar(usuario)) {
+    return password === usuario.password;
+  }
+  return false;
+}
