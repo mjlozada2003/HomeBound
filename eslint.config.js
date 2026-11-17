@@ -7,6 +7,7 @@ export default [
       'TDDLabBaseProject/**',
       'script/**',
       'semantic-commits.js',
+      '.claude/**',
     ],
   },
   {

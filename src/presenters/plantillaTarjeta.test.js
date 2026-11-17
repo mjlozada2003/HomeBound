@@ -1,4 +1,4 @@
-import { crearTarjetaHtml, crearEtiquetasHtml } from './plantillaTarjeta';
+import { crearTarjetaHtml, crearEtiquetasHtml, crearEsqueletosHtml } from './plantillaTarjeta';
 
 describe('HU-06 y HU-10: Plantilla compartida de tarjeta', () => {
   const publicacion = { id: '1', foto: 'foto1.jpg', titulo: 'Credencial UCB' };
@@ -53,5 +53,21 @@ describe('Etiquetas de tipo y estado con el mismo formato en todas las vistas', 
 
     expect(html).not.toContain('<b>');
     expect(html).not.toContain('<i>');
+  });
+});
+
+describe('Tarjetas de carga (esqueletos) mientras llegan las publicaciones', () => {
+  test('Debería crear la cantidad de esqueletos pedida', () => {
+    const html = crearEsqueletosHtml(3);
+
+    expect(html.match(/class="tarjeta-esqueleto"/g)).toHaveLength(3);
+  });
+
+  test('Debería ocultarlos a los lectores de pantalla', () => {
+    expect(crearEsqueletosHtml(1)).toContain('aria-hidden="true"');
+  });
+
+  test('Debería no crear nada si la cantidad es 0', () => {
+    expect(crearEsqueletosHtml(0)).toBe('');
   });
 });

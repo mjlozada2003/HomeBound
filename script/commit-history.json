@@ -1862,12 +1862,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "7b833b3969926195705f3c9f1b8f3b24f87d566f",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:06:42.000Z",
       "message": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/7b833b3969926195705f3c9f1b8f3b24f87d566f"
     },
     "stats": {
       "total": 23,
@@ -1881,12 +1881,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "93e02d762b3df6781313e21d3e691863e1aecda8",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:17:29.000Z",
       "message": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/93e02d762b3df6781313e21d3e691863e1aecda8"
     },
     "stats": {
       "total": 352,
@@ -1900,12 +1900,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "b21b006518cf478bb38ca4d795524f8d2d9113e7",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:18:59.000Z",
       "message": "test: deberia cifrar la contrasena con pbkdf2 y una sal",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/b21b006518cf478bb38ca4d795524f8d2d9113e7"
     },
     "stats": {
       "total": 47,
@@ -1919,12 +1919,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "ea273451cde93badbbe95026efee972d42514da6",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:21:28.000Z",
       "message": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ea273451cde93badbbe95026efee972d42514da6"
     },
     "stats": {
       "total": 30,
@@ -1938,12 +1938,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "33a7f927496cb59a7a9755695d5fec7b2656cf73",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:23:48.000Z",
       "message": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/33a7f927496cb59a7a9755695d5fec7b2656cf73"
     },
     "stats": {
       "total": 51,
@@ -1957,12 +1957,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "f64fead6a7cec912a5bc1a8029b93d7329f81469",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:25:53.000Z",
       "message": "fix: la contrasena del admin ya no esta en texto plano y el login verifica el hash",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/f64fead6a7cec912a5bc1a8029b93d7329f81469"
     },
     "stats": {
       "total": 89,
@@ -1976,12 +1976,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "423aebaa5b1575e8bdf51a9238e4c84b8a3841c8",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:27:52.000Z",
       "message": "fix: el registro guarda la contrasena cifrada y migra a los usuarios antiguos al iniciar sesion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/423aebaa5b1575e8bdf51a9238e4c84b8a3841c8"
     },
     "stats": {
       "total": 67,
@@ -1995,12 +1995,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "8e85eb66d70b636846d3ce65ac5b9fad2fa515cb",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:28:22.000Z",
       "message": "docs: lista de casos de prueba de contrasenas cifradas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/8e85eb66d70b636846d3ce65ac5b9fad2fa515cb"
     },
     "stats": {
       "total": 28,
@@ -2352,6 +2352,158 @@
     },
     "coverage": 72.94,
     "test_count": 328,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T07:57:55.000Z",
+      "message": "chore: ignorar la carpeta local de skills de claude en git y eslint",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 5,
+      "additions": 4,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.94,
+    "test_count": 328,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T07:58:47.000Z",
+      "message": "refactor: mover los estilos responsive a su propio archivo",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 304,
+      "additions": 153,
+      "deletions": 151,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.94,
+    "test_count": 328,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:00:30.000Z",
+      "message": "test: deberia calcular el paso activo de como funciona segun el scroll",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 61,
+      "additions": 61,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.16,
+    "test_count": 336,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:02:54.000Z",
+      "message": "test: deberia crear tarjetas esqueleto para mostrar mientras cargan las publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 29,
+      "additions": 28,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.22,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:27:48.000Z",
+      "message": "feat: landing page con hero, como funciona por pasos, caracteristicas, avisos reales y footer",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 1797,
+      "additions": 1793,
+      "deletions": 4,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:28:36.000Z",
+      "message": "feat: acabados visuales en toda la app con textura, transiciones, carga y estados de foco",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 216,
+      "additions": 211,
+      "deletions": 5,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:29:55.000Z",
+      "message": "docs: lista de casos de prueba de la landing y los acabados",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 30,
+      "additions": 30,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
+    "test_count": 339,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T09:42:04.000Z",
+      "message": "feat: videos de fondo del hero que se turnan con un fundido",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 62,
+      "additions": 46,
+      "deletions": 16,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.24,
+    "test_count": 339,
     "failed_tests": 0,
     "conclusion": "success"
   }

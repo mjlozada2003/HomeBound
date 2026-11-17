@@ -5,7 +5,7 @@ export function crearTarjetaHtml({ id, foto, titulo }, contenido, claseExtra = '
 
   return `
     <div class="${clases}" data-id="${escaparHtml(id)}">
-      <img src="${escaparHtml(foto)}" alt="${escaparHtml(titulo)}" class="tarjeta-foto" />
+      <div class="tarjeta-foto-marco"><img src="${escaparHtml(foto)}" alt="${escaparHtml(titulo)}" class="tarjeta-foto" loading="lazy" /></div>
       <div class="tarjeta-info">
         <h3 class="tarjeta-titulo">${escaparHtml(titulo)}</h3>
         ${contenido}
@@ -22,4 +22,15 @@ export function crearEtiquetasHtml({ tipoTexto, estadoTexto }) {
     : '';
 
   return `<p class="tarjeta-etiquetas"><span class="badge-tipo ${claseTipo}">${escaparHtml(tipoTexto)}</span>${etiquetaEstado}</p>`;
+}
+
+// Tarjetas "fantasma" con la forma de una tarjeta real, mientras se cargan las publicaciones.
+export function crearEsqueletosHtml(cantidad) {
+  const esqueleto = `
+    <div class="tarjeta-esqueleto" aria-hidden="true">
+      <div class="esqueleto-foto"></div>
+      <div class="esqueleto-linea esqueleto-linea-larga"></div>
+      <div class="esqueleto-linea esqueleto-linea-corta"></div>
+    </div>`;
+  return esqueleto.repeat(Math.max(0, cantidad));
 }

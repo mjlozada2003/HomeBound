@@ -3635,13 +3635,13 @@
     "testId": 81
   },
   {
-    "commitId": "HEAD",
+    "commitId": "7b833b3969926195705f3c9f1b8f3b24f87d566f",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882921831,
     "testId": 82
   },
   {
-    "commitId": "HEAD",
+    "commitId": "93e02d762b3df6781313e21d3e691863e1aecda8",
     "commitName": "fix: el boton publicar solo se muestra con la sesion iniciada",
     "commitTimestamp": 1794884586265,
     "testId": 83
@@ -3663,19 +3663,19 @@
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b21b006518cf478bb38ca4d795524f8d2d9113e7",
     "commitName": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
     "commitTimestamp": 1794884714269,
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ea273451cde93badbbe95026efee972d42514da6",
     "commitName": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
     "commitTimestamp": 1794884807413,
     "testId": 85
   },
   {
-    "commitId": "HEAD",
+    "commitId": "33a7f927496cb59a7a9755695d5fec7b2656cf73",
     "commitName": "feat: diseno responsive que aprovecha pantallas anchas y se adapta al celular",
     "commitTimestamp": 1794885452737,
     "testId": 83
@@ -3697,7 +3697,7 @@
     "testId": 83
   },
   {
-    "commitId": "HEAD",
+    "commitId": "f64fead6a7cec912a5bc1a8029b93d7329f81469",
     "commitName": "test: deberia cifrar la contrasena con pbkdf2 y una sal",
     "commitTimestamp": 1794885543295,
     "testId": 83
@@ -3719,7 +3719,7 @@
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "423aebaa5b1575e8bdf51a9238e4c84b8a3841c8",
     "commitName": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
     "commitTimestamp": 1794885694104,
     "testId": 84
@@ -3741,7 +3741,7 @@
     "testId": 85
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8e85eb66d70b636846d3ce65ac5b9fad2fa515cb",
     "commitName": "test: deberia verificar contrasenas cifradas y las antiguas sin cifrar",
     "commitTimestamp": 1794885832012,
     "testId": 85
@@ -3919,5 +3919,93 @@
     "commitName": "fix: restaurar estilos responsive y entradas del historial perdidas al mergear HU-05",
     "commitTimestamp": 1794900300113,
     "testId": 99
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "chore: ignorar la carpeta local de skills de claude en git y eslint",
+    "commitTimestamp": 1794902280502,
+    "testId": 100
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: mover los estilos responsive a su propio archivo",
+    "commitTimestamp": 1794902334905,
+    "testId": 101
+  },
+  {
+    "numPassedTests": 332,
+    "failedTests": 4,
+    "numTotalTests": 336,
+    "timestamp": 1794902395304,
+    "success": false,
+    "testId": 102
+  },
+  {
+    "numPassedTests": 336,
+    "failedTests": 0,
+    "numTotalTests": 336,
+    "timestamp": 1794902418510,
+    "success": true,
+    "testId": 102
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia calcular el paso activo de como funciona segun el scroll",
+    "commitTimestamp": 1794902437068,
+    "testId": 102
+  },
+  {
+    "numPassedTests": 337,
+    "failedTests": 2,
+    "numTotalTests": 339,
+    "timestamp": 1794902479051,
+    "success": false,
+    "testId": 103
+  },
+  {
+    "numPassedTests": 339,
+    "failedTests": 0,
+    "numTotalTests": 339,
+    "timestamp": 1794902563045,
+    "success": true,
+    "testId": 103
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear tarjetas esqueleto para mostrar mientras cargan las publicaciones",
+    "commitTimestamp": 1794902579011,
+    "testId": 103
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: landing page con hero, como funciona por pasos, caracteristicas, avisos reales y footer",
+    "commitTimestamp": 1794904072169,
+    "testId": 104
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: acabados visuales en toda la app con textura, transiciones, carga y estados de foco",
+    "commitTimestamp": 1794904127069,
+    "testId": 105
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: lista de casos de prueba de la landing y los acabados",
+    "commitTimestamp": 1794904202920,
+    "testId": 106
+  },
+  {
+    "numPassedTests": 339,
+    "failedTests": 0,
+    "numTotalTests": 339,
+    "timestamp": 1794908253582,
+    "success": true,
+    "testId": 107
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: videos de fondo del hero que se turnan con un fundido",
+    "commitTimestamp": 1794908528448,
+    "testId": 107
   }
 ]

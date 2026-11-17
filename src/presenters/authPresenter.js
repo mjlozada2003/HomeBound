@@ -137,6 +137,7 @@ function configurarNavegacionNavbar(elementos, callbacks) {
     mostrarHallazgo,
     mostrarMisPublicaciones,
     actualizarNavbar,
+    mostrarInicio,
   } = callbacks;
 
   if (linkIrLogin) {
@@ -160,7 +161,7 @@ function configurarNavegacionNavbar(elementos, callbacks) {
       if (sesion) {
         mostrarPublicaciones();
       } else {
-        mostrarRegistro();
+        mostrarInicio();
       }
     });
   }
@@ -168,7 +169,7 @@ function configurarNavegacionNavbar(elementos, callbacks) {
     navBtnLogout.addEventListener('click', () => {
       cerrarSesion();
       actualizarNavbar(null);
-      mostrarLogin();
+      mostrarInicio();
     });
   }
   // Todos los botones "Volver" (Panel de control y Mis publicaciones) llevan a la lista pública.
@@ -203,6 +204,7 @@ function configurarNavegacionNavbar(elementos, callbacks) {
 
 export function iniciarAuthPresenter() {
   // Secciones
+  const vistaInicio = document.querySelector('#vista-inicio');
   const vistaRegistro = document.querySelector('#vista-registro');
   const vistaLogin = document.querySelector('#vista-login');
   const vistaHallazgo = document.querySelector('#hallazgo-seccion');
@@ -242,6 +244,7 @@ export function iniciarAuthPresenter() {
 
   // Helper centralizado para alternar vistas (Router SPA)
   const todasLasVistas = [
+    vistaInicio,
     vistaRegistro,
     vistaLogin,
     vistaHallazgo,
@@ -261,6 +264,12 @@ export function iniciarAuthPresenter() {
     if (vistaActiva) {
       vistaActiva.classList.remove('oculto');
     }
+    // Cada vista empieza arriba (la landing es larga).
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  function mostrarInicio() {
+    activarVista(vistaInicio);
   }
 
   function mostrarLogin() {
@@ -352,6 +361,7 @@ export function iniciarAuthPresenter() {
       mostrarHallazgo,
       mostrarMisPublicaciones,
       actualizarNavbar,
+      mostrarInicio,
     }
   );
 
@@ -360,8 +370,10 @@ export function iniciarAuthPresenter() {
   actualizarNavbar(sesionGuardada);
   if (sesionGuardada) {
     mostrarPublicaciones();
+  } else {
+    mostrarInicio();
   }
 
   // Lo usan otros presenters para volver a la lista (por ejemplo, desde publicar).
-  return { mostrarPublicaciones };
+  return { mostrarPublicaciones, mostrarInicio, mostrarRegistro, mostrarLogin };
 }

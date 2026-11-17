@@ -9,7 +9,7 @@ import {
 } from '../services/publicacionesService';
 import { escaparHtml } from '../models/html';
 import { obtenerSesionActiva } from '../models/Auth/sesion';
-import { crearTarjetaHtml, crearEtiquetasHtml } from './plantillaTarjeta';
+import { crearTarjetaHtml, crearEtiquetasHtml, crearEsqueletosHtml } from './plantillaTarjeta';
 import { renderizarEstadisticas } from './statsPresenter';
 
 let pendientesCargadas = [];
@@ -42,6 +42,7 @@ export async function renderizarBandejaModeracion() {
   if (!contenedorPendientes) {return;}
 
   renderizarEstadisticas();
+  contenedorPendientes.innerHTML = crearEsqueletosHtml(4);
 
   let pendientesFirestore;
 
