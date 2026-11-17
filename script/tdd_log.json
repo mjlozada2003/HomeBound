@@ -3811,7 +3811,7 @@
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "056cef369612eed50343292ab630b54b05ca3a62",
     "commitName": "test: deberia generar la url del mapa embebido a partir de la ubicacion",
     "commitTimestamp": 1794887636217,
     "testId": 86
@@ -4047,5 +4047,11 @@
     "commitName": "fix: quitar el parpadeo al cambiar de paso en como funciona",
     "commitTimestamp": 1794910626027,
     "testId": 111
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: casos de prueba de las publicaciones destacadas y del cambio de paso",
+    "commitTimestamp": 1794910686196,
+    "testId": 112
   }
 ]

@@ -2090,12 +2090,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "056cef369612eed50343292ab630b54b05ca3a62",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:55:25.000Z",
       "message": "feat: mostrar mapa con marcador en el detalle de la publicacion",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/056cef369612eed50343292ab630b54b05ca3a62"
     },
     "stats": {
       "total": 19,
@@ -2576,6 +2576,25 @@
       "total": 24,
       "additions": 19,
       "deletions": 5,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.6,
+    "test_count": 346,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T10:17:58.000Z",
+      "message": "docs: casos de prueba de las publicaciones destacadas y del cambio de paso",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 14,
+      "additions": 12,
+      "deletions": 2,
       "date": "2026-11-17"
     },
     "coverage": 73.6,
