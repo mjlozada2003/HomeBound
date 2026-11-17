@@ -3453,7 +3453,7 @@
     "testId": 72
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ea17b3d6cdc7b739ac6d0d1eb279377b0733eaa4",
     "commitName": "test(lista): no deberia eliminar publicaciones resueltas expiradas de la base",
     "commitTimestamp": 1794690497748,
     "testId": 72
@@ -3529,5 +3529,27 @@
     "commitName": "test: deberia crear una clave de borrador por tipo y por usuario",
     "commitTimestamp": 1794879528590,
     "testId": 76
+  },
+  {
+    "numPassedTests": 248,
+    "failedTests": 4,
+    "numTotalTests": 252,
+    "timestamp": 1794879550640,
+    "success": false,
+    "testId": 77
+  },
+  {
+    "numPassedTests": 252,
+    "failedTests": 0,
+    "numTotalTests": 252,
+    "timestamp": 1794879575245,
+    "success": true,
+    "testId": 77
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia guardar, recuperar y eliminar el borrador en el navegador",
+    "commitTimestamp": 1794879582025,
+    "testId": 77
   }
 ]
