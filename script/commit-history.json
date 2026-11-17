@@ -1710,12 +1710,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "70ce7d85d0ef473cc164295a0b30bd1d8c6f9e4d",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T02:05:16.000Z",
       "message": "feat: iconos de lucide en el detalle y formato unico para todos los iconos",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/70ce7d85d0ef473cc164295a0b30bd1d8c6f9e4d"
     },
     "stats": {
       "total": 104,
@@ -1891,6 +1891,25 @@
     "stats": {
       "total": 62,
       "additions": 62,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 69.37,
+    "test_count": 273,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-17T03:54:25.000Z",
+      "message": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 52,
+      "additions": 52,
       "deletions": 0,
       "date": "2026-11-17"
     },

@@ -3571,7 +3571,7 @@
     "testId": 79
   },
   {
-    "commitId": "HEAD",
+    "commitId": "70ce7d85d0ef473cc164295a0b30bd1d8c6f9e4d",
     "commitName": "chore: agregar la libreria de iconos lucide",
     "commitTimestamp": 1794880071993,
     "testId": 74
@@ -3679,5 +3679,11 @@
     "commitName": "test: deberia generar la url del mapa embebido a partir de la ubicacion",
     "commitTimestamp": 1794887636217,
     "testId": 86
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
+    "commitTimestamp": 1794887669629,
+    "testId": 87
   }
 ]
