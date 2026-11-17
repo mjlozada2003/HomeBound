@@ -3623,7 +3623,7 @@
     "testId": 80
   },
   {
-    "commitId": "HEAD",
+    "commitId": "00c46a38c2a943aec90a9b9aa6bb8b82b0b991d2",
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/volver-desde-mis-publicaciones\n\n# Conflicts:\n#\tindex.html\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882073514,
     "testId": 76
@@ -3715,5 +3715,19 @@
     "commitName": "test: deberia buscar, filtrar por categoria y fecha, y ordenar publicaciones",
     "commitTimestamp": 1794889222928,
     "testId": 92
+  },
+  {
+    "numPassedTests": 314,
+    "failedTests": 0,
+    "numTotalTests": 314,
+    "timestamp": 1794889250624,
+    "success": true,
+    "testId": 93
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: buscar publicaciones por texto, categoria, fecha y ordenarlas",
+    "commitTimestamp": 1794889273202,
+    "testId": 93
   }
 ]

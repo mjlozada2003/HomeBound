@@ -1824,12 +1824,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "00c46a38c2a943aec90a9b9aa6bb8b82b0b991d2",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:03:00.000Z",
       "message": "fix: el boton publicar solo se muestra con la sesion iniciada",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/00c46a38c2a943aec90a9b9aa6bb8b82b0b991d2"
     },
     "stats": {
       "total": 6,
@@ -2005,6 +2005,25 @@
     "stats": {
       "total": 218,
       "additions": 218,
+      "deletions": 0,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.51,
+    "test_count": 314,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-17T04:21:07.000Z",
+      "message": "feat: buscar publicaciones por texto, categoria, fecha y ordenarlas",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 214,
+      "additions": 214,
       "deletions": 0,
       "date": "2026-11-17"
     },
