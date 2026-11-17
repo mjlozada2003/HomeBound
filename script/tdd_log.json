@@ -3531,7 +3531,7 @@
     "testId": 76
   },
   {
-    "commitId": "HEAD",
+    "commitId": "381f50529baed7e60e8e86a9ccfd70fbd892cfa4",
     "commitName": "test: deberia crear una clave de borrador por tipo y por usuario",
     "commitTimestamp": 1794879528590,
     "testId": 76
@@ -3639,5 +3639,11 @@
     "commitName": "Merge remote-tracking branch 'origin/main' into feat/borrador-publicacion\n\n# Conflicts:\n#\tscript/commit-history.json\n#\tscript/tdd_log.json",
     "commitTimestamp": 1794882921831,
     "testId": 82
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: el boton publicar solo se muestra con la sesion iniciada",
+    "commitTimestamp": 1794884586265,
+    "testId": 83
   }
 ]
