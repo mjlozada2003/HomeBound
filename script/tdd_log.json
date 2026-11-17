@@ -3669,7 +3669,7 @@
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5794151a4dc7bf1d65075833a00a6d1fc50d3538",
     "commitName": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
     "commitTimestamp": 1794884807413,
     "testId": 85
@@ -3753,5 +3753,11 @@
     "commitName": "style: estilos de la barra de filtros y del mensaje sin resultados",
     "commitTimestamp": 1794889404289,
     "testId": 97
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "docs: agregar lista de pruebas de HU-05",
+    "commitTimestamp": 1794889435949,
+    "testId": 98
   }
 ]
