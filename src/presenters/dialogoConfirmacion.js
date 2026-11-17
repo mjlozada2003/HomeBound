@@ -23,3 +23,17 @@ export function pedirConfirmacion({
     );
   });
 }
+
+// Pregunta qué hacer al salir de publicar con datos sin enviar.
+// Responde 'borrador', 'descartar' o 'cancelar' (también si se cierra con Esc).
+export function pedirDecisionSalida() {
+  const dialogo = document.querySelector('#dialogo-salir-publicar');
+  dialogo.returnValue = '';
+  dialogo.showModal();
+
+  return new Promise((resolve) => {
+    dialogo.addEventListener('close', () => resolve(dialogo.returnValue || 'cancelar'), {
+      once: true,
+    });
+  });
+}

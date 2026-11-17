@@ -6,8 +6,8 @@ import { inicializarMisPublicacionesPresenter } from './presenters/misPublicacio
 import { abrirPublicacionPorEnlace } from './presenters/enlaceNavegacion';
 
 function iniciarAplicacion() {
-  iniciarAuthPresenter();
-  iniciarPostPresenter();
+  const navegacion = iniciarAuthPresenter();
+  iniciarPostPresenter({ alVolver: navegacion.mostrarPublicaciones });
   inicializarListaPresenter();
   inicializarModeracionPresenter();
   inicializarMisPublicacionesPresenter();

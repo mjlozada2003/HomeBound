@@ -502,6 +502,21 @@ body {
     cursor: pointer;
 }
 
+/* Volver desde publicar y diálogo de borrador */
+.btn-volver-formulario {
+    display: block;
+    margin: 0 auto 0.75rem 0;
+}
+
+.dialogo-acciones-salida {
+    flex-wrap: wrap;
+}
+
+.btn-borrador {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
 /* HU-03: estilos exclusivos del formulario de hallazgo */
 .hallazgo-card {
   max-width: 640px;

@@ -359,4 +359,7 @@ export function iniciarAuthPresenter() {
   if (sesionGuardada) {
     mostrarPublicaciones();
   }
+
+  // Lo usan otros presenters para volver a la lista (por ejemplo, desde publicar).
+  return { mostrarPublicaciones };
 }

@@ -1520,12 +1520,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "9ae340d1a12b90702c414656b7708496585c0889",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T01:37:14.000Z",
       "message": "test: deberia detectar si el formulario de publicar tiene datos ingresados",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9ae340d1a12b90702c414656b7708496585c0889"
     },
     "stats": {
       "total": 42,
@@ -1591,6 +1591,25 @@
       "date": "2026-11-17"
     },
     "coverage": 78.5,
+    "test_count": 252,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T01:43:46.000Z",
+      "message": "feat: boton volver en publicar que pregunta si guardar borrador o descartar",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 167,
+      "additions": 152,
+      "deletions": 15,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.04,
     "test_count": 252,
     "failed_tests": 0,
     "conclusion": "success"

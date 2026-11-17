@@ -3459,7 +3459,7 @@
     "testId": 72
   },
   {
-    "commitId": "HEAD",
+    "commitId": "9ae340d1a12b90702c414656b7708496585c0889",
     "commitName": "fix: las etiquetas de tipo y estado de la tarjeta se ven como pildoras en una fila",
     "commitTimestamp": 1794877780155,
     "testId": 73
@@ -3551,5 +3551,11 @@
     "commitName": "test: deberia guardar, recuperar y eliminar el borrador en el navegador",
     "commitTimestamp": 1794879582025,
     "testId": 77
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: boton volver en publicar que pregunta si guardar borrador o descartar",
+    "commitTimestamp": 1794879830159,
+    "testId": 78
   }
 ]
