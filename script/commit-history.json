@@ -1919,12 +1919,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "ea273451cde93badbbe95026efee972d42514da6",
     "author": "Maite Arauco",
     "commit": {
       "date": "2026-11-17T03:21:28.000Z",
       "message": "test: deberia crear credenciales con hash y sal sin guardar la contrasena",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/ea273451cde93badbbe95026efee972d42514da6"
     },
     "stats": {
       "total": 30,
@@ -2409,6 +2409,25 @@
     },
     "coverage": 73.16,
     "test_count": 336,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Maite Arauco",
+    "commit": {
+      "date": "2026-11-17T08:02:54.000Z",
+      "message": "test: deberia crear tarjetas esqueleto para mostrar mientras cargan las publicaciones",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 29,
+      "additions": 28,
+      "deletions": 1,
+      "date": "2026-11-17"
+    },
+    "coverage": 73.22,
+    "test_count": 339,
     "failed_tests": 0,
     "conclusion": "success"
   }

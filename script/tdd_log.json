@@ -3669,7 +3669,7 @@
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ea273451cde93badbbe95026efee972d42514da6",
     "commitName": "fix: etiquetas de tipo y estado en mayusculas y con el mismo formato en todas las vistas",
     "commitTimestamp": 1794884807413,
     "testId": 85
@@ -3953,5 +3953,27 @@
     "commitName": "test: deberia calcular el paso activo de como funciona segun el scroll",
     "commitTimestamp": 1794902437068,
     "testId": 102
+  },
+  {
+    "numPassedTests": 337,
+    "failedTests": 2,
+    "numTotalTests": 339,
+    "timestamp": 1794902479051,
+    "success": false,
+    "testId": 103
+  },
+  {
+    "numPassedTests": 339,
+    "failedTests": 0,
+    "numTotalTests": 339,
+    "timestamp": 1794902563045,
+    "success": true,
+    "testId": 103
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: deberia crear tarjetas esqueleto para mostrar mientras cargan las publicaciones",
+    "commitTimestamp": 1794902579011,
+    "testId": 103
   }
 ]
