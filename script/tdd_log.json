@@ -3663,7 +3663,7 @@
     "testId": 84
   },
   {
-    "commitId": "HEAD",
+    "commitId": "9c0b5a2cce917444cd5d556b5fd6a3196ca16427",
     "commitName": "test: deberia crear las etiquetas de tipo y estado con el mismo formato",
     "commitTimestamp": 1794884714269,
     "testId": 84
@@ -3747,5 +3747,11 @@
     "commitName": "feat: agregar barra de busqueda, filtros desplegables y orden en la lista",
     "commitTimestamp": 1794889367877,
     "testId": 96
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "style: estilos de la barra de filtros y del mensaje sin resultados",
+    "commitTimestamp": 1794889404289,
+    "testId": 97
   }
 ]

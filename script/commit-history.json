@@ -1900,12 +1900,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "9c0b5a2cce917444cd5d556b5fd6a3196ca16427",
     "author": "KathM00",
     "commit": {
       "date": "2026-11-17T03:54:25.000Z",
       "message": "feat: crear url del mapa embebido de Google Maps y formatear coordenadas",
-      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/9c0b5a2cce917444cd5d556b5fd6a3196ca16427"
     },
     "stats": {
       "total": 52,
@@ -2082,6 +2082,25 @@
       "total": 176,
       "additions": 174,
       "deletions": 2,
+      "date": "2026-11-17"
+    },
+    "coverage": 72.51,
+    "test_count": 314,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "KathM00",
+    "commit": {
+      "date": "2026-11-17T04:23:18.000Z",
+      "message": "style: estilos de la barra de filtros y del mensaje sin resultados",
+      "url": "https://github.com/mjlozada2003/HomeBound/commit/HEAD"
+    },
+    "stats": {
+      "total": 76,
+      "additions": 76,
+      "deletions": 0,
       "date": "2026-11-17"
     },
     "coverage": 72.51,

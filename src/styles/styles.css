@@ -1025,3 +1025,79 @@ body {
 .detalle-mapa-iframe {
   height: 280px;
 }
+
+/* HU-05: Buscar por filtro y ordenar */
+.filtros-publicaciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.75rem 1rem;
+  align-items: end;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-input-border);
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.filtro-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.filtro-campo[hidden] {
+  display: none;
+}
+
+.filtro-busqueda {
+  grid-column: 1 / -1;
+}
+
+.filtro-campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.filtro-campo input,
+.filtro-campo select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--color-input-border);
+  background-color: var(--color-input-bg);
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.filtro-campo input:focus,
+.filtro-campo select:focus {
+  border-color: var(--color-primary);
+  background-color: #FFFFFF;
+}
+
+.filtro-limpiar {
+  justify-self: start;
+  align-self: end;
+}
+
+.filtro-limpiar[hidden] {
+  display: none;
+}
+
+.filtro-resumen {
+  min-height: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.grid-publicaciones > .mensaje-vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--color-text-muted);
+}
